@@ -119,3 +119,7 @@ Where the skills are silent, the Cryptonite rules apply as written.
 
 ### Voice (user decision, 20 Oct 2026)
 Narration uses Google Cloud Text-to-Speech, voice `id-ID-Chirp3-HD-Orus`, the same voice every episode. Chirp 3 HD returns no word timings, so captions need a forced-alignment pass on the audio. ElevenLabs is not used: the account is on the free plan, which cannot use library voices through the API.
+
+### Framework and logo (user decision, 20 Oct 2026)
+- Remotion is the default framework for every Reel. HyperFrames may be used instead for a Reel when it suits that piece better; record the choice and the reason in the episode's `brief.md`.
+- `public/brand/logo.png` is the official 2000×667 logo with a transparent background (white wordmark, blue gem as the "O"). Use `logoBlend: 'normal'`, not `'screen'`. It needs a dark ground; on off-white chapters, use only the gem or keep the logo off screen.
