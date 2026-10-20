@@ -1,0 +1,9 @@
+{
+  "id": "pipeline-test",
+  "title": "Tes pipeline",
+  "minSeconds": 5,
+  "maxSeconds": 30,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}

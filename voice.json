@@ -1,0 +1,12 @@
+{
+  "engine": "google",
+  "google": {
+    "voice": "id-ID-Chirp3-HD-Orus",
+    "languageCode": "id-ID",
+    "speakingRate": 1.0
+  },
+  "alignment": {
+    "model": "small",
+    "whisperCppVersion": "1.7.5"
+  }
+}

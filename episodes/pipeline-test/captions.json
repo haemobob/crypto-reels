@@ -1,0 +1,155 @@
+{
+  "durationSec": 11.280417,
+  "timing": "whisper.cpp 1.7.5 small, aligned to narration.txt (24/24 words matched, rest interpolated)",
+  "words": [
+    {
+      "text": "Harga",
+      "start": 0,
+      "end": 0.4,
+      "highlight": false
+    },
+    {
+      "text": "di",
+      "start": 0.4,
+      "end": 0.74,
+      "highlight": false
+    },
+    {
+      "text": "layar",
+      "start": 0.74,
+      "end": 0.94,
+      "highlight": false
+    },
+    {
+      "text": "belum",
+      "start": 0.94,
+      "end": 1.32,
+      "highlight": false
+    },
+    {
+      "text": "tentu",
+      "start": 1.32,
+      "end": 1.72,
+      "highlight": false
+    },
+    {
+      "text": "harga",
+      "start": 1.72,
+      "end": 2.11,
+      "highlight": false
+    },
+    {
+      "text": "yang",
+      "start": 2.11,
+      "end": 2.43,
+      "highlight": false
+    },
+    {
+      "text": "kamu",
+      "start": 2.43,
+      "end": 2.74,
+      "highlight": false
+    },
+    {
+      "text": "dapat.",
+      "start": 2.74,
+      "end": 3.36,
+      "highlight": false
+    },
+    {
+      "text": "Kalau",
+      "start": 3.36,
+      "end": 4,
+      "highlight": false
+    },
+    {
+      "text": "pembelinya",
+      "start": 4,
+      "end": 4.56,
+      "highlight": false
+    },
+    {
+      "text": "tipis,",
+      "start": 4.56,
+      "end": 5.28,
+      "highlight": true
+    },
+    {
+      "text": "jual",
+      "start": 5.28,
+      "end": 5.72,
+      "highlight": false
+    },
+    {
+      "text": "sedikit",
+      "start": 5.72,
+      "end": 6.18,
+      "highlight": false
+    },
+    {
+      "text": "saja",
+      "start": 6.18,
+      "end": 6.49,
+      "highlight": false
+    },
+    {
+      "text": "bisa",
+      "start": 6.49,
+      "end": 6.82,
+      "highlight": false
+    },
+    {
+      "text": "menggeser",
+      "start": 6.82,
+      "end": 7.54,
+      "highlight": false
+    },
+    {
+      "text": "harga.",
+      "start": 7.54,
+      "end": 8,
+      "highlight": false
+    },
+    {
+      "text": "Cek",
+      "start": 8,
+      "end": 8.32,
+      "highlight": false
+    },
+    {
+      "text": "dulu",
+      "start": 8.32,
+      "end": 9.29,
+      "highlight": false
+    },
+    {
+      "text": "order",
+      "start": 9.29,
+      "end": 9.43,
+      "highlight": true
+    },
+    {
+      "text": "book",
+      "start": 9.43,
+      "end": 9.76,
+      "highlight": true
+    },
+    {
+      "text": "sebelum",
+      "start": 9.76,
+      "end": 10.54,
+      "highlight": false
+    },
+    {
+      "text": "beli.",
+      "start": 10.54,
+      "end": 11,
+      "highlight": false
+    }
+  ],
+  "cues": {
+    "hook": 0,
+    "answer": 3.36,
+    "payoff": 8
+  }
+}

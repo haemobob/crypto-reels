@@ -1,0 +1,5 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[hook]]Harga di layar belum tentu harga yang kamu dapat.
+[[answer]]Kalau pembelinya *tipis*, [[pause:0.4]] jual sedikit saja bisa menggeser harga.
+[[payoff]]Cek dulu *order book* sebelum beli.

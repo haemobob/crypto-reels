@@ -1,9 +1,10 @@
+*-key.txt
+*.mp4
+.env
+.whisper/
+elevenlabs-key.txt
+episodes/*/voice-cache/
+google-tts-key.txt
 node_modules/
 out/
 output/
-*.mp4
-.env
-*-key.txt
-elevenlabs-key.txt
-google-tts-key.txt
-episodes/*/voice-cache/
