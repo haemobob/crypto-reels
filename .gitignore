@@ -1,0 +1,9 @@
+node_modules/
+out/
+output/
+*.mp4
+.env
+*-key.txt
+elevenlabs-key.txt
+google-tts-key.txt
+episodes/*/voice-cache/

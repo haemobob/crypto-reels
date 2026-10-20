@@ -1,0 +1,11 @@
+# Episode visual log
+
+One row per episode, added when it is built. Read before planning a new Reel so subjects, environments, compositions and hero moves don't repeat by default (`.claude/rules/cryptonite-story-visuals.md`).
+
+| Episode | Topic | Visual subject | Visual concept / environment | Signature composition or hero move | Main transitions |
+|---|---|---|---|---|---|
+| episode-001 | Liquidation cascade: why Bitcoin can crash in seconds | Bitcoin price and leveraged positions | Continuous 2D camera journey through a market chart | One unbroken camera move across the cascade | Camera travel (older "camera never stops" rules) |
+| episode-002 | AI could break crypto signatures (Justin Drake, 7 Oct 2026) | Ethereum researcher's warning, keys and signatures | 2D explainer of public/private keys | Key-pair diagram | Mixed 2D transitions |
+| msci-indonesia-cryptonite | MSCI proposal to move Indonesia to Standalone | MSCI release, IHSG chart, market-classification building | Full-frame 3D tiered building (Emerging / Frontier / Standalone) | Descent through the 3D building; vector IHSG chart zoom | Match cuts between 3D and 2D, thesis card |
+| altcoin-liquidity (planned) | Why altcoins fall harder; checking an order book | Real BTC/USDT order book and market-depth chart | Order-book ladder and depth staircase (SIMULASI) | Camera follows the price marker through a thin book | To be planned |
+| episode-003 (v2, rebuilt 17 Oct 2026) | Market cap vs liquidity: Rp80 jt sell, −Rp50 M market cap (simulation) | Fictional coin NusaKoin (NSK): metallic hero coin, valuation monolith, order book | One continuous 3D world: a market-cap monolith standing over an order-book canyon under the floor; extruded 3D type | The sell rides down the bid shelves, the new last price flies up and re-prices the monolith; crash zoom into the Rp90 jt liquidity speck | Coin→card turn, card rows→formula blocks, floor opens to the canyon, sell dives in, price flies up, hard reset to KOK BISA?, crash zoom into the thesis card |
