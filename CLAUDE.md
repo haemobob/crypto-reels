@@ -122,4 +122,4 @@ Narration uses Google Cloud Text-to-Speech, voice `id-ID-Chirp3-HD-Orus`, the sa
 
 ### Framework and logo (user decision, 20 Oct 2026)
 - Remotion is the default framework for every Reel. HyperFrames may be used instead for a Reel when it suits that piece better; record the choice and the reason in the episode's `brief.md`.
-- `public/brand/logo.png` is the official 2000×667 logo with a transparent background (white wordmark, blue gem as the "O"). Use `logoBlend: 'normal'`, not `'screen'`. It needs a dark ground; on off-white chapters, use only the gem or keep the logo off screen.
+- `public/brand/logo.png` is the official 2000×667 logo with a transparent background (white wordmark, blue gem as the "O"). Use `logoBlend: 'normal'`, not `'screen'`. It needs a dark ground: on off-white chapters keep it off screen (don't crop or recolour it); ask the user for a dark-text version if one is needed.
