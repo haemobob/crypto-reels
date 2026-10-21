@@ -14,7 +14,7 @@ export const CryptoReel = ({episodeId}: {episodeId: string}) => {
   const {fps} = useVideoConfig();
   const ep = episodes[episodeId];
   if (!ep) throw new Error(`Episode "${episodeId}" is not registered in src/episodes/index.ts`);
-  const {config, captions, Scene, captionMute} = ep;
+  const {config, captions, Scene, captionMute, logoHide} = ep;
   const outroFrom = Math.round((captions.durationSec + (config.tailSeconds ?? 0.6)) * fps);
   const hasVoice = captions.words.length > 0;
   return (
@@ -22,7 +22,7 @@ export const CryptoReel = ({episodeId}: {episodeId: string}) => {
       <AbsoluteFill>
         <Sequence durationInFrames={outroFrom} name="Episode">
           <Scene />
-          <CornerLogo from={LOGO_AFTER_SEC * fps} />
+          <CornerLogo from={LOGO_AFTER_SEC * fps} hide={logoHide} />
           {config.captions === 'micro' && <MicroCaptions words={captions.words} mute={captionMute} />}
         </Sequence>
         {config.outro !== false && (

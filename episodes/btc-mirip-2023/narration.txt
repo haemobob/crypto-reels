@@ -1,0 +1,16 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+# Base script from the user's brief (21 Oct 2026), edited to match the verified data:
+# order of phases (low → base → breakout), exact week timing, the depth difference, and both key levels.
+[[rate:1.06]][[hook]]Bitcoin sekarang terlihat mirip struktur tahun *dua ribu dua puluh tiga*.
+[[caution]]Bukan berarti hasilnya pasti sama. [[pause:0.2]] Tapi polanya... [[pause:0.3]] menarik.
+[[bottom]]Dua-duanya membentuk *titik rendah*, [[base]]masuk fase *konsolidasi*, [[breakout]]lalu *breakout* dan naik kuat.
+[[pullback]]Setelah itu, sama-sama *pullback*.
+[[timing]]*Timing*-nya pun mirip: puncak di minggu kedua belas, [[timing2]]pullback di minggu kelima belas.
+[[depth]]Bedanya, sekarang jauh lebih dangkal.
+[[rate:1.0]][[key2023]]Di dua ribu dua puluh tiga, Bitcoin baru lanjut naik setelah merebut kembali puncak itu, [[level2023]]sekitar *dua puluh lima ribu dolar*.
+[[keynow]]Sekarang, levelnya di sekitar *delapan puluh tujuh ribu dolar*.
+[[reclaim]]Kalau berhasil di-reclaim, kemiripannya makin kuat.
+[[fail]]Tapi kalau gagal, analoginya ikut melemah.
+[[rate:1.06]][[takeaway]]Jadi, pola seperti ini bukan buat nebak masa depan. [[validate]]Tapi buat tahu level mana yang benar-benar penting.
+[[pause:0.3]][[closing]]Karena chart yang mirip... belum tentu hasilnya sama.

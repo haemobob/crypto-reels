@@ -12,9 +12,11 @@
     "audit": "tsx scripts/audit.ts",
     "still": "tsx scripts/still.ts",
     "render": "tsx scripts/render.ts",
+    "audio": "tsx scripts/make-audio.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@remotion/bundler": "^4.0.537",
     "@remotion/cli": "^4.0.537",
     "@remotion/fonts": "^4.0.537",
     "@remotion/install-whisper-cpp": "^4.0.537",

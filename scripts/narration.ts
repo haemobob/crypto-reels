@@ -8,13 +8,14 @@ export type ScriptWord = {
   segment: number;
 };
 
-export type Segment = {text: string; pauseAfter: number};
+export type Segment = {text: string; pauseAfter: number; rate?: number};
 
 /**
  * Parses narration.txt markup:
  *   [[cue]]        names the beat that starts at the next word
  *   *word*         blue highlight (closing * before punctuation: *word*,)
  *   [[pause:0.6]]  exact silence in seconds; splits the take into segments
+ *   [[rate:0.9]]   speaking rate for what follows (until the next rate marker); also splits the take
  *   [[tone:...]] / [[say:...]]  ElevenLabs/Edge-only directions: ignored by Google TTS
  * Lines starting with # are comments.
  */
@@ -26,6 +27,7 @@ export const parseNarration = (source: string, pronunciations: Record<string, st
   const tokens = body.match(/\[\[[^\]]+\]\]|\S+/g) ?? [];
   const words: ScriptWord[] = [];
   const segments: Segment[] = [{text: '', pauseAfter: 0}];
+  let rate: number | undefined;
   const ignored = new Set<string>();
   let pendingCue: string | undefined;
 
@@ -35,7 +37,12 @@ export const parseNarration = (source: string, pronunciations: Record<string, st
       const [kind, value] = marker[1].split(':');
       if (kind === 'pause') {
         segments[segments.length - 1].pauseAfter += Number(value);
-        segments.push({text: '', pauseAfter: 0});
+        segments.push({text: '', pauseAfter: 0, rate});
+      } else if (kind === 'rate') {
+        rate = Number(value);
+        const last = segments[segments.length - 1];
+        if (last.text) segments.push({text: '', pauseAfter: 0, rate});
+        else last.rate = rate;
       } else if (kind === 'tone' || kind === 'say') {
         ignored.add(kind);
       } else {

@@ -3,6 +3,43 @@ import type {ScriptWord} from './narration';
 export type Heard = {text: string; start: number; end: number};
 export type Timed = {start: number; end: number; matched: boolean};
 
+const ONES = ['nol', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas'];
+
+/** Indonesian number words ("terbilang"): 25000 -> "dua puluh lima ribu". */
+export const terbilang = (n: number): string => {
+  const rest = (r: number) => (r ? ` ${terbilang(r)}` : '');
+  if (n < 12) return ONES[n];
+  if (n < 20) return `${terbilang(n - 10)} belas`;
+  if (n < 100) return `${terbilang(Math.floor(n / 10))} puluh${rest(n % 10)}`;
+  if (n < 200) return `seratus${rest(n - 100)}`;
+  if (n < 1000) return `${terbilang(Math.floor(n / 100))} ratus${rest(n % 100)}`;
+  if (n < 2000) return `seribu${rest(n - 1000)}`;
+  if (n < 1e6) return `${terbilang(Math.floor(n / 1000))} ribu${rest(n % 1000)}`;
+  if (n < 1e9) return `${terbilang(Math.floor(n / 1e6))} juta${rest(n % 1e6)}`;
+  return String(n);
+};
+
+/** Whisper writes spoken numbers as digits ("2023", "$25.000", "ke-12"); spell them out so they align with the script. */
+const expandHeard = (heard: Heard[]): Heard[] =>
+  heard.flatMap((h) => {
+    const raw = h.text.replace(/[,;:!?]+$/u, '').replace(/\.$/u, '');
+    const ordinal = raw.match(/^ke-?(\d+)$/i);
+    const money = raw.match(/^(\$|Rp)?(\d{1,3}(?:[.,]\d{3})+|\d+)$/);
+    let spoken: string | undefined;
+    if (ordinal) spoken = ordinal[1] === '1' ? 'pertama' : `ke${terbilang(Number(ordinal[1]))}`;
+    else if (money) spoken = `${terbilang(Number(money[2].replace(/[.,]/g, '')))}${money[1] === '$' ? ' dolar' : money[1] ? ' rupiah' : ''}`;
+    if (!spoken) return [h];
+    const parts = spoken.split(' ');
+    const total = parts.reduce((a, p) => a + p.length, 0);
+    let t = h.start;
+    return parts.map((p) => {
+      const d = ((h.end - h.start) * p.length) / total;
+      const w = {text: p, start: t, end: t + d};
+      t += d;
+      return w;
+    });
+  });
+
 const norm = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
 
 const similarity = (a: string, b: string) => {
@@ -20,7 +57,8 @@ const similarity = (a: string, b: string) => {
  * Gives every script word a time by aligning it to what whisper heard (global sequence alignment).
  * Words whisper misheard or merged get times interpolated between their matched neighbours, by length.
  */
-export const alignWords = (script: ScriptWord[], heard: Heard[], totalSec: number): Timed[] => {
+export const alignWords = (script: ScriptWord[], heardRaw: Heard[], totalSec: number): Timed[] => {
+  const heard = expandHeard(heardRaw);
   const A = script.map((w) => norm(w.spoken));
   const B = heard.map((h) => norm(h.text));
   const n = A.length, m = B.length, GAP = -0.4;

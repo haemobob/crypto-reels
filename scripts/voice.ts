@@ -36,8 +36,8 @@ const outDir = publicEpisodeDir(id);
 mkdirSync(cacheDir, {recursive: true});
 mkdirSync(outDir, {recursive: true});
 
-const synthesise = async (text: string) => {
-  const g = voice.google;
+const synthesise = async (text: string, rate?: number) => {
+  const g = {...voice.google, speakingRate: rate ?? voice.google.speakingRate};
   const hash = createHash('sha1').update(JSON.stringify({g, text})).digest('hex').slice(0, 16);
   const file = path.join(cacheDir, `${hash}.wav`);
   if (existsSync(file)) return file;
@@ -62,7 +62,7 @@ const inputs: string[] = [];
 let n = 0;
 for (const seg of segments) {
   if (seg.text) {
-    inputs.push('-i', await synthesise(seg.text));
+    inputs.push('-i', await synthesise(seg.text, seg.rate));
     n++;
   }
   if (seg.pauseAfter > 0) {
@@ -89,6 +89,9 @@ const heard = toCaptions({whisperCppOutput: out})
   .captions.map((c) => ({text: c.text.trim(), start: c.startMs / 1000, end: c.endMs / 1000}))
   .filter((h) => h.text);
 const timed = alignWords(words, heard, durationSec);
+// What whisper heard, for checking pronunciation: unmatched words are often mispronounced English terms.
+writeFileSync(path.join(cacheDir, 'heard.txt'), heard.map((h) => h.text).join(' ') + '\n');
+const unmatched = words.filter((_, i) => !timed[i].matched).map((w) => w.text);
 
 const captions: Captions = {
   durationSec,
@@ -102,6 +105,7 @@ const matched = timed.filter((t) => t.matched).length;
 const inWindow = durationSec >= episode.minSeconds && durationSec <= episode.maxSeconds;
 console.log(`\n✔ narration.wav ${durationSec.toFixed(2)} s  (window ${episode.minSeconds}–${episode.maxSeconds} s: ${inWindow ? 'OK' : 'OUTSIDE'})`);
 console.log(`✔ captions.json ${words.length} words, ${matched} matched to audio (${Math.round((100 * matched) / words.length)}%), cues: ${Object.keys(captions.cues).join(', ') || 'none'}`);
+if (unmatched.length) console.log(`ℹ Not matched (check pronunciation; heard text in voice-cache/heard.txt): ${unmatched.join(', ')}`);
 if (matched / words.length < 0.8) console.log('⚠ Under 80% of words matched: listen to the take and check captions.json before building on these timings.');
 if (episode.minWords && words.length < episode.minWords) console.log(`⚠ ${words.length} words is under the minimum (${episode.minWords})`);
 if (episode.maxWords && words.length > episode.maxWords) console.log(`⚠ ${words.length} words is over the maximum (${episode.maxWords})`);
