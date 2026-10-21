@@ -120,6 +120,8 @@ Where the skills are silent, the Cryptonite rules apply as written.
 ### Voice (user decision, 20 Oct 2026)
 Narration uses Google Cloud Text-to-Speech, voice `id-ID-Chirp3-HD-Orus`, the same voice every episode. Chirp 3 HD returns no word timings, so captions need a forced-alignment pass on the audio. ElevenLabs is not used: the account is on the free plan, which cannot use library voices through the API.
 
+Supplied takes: a voice recorded or generated elsewhere (e.g. ElevenLabs on the user's account) can replace the synthesised one with `npm run voice -- <id> --audio <file>`; it must read `narration.txt` word for word, and the same alignment builds the captions. `btc-mirip-2023` uses the user's ElevenLabs take ("Ongky Himawan – Calm, Deep", 21 Oct 2026).
+
 ### Framework and logo (user decision, 20 Oct 2026)
 - Remotion is the default framework for every Reel. HyperFrames may be used instead for a Reel when it suits that piece better; record the choice and the reason in the episode's `brief.md`.
 - `public/brand/logo.png` is the official 2000×667 logo with a transparent background (white wordmark, blue gem as the "O"). Use `logoBlend: 'normal'`, not `'screen'`. It needs a dark ground: on off-white chapters keep it off screen (don't crop or recolour it); ask the user for a dark-text version if one is needed.

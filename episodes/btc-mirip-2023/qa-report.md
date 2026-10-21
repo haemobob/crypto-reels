@@ -74,12 +74,12 @@ Checked on: rendered stills (`npm run still -- btc-mirip-2023 --frames …`) acr
 - [x] No CTA; "Bukan nasihat finansial" on the closing frame.
 
 ### Runtime and implementation
-- [x] Duration measured: narration 52.12 s; MP4 54.8 s (user target 40–55 s).
+- [x] Duration measured: narration 53.39 s (window 40–55 s); MP4 56.1 s including the 2 s outro, 1.1 s over the user's 40–55 s target (accepted with the user's own take).
 - [x] ffprobe: 1080×1920, 30/1, H.264 + AAC.
 - [x] No black frames (blackdetect), no missing assets; render validated by `npm run render`.
 - [x] Safe zones: key content within x 90–990, y 384–1555.
 - [x] Numbers on screen match `chart-data.json` and `research.md` ($15,476 · $57,800 · $25,250 · $87,396 · $82,893 · −22.6% · −8.7% · 17 Mar 2023 · $31,000).
-- [x] Loudness −14.2 LUFS, true peak −1.2 dBTP; low hits lowered after measuring them above the voice.
+- [x] Loudness −14.3 LUFS, true peak −1.1 dBTP (ElevenLabs render).
 
 ### Visual and sound inspection
 - [x] Stills across every beat; every transition before/mid/after; first frame and outro at full resolution.
@@ -100,7 +100,7 @@ Camera, transitions and rhythm are scored from stills; they need a look in motio
 ## Known limitations
 - Motion not watched. Please watch the MP4 on a phone before posting: camera easing, the hero move at 32 s and caption sync.
 - No music bed. SFX now come from the user-supplied pack (licence on the user's confirmation, not independently verified); placement and levels were measured, not listened to.
-- Chirp 3 HD has no emotion tags: the "slightly dramatic / firmer" delivery relies on wording, pauses and rate.
+- Final voice is the user's ElevenLabs take ("Ongky Himawan – Calm, Deep"), not the house Orus voice; aligned 119/120 words.
 - Data is a 21 Oct 2026 snapshot; re-check before a later release (`data/chart-data-notes.md`).
 - The reference video wasn't available here; its $72.5K level was not used (not supported by current data).
 
@@ -111,6 +111,7 @@ Camera, transitions and rhythm are scored from stills; they need a look in motio
 - Level label "~$87.396" → exact "$87.396" on the chart, "~$87.400" in the headline.
 - Low-hit SFX louder than the voice → lowered.
 - SFX swapped to the user's pack (21 Oct): re-rendered; −14.2 LUFS, −1.3 dBTP; effects measured 0.4–1.7 dB above voice-only passages.
+- Voice replaced with the user's ElevenLabs take and corner logo shown from frame 0 (21 Oct): cues re-timed from the take, re-rendered; frames from the MP4 checked at every beat (`output/btc-mirip-2023-review/elevenlabs-check.jpg`).
 
 ## Final verified artifact path
 `output/btc-mirip-2023.mp4` (render of 21 Oct 2026; gitignored; re-render with `make-video.bat btc-mirip-2023`).

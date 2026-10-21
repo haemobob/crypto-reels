@@ -1,6 +1,6 @@
 # Script — Bitcoin sekarang mirip 2023?
 
-Approved exact wording is `narration.txt` (Google Chirp 3 HD Orus, rate 1.06, key-level section 1.0). Measured take: 52.1 s; with tail and outro the file is 54.8 s.
+Approved exact wording is `narration.txt`. Final voice: the user's ElevenLabs take ("Ongky Himawan – Calm, Deep"), 53.4 s; with tail and outro the file is 56.1 s. Times below are from the earlier Orus take; the build follows the cue times in `captions.json`, which come from the ElevenLabs take.
 
 | Time | Line | Delivery |
 |---|---|---|
@@ -19,4 +19,4 @@ Approved exact wording is `narration.txt` (Google Chirp 3 HD Orus, rate 1.06, ke
 
 Changes from the user's base script, all for accuracy or length: phase order matches the data (low → base → breakout; "memantul kuat" before the base wasn't what happened); exact week timing added; the depth difference added; both key levels spoken ($25K in 2023, $87K now); "Di dua periode ini" / "harganya … mengalami" / "area yang sama ada di" trimmed to fit 40–55 s.
 
-Delivery limits: Google Chirp 3 HD has no emotion tags, so "slightly dramatic / firmer" comes from wording, pauses and rate only (see `audio-map.md`).
+Delivery: performed in ElevenLabs by the user.

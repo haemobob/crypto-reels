@@ -1,7 +1,8 @@
 /**
- * npm run voice -- <id>
- * Synthesises episodes/<id>/narration.txt with the house voice, writes public/episodes/<id>/narration.wav,
- * then aligns every script word to the audio (whisper.cpp) and writes episodes/<id>/captions.json.
+ * npm run voice -- <id>                       synthesise narration.txt with the house voice (voice.json)
+ * npm run voice -- <id> --audio <file>        use a recorded/generated take instead (e.g. an ElevenLabs MP3)
+ * Writes public/episodes/<id>/narration.wav, then aligns every script word to the audio (whisper.cpp)
+ * and writes episodes/<id>/captions.json. A supplied take must read narration.txt word for word.
  */
 import {createHash} from 'node:crypto';
 import {existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
@@ -9,7 +10,7 @@ import path from 'node:path';
 import {downloadWhisperModel, installWhisperCpp, toCaptions, transcribe, type WhisperModel} from '@remotion/install-whisper-cpp';
 import type {Captions, EpisodeConfig} from '../src/lib/types';
 import {alignWords} from './align';
-import {episodeDir, fail, ffmpegBin, p, probeDuration, publicEpisodeDir, readJson, readSecret, requireEpisodeId, run} from './lib';
+import {episodeDir, fail, ffmpegBin, flag, p, probeDuration, publicEpisodeDir, readJson, readSecret, requireEpisodeId, run} from './lib';
 import {parseNarration} from './narration';
 
 type VoiceConfig = {
@@ -57,6 +58,13 @@ const synthesise = async (text: string, rate?: number) => {
   return file;
 };
 
+const narration = path.join(outDir, 'narration.wav');
+const suppliedAudio = flag('audio');
+if (suppliedAudio) {
+  if (!existsSync(suppliedAudio)) fail(`--audio file not found: ${suppliedAudio}`);
+  console.log(`▶ Voice: supplied take ${path.basename(suppliedAudio)}, ${words.length} script words`);
+  run(ffmpegBin(), ['-v', 'error', '-y', '-i', suppliedAudio, '-ar', '48000', '-ac', '1', '-c:a', 'pcm_s16le', narration]);
+} else {
 console.log(`▶ Voice: ${voice.google.voice} (rate ${voice.google.speakingRate}), ${segments.length} segment(s), ${words.length} words`);
 const inputs: string[] = [];
 let n = 0;
@@ -70,10 +78,10 @@ for (const seg of segments) {
     n++;
   }
 }
-const narration = path.join(outDir, 'narration.wav');
 const streams = Array.from({length: n}, (_, i) => `[${i}:a]aformat=sample_rates=48000:channel_layouts=mono[a${i}]`).join(';');
 const concat = `${streams};${Array.from({length: n}, (_, i) => `[a${i}]`).join('')}concat=n=${n}:v=0:a=1[out]`;
 run(ffmpegBin(), ['-v', 'error', '-y', ...inputs, '-filter_complex', concat, '-map', '[out]', '-c:a', 'pcm_s16le', narration]);
+}
 const durationSec = probeDuration(narration);
 
 // Word timings: whisper.cpp hears the take, then each script word is matched to what it heard.
@@ -95,7 +103,7 @@ const unmatched = words.filter((_, i) => !timed[i].matched).map((w) => w.text);
 
 const captions: Captions = {
   durationSec,
-  timing: `whisper.cpp ${whisperCppVersion} ${model}, aligned to narration.txt (${timed.filter((t) => t.matched).length}/${words.length} words matched, rest interpolated)`,
+  timing: `${suppliedAudio ? `supplied take ${path.basename(suppliedAudio)}; ` : ''}whisper.cpp ${whisperCppVersion} ${model}, aligned to narration.txt (${timed.filter((t) => t.matched).length}/${words.length} words matched, rest interpolated)`,
   words: words.map((w, i) => ({text: w.text, start: +timed[i].start.toFixed(3), end: +timed[i].end.toFixed(3), highlight: w.highlight})),
   cues: Object.fromEntries(words.flatMap((w, i) => (w.cue ? [[w.cue, +timed[i].start.toFixed(3)]] : []))),
 };

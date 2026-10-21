@@ -2,7 +2,7 @@
 
 Episode: btc-mirip-2023, "Bitcoin sekarang mirip 2023?"
 Published (WIB): NOT YET PUBLISHED
-Length (s): 54.8
+Length (s): 56.1
 Topic and audience: BTC structure analogy (2023 vs now) and the level that would validate it; Indonesian BTC holders and traders
 Hook variant / first 8s transcript: B. "Bitcoin sekarang terlihat mirip struktur tahun dua ribu dua puluh tiga. Bukan berarti hasilnya pasti sama. Tapi polanya… menarik."
 First frame visual: BITCOIN SEKARANG MIRIP 2023? centred on black
