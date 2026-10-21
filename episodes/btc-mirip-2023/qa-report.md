@@ -99,7 +99,7 @@ Camera, transitions and rhythm are scored from stills; they need a look in motio
 
 ## Known limitations
 - Motion not watched. Please watch the MP4 on a phone before posting: camera easing, the hero move at 32 s and caption sync.
-- No music bed (none generated yet); SFX are synthetic and were level-checked, not listened to.
+- No music bed. SFX now come from the user-supplied pack (licence on the user's confirmation, not independently verified); placement and levels were measured, not listened to.
 - Chirp 3 HD has no emotion tags: the "slightly dramatic / firmer" delivery relies on wording, pauses and rate.
 - Data is a 21 Oct 2026 snapshot; re-check before a later release (`data/chart-data-notes.md`).
 - The reference video wasn't available here; its $72.5K level was not used (not supported by current data).
@@ -110,6 +110,7 @@ Camera, transitions and rhythm are scored from stills; they need a look in motio
 - 2023 level/reclaim labels over candles → price above the label, reclaim date moved to the headline zone.
 - Level label "~$87.396" → exact "$87.396" on the chart, "~$87.400" in the headline.
 - Low-hit SFX louder than the voice → lowered.
+- SFX swapped to the user's pack (21 Oct): re-rendered; −14.2 LUFS, −1.3 dBTP; effects measured 0.4–1.7 dB above voice-only passages.
 
 ## Final verified artifact path
 `output/btc-mirip-2023.mp4` (render of 21 Oct 2026; gitignored; re-render with `make-video.bat btc-mirip-2023`).

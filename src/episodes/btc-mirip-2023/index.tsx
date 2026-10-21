@@ -437,18 +437,28 @@ const Scene = () => {
         </AbsoluteFill>
       )}
 
-      <Sfx name="hit" at={0} volume={0.3} />
-      <Sfx name="whoosh" at={30} volume={0.22} />
-      {[B, BASE, BR, HI, P, T, T2, D, R, F].map((f) => (
-        <Sfx key={f} name="tick" at={f} volume={0.32} />
+      {/* Sound: each effect marks what the picture is doing (library sounds, see sources.md). */}
+      <Sfx name="cinematic-boom-soft" at={0} volume={0.28} />
+      <Sfx name="data-whoosh" at={28} volume={0.25} />
+      <Sfx name="mountain-audio-computer-data-readout-and-counter-bundle-sound-3" at={48} volume={0.18} />
+      <Sfx name="ui-reveal" at={C + 12} volume={0.25} />
+      {[B, BASE, BR, HI, P].map((f) => (
+        <Sfx key={f} name="ui-clicks-notification-pop" at={f} volume={0.3} />
       ))}
-      <Sfx name="whoosh" at={K + 2} volume={0.28} />
-      <Sfx name="ping" at={K + 8} volume={0.35} />
-      <Sfx name="tick" at={K + 62} volume={0.32} />
-      <Sfx name="whoosh" at={N} volume={0.32} />
-      <Sfx name="ping" at={N + 40} volume={0.35} />
-      <Sfx name="hit" at={TK} volume={0.28} />
-      <Sfx name="whoosh" at={CL - 4} volume={0.22} />
+      {[T, T2].map((f) => (
+        <Sfx key={f} name="hud-electronic-interface-sfx-pack-4" at={f} volume={0.26} />
+      ))}
+      <Sfx name="bass-drop-descend" at={D} volume={0.3} />
+      <Sfx name="whoosh-deep-short" at={K} volume={0.3} />
+      <Sfx name="melodic-linear-2" at={K + 8} volume={0.2} />
+      <Sfx name="ni-sound-cute-interface-bubble-pop-synth-chord-positive-notification" at={K + 60} volume={0.24} />
+      <Sfx name="transition-swoosh" at={N} volume={0.35} />
+      <Sfx name="whoosh-deep-light" at={N + 4} volume={0.2} />
+      <Sfx name="melodic-linear-2" at={N + 40} volume={0.2} />
+      <Sfx name="infographic-sound-effect-1" at={R + 8} volume={0.25} />
+      <Sfx name="bass-drop-descend" at={F + 6} volume={0.26} />
+      <Sfx name="impact-bass-echo" at={TK} volume={0.24} />
+      <Sfx name="whoosh-and-hit-2" at={CL - 6} volume={0.24} />
     </Ground>
   );
 };

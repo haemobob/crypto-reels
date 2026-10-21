@@ -13,6 +13,7 @@
     "still": "tsx scripts/still.ts",
     "render": "tsx scripts/render.ts",
     "audio": "tsx scripts/make-audio.ts",
+    "import-sfx": "tsx scripts/import-sfx.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

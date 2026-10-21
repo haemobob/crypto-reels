@@ -11,4 +11,4 @@ Notes
 - The current week (w/c 2026-10-19) is incomplete; on screen as "data per 21 Okt 2026".
 - Scenario paths on the current chart are hypothetical and labelled SKENARIO on screen.
 - No third-party images, logos or footage. The reference video the user mentioned was not available in this session and nothing from it is used.
-- Sound effects are generated originals (`npm run audio`, see `audio-map.md`).
+- Sound effects come from the imported "NEWEST SFX PACK" (`public/sfx/newest/`, see its `README.md` and `manifest.json`): cleared for Cryptonite on the user's confirmation of 21 Oct 2026, not independently verified. Sounds used and their inferred sources are listed in `audio-map.md`.
