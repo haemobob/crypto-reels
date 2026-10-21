@@ -1,0 +1,9 @@
+{
+  "id": "liquidation-heatmap",
+  "title": "Peta likuidasi Bitcoin",
+  "minSeconds": 40,
+  "maxSeconds": 55,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}

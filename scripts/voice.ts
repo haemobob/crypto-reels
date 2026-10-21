@@ -92,7 +92,9 @@ await installWhisperCpp({to: whisperPath, version: whisperCppVersion, printOutpu
 await downloadWhisperModel({model, folder: whisperPath, printOutput: false});
 const wav16 = path.join(cacheDir, 'whisper-16k.wav');
 run(ffmpegBin(), ['-v', 'error', '-y', '-i', narration, '-ar', '16000', '-ac', '1', '-c:a', 'pcm_s16le', wav16]);
-const out = await transcribe({inputPath: wav16, whisperPath, whisperCppVersion, model, modelFolder: whisperPath, tokenLevelTimestamps: true, language: 'id', splitOnWord: true, printOutput: false});
+const out = await transcribe({inputPath: wav16, whisperPath, whisperCppVersion, model, modelFolder: whisperPath, tokenLevelTimestamps: true, language: 'id', splitOnWord: true, printOutput: false,
+  // No context carry-over: stops whisper getting stuck repeating a phrase on some takes.
+  additionalArgs: [['--max-context', '0']]});
 const heard = toCaptions({whisperCppOutput: out})
   .captions.map((c) => ({text: c.text.trim(), start: c.startMs / 1000, end: c.endMs / 1000}))
   .filter((h) => h.text);

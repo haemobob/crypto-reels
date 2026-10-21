@@ -1,0 +1,11 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[rate:1.06]][[hook]]Banyak trader futures cek peta ini sebelum entry: [[anchor]]*liquidation heatmap*. Ini data CoinGlass hari ini.
+[[bands]]Garis kuning terang ada di sekitar *delapan puluh dua ribu tiga ratus*, [[band2]]dan *delapan puluh empat ribu delapan ratus dolar*.
+[[what]]Garis itu bukan order. Itu *perkiraan* harga likuidasi posisi leverage.
+[[long]]Long lima puluh kali di delapan puluh empat ribu? Likuidasinya sekitar delapan puluh dua ribu enam ratus. [[short]]Short lima puluh kali? Sekitar delapan puluh lima ribu tiga ratus.
+[[stack]]Ribuan posisi begini menumpuk jadi zona terang.
+[[why]]Saat harga menyentuh zona itu, likuidasi jadi *jual atau beli paksa*. [[fuel]]Makanya harga sering tertarik ke sana, dan bergerak makin cepat.
+[[caveat]]Tapi ini cuma *perkiraan*. Kata CoinGlass, likuidasi nyata biasanya lebih kecil. [[sweep]]Dan setelah zona disapu, harga bisa *berbalik*.
+[[payoff]]Jadi, satu cek sebelum entry: [[check]]harga likuidasi kamu jangan ada di *zona kuning*.
+[[closing]]Karena di zona yang ramai, posisi kamu bisa jadi bahan bakarnya.

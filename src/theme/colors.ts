@@ -11,6 +11,8 @@ export const colors = {
   ink: '#101828',
   positive: '#19D69A',
   negative: '#FF5263',
+  /** Heatmap density only: matches the yellow that liquidation heatmaps use for their densest estimates. */
+  yellow: '#F2D33B',
 } as const;
 
 export type Polarity = 'dark' | 'light' | 'navy';
