@@ -54,7 +54,7 @@ Checked on: rendered stills (`npm run still -- btc-mirip-2023 --frames …`) acr
 - [x] No text over graphics: headlines, legend and source line have their own zones; in-chart labels sit in clear space (fixed: level/reclaim labels that crossed 2023 candles moved; week "15"/"16" collision fixed).
 - [x] Nothing darkens, crops or covers the graphics for text (the chart stage is a fixed window the camera moves inside; zooms are framing, not cover).
 - [x] Source images: n/a (charts drawn from data).
-- [x] Opening title centred, rising in, no tag above it, no logo before the hook (logo bug from 12 s).
+- [x] Opening title centred, rising in, no tag above it, no logo intro before the hook; corner logo bug on screen from frame 0 alongside the title (user decision, 21 Oct 2026).
 
 ### Opening (cryptonite-openings.md)
 - [x] Statement (0 s) → real data (1.5 s) → designed comparison (4.3 s) → annotation (9 s).

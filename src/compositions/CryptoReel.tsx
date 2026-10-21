@@ -6,8 +6,8 @@ import {episodes} from '../episodes';
 import {EpisodeContext} from '../lib/cues';
 import {brand} from '../theme/brand';
 
-// The logo bug waits until the cold open has done its job.
-const LOGO_AFTER_SEC = 12;
+// The logo bug is on screen from the first frame (user decision, 21 Oct 2026).
+const LOGO_AFTER_SEC = 0;
 
 /** Master layers: episode -> logo bug -> captions -> outro, with the narration underneath. */
 export const CryptoReel = ({episodeId}: {episodeId: string}) => {
