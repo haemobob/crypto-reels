@@ -2,7 +2,7 @@
 
 Episode: liquidation-heatmap, "Peta likuidasi Bitcoin" (adapted from @pushkarrajthakur's reel structure)
 Published (WIB): NOT YET PUBLISHED
-Length (s):
+Length (s): 60.0
 Topic and audience:
 Hook variant / first 8s transcript:
 First frame visual:

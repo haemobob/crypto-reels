@@ -35,4 +35,4 @@ Concept score: 23 × 4 = **92/100**
 - **Misconception**: "zona kuning = target pasti".
 - **Share trigger**: the friend who trades with high leverage.
 - **Emotional shape**: curiosity → clarity → caution → control.
-- **Chosen length**: 45–55 s (the reference spends ~70 s on the education; ours keeps the mechanism and adds the limits in less).
+- **Chosen length**: 45–55 s planned (the reference spends ~70 s on the education); the final ElevenLabs take runs 57.3 s, so the episode window is 40–60 s and the file is 60 s.

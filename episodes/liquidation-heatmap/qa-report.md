@@ -55,7 +55,7 @@ Checked on rendered stills across every beat and frames from the encoded MP4 at 
 - [x] Opening: statement (0 s) → real map (2.6 s) → designed ladder (12 s).
 - [x] Simulations labelled: ILUSTRASI tag on the ladder and in the source line; formula and MMR on screen.
 - [x] Caveat on screen at the claim (CoinGlass paraphrase, marked as paraphrase).
-- [x] ffprobe 1080×1920, 30 fps, H.264 + AAC; 55.7 s; no black frames; −14.2 LUFS, −1.2 dBTP.
+- [x] ffprobe 1080×1920, 30 fps, H.264 + AAC; 60.0 s with the ElevenLabs take (window widened to 40–60 s for it); no black frames; −14.3 LUFS, −1.1 dBTP.
 - [x] Numbers match `research.md`: $82,300 / $84,800 (axis readings $82,336 / $84,791), $84,222, $82,656, $85,344.
 - [x] Logo from frame 0; hidden on the off-white caveat; captions muted there.
 - [ ] Motion watched: **NOT REVIEWED**.
@@ -67,7 +67,7 @@ Checked on rendered stills across every beat and frames from the encoded MP4 at 
 
 ## Known limitations
 - Motion not watched; please check on a phone.
-- Working Orus voice; ElevenLabs take pending.
+- Final voice is the user's ElevenLabs take 2 (57.3 s), so the Reel is 60 s rather than the 45–55 s planned.
 - Screenshot is a 21 Oct 2026 14:42 UTC snapshot; levels change hourly. Re-capture before a later release.
 - Using CoinGlass's screenshot is editorial use with credit, not a licence.
 - The 0.4% maintenance-margin figure comes from calculators, not Binance's own spec page; labelled as an illustration.

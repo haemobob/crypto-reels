@@ -1,6 +1,6 @@
 # Script — Peta likuidasi Bitcoin
 
-Approved wording is `narration.txt`. Working voice: Google Chirp 3 HD Orus (53.1 s); the final take can be the user's ElevenLabs voice (`npm run voice -- liquidation-heatmap --audio <file>`), which re-times everything.
+Approved wording is `narration.txt`. Final voice: the user's ElevenLabs take ("Ongky Himawan – Calm, Deep", v3 delivery tags), 57.3 s, imported with `npm run voice -- liquidation-heatmap --audio <file>`.
 
 Banyak trader futures cek peta ini sebelum entry: liquidation heatmap. Ini data CoinGlass hari ini.
 Garis kuning terang ada di sekitar delapan puluh dua ribu tiga ratus, dan delapan puluh empat ribu delapan ratus dolar.
