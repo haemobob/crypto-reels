@@ -14,10 +14,11 @@ export const sfxLibrary: Record<string, {file: string; seconds: number}> = {...g
 export type SfxName = keyof typeof generated | keyof typeof newest;
 
 /** One sound effect starting at an absolute frame. Imported sounds start on their transient (leading silence trimmed). */
-export const Sfx = ({name, at, volume = 0.5}: {name: SfxName; at: number; volume?: number}) => {
+export const Sfx = ({name, at, volume = 0.5, frames}: {name: SfxName; at: number; volume?: number; /** Cut a long sound to this many frames. */ frames?: number}) => {
   const s = sfxLibrary[name];
+  const full = Math.ceil(s.seconds * 30) + 2;
   return (
-    <Sequence from={Math.max(0, Math.round(at))} durationInFrames={Math.ceil(s.seconds * 30) + 2} name={`sfx:${name}`}>
+    <Sequence from={Math.max(0, Math.round(at))} durationInFrames={frames ? Math.min(frames, full) : full} name={`sfx:${name}`}>
       <Audio src={staticFile(s.file)} volume={volume} />
     </Sequence>
   );

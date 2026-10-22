@@ -129,6 +129,11 @@ Supplied takes: a voice recorded or generated elsewhere (e.g. ElevenLabs on the 
 ### Logo from the first frame (user decision, 21 Oct 2026)
 The corner logo bug is on screen from frame 0 in every Reel (`LOGO_AFTER_SEC = 0` in `CryptoReel.tsx`), alongside the opening headline. This replaces "no Cryptonite logo first" / "logo bug from 12 s" for the corner bug only: the headline is still the first frame's focal point, there is no logo intro before the hook, and the logo stays hidden on off-white grounds (`logoHide`).
 
+### Currency follows context (user decision, 22 Oct 2026)
+- Wealth, net worth, assets under management, company or fund size, GDP and other "how rich / how big" figures: **rupiah** (spoken "… triliun rupiah"; on screen `Rp…`), converted at a dated rate logged in `sources.md`; the USD original may sit beside it on screen.
+- Crypto prices, crypto market sizes, trading levels and anything quoted in USD by its market (BTC price, liquidation levels, tokenized-asset totals, stablecoin supply): **USD**.
+- When the two meet in one comparison, compare with a ratio or percentage rather than mixing currencies in one sentence.
+
 ### Rebuilt project status (20 Oct 2026)
 The original project was not available, so it was rebuilt from these rules. The **Code map** and **Gotchas** above describe the original; this is what exists now:
 - Exists: `src/theme/` (colors, typography with local fonts, layout, brand, motion), `src/components/` (`BrandLogo`, `CornerLogo` (with `logoHide` ranges), `BrandedOutro`, `MicroCaptions`, `Ground`, `Headline`/`Hi`, `HeadlineTrack` (headline zone, outgoing text clears before the next), `ThesisCard`, `Label`, `CountUp`, `CandleChart` (`Candles`, `TracePath`, `LevelLine`, `ScenarioPath`, `scaleFor`: log-scale weekly candles), `Sfx`), `src/compositions/CryptoReel.tsx`, `src/lib/` (`useCues()` with `cue(name)`, `word(text, nth)`, `narrationEnd`; `cameraAt`/`cameraTransform` keyframed 2D camera), and the scripts `new`, `voice` (`[[rate:x]]` per section; reports unmatched words and saves `voice-cache/heard.txt`), `audio` (generated SFX in `public/sfx`), `validate`, `audit`, `still` (`--sec N`, `--sheet`, or `--frames a,b,c` for a labelled sheet), `render`, plus `make-video.bat`.

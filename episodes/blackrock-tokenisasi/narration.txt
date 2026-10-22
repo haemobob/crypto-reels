@@ -1,0 +1,11 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[rate:1.06]][[hook]]Larry Fink, bos BlackRock, bilang [[quote]]tokenisasi sekarang kira-kira ada di titik internet tahun *sembilan belas sembilan puluh enam*.
+[[scale]]Perusahaannya mengelola sekitar *dua ratus tujuh puluh sembilan ribu triliun rupiah*. [[gdp]]Hampir *dua belas kali* PDB Indonesia setahun.
+[[what]]Tokenisasi itu mencatat kepemilikan aset di *buku besar digital*.
+[[old]]Beli saham di BEI, serah terimanya butuh *dua hari bursa*. [[new]]Di blockchain, token bisa pindah tangan dalam *hitungan detik*, dua puluh empat jam.
+[[split]]Token itu juga bisa dipecah kecil, [[collateral]]dan dijadikan *jaminan* pinjaman.
+[[reality]]Tapi jangan kebawa hype. [[size]]Total aset nyata yang ditokenisasi baru sekitar *tiga puluh sembilan miliar dolar*. [[ratio]]Kurang dari *setengah persen* dana BlackRock saja.
+[[fink2]]Fink sendiri bilang, ini nggak akan menggantikan sistem lama *dalam semalam*.
+[[payoff]]Jadi sebelum beli token aset nyata, cek tiga hal: [[c1]]siapa penerbitnya, [[c2]]aset aslinya disimpan di mana, [[c3]]dan bisa ditukar balik atau nggak.
+[[closing]]Karena token cuma sekuat janji di belakangnya.

@@ -16,6 +16,8 @@ export const terbilang = (n: number): string => {
   if (n < 2000) return `seribu${rest(n - 1000)}`;
   if (n < 1e6) return `${terbilang(Math.floor(n / 1000))} ribu${rest(n % 1000)}`;
   if (n < 1e9) return `${terbilang(Math.floor(n / 1e6))} juta${rest(n % 1e6)}`;
+  if (n < 1e12) return `${terbilang(Math.floor(n / 1e9))} miliar${rest(n % 1e9)}`;
+  if (n < 1e15) return `${terbilang(Math.floor(n / 1e12))} triliun${rest(n % 1e12)}`;
   return String(n);
 };
 
@@ -26,7 +28,11 @@ const expandHeard = (heard: Heard[]): Heard[] =>
     const ordinal = raw.match(/^ke-?(\d+)$/i);
     const money = raw.match(/^(\$|Rp)?(\d{1,3}(?:[.,]\d{3})+|\d+)$/);
     let spoken: string | undefined;
-    if (ordinal) spoken = ordinal[1] === '1' ? 'pertama' : `ke${terbilang(Number(ordinal[1]))}`;
+    const year = raw.match(/^(1[1-9])(\d\d)$/);
+    if (/^(Rp|\$)$/i.test(raw)) return [];
+    // Years before 2000 are read in pairs: 1996 -> "sembilan belas sembilan puluh enam".
+    if (year) spoken = `${terbilang(Number(year[1]))} ${terbilang(Number(year[2]))}`;
+    else if (ordinal) spoken = ordinal[1] === '1' ? 'pertama' : `ke${terbilang(Number(ordinal[1]))}`;
     else if (money) spoken = `${terbilang(Number(money[2].replace(/[.,]/g, '')))}${money[1] === '$' ? ' dolar' : money[1] ? ' rupiah' : ''}`;
     if (!spoken) return [h];
     const parts = spoken.split(' ');

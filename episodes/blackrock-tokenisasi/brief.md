@@ -1,0 +1,11 @@
+# Visual brief — Tokenisasi: internet 1996-nya keuangan?
+
+- **Framework**: Remotion. The reference reel (0x100x, DUEmp0Ck0j7) was used for analysis only (download, transcript, frames); see `reference-analysis.md`.
+- **Visual subject**: Larry Fink is genuinely central (the "1996" line is his, from his own 2026 letter), so the opening uses the Authority archetype with his official BlackRock headshot. After the opening the subject becomes the mechanism: a ledger, a settlement lane, a token split into pieces.
+- **Visual concept**: *the same ownership, on a different ledger.* A paper certificate turns into a token on a ledger row; the token then races a T+2 lane, splits, gets pledged; finally the off-white reality check puts the whole market next to BlackRock at true scale.
+- **Different from recent episodes** (`reference/episode-visual-log.md`): no price chart at all (btc-mirip-2023, liquidation-heatmap were chart-led); an authority card with a real photo; rupiah counter with a PDB block comparison; a two-lane settlement race; a to-scale bar comparison on off-white; a numbered checklist ending.
+- **Opening asset hierarchy**: level 1 (official photo, BlackRock press asset, credit on screen). The second photo the user supplied is not used: its source and licence are unknown. The user said both photos were references only.
+- **Currency rule** (user decision 22 Oct 2026): BlackRock's AUM is a "how big" figure, so it is spoken and shown in rupiah (≈ Rp279.465 triliun, at 18.030 IDR/USD, 22 Oct 2026) with $15,5 triliun beside it; tokenized-asset totals are a crypto market size, so they stay in USD ($39,02 miliar). The comparison between them is a percentage (≈ 0,25%, spoken "kurang dari setengah persen").
+- **Polarity**: navy/black for the promise and mechanism; off-white for the reality check (31.8–44.8 s), the turn from hype to size; back to dark for the checklist.
+- **Hero move**: none in 3D. The two signature moments are the certificate → token handoff on the ledger (16 s) and the to-scale bar (BlackRock 100% vs whole tokenized market 0,25%) at 38 s.
+- **Left out from the reference**: the $10T figure (outdated; filing says $15.5T), "half of China's GDP" (replaced by PDB Indonesia in rupiah), US T+2 (replaced by BEI T+2), the $16T forecast (forecast, not used), the talking head.
