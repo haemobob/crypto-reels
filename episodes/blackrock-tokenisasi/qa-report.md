@@ -28,30 +28,29 @@ Visual-quality audit result: PASS
 ### Rejection gates
 - [x] Unsupported consequence: NO · first frame lacks stake: NO · logo/3D-only opening: NO · nothing real in 3–8 s: NO (official photo from 1.4 s) · no return by 8–12 s: NO · padding: NO · disconnected diagrams: NO (one token carries ledger → lanes → split → pledge) · ending doesn't answer opening: NO
 
-## Part B — Visual-quality audit
+## Part B — Visual-quality audit (v2, 3D rebuild after user feedback)
 
-Checked on rendered stills across every beat and on before/mid/after frames at every transition from the encoded MP4 (`output/blackrock-tokenisasi-review/`). Not watched in motion.
+Checked on stills across every beat during the build and on 28 frames from the encoded MP4 (`output/blackrock-tokenisasi-review/encoded-sheet.jpg`). Not watched in motion.
 
-- [x] No text over graphics: headlines in the headline zone, source line below the stage, ILUSTRASI tags in clear space beside the graphics (fixed: three-line title wrap; "≈ 12× PDB" headline arriving before the blocks).
-- [x] Nothing darkens or crops graphics for text; rwa.xyz crop shown whole and readable, with source and capture time on screen.
-- [x] Opening: centred title rising in (0 s) → official photo + profile card (1.4 s) → quote card (2.6 s) → designed counter (8 s); no logo intro (corner bug only, per 21 Oct decision).
-- [x] Asset hierarchy level 1 (official BlackRock headshot, credited "FOTO: JERRY GOLDBERG / BLACKROCK"); unaltered; no implied endorsement. Second supplied photo not used (unknown source).
-- [x] Every graphic demonstrates its line: certificate → token on a ledger, T+2 lane vs seconds lane, split and pledge, to-scale bars.
-- [x] Sound-off: headline zone carries each step (WHO, ≈ Rp279.465 T, ≈ 12× PDB, definition, T+2 vs detik, dipecah, jaminan, $39 M, 0,25%, three checks).
-- [x] Simulations labelled ILUSTRASI while shown (ledger, lanes' token, split/pledge); no simulated market data.
-- [x] Numbers match `research.md`/`sources.md`: $15,5 T (30 Sep 2026), 18.030 IDR/USD (22 Oct 2026), PDB 2025 Rp23.821,1 T → 11,7×, $39,02 M (22 Oct 2026), 0,25%; currency rule applied (wealth in IDR, tokenized market in USD, ratio between them).
-- [x] Polarity: one off-white chapter for the reality check, back to dark for the checklist; logo hidden on off-white.
-- [x] Payoff stretch: blackdetect flagged 44.8–47.8 s as near-black; fixed with numbered shells at the payoff cue. Only remaining dark stretch is the ≤2 s branded outro.
-- [x] ffprobe 1080×1920, 30 fps, H.264 + AAC; 58.0 s (window 40–60); −14.2 LUFS, −1.2 dBTP.
+- [x] Feedback addressed: the generic "TOKEN" circle and drawn certificate are replaced by a real token (BUIDL, BlackRock's tokenized fund, its real face on a 3D coin), a real public-domain 1880s share certificate, and real on-chain transfers; the mechanism is one 3D world with six camera angles (desk 3/4 push-in, eye-level, behind-the-lanes, reverse angle, top-down, 3/4 tilt) plus a crane reveal on the tower.
+- [x] Every 3D subject framed numerically into the stage (y ≈ 720–1450) with a view offset; nothing 3D enters the headline zone (fixed: lanes and far labels rising into the headline in the reverse shot → fog + hidden far objects; ledger panel over the lanes → reverse-angle cut onto empty floor; loan coin leaving frame; vault label hidden by the loan coin; slab label hidden behind the tower).
+- [x] Headline cleared while the tower crane passes through its zone (37.9–39.2 s). The one-word micro caption does overlap the moving tower for about one second (allowed by the skills-override decision on captions).
+- [x] Real ledger rebuilt as vector with identical values (Blockscout, times converted to WIB); qualifier "BUIDL khusus investor terdaftar" on screen.
+- [x] ILUSTRASI tag on the lanes, split and pledge; the real ledger is labelled as real data with its source.
+- [x] BlackRock wordmark unaltered (white-on-black, as in BUIDL's own icon); slicing happens only in the ILUSTRASI beat.
+- [x] Opening unchanged: title (0 s) → official photo card (1.4 s) → quote (2.6 s); 3D starts at 16 s.
+- [x] Numbers unchanged and sourced (S1–S12); currency rule applied.
+- [x] ffprobe 1080×1920, 30 fps, H.264 + AAC; 58.0 s (window 40–60); −14.1 LUFS, −1.2 dBTP; only dark stretch is the ≤2 s outro.
 - [ ] Motion watched: **NOT REVIEWED**.
 
 ## Scores (1–5; any score below 4 → targeted revision and re-check)
 | Hook | First 12 s | Real-world opening | Educational payoff | Reward ladder | Understanding | Hierarchy | Camera | Transitions | Rhythm | Brand | Factual accuracy |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 4 | 4 | 5 | 5 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 5 |
+| 4 | 4 | 5 | 5 | 4 | 5 | 4 | 4 | 4 | 4 | 4 | 5 |
 
 ## Known limitations
-- Motion not watched; please check on a phone.
+- Motion not watched; please check on a phone, especially the scan (18.7 s), the lane zip (24.7 s) and the tower crane (38 s).
+- Wikimedia Commons licence for the certificate taken from the Commons search listing (Public domain); the file-page check was rate-limited — recheck before release.
 - Working voice is Orus; an ElevenLabs take will replace it if the user supplies one (re-render needed).
 - rwa.xyz figure is a 22 Oct 2026 snapshot; re-capture before a later release. Screenshot used editorially with credit.
 - The exchange rate and PDB comparison move with the rupiah; dated on screen.
