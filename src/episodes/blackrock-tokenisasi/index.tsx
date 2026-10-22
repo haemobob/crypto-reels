@@ -12,6 +12,8 @@ import type {Captions, EpisodeConfig} from '../../lib/types';
 import {colors} from '../../theme/colors';
 import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
+import {TowerWorld} from './Tower';
+import {MechanismWorld} from './World';
 
 // Layout (screen px): headlines 470–690, stage 700–1520, source line 1534.
 const HEADLINE_Y = 585;
@@ -26,6 +28,13 @@ const PDB_2025_T = 23821.1; // BPS, PDB ADHB 2025 (trillion rupiah)
 const RATIO_PDB = AUM_IDR_T / PDB_2025_T; // ≈ 11.7
 const RWA_B = 39.02; // rwa.xyz, 22 Oct 2026
 const RWA_SHARE = RWA_B / (AUM_USD_T * 1000); // ≈ 0.25%
+
+// Real BUIDL transfers on Ethereum (Blockscout API, fetched 22 Oct 2026; buidl-transfers-2026-10-22.json). Times in WIB.
+const BUIDL_TX = [
+  {day: 'RAB 21 OKT', time: '23.33', qty: '20.000.000', from: '0x7137…A258', to: '0x8780…4200'},
+  {day: 'RAB 21 OKT', time: '21.05', qty: '711,78', from: '0xDbef…B910', to: '0xf819…73AA'},
+  {day: 'SEL 20 OKT', time: '23.24', qty: '260,13', from: '0x026B…b1d2', to: '0x7702…63de'},
+];
 
 const fade = (frame: number, from: number, len = 10) =>
   interpolate(frame, [from, from + len], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.out});
@@ -59,7 +68,7 @@ const OpeningTitle = ({until}: {until: number}) => {
 
 const Scene = () => {
   const frame = useCurrentFrame();
-  const {cue, narrationEnd} = useCues();
+  const {cue, word, narrationEnd} = useCues();
   const Q = cue('quote');
   const SC = cue('scale');
   const GDP = cue('gdp');
@@ -86,6 +95,7 @@ const Scene = () => {
   // At the scale beat the card slides up to make room for the number.
   const cardUp = interpolate(frame, [SC - 4, SC + 14], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.inOut});
   const cardY = 120 - 90 * cardUp;
+  const push = interpolate(frame, [40, WH], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const quoteIn = fade(frame, Q + 6, 12) * fadeOut(frame, SC - 6, 8);
 
   // ---- 2. Scale in rupiah vs PDB blocks ----
@@ -93,30 +103,20 @@ const Scene = () => {
   const count = interpolate(frame, [SC + 6, SC + 60], [0, AUM_IDR_T], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.out});
   const blocksIn = (i: number) => fade(frame, GDP + 4 + i * 4, 6) * cardOut;
 
-  // ---- 3. Ledger ----
-  const ledgerIn = fade(frame, WH + 2, 12) * fadeOut(frame, OLD - 6, 8);
-  const certToToken = interpolate(frame, [WH + 20, WH + 46], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.inOut});
-  const rows = [
-    {who: 'Andi', what: 'Obligasi', qty: '10', hash: '0x3fa9…c21'},
-    {who: 'Sari', what: 'Saham', qty: '250', hash: '0x8b02…e7d'},
-    {who: 'Kamu', what: 'Reksa dana', qty: '1,5', hash: '0xd41c…09a'},
-  ];
-
-  // ---- 4. Settlement lanes, then fractions and collateral ----
-  const lanesIn = fade(frame, OLD + 2, 12) * fadeOut(frame, SP - 6, 8);
-  const slow = interpolate(frame, [OLD + 16, NEW + 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const fastIn = fade(frame, NEW, 8);
-  const fast = interpolate(frame, [NEW + 6, NEW + 16], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.out});
-  const fracIn = fade(frame, SP + 2, 10) * fadeOut(frame, RE - 4, 6);
-  const splitP = interpolate(frame, [SP + 10, SP + 34], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.inOut});
-  const pledge = interpolate(frame, [CO + 4, CO + 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.inOut});
-  const loanOut = fade(frame, CO + 30, 10);
+  // ---- 3. Mechanism world (3D): certificate → token, lanes, split, pledge ----
+  const beats = {
+    WH, buku: word('buku'), digital: word('digital'), OLD, NEW, pindah: word('pindah'), tangan: word('tangan'),
+    SP, dipecah: word('dipecah'), CO, jaminan: word('jaminan'), pinjaman: word('pinjaman'), RE,
+  };
+  const ledgerIn = fade(frame, beats.tangan + 8, 10) * fadeOut(frame, SP - 8, 8);
+  const lateHours = fade(frame, word('jam'), 8);
+  const illus = fade(frame, OLD + 6, 10) * (frame < RE ? 1 : 0);
+  const piecesIn = fade(frame, beats.dipecah + 6, 10) * fadeOut(frame, CO - 4, 6);
 
   // ---- 5. Reality check (off-white) ----
-  const shotIn = fade(frame, SZ + 2, 12) * fadeOut(frame, F2 - 6, 8);
-  const barsIn = fade(frame, RA, 10) * fadeOut(frame, F2 - 6, 8);
-  const barGrow = interpolate(frame, [RA + 4, RA + 26], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.out});
-  const quote2In = fade(frame, F2 + 4, 12);
+  const DOLAR = word('dolar');
+  const shotIn = fade(frame, SZ + 2, 12) * fadeOut(frame, DOLAR - 2, 6);
+  const quote2In = fade(frame, F2 + 8, 12);
 
   // ---- 6. Checklist ----
   const checks = [
@@ -128,8 +128,10 @@ const Scene = () => {
   const sourceText = (() => {
     if (frame < SC) return 'FOTO: JERRY GOLDBERG / BLACKROCK · KUTIPAN: SURAT TAHUNAN LARRY FINK 2026';
     if (frame < WH) return `AUM $15,5 T (30 SEP 2026, SEC 8-K) × KURS Rp${idr(USD_IDR)} (22 OKT 2026) · PDB 2025 BPS`;
-    if (frame < OLD) return 'DEFINISI: SURAT TAHUNAN LARRY FINK 2026 · ILUSTRASI';
-    if (frame < SP) return 'BEI: PENYELESAIAN T+2 SEJAK 26 NOV 2018 (POJK 21/2018)';
+    if (frame < beats.buku + 6) return 'SERTIFIKAT SAHAM CHICAGO, BURLINGTON & QUINCY RAILROAD, 1880-AN · DOMAIN PUBLIK';
+    if (frame < OLD) return 'TOKEN BUIDL = DANA TOKEN BLACKROCK DI ETHEREUM (SEJAK 2024)';
+    if (frame < beats.tangan + 8) return 'BEI: PENYELESAIAN T+2 SEJAK 26 NOV 2018 (POJK 21/2018)';
+    if (frame < SP) return 'DATA: BLOCKSCOUT (ETHEREUM), DIAMBIL 22 OKT 2026 · WAKTU DIKONVERSI KE WIB';
     if (frame < RE) return 'ILUSTRASI';
     if (frame < PO) return 'DATA: RWA.XYZ, 22 OKT 2026 (TANPA STABLECOIN) · AUM BLACKROCK 30 SEP 2026';
     return 'BUKAN NASIHAT FINANSIAL';
@@ -143,7 +145,7 @@ const Scene = () => {
       {light && <AbsoluteFill style={{backgroundColor: colors.offWhite}} />}
 
       {/* 1. Authority card */}
-      <At x={90} y={cardY} w={900} o={cardIn * cardOut} style={{transform: `${rise(cardIn, 40)} scale(${1 - 0.12 * cardUp})`, transformOrigin: '50% 0'}}>
+      <At x={90} y={cardY} w={900} o={cardIn * cardOut} style={{transform: `${rise(cardIn, 40)} scale(${(1 - 0.12 * cardUp) * (1 + 0.035 * push)})`, transformOrigin: '50% 0'}}>
         <div style={{display: 'flex', alignItems: 'center', gap: 34, background: colors.bg2, borderRadius: 28, padding: '30px 36px', boxShadow: '0 0 0 2px #1E3256'}}>
           <div style={{position: 'relative'}}>
             <Img src={staticFile('episodes/blackrock-tokenisasi/larry-fink-official-headshot.png')} style={{width: 210, height: 210, borderRadius: 105, objectFit: 'cover', boxShadow: `0 0 0 4px ${colors.blue}`}} />
@@ -165,7 +167,7 @@ const Scene = () => {
       </At>
 
       {/* 2. Scale */}
-      <At x={90} y={300} w={900} o={countIn} style={{textAlign: 'center', transform: rise(countIn)}}>
+      <At x={90} y={300} w={900} o={countIn} style={{textAlign: 'center', transform: `${rise(countIn)} scale(${0.97 + 0.05 * push})`}}>
         <div style={{fontFamily: fonts.mono, fontWeight: 600, fontSize: 24, letterSpacing: '0.1em', color: colors.muted}}>DANA YANG DIKELOLA BLACKROCK</div>
         <div style={{fontFamily: fonts.heading, fontWeight: 800, fontSize: 104, color: colors.text, letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums'}}>
           ≈ Rp{idr(count)} <span style={{fontSize: 56}}>triliun</span>
@@ -176,7 +178,7 @@ const Scene = () => {
         <div style={{display: 'flex', gap: 8, alignItems: 'flex-end'}}>
           {Array.from({length: 12}, (_, i) => {
             const fill = Math.min(1, Math.max(0, RATIO_PDB - i));
-            return <div key={i} style={{width: 67, height: 80, borderRadius: 8, background: '#13213A', overflow: 'hidden', opacity: blocksIn(i), position: 'relative'}}>
+            return <div key={i} style={{width: 67, height: 80, borderRadius: 8, background: '#13213A', overflow: 'hidden', opacity: blocksIn(i), position: 'relative', transform: `translateY(${(1 - blocksIn(i)) * -60}px) rotate(${(1 - blocksIn(i)) * (i % 2 ? 8 : -8)}deg)`}}>
               <div style={{position: 'absolute', left: 0, bottom: 0, width: `${fill * 100}%`, height: '100%', background: colors.blue}} />
             </div>;
           })}
@@ -187,82 +189,34 @@ const Scene = () => {
         </div>
       </At>
 
-      {/* 3. Ledger */}
-      <At x={90} y={60} w={900} o={ledgerIn}>
-        <div style={{display: 'flex', alignItems: 'center', gap: 30}}>
-          <div style={{position: 'relative', width: 200, height: 250}}>
-            <div style={{position: 'absolute', inset: 0, borderRadius: 14, background: '#E9E4D6', opacity: 1 - certToToken, transform: `scale(${1 - 0.5 * certToToken}) rotate(${-4 + 4 * certToToken}deg)`, padding: 22, boxSizing: 'border-box'}}>
-              <div style={{fontFamily: fonts.heading, fontWeight: 800, fontSize: 24, color: colors.ink}}>SERTIFIKAT</div>
-              {[0, 1, 2, 3, 4].map((i) => <div key={i} style={{height: 8, background: '#C9C2B0', borderRadius: 4, marginTop: 18, width: `${90 - i * 9}%`}} />)}
-            </div>
-            <div style={{position: 'absolute', left: 25, top: 50, width: 150, height: 150, borderRadius: 75, background: `radial-gradient(circle at 35% 30%, ${colors.light}, ${colors.blue} 60%, #0B3F99)`, opacity: certToToken, transform: `scale(${0.6 + 0.4 * certToToken})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: fonts.mono, fontWeight: 800, fontSize: 30, color: '#fff'}}>TOKEN</div>
+      {/* 3–4. Mechanism in 3D, with the real ledger below it */}
+      {frame >= WH && frame < RE && <MechanismWorld b={beats} />}
+      <At x={90} y={420} w={900} o={ledgerIn} style={{transform: rise(ledgerIn)}}>
+        <div style={{background: 'rgba(11,23,48,0.94)', borderRadius: 20, padding: '20px 26px', boxShadow: '0 0 0 2px #1E3256'}}>
+          <div style={{display: 'flex', justifyContent: 'space-between', fontFamily: fonts.mono, fontWeight: 700, fontSize: 21, letterSpacing: '0.08em', color: colors.light, marginBottom: 8}}>
+            <span>TRANSFER NYATA · TOKEN BUIDL</span><span style={{color: '#6F83A3'}}>ETHEREUM</span>
           </div>
-          <div style={{flex: 1, background: colors.bg2, borderRadius: 20, padding: '22px 26px', boxShadow: '0 0 0 2px #1E3256'}}>
-            <div style={{fontFamily: fonts.mono, fontWeight: 700, fontSize: 22, letterSpacing: '0.1em', color: colors.light, marginBottom: 14}}>BUKU BESAR DIGITAL</div>
-            {rows.map((r, i) => {
-              const o = fade(frame, WH + 30 + i * 12, 8);
-              return <div key={r.hash} style={{display: 'flex', justifyContent: 'space-between', fontFamily: fonts.mono, fontSize: 24, color: colors.text, padding: '12px 0', borderTop: '1px solid #1E3256', opacity: o, transform: `translateX(${(1 - o) * 30}px)`}}>
-                <span>{r.who}</span><span style={{color: colors.muted}}>{r.what}</span><span>{r.qty}</span><span style={{color: '#6F83A3', fontSize: 20}}>{r.hash}</span>
-              </div>;
-            })}
+          {BUIDL_TX.map((t, i) => {
+            const o = fade(frame, beats.tangan + 12 + i * 5, 8);
+            return (
+              <div key={t.from} style={{display: 'flex', alignItems: 'baseline', gap: 18, fontFamily: fonts.mono, fontSize: 23, color: colors.text, padding: '10px 0', borderTop: '1px solid #1E3256', opacity: o, transform: `translateX(${(1 - o) * 30}px)`}}>
+                <span style={{color: colors.muted, width: 150}}>{t.day}</span>
+                <span style={{width: 130, fontWeight: 800, color: lateHours > 0.5 ? colors.light : colors.text}}>{t.time} WIB</span>
+                <span style={{flex: 1, textAlign: 'right', fontWeight: 700}}>{t.qty}</span>
+                <span style={{color: '#6F83A3', fontSize: 18, width: 170, textAlign: 'right'}}>{t.from}<br />→ {t.to}</span>
+              </div>
+            );
+          })}
+          <div style={{fontFamily: fonts.mono, fontWeight: 600, fontSize: 18, color: '#6F83A3', marginTop: 10, opacity: lateHours}}>
+            SEMUA DI LUAR JAM BURSA BEI · BUIDL KHUSUS INVESTOR TERDAFTAR
           </div>
         </div>
       </At>
-
-      {/* 4a. Settlement lanes */}
-      <At x={90} y={70} w={900} o={lanesIn}>
-        {[
-          {label: 'BEI · SAHAM', sub: 'T+2', p: slow, marks: ['HARI 0', 'HARI 1', 'HARI 2'], o: 1, color: colors.muted},
-          {label: 'BLOCKCHAIN · TOKEN', sub: '24 JAM', p: fast, marks: ['', '', 'DETIK'], o: fastIn, color: colors.electric},
-        ].map((lane, li) => (
-          <div key={lane.label} style={{marginBottom: 70, opacity: lane.o}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', fontFamily: fonts.mono, fontWeight: 700, fontSize: 26, color: lane.color, marginBottom: 18}}>
-              <span>{lane.label}</span><span>{lane.sub}</span>
-            </div>
-            <div style={{position: 'relative', height: 60}}>
-              <div style={{position: 'absolute', left: 0, right: 0, top: 28, height: 4, background: '#1E3256', borderRadius: 2}} />
-              <div style={{position: 'absolute', left: 0, top: 28, height: 4, width: `${lane.p * 100}%`, background: lane.color, borderRadius: 2}} />
-              {lane.marks.map((m, i) => (
-                <div key={i} style={{position: 'absolute', left: `${(i / 2) * 100}%`, top: 44, transform: 'translateX(-50%)', fontFamily: fonts.mono, fontSize: 20, color: '#6F83A3', whiteSpace: 'nowrap'}}>{m}</div>
-              ))}
-              <div style={{position: 'absolute', left: `calc(${lane.p * 100}% - 22px)`, top: 8, width: 44, height: 44, borderRadius: li === 0 ? 8 : 22, background: li === 0 ? '#E9E4D6' : colors.blue}} />
-            </div>
-          </div>
-        ))}
+      <At x={90} y={780} w={400} o={illus * (frame < beats.tangan + 8 || frame >= SP ? 1 : 0)}>
+        <div style={{fontFamily: fonts.mono, fontWeight: 700, fontSize: 22, letterSpacing: '0.12em', color: colors.light}}>ILUSTRASI</div>
       </At>
-
-      {/* 4b. Fractions and collateral (ILUSTRASI) */}
-      <At x={90} y={40} w={900} h={700} o={fracIn}>
-        <svg width={900} height={640} viewBox="0 0 900 640">
-          {Array.from({length: 8}, (_, i) => {
-            const a0 = (i / 8) * Math.PI * 2 - Math.PI / 2;
-            const a1 = ((i + 1) / 8) * Math.PI * 2 - Math.PI / 2;
-            const r = 140;
-            const mid = (a0 + a1) / 2;
-            const off = 26 * splitP;
-            let cx = 250 + Math.cos(mid) * off;
-            let cy = 260 + Math.sin(mid) * off;
-            // One slice is pledged as collateral.
-            if (i === 1) {
-              cx += (640 - 250) * pledge;
-              cy += (40) * pledge;
-            }
-            const d = `M${cx},${cy} L${cx + Math.cos(a0) * r},${cy + Math.sin(a0) * r} A${r},${r} 0 0 1 ${cx + Math.cos(a1) * r},${cy + Math.sin(a1) * r} Z`;
-            return <path key={i} d={d} fill={i === 1 ? colors.light : colors.blue} stroke={colors.bg} strokeWidth={4} />;
-          })}
-          <text x={250} y={470} textAnchor="middle" fill={colors.muted} fontFamily={fonts.mono} fontWeight={600} fontSize={24}>1 TOKEN → 8 BAGIAN</text>
-          <g opacity={fade(frame, CO, 10)}>
-            <rect x={540} y={160} width={220} height={240} rx={18} fill="none" stroke={colors.light} strokeWidth={3} strokeDasharray="10 8" />
-            <text x={650} y={150} textAnchor="middle" fill={colors.light} fontFamily={fonts.mono} fontWeight={700} fontSize={24}>JAMINAN</text>
-          </g>
-          <g opacity={loanOut}>
-            <line x1={650} y1={410} x2={650} y2={470} stroke={colors.positive} strokeWidth={3} />
-            <circle cx={650} cy={510} r={40} fill={colors.positive} />
-            <text x={650} y={519} textAnchor="middle" fill={colors.bg} fontFamily={fonts.heading} fontWeight={800} fontSize={28}>$</text>
-            <text x={650} y={590} textAnchor="middle" fill={colors.positive} fontFamily={fonts.mono} fontWeight={700} fontSize={24}>PINJAMAN</text>
-          </g>
-        </svg>
-        <div style={{position: 'absolute', left: 0, top: -6, fontFamily: fonts.mono, fontWeight: 700, fontSize: 22, letterSpacing: '0.12em', color: colors.light}}>ILUSTRASI</div>
+      <At x={90} y={690} w={900} o={piecesIn} style={{textAlign: 'center'}}>
+        <div style={{fontFamily: fonts.mono, fontWeight: 700, fontSize: 30, color: colors.muted}}>1 TOKEN → 8 BAGIAN</div>
       </At>
 
       {/* 5. Reality check on off-white */}
@@ -274,20 +228,9 @@ const Scene = () => {
           </div>
         </div>
       </At>
-      <At x={90} y={330} w={900} o={barsIn}>
-        {[
-          {label: 'Dana dikelola BlackRock', v: 1, txt: '100%', color: colors.ink},
-          {label: 'Semua aset nyata yang ditokenisasi', v: RWA_SHARE, txt: `${(RWA_SHARE * 100).toFixed(2).replace('.', ',')}%`, color: colors.blue},
-        ].map((b) => (
-          <div key={b.label} style={{marginBottom: 36}}>
-            <div style={{fontFamily: fonts.body, fontWeight: 600, fontSize: 28, color: ink, marginBottom: 10}}>{b.label}</div>
-            <div style={{display: 'flex', alignItems: 'center', gap: 16}}>
-              <div style={{height: 46, width: Math.max(6, 760 * b.v * barGrow), background: b.color, borderRadius: 6}} />
-              <div style={{fontFamily: fonts.mono, fontWeight: 800, fontSize: 30, color: b.color}}>{b.txt}</div>
-            </div>
-          </div>
-        ))}
-      </At>
+      {frame >= DOLAR - 2 && frame < F2 + 8 && (
+        <TowerWorld start={DOLAR - 2} crane={RA - 2} settle={word('dana')} share={RWA_SHARE} end={F2 + 8} />
+      )}
       <At x={90} y={170} w={900} o={quote2In * (light ? 1 : 0)} style={{transform: rise(quote2In)}}>
         <div style={{borderLeft: `6px solid ${colors.blue}`, paddingLeft: 30}}>
           <div style={{fontFamily: fonts.heading, fontWeight: 700, fontSize: 50, lineHeight: 1.15, color: colors.ink}}>
@@ -304,7 +247,7 @@ const Scene = () => {
           const shell = fade(frame, PO + 4 + i * 4, 10);
           const o = fade(frame, c.at, 10);
           return (
-            <At key={c.n} x={90} y={70 + i * 200} w={900} o={shell * (0.35 + 0.65 * o) * (frame >= CL ? 0.55 : 1)} style={{transform: `translateX(${(1 - shell) * 40}px)`}}>
+            <At key={c.n} x={90} y={70 + i * 200} w={900} o={shell * (0.35 + 0.65 * o) * (frame >= CL ? 0.55 : 1)} style={{transform: `perspective(1400px) rotateX(${(1 - shell) * 75}deg) rotateY(${(1 - o) * -10}deg)`, transformOrigin: '50% 0'}}>
               <div style={{display: 'flex', alignItems: 'center', gap: 28, background: colors.bg2, borderRadius: 22, padding: '26px 30px', boxShadow: '0 0 0 2px #1E3256'}}>
                 <div style={{width: 72, height: 72, borderRadius: 36, background: colors.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 38, color: '#fff', flexShrink: 0}}>{c.n}</div>
                 <div style={{opacity: o}}>
@@ -337,7 +280,9 @@ const Scene = () => {
         cues={[
           {from: RE, content: <>TAPI JANGAN <span style={{color: colors.blue}}>KEBAWA HYPE</span></>, size: 80},
           {from: SZ, content: <>BARU <span style={{color: colors.blue}}>$39 MILIAR</span></>, size: 84},
-          {from: RA, content: <>&lt; <span style={{color: colors.blue}}>0,5%</span> DANA BLACKROCK SAJA</>, size: 70},
+          // Cleared while the camera cranes up the tower, back once it settles.
+          {from: RA - 2, content: null},
+          {from: word('dana'), content: <>&lt; <span style={{color: colors.blue}}>0,5%</span> DANA BLACKROCK SAJA</>, size: 70},
           {from: F2, content: <>BUKAN DALAM SEMALAM</>, size: 76},
         ]}
       />
@@ -361,13 +306,18 @@ const Scene = () => {
       <Sfx name="mountain-audio-computer-data-readout-and-counter-bundle-sound-3" at={SC + 6} volume={0.22} />
       <Sfx name="ui-clicks-notification-pop" at={GDP + 4} volume={0.26} />
       <Sfx name="paper-movement-2" at={WH + 4} volume={0.3} />
-      <Sfx name="typing-beep-computer-3" at={WH + 30} volume={0.12} frames={40} />
-      <Sfx name="clock-ticking-1" at={OLD + 10} volume={0.14} frames={NEW - OLD - 6} />
-      <Sfx name="transition-swoosh" at={NEW + 4} volume={0.32} />
-      <Sfx name="hud-electronic-interface-sfx-pack-1" at={SP + 8} volume={0.24} />
-      <Sfx name="coins-money-drop" at={CO + 30} volume={0.26} />
+      <Sfx name="data-whoosh" at={beats.buku - 3} volume={0.26} />
+      <Sfx name="metalic-riser" at={beats.buku + 6} volume={0.16} frames={30} />
+      <Sfx name="clock-ticking-1" at={OLD + 10} volume={0.14} frames={beats.pindah - OLD - 10} />
+      <Sfx name="transition-swoosh" at={beats.pindah} volume={0.34} />
+      <Sfx name="ni-sound-cute-interface-bubble-pop-synth-chord-positive-notification" at={beats.pindah + 10} volume={0.2} />
+      <Sfx name="typing-beep-computer-3" at={beats.tangan + 12} volume={0.1} frames={24} />
+      <Sfx name="paper-wrapper-rip-2" at={beats.dipecah + 2} volume={0.22} />
+      <Sfx name="jail-lock-2" at={beats.jaminan + 8} volume={0.16} frames={30} />
+      <Sfx name="coins-money-drop" at={beats.pinjaman} volume={0.26} />
       <Sfx name="impact-bass-echo" at={RE} volume={0.22} />
       <Sfx name="ui-clicks-notification-pop" at={SZ + 4} volume={0.26} />
+      <Sfx name="whoosh-deep-short" at={RA - 2} volume={0.24} />
       <Sfx name="slide-projector-9" at={F2 + 2} volume={0.26} />
       {[C1, C2, C3].map((f) => (
         <Sfx key={f} name="slick-ui-mechanical-button-press" at={f} volume={0.3} />
