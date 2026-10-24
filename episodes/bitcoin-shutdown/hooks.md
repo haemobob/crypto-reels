@@ -27,4 +27,4 @@ The user's brief fixes the hook ("BITCOIN AKAN SEGERA SHUTDOWN?") and the cold-o
 - Variant used: B, per the user's brief. A is noted for a later Trial Reels test if the account supports it.
 
 ## First-frame test
-Frame 0 shows the big Bitcoin coin and the headline rising in. "Bitcoin" and "shutdown?" are readable in about one second. The corner logo is the 21 Oct standard bug, and there is no logo intro.
+Frame 0 shows the Bitcoin coin held in its web of links under the headline BITCOIN AKAN SEGERA SHUTDOWN?, readable in about one second. The corner logo is the 21 Oct standard bug, and there is no logo intro.

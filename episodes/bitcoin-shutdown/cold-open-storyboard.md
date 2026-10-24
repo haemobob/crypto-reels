@@ -22,4 +22,4 @@
 - **Why important:** real outage risks are in this week's news, and holders rely on connectivity.
 - **Why keep watching:** to learn whether Bitcoin survives an outage and whether you could still use it.
 
-- Approved to animate the rest: PENDING (build 0–12 s first, review stills sound-off)
+- Approved to animate the rest: YES (24 Oct 2026). The user's brief asked for the full Reel in one pass, so the cold open was built with the rest and reviewed sound-off on stills, then on the encoded render: frame 0 reads "BITCOIN AKAN SEGERA SHUTDOWN?" over the coin; the real GOV.UK page is on screen from 2.4 s; the first answer (three days, power and internet) lands at 5.7–9.0 s.
