@@ -1,99 +1,42 @@
-# QA report — bitcoin-shutdown
+# QA report — Bitcoin akan segera shutdown?
 
-Both audits are done **before final rendering** (the user renders the final MP4). Update the two result lines; `npm run audit -- <id>` reads them and warns at render time while either is not PASS.
+Both audits are done **before final rendering**. `npm run audit -- <id>` reads the two result lines.
 
 Retention audit result: PENDING
 Visual-quality audit result: PENDING
 
-## Part A — Retention audit (retention rules, Rules 3, 6, 9)
+## Part A — Retention audit (script, on the final ElevenLabs take; times from captions.json)
 
-### Script audit (before voice generation; quote exact lines and timestamps)
-- [ ] 1. Hook: a stranger can say what is at stake —
-- [ ] 2. Evidence: the proof that appears by second 5 —
-- [ ] 3. First payoff: the useful answer delivered by second 8–12 —
-- [ ] 4. Reason to continue: each answer leads to a genuine next question —
-- [ ] 5. Concrete nouns: a 12-year-old can picture the mechanism without jargon —
-- [ ] 6. Cut test: removed every line that repeats the headline, delays explanation, asks an empty rhetorical question or adds irrelevant context —
-- [ ] 7. Promise/payoff: the ending answers the opening —
-- [ ] 8. Truth test: no proposal, prediction or allegation can be mistaken for completed fact (first frame and wording) —
-- [ ] 9. Silent test: first 3 s legible muted; an explanation beat's diagram carries the relationship muted —
-- [ ] 10. Share reason: a real person this would be useful to —
+### Script audit
+- [x] 1. **Hook:** 0.07 s "BITCOIN akan segera... SHUTDOWN?". A stranger can say what's at stake: whether Bitcoin can stop working.
+- [x] 2. **Evidence by 5 s:** 2.37 s "Pemerintah Inggris baru saja mengimbau…" over the real GOV.UK page (22 Oct 2026).
+- [x] 3. **First payoff by 8–12 s:** 5.68–9.0 s "tiga hari gangguan layanan penting, seperti listrik dan internet". A concrete, sourced fact.
+- [x] 4. **Reason to continue:** each answer opens the next question: UK advice → real attack this week (9.4 s) → "not the end of the internet, but imagine" (19.5 s) → money stops (25.5 s) → "Bitcoin lo gimana?" (34.8 s) → how a transaction travels (36.3 s) → what an outage does to it (44.0 s) → "Tapi tunggu… nggak otomatis hilang" (52.3 s) → satellite (60.0 s) → exchange (68.7 s) → ownership vs access (73.8–84.8 s).
+- [x] 5. **Concrete nouns:** mesin pembayaran, ATM, aplikasi bank, server, jaringan komputer, satelit, exchange, private key; each one has an object on screen.
+- [x] 6. **Cut test:** no sentence repeats the headline; no generic bridge ("Tapi tunggu" is the brief's own deliberate reversal and is followed by the answer within 1.1 s).
+- [x] 7. **Promise/payoff:** "Bitcoin akan segera shutdown?" is answered at 73.8 s ("internet mati belum tentu membuat Bitcoin mati"), then deepened into the access question.
+- [x] 8. **Truth test:** the opening is a question; "Ini bukan berarti internet dunia akan segera mati" at 19.5 s; UK advice shown as general preparedness, not a prediction; "millions of attempts" shown as attempts, with NCSC UK's "no reports of successful hacks"; outage and partition beats labelled SIMULASI/ILUSTRASI; satellite shown as receive-only; hardware wallet shown as guarding keys, not holding coins.
+- [x] 9. **Silent test:** to verify on stills in Part B (headlines carry each turn: SHUTDOWN? · 72 JAM · JUTAAN PERCOBAAN · SIMULASI · BITCOIN JUGA OFFLINE? · TANPA SERVER PUSAT · TRANSAKSI TERTUNDA · INTERNET MATI ≠ BITCOIN HILANG · SATU ARAH · BISAKAH LO MENGAKSESNYA?).
+- [x] 10. **Share reason:** for a friend who keeps everything on an exchange app, or who thinks Bitcoin is immune to outages.
 
-### Viewer-value gate (directive §10, before animation)
-- [ ] Opening understandable within three seconds
-- [ ] The audience has a reason to care
-- [ ] A meaningful early payoff
-- [ ] Each section contributes new information (answers a question, reveals a mechanism, creates the next question)
-- [ ] The central mechanism is explained clearly
-- [ ] No sentence can be removed without reducing understanding
-- [ ] The final insight is worth remembering (practical check / mental model / distinction / warning)
-- [ ] The viewer would feel the video delivered what it promised
-- [ ] No follow/save/share request; the payoff is the last content beat
+### Viewer-value gate
+- [x] Opening understandable within 3 s · reason to care · early payoff (8–9 s) · each section adds information · mechanism explained (36–51 s) · no removable sentence · final insight worth keeping (ownership ≠ access) · delivers the promise.
+- Ending: per the user's brief it ends on a question, after the answer (73.8 s) and the distinction. No follow/save/share request.
 
-### Retention ladder
-- [ ] A concrete fact, reveal or causal step about every 5–10 s (list them with times)
-- [ ] Generic bridges ("Tapi tunggu dulu", "Dan bukan cuma itu") replaced with specific ones
-- [ ] No second intro at 8–15 s; caveats sit at the claim, not only at the end
-- [ ] Final frame answers or echoes the first question; CTA and brand ending short
+### Retention ladder (a new fact or turn every ~3–8 s)
+2.4 UK advice · 5.7 three days · 7.7 power and internet · 9.4 PHP attacks · 15.8 sites switched off · 19.5 caveat · 22.6 imagine · 25.5/27.1/28.3 payments, ATM, bank app · 34.8 the Bitcoin question · 36.3 no central server · 38.8 must be sent · 42.6 confirmed · 44.0 local outage → delay · 47.4 partition · 52.3 reversal · 55.5 key and chain · 60.0 satellite · 64.7 one-way · 68.7 exchange · 73.8 answer · 77.7–84.8 final question.
 
-### Rejection gates (any YES = rewrite before animating)
-- [ ] Hook's promised consequence cannot be supported
-- [ ] First frame lacks an understandable subject/stake
-- [ ] Opening is only an animated logo or meaningless 3D
-- [ ] Nothing recognisably real (photo, logo, chart, document) in the first 3–8 s
-- [ ] No tangible proof or educational return by ~8–12 s
-- [ ] Script repeats context or pads with generic questions
-- [ ] Animation is a deck of disconnected diagrams, not a causal story
-- [ ] Final answer does not fulfil the first question
+### Rejection gates
+- [x] Unsupported consequence: NO · first frame lacks stake: NO · logo/3D-only opening: NO (real document from 2.4 s) · no return by 8–12 s: NO · padding: NO · disconnected diagrams: NO (one transaction and one node map carry the mechanism) · ending doesn't answer the opening: NO (73.8 s).
 
-## Part B — Visual-quality audit (motion-design rules, sections 4–8, and CLAUDE.md layout rules)
+## Part B — Visual-quality audit
+(after the build)
 
-### Layout (CLAUDE.md)
-- [ ] No text over graphics in any frame, including camera moves and crossfades
-- [ ] Nothing darkens, crops or covers the graphics to make room for text
-- [ ] Source images shown whole first, then zoomed only on the narrated part
-- [ ] Opening title centred, rising in; no date/press tag above it; no logo before the hook
-
-### Opening (cryptonite-openings.md)
-- [ ] Statement → real anchor → designed card/diagram → abstract graphics, in that order
-- [ ] Highest available level of the asset hierarchy used (real photo/logo/document over abstract)
-- [ ] Opening motion restrained: push-ins, card reveals, light sweeps, reframing; no hero move or spectacle
-- [ ] Each real asset sourced in `sources.md` (origin, date, licence basis); third-party logos/photos unaltered, no implied endorsement; news-style panels don't imitate a publisher's masthead
-
-### Demonstration and sound-off (directive §6–8)
-- [ ] Every important graphic demonstrates the spoken mechanism; decorative animation removed
-- [ ] Main idea understandable muted: headlines, progressive labels, visible cause and effect, uncrowded
-- [ ] Simulations labelled SIMULASI/ILUSTRASI on screen while shown; nothing simulated passes as real market data
-- [ ] Real assets used where they add credibility; missing ones were requested, not faked
-
-### Evidence and editorial
-- [ ] All claims sourced; event dates and date checked recorded
-- [ ] Conditional claims are visibly conditional
-- [ ] CTA factually represents an existing asset or offer
-
-### Runtime and implementation
-- [ ] Duration measured from audio and render
-- [ ] Output 1080×1920, 30fps, intended codecs (verified by ffprobe)
-- [ ] No missing assets, 0-frame/negative-length clips, scene gaps, or audio tails
-- [ ] Safe zones and fonts checked at mobile preview size
-- [ ] Numbers and labels verified, including qualifiers
-
-### Visual and sound inspection
-- [ ] Stills across every beat; every transition before/mid/after; first 3 s and last 2 s at full resolution
-- [ ] Motion watched in a full render: YES / NOT REVIEWED (never claim motion was checked from stills alone)
-- [ ] Sound synchronized to emphasis and narration intelligible
-- [ ] Single dominant visual concept per beat
-- [ ] Camera move meaningfully motivated
-- [ ] Polarity switches have semantic purpose
-- [ ] Brand consistency and licensed assets checked
-
-## Scores (1–5; any score below 4 → targeted revision and re-check)
+## Scores (1–5)
 | Hook | First 12 s | Real-world opening | Educational payoff | Reward ladder | Understanding | Hierarchy | Camera | Transitions | Rhythm | Brand | Factual accuracy |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | | | | | | | | | | | | |
 
 ## Known limitations
-
-## Fixes completed and rechecked
 
 ## Final verified artifact path

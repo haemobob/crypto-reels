@@ -110,3 +110,45 @@ export const alignWords = (script: ScriptWord[], heardRaw: Heard[], totalSec: nu
   }
   return out as Timed[];
 };
+
+/**
+ * Whisper often starts a word inside the pause before it. Any word that starts inside a measured
+ * silence is moved to where speech resumes, and the word before it ends where the silence begins.
+ */
+export const snapToSilences = (timed: Timed[], silences: Array<[number, number]>, lengths: number[] = []): Timed[] => {
+  const out = timed.map((t) => ({...t}));
+  for (const [s, e] of silences) {
+    out.forEach((w, i) => {
+      if (w.start < s - 0.02 || w.start >= e) return;
+      w.start = e;
+      w.end = Math.max(w.end, e + 0.05);
+      const prev = out[i - 1];
+      if (prev && prev.end > s) prev.end = Math.max(prev.start + 0.05, s);
+    });
+  }
+  // Words snapped onto the same onset (or before the previous one) are spread out again by length (≈ 0.06 s per letter).
+  for (let i = 1; i < out.length; i++) {
+    if (out[i].start > out[i - 1].start + 0.01) continue;
+    const min = out[i - 1].start + Math.min(0.45, Math.max(0.12, 0.06 * (lengths[i - 1] ?? 4)));
+    out[i].start = min;
+    out[i].end = Math.max(out[i].end, min + 0.05);
+    out[i - 1].end = Math.min(out[i - 1].end, min);
+  }
+  return out;
+};
+
+/** Silences of at least `minSec` below `noiseDb`, parsed from ffmpeg's silencedetect report. */
+export const parseSilences = (report: string): Array<[number, number]> => {
+  const out: Array<[number, number]> = [];
+  let start: number | null = null;
+  for (const line of report.split('\n')) {
+    const s = line.match(/silence_start: ([\d.]+)/);
+    const e = line.match(/silence_end: ([\d.]+)/);
+    if (s) start = Number(s[1]);
+    if (e && start !== null) {
+      out.push([start, Number(e[1])]);
+      start = null;
+    }
+  }
+  return out;
+};

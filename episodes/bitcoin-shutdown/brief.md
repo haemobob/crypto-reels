@@ -1,10 +1,11 @@
-# Visual brief — bitcoin-shutdown
+# Visual brief — Bitcoin akan segera shutdown?
 
-- **Framework**: Remotion (or HyperFrames, and why)
-- **Visual subject** and why it is the most relevant:
-- **Visual concept** (the one idea the look is built around):
-- **Different from recent episodes** (see reference/episode-visual-log.md):
-- **Opening asset hierarchy level** (and why, if below 3):
-- **Visual nouns**:
-- **Polarity chapters** (by meaning):
-- **Hero move(s)**:
+- **Framework:** Remotion + React Three Fiber (`@remotion/three`), one canvas per world, cue-keyed cameras (`src/three/camera.tsx`). The user's brief asks for a cinematic tech-thriller: continuous camera motion, real 3D environments and motivated transitions. That overrides the restrained-camera default under the 20 Oct "skills override style" decision; truthfulness rules stay binding.
+- **Visual subject:** Bitcoin itself (a hero coin with the public-domain ₿ mark) and the infrastructure around it: a government notice, a server room, payment devices, a phone, the real node network, a hardware wallet, a satellite.
+- **Visual concept:** *the connections around the coin.* The opening coin is held in a web of blue links that snap. Every later world is about a link: the document's underline, server LEDs, a terminal's NO CONNECTION, the wallet's DISCONNECTED, the node map splitting, a one-way satellite beam. At the end the links fade and only the coin stays lit: it survives, but can you reach it?
+- **Real assets first (opening rules):** coin render 0–2.3 s (level 4), then the real GOV.UK page from 2.4 s (level 3), the Guardian and NCSC-NL clippings, real Bitnodes node coordinates (3,271 locations, 21 Oct 2026), real block heights from mempool.space (24 Oct 2026), and NASA Earth textures (public domain).
+- **Polarity:** black/navy world with red threat accents 0–52 s; clinical off-white for the revelation (53–60 s, "INTERNET MATI ≠ BITCOIN HILANG"); deep space for the satellite; black for the ending, with only the coin lit.
+- **Hero moves:** (1) the 72 JAM pull-back, with the digits dissolving into server LEDs and the camera flying into the room; (2) the pull-back from the stuck transaction to the split world network; (3) the blue light that turns out to be the hardware wallet's LED as the world flips to off-white. Supporting moves: lateral server-aisle track, match cuts terminal → ATM → phone, orbit + crash push on the wallet, orbital Earth reveal, final dolly-out to the lone coin.
+- **Labels:** SIMULASI GANGGUAN BESAR on the payment/ATM/bank-app beats; ILUSTRASI on the outage/partition scenarios; sources and dates in the source line; "percobaan, bukan peretasan berhasil" at the claim.
+- **Different from recent episodes** (`reference/episode-visual-log.md`): first fully 3D-driven Reel; no chart; no off-white chapter until the reversal; new environments (newsroom, server room, store counter, space); the node map uses real data; the hero coin returns as a visual callback at the end.
+- **Missing assets:** none required from the user. Devices are built procedurally with no brands (generic terminal, ATM, bank app, wallet app, exchange UI, hardware wallet), so no third-party product is implied.

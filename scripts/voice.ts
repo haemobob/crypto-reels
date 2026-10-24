@@ -9,7 +9,7 @@ import {existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import path from 'node:path';
 import {downloadWhisperModel, installWhisperCpp, toCaptions, transcribe, type WhisperModel} from '@remotion/install-whisper-cpp';
 import type {Captions, EpisodeConfig} from '../src/lib/types';
-import {alignWords} from './align';
+import {alignWords, parseSilences, snapToSilences} from './align';
 import {episodeDir, fail, ffmpegBin, flag, p, probeDuration, publicEpisodeDir, readJson, readSecret, requireEpisodeId, run} from './lib';
 import {parseNarration} from './narration';
 
@@ -98,7 +98,9 @@ const out = await transcribe({inputPath: wav16, whisperPath, whisperCppVersion, 
 const heard = toCaptions({whisperCppOutput: out})
   .captions.map((c) => ({text: c.text.trim(), start: c.startMs / 1000, end: c.endMs / 1000}))
   .filter((h) => h.text);
-const timed = alignWords(words, heard, durationSec);
+// Snap word starts out of pauses: whisper tends to begin a word inside the silence before it.
+const silenceReport = run(ffmpegBin(), ['-hide_banner', '-i', narration, '-af', 'silencedetect=noise=-40dB:d=0.18', '-f', 'null', '-'], {quiet: true});
+const timed = snapToSilences(alignWords(words, heard, durationSec), parseSilences(silenceReport), words.map((w) => w.spoken.length));
 // What whisper heard, for checking pronunciation: unmatched words are often mispronounced English terms.
 writeFileSync(path.join(cacheDir, 'heard.txt'), heard.map((h) => h.text).join(' ') + '\n');
 const unmatched = words.filter((_, i) => !timed[i].matched).map((w) => w.text);
