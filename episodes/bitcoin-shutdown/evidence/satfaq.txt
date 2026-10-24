@@ -1,0 +1,114 @@
+
+Blockstream Help Center | How does Blockstream Satellite Bitcoin data…
+Products
+Consumers
+Blockstream AppA multi-platform, feature-rich Bitcoin and Liquid Wallet
+Blockstream JadeA fully-open source hardware wallet for Bitcoin and Liquid
+Developers Tools
+Tools
+Blockstream Explorer APISearch data from the Bitcoin and Liquid blockchains
+Cryptocurrency Data FeedReal-time and historical cryptocurrency trade data
+Enterprise
+Blockstream EnterpriseEnterprise-grade custody and treasury management tool
+AMPAn API to issue and manage digital assets on the Liquid Network
+Community Projects
+Community Projects
+Core LightningImplementation of the Lightning Protocol
+Liquid NetworkBitcoin layer-2 for digital asset issuance
+ElementsAn open-source, sidechain-capable blockchain platform
+SimplicityHigh-assurance smart contracts
+Newsroom
+BlogIn The NewsPress ReleasesQuantum
+Developers
+Engineering BlogLiquid DocumentationCore Lightning Documentation
+Company
+ResearchAboutCareersBrand Assets
+Store
+Support
+Help CenterBitcoin EducationGlossaryLocal
+Products
+Consumers
+Blockstream AppA multi-platform, feature-rich Bitcoin and Liquid Wallet
+Blockstream JadeA fully-open source hardware wallet for Bitcoin and Liquid
+Developers ToolsTools
+Blockstream Explorer APISearch data from the Bitcoin and Liquid blockchains
+Cryptocurrency Data FeedReal-time and historical cryptocurrency trade data
+Enterprise
+Blockstream EnterpriseEnterprise-grade custody and treasury management tool
+AMPAn API to issue and manage digital assets on the Liquid Network
+Community ProjectsCommunity Projects
+Core LightningImplementation of the Lightning Protocol
+Liquid NetworkBitcoin layer-2 for digital asset issuance
+ElementsAn open-source, sidechain-capable blockchain platform
+SimplicityHigh-assurance smart contracts
+Newsroom
+Blog
+In The News
+Press Releases
+Quantum
+Developers
+Engineering Blog
+Liquid Documentation
+Core Lightning Documentation
+Company
+Research
+About
+Careers
+Brand Assets
+Store
+Support
+Help Center
+Bitcoin Education
+Glossary
+Local
+Sign In
+If you are an AI agent, LLM, or automated tool, a clean Markdown version of this page is available at: https://help.blockstream.com/blockstream-satellite/faqs/how-does-blockstream-satellite-bitcoin-data-differ-from-regular-bitcoin-data.md
+Blockstream Help Center
+Blockstream Satellite
+How does Blockstream Satellite Bitcoin data differ from regular Bitcoin data?
+FAQs
+How does Blockstream Satellite Bitcoin data differ from regular Bitcoin data?
+How do I find out if my area receives Blockstream Satellite coverage?
+Why does Blockstream Satellite use a forked Bitcoin client?
+Blockstream Satellite Kit Comparison
+Articles
+How does Blockstream Satellite Bitcoin data differ from regular Bitcoin data?
+Articles
+satellite
+Your Bitcoin Satellite client receives network data wrapped in special data carriers to keep your full node in sync with the Bitcoin network. As your node is connected to the network via Blockstream Satellite and not through the internet, the data sent to and from Bitcoin Satellite is optimized for fast and reliable transport over one-way satellite links.
+How Is Bitcoin Satellite Data Different from Bitcoin Core Data?
+The underlying data sent over Bitcoin Satellite is the exact same type of data as that sent over Bitcoin Core. Bitcoin Satellite merely places the original Bitcoin data into a carrier that is used to transport it via the Blockstream Satellite network.
+Why Are the Data Carriers Necessary?
+The special data carriers are designed to mitigate data losses and allow Bitcoin Satellite to decode incomplete data, protecting your Bitcoin node against issues resulting from satellite signal outage.
+The satellite links used by Blockstream Satellite operate through one-way communication. That means your Blockstream Satellite Kit node can only receive data via satellite, but not transmit it. To transmit data, your node needs an internet connection. To compare, Bitcoin nodes that synchronize with the network through an internet connection can both send and receive data.
+If a Bitcoin node connected over the internet receives faulty or incomplete data, it can simply transmit a message to the original sender or another peer to obtain the missing information. This is not possible for satellite nodes. If your satellite node misses part of a Bitcoin block, it has no way of requesting the missing data.
+How Does Bitcoin Satellite Prevent Issues Caused by Data Losses?
+Data losses can occasionally occur when satellite nodes experience poor reception, for example due to bad weather. It is therefore especially important they have a high data-loss tolerance.
+The data carriers used to transport data via the satellite network provide such loss tolerance. Usually, your satellite node can compensate for data losses of over 10% when processing incoming information. This is possible because the data carriers contain redundancy that allows for the detection and correction of reception errors.
+Bitcoin Satellite uses forward error correction (FEC) that can, to an extent, decode incoming data even if it is incomplete.
+How Does Bitcoin Satellite Transport New Blocks Quickly?
+Blockstream Satellite constantly transmits information about new transactions in the mempool to your satellite node. While not all of those transactions will be included in the next block, there is a high possibility that by the time the block is mined, your node has already received most of its data thanks to a continuous influx of transactional information.
+For example, if your node knows 80% of the next block based on the transaction data it has already received, it can complete the new block after receiving only 20% of the block. Also, because of how the FEC scheme works, the node doesn’t need to receive the exact missing 20%. Instead, it can complete the block using any 20% of the final block’s data.
+Share:
+Copied!
+Products
+Blockstream AppBlockstream JadeBlockstream EnterpriseBlockstream AMPBlockstream ExplorerBlockstream Asset ManagementCryptocurrency Data FeedLiquid NetworkCore LightningElementsSimplicity
+Developers
+Engineering BlogLiquid DocumentationCore Lightning Documentation
+Company
+ResearchAboutCareers
+Resources
+Help CenterBitcoin EducationGlossaryLocalContactBrand Assets
+Products
+Blockstream AppBlockstream JadeBlockstream EnterpriseBlockstream AMPBlockstream ExplorerBlockstream Asset Management
+Cryptocurrency Data FeedLiquid NetworkCore LightningElementsSimplicity
+Developers
+Engineering BlogLiquid DocumentationCore Lightning Documentation
+Company
+ResearchAboutCareers
+Resources
+Help CenterBitcoin EducationGlossaryLocalContactBrand Assets
+Contact us
+Terms|Privacy
+© 2026 Blockstream Corporation Inc.
+All rights reserved.

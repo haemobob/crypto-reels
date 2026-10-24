@@ -1,0 +1,9 @@
+{
+  "id": "bitcoin-shutdown",
+  "title": "Bitcoin akan segera shutdown?",
+  "minSeconds": 60,
+  "maxSeconds": 88,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}

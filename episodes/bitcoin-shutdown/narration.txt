@@ -1,0 +1,16 @@
+[[hook]]*BITCOIN* akan segera *SHUTDOWN*?
+[[uk]]Pemerintah Inggris baru saja mengimbau warganya bersiap menghadapi [[days]]*tiga hari* gangguan layanan penting, [[ukinet]]seperti listrik dan internet.
+[[php]]Dan di saat yang hampir bersamaan, *jutaan* percobaan serangan siber menyasar celah keamanan serius di *PHP*.
+[[offline]]Bahkan, sejumlah website sengaja *dimatikan* sementara.
+[[notend]]Ini bukan berarti internet dunia akan segera mati.
+[[imagine]]Tapi bayangin... kalau gangguannya *meluas*.
+[[pos]]Mesin pembayaran nggak berfungsi. [[atm]]ATM *offline*. [[bank]]Aplikasi bank nggak bisa dibuka.
+[[question]]Sekarang pertanyaannya... [[q2]]kalau *internet* mati... [[q3]]*Bitcoin* lo *gimana*?
+[[nocenter]]Bitcoin memang nggak punya satu server pusat. [[relay]]Tapi setiap transaksi tetap perlu *dikirim* ke jaringan komputer, [[confirm]]lalu *dikonfirmasi*.
+[[local]]Kalau koneksi internet lo terputus, transaksi bisa *tertunda*. [[partition]]Dan kalau jaringan global *terpecah*, komunikasi antar-node juga bisa terganggu.
+[[wait]]Tapi tunggu... [[reveal]]Bitcoin lo nggak *otomatis hilang*.
+[[key]]Selama *private key* lo aman, kepemilikan Bitcoin tetap tercatat di *blockchain*.
+[[sat]]Bahkan, ada *satelit* yang bisa menyiarkan data blockchain tanpa internet biasa. [[satsend]]Meski untuk *mengirim* transaksi, tetap diperlukan jalur komunikasi lain.
+[[exchange]]Dan kalau Bitcoin lo disimpan di *exchange*? [[access]]Aksesnya juga bergantung pada *sistem mereka*.
+[[sum]]Jadi, internet mati belum tentu membuat Bitcoin mati.
+[[final]]Tapi kalau seluruh sistem keuangan *offline*... [[final2]]apa gunanya punya uang... [[final3]]kalau lo nggak bisa *menggunakannya*?

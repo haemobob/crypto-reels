@@ -1,0 +1,64 @@
+
+Update: PHP vulnerabilities remain a reason for immediate patching | NCSC-NL
+Skip to main navigationSkip to main content
+National Cyber Security CentreMinistry of Justice and Security
+Loading...
+Menu
+Log in
+Main navigation
+Home
+Resources
+Services
+About us
+Search
+Log in
+Home
+Updates
+Alerts
+Update: PHP vulnerabilities remain a reason for immediate patching
+Alerts
+Update: PHP vulnerabilities remain a reason for immediate patching
+Alert
+21 October 2026
+Updated: 23 Oct 2026 at 15:45
+Two critical vulnerabilities have been discovered in PHP, a widely used programming language for websites and web applications. Exploitation of these vulnerabilities could allow attackers to take over systems remotely. As a precaution, the NCSC-NL had temporarily taken its website offline. Several other organizations, including government agencies, had also proactively disabled their websites. Security updates (patches) are now available to resolve the vulnerabilities.
+Update: 23 October, 3:45 PM
+Exploitation is complex; updating remains the recommended course of action
+Over the past few days, we have written extensively about two serious vulnerabilities in PHP, a programming language on which many websites, amongst others, run. At the moment, we are aware of one report of a possible exploit abroad, but it has not been confirmed that the attack was actually successful.
+Further investigation shows that exploiting these vulnerabilities is complex and the likelihood of large-scale exploitation is lower than previously estimated. For the time being, the latest PHP updates appear to be working well. The PHP Foundation has today disclosed a new vulnerability, CVE-2026-115560. According to the PHP Foundation, it is unlikely that this vulnerability could be exploited to achieve Remote Code Execution (RCE). The PHP Foundation will address this vulnerability in its next regular bugfix release.
+Our advice remains the same: ensure that the latest security updates for PHP are installed on your website(s), applications and (network) equipment as soon as possible. If you do not manage your IT environment yourself, please contact your hosting provider or IT supplier. We are continuing to monitor the situation closely and will update this notice should the situation change significantly.
+Update: 22 October, 4:00 PM
+Following our previous message regarding the two critical vulnerabilities in PHP, we are providing an update on the situation. Since the publication of our advisory and the release of security updates, several websites have been brought back online. Has your organization not yet installed the updates? If not, do so as soon as possible. As a precaution, keep any systems that are still vulnerable offline until you have installed the updates.
+Potential exploitation
+At this time, the NCSC-NL is investigating initial signs of successful exploitation. The situation could escalate quickly, as Proof of Concepts (PoCs) are known. This means it has been demonstrated that the vulnerability can be exploited. The use of artificial intelligence (AI) could potentially allow these vulnerabilities to be exploited even more quickly. This reinforces the urgency of installing the updates. We therefore strongly advise everyone to apply the patches immediately.
+Install the security updates
+You should therefore not wait for signs of exploitation but install the available security updates as soon as possible. Check which version of PHP your organisation is using and follow the instructions from the NCSC-NL and your software supplier. Please make use of our decision tree, which you will find further on in this notice.
+It is important that organisations check as soon as possible whether their systems are vulnerable and apply the available updates. Until systems have been updated, they should be kept offline as a precaution.
+Patches available
+PHP has released patches for the PHP vulnerabilities. Upgrade to PHP 8.5.12, 8.4.27, 8.3.36, or 8.2.35. Users of Linux distributions and LTS versions are advised to apply the security updates provided by their vendor.
+PHP 8.1 and earlier versions are no longer supported on a regular basis by the PHP project. However, due to the severity of the vulnerabilities, the PHP team has made minimal source code patches available for PHP 7.4, 8.0 and 8.1.
+Temporary mitigating measures
+When immediate updating is not possible, temporary mitigations are available for both vulnerabilities. The PHP team emphasises that these measures only limit specific attack vectors and do not constitute a complete solution. Only installing a security update will fully resolve the vulnerabilities.
+Decision tree with explanation
+The NCSC-NL has drawn up a decision tree with an explanation on how your organisation can assess which measures you can take if you use PHP.
+NCSC Guide Decision tree + explanation PHP vulnerabilitiesPDF, 1.5 MB, 23-10-2026
+Download
+Further technical information on GitHub
+The NCSC-NL has also set up a page on GitHub. Here you will find technical information about the vulnerabilities. This page is continuously updated by the NCSC-NL. You will also find a list of all PHP-related software products here, to help you identify which products are vulnerable.
+Form
+Did you find this page helpful? 
+Yes
+No
+Loading results...Everything within alerts
+Footer
+The National Cyber Security Centre (NCSC-NL)
+Shaping a safe, digitally resilient Netherlands
+About us
+Statutory mandate
+Working with NCSC
+International network
+Quick access
+Contact and incident reporting
+Language switch
+Nederlands
+|English

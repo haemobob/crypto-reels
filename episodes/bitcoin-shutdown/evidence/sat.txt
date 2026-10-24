@@ -1,0 +1,155 @@
+ 
+Blockstream Satellite: Bitcoin blockchain broadcasts 
+Multisig Is Here: Hold Two of Three Keys to Your Bitcoin Learn More 
+ Products 
+CONSUMERS
+Blockstream App
+A multi-platform, feature-rich Bitcoin and Liquid Wallet
+Blockstream Jade
+A fully-open source hardware wallet for Bitcoin and Liquid
+ENTERPRISE
+Blockstream Enterprise
+Enterprise-grade custody and treasury management tool
+AMP
+An API to issue and manage digital assets on the Liquid Network
+DEVELOPERS
+TOOLS
+Blockstream Explorer API
+Search data from the Bitcoin and Liquid blockchains
+Cryptocurrency Data Feed
+Real-time and historical cryptocurrency trade data
+COMMUNITY PROJECTS
+Core Lightning
+Implementation of the Lightning Protocol
+Liquid Network
+Bitcoin layer-2 for digital asset issuance
+Elements
+An open-source, sidechain-capable blockchain platform
+Simplicity
+High-assurance smart contracts
+ Newsroom 
+ Blog
+ In The News
+ Press Releases
+ Quantum
+ Developers 
+ Engineering Blog
+ Liquid Documentation 
+ Core Lightning Documentation 
+ Company 
+ Research
+ About
+ Careers
+ Brand Assets
+ Store
+ Support 
+ Help Center 
+ Bitcoin Education 
+ Glossary 
+ Local 
+ Blockstream Satellite
+ Blockstream Satellite
+ Overview 
+ API 
+ Transmissions 
+ API Documentation 
+ Help Center
+The Bitcoin blockchain from space. No internet required.
+The Blockstream Satellite network broadcasts the Bitcoin blockchain around the world 24/7 for free, protecting against network interruptions and providing areas without reliable internet connections with the opportunity to use Bitcoin.
+ Get a Satellite Kit Resources
+Why Satellite?
+Internet Not Required
+ Blockstream Satellite broadcasts the Bitcoin blockchain to the entire planet via satellite, reducing Bitcoin’s dependency on internet access. Everyone in the world now has an opportunity to use Bitcoin.
+Massive Cost Savings
+ By eliminating cost barriers, people can now receive blocks at no cost, which allows more people to utilize Bitcoin and participate in the Bitcoin network.
+Network Stability
+ Blockstream Satellite provides an alternative method for receiving the Bitcoin blockchain that is not affected by connection failure. This protects users against network interruptions and prevents any full node from becoming isolated or partitioned.
+Satellite Network Coverage
+GALAXY 18
+North America
+ Long: 123W
+ Band: Ku
+ Freq: 11913.40 MHz
+ Pol: Horizontal
+TELSTAR 11N
+Africa
+ Long: 37.5W
+ Band: Ku
+ Freq: 11470.3 MHz
+ Pol: Horizontal
+TELSTAR 11N
+Europe
+ Long: 37.5W
+ Band: Ku
+ Freq: 11494.51 MHz
+ Pol: Vertical
+TELSTAR 18V
+Asia Pacific
+ Long: 138E
+ Band: C
+ Freq: 4140.0 MHz
+ Pol: Horizontal
+TELSTAR 18V
+Asia Pacific
+ Long: 138E
+ Band: Ku
+ Freq: 11507.9 MHz
+ Pol: Horizontal
+ ×
+Aim Antenna
+This tool will calculate the direction you will need to aim your antenna based on your location.
+Simply enter either your address or latitude and longitude coordinates, then select the satellite you would like to calculate aiming parameters.
+If you do not know which satellite covers your area, look at the Network Status section.
+ Address Latitude / Longitude 
+ Galaxy 18, North America, 123W EUTELSAT 113, South America, 113W TELSTAR 11N, Africa, 37.5W TELSTAR 11N, Europe, 37.5W TELSTAR 18V, Asia, 138E 
+ Calculate
+DISH ALIGNMENT
+Latitude: 0°
+Longitude: 0°
+ Your antenna should be aimed:
+ Elevation: 
+ Azimuth: 
+ Polarity: 
+How It Works
+ Blockstream Satellite ground stations, known as 'teleports,' participate in the Bitcoin network and transmit blocks to geosynchronous satellites.
+ Geosynchronous satellites, orbiting at an altitude of 35,786 km (22,236 mi), receive the signal from the Blockstream Satellite teleports and broadcast it across a wide portion of the Earth.
+ Anyone in the coverage area with a small satellite antenna and an inexpensive USB receiver can receive these blocks and ensure that their node is always in sync.
+ Additionally, each Blockstream Satellite teleport also receive blocks from our other teleports around the world to ensure the teleports themselves do not become partitioned.
+ The entire Blockstream Satellite network forms a ring around the planet to ensure that the Bitcoin network has full redundancy.
+Connect to the Network
+ Satellite Coverage
+ Detailed coverage map for each satellite in the network.
+ Learn More 
+ GitHub Project
+ Visit our open source project and get support using our software.
+ Learn More 
+ Terms
+ Privacy
+ Blockstream Corporation Inc. All rights reserved.
+ Products
+ Blockstream App
+ Blockstream Jade
+ Blockstream Enterprise
+ Blockstream AMP
+ Blockstream Explorer
+ Cryptocurrency Data Feed
+ Liquid Network
+ Core Lightning
+ Elements
+ Simplicity
+ Developers
+ Engineering Blog
+ Liquid Documentation
+ Core Lightning Documentation
+ Company
+ Research
+ About
+ Careers
+ Resources
+ Help Center
+ Bitcoin Education
+ Glossary
+ Local
+ Contact
+ Brand Assets 
+
