@@ -10,11 +10,11 @@
   3. *Podium* (10.2–15.9 s): podium rises; numbers count in on each word.
   4. *Ride* (15.9–35 s, hero move): crane up and around behind the podium; tracks; a coin cart on Bitcoin's track; a stack of 100 coins halves to 50 and regrows to 75 (−25%); a ghost extension on Bitcoin's step shows 20.9% and evaporates to the 10% step.
   5. *Fan* (35–42.5 s): from one point (Rp10 juta) three ribbons fan out over ten year markers: Rp48,1 jt / Rp25,9 jt / Rp3,6 jt, SIMULASI.
-  6. *Real chart* (42.5–50 s, 2D): weekly candles Jun 2025–Oct 2026; peak $126,2K, low $57,8K, −54%.
-  7. *Ring* (50–54 s): a portfolio ring (stocks, bonds, alternatives) with the orange Bitcoin wedge kept outside; ILUSTRASI; "bitcoin is not included as an allocation".
+  6. *Real chart* (42.5–50 s, 2D): Binance weekly candles Jan 2025–Oct 2026; peak $126,2K (Okt 2025), low $57,8K (Jun 2026), −54%.
+  7. *Ring* (50–54 s): JPMorgan's headline 60/40 portfolio as a 3D ring (SAHAM 60%, OBLIGASI 40%) with the Bitcoin coin waiting outside it, BELUM MASUK; ILUSTRASI; "bitcoin is not included as an allocation".
   8. *Payoff* (54–61.9 s): back to the podium-and-ride wide shot: RETURN = HADIAHNYA / VOLATILITAS = HARGA TIKETNYA, then KALAU TURUN SETENGAH, LO KUAT NAHAN?
 - **Polarity:** black/navy throughout (one continuous "night arena"); one off-white chart chapter for the real-data proof (42.5–50 s) marks the switch from model to reality.
-- **Hero move:** the crane from the front of the podium to behind it, revealing the tracks (15.9–19 s). Supporting: documentary push on the report, cart follow on the rollercoaster, side-on fan dolly.
+- **Hero move:** the crane up over the podium as the tracks draw in behind it (15.9–18.6 s), then a hard cut to the reverse angle from the far end of the tracks: the podium is only the finish line (18.7 s). The payoff returns to that reverse angle. Supporting: documentary push on the report, fast flight to the coin stack, dolly-out on the fan.
 - **Labels at the claim:** PROYEKSI · 10–15 TAHUN · BUKAN JAMINAN (numbers); ILUSTRASI (−50/+50, ring); SIMULASI · SKENARIO JPMORGAN VIA COINDESK · PAJAK, BIAYA & KURS DIABAIKAN (fan); sources in the source line.
 - **Different from recent episodes** (`reference/episode-visual-log.md`): no globe, no devices, no off-white reveal device; new environment (a night arena with podium and tracks), new hero move (crane behind a podium), first scenario fan; the ₿ coin is reused for continuity of the Bitcoin subject.
 - **Missing assets:** none needed from the user.
