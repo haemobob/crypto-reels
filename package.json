@@ -12,6 +12,7 @@
     "audit": "tsx scripts/audit.ts",
     "still": "tsx scripts/still.ts",
     "render": "tsx scripts/render.ts",
+    "srt": "tsx scripts/srt.ts",
     "audio": "tsx scripts/make-audio.ts",
     "import-sfx": "tsx scripts/import-sfx.ts",
     "typecheck": "tsc --noEmit"

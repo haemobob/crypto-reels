@@ -1,0 +1,179 @@
+1
+00:00:00,070 --> 00:00:02,189
+BITCOIN akan segera SHUTDOWN?
+
+2
+00:00:02,372 --> 00:00:03,560
+Pemerintah Inggris baru saja
+
+3
+00:00:03,600 --> 00:00:05,640
+mengimbau warganya bersiap menghadapi
+
+4
+00:00:05,680 --> 00:00:07,527
+tiga hari gangguan layanan penting,
+
+5
+00:00:07,663 --> 00:00:09,212
+seperti listrik dan internet.
+
+6
+00:00:09,385 --> 00:00:11,160
+Dan di saat yang hampir bersamaan,
+
+7
+00:00:11,200 --> 00:00:13,120
+jutaan percobaan serangan siber
+
+8
+00:00:13,160 --> 00:00:15,626
+menyasar celah keamanan serius di PHP.
+
+9
+00:00:15,807 --> 00:00:17,200
+Bahkan, sejumlah website
+
+10
+00:00:17,240 --> 00:00:19,185
+sengaja dimatikan sementara.
+
+11
+00:00:19,517 --> 00:00:20,980
+Ini bukan berarti internet
+
+12
+00:00:21,020 --> 00:00:22,177
+dunia akan segera mati.
+
+13
+00:00:22,561 --> 00:00:23,700
+Tapi bayangin...
+
+14
+00:00:23,740 --> 00:00:25,470
+kalau gangguannya meluas.
+
+15
+00:00:25,510 --> 00:00:27,010
+Mesin pembayaran nggak berfungsi.
+
+16
+00:00:27,050 --> 00:00:28,210
+ATM offline.
+
+17
+00:00:28,250 --> 00:00:30,072
+Aplikasi bank nggak bisa dibuka.
+
+18
+00:00:30,720 --> 00:00:32,710
+Sekarang pertanyaannya...
+
+19
+00:00:32,750 --> 00:00:34,223
+kalau internet mati...
+
+20
+00:00:34,757 --> 00:00:35,979
+Bitcoin lo gimana?
+
+21
+00:00:36,285 --> 00:00:37,380
+Bitcoin memang nggak punya
+
+22
+00:00:37,420 --> 00:00:38,576
+satu server pusat.
+
+23
+00:00:38,832 --> 00:00:41,270
+Tapi setiap transaksi tetap perlu dikirim
+
+24
+00:00:41,310 --> 00:00:43,762
+ke jaringan komputer, lalu dikonfirmasi.
+
+25
+00:00:43,972 --> 00:00:45,850
+Kalau koneksi internet lo terputus,
+
+26
+00:00:45,890 --> 00:00:47,294
+transaksi bisa tertunda.
+
+27
+00:00:47,445 --> 00:00:49,380
+Dan kalau jaringan global terpecah,
+
+28
+00:00:49,420 --> 00:00:51,590
+komunikasi antar-node juga bisa terganggu.
+
+29
+00:00:52,319 --> 00:00:53,119
+Tapi tunggu...
+
+30
+00:00:53,464 --> 00:00:55,440
+Bitcoin lo nggak otomatis hilang.
+
+31
+00:00:55,480 --> 00:00:57,890
+Selama private key lo aman, kepemilikan
+
+32
+00:00:57,930 --> 00:00:59,787
+Bitcoin tetap tercatat di blockchain.
+
+33
+00:00:59,956 --> 00:01:02,050
+Bahkan, ada satelit yang bisa menyiarkan
+
+34
+00:01:02,090 --> 00:01:04,531
+data blockchain tanpa internet biasa.
+
+35
+00:01:04,675 --> 00:01:06,340
+Meski untuk mengirim transaksi,
+
+36
+00:01:06,380 --> 00:01:08,516
+tetap diperlukan jalur komunikasi lain.
+
+37
+00:01:08,679 --> 00:01:11,138
+Dan kalau Bitcoin lo disimpan di exchange?
+
+38
+00:01:11,314 --> 00:01:12,450
+Aksesnya juga bergantung
+
+39
+00:01:12,490 --> 00:01:13,692
+pada sistem mereka.
+
+40
+00:01:13,840 --> 00:01:15,910
+Jadi, internet mati belum tentu
+
+41
+00:01:15,950 --> 00:01:17,397
+membuat Bitcoin mati.
+
+42
+00:01:17,653 --> 00:01:19,320
+Tapi kalau seluruh sistem
+
+43
+00:01:19,360 --> 00:01:20,459
+keuangan offline...
+
+44
+00:01:20,897 --> 00:01:22,460
+apa gunanya punya uang...
+
+45
+00:01:22,924 --> 00:01:24,940
+kalau lo nggak bisa menggunakannya?

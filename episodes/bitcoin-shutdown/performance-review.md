@@ -1,11 +1,11 @@
 # Cryptonite post-publication retention review
 
-Episode:
-Published (WIB):
-Length (s):
-Topic and audience:
-Hook variant / first 8s transcript:
-First frame visual:
+Episode: bitcoin-shutdown — "Bitcoin akan segera shutdown?"
+Published (WIB): NOT YET POSTED (the user controls release)
+Length (s): 87.4 (84.8 s narration + 0.6 s hold + 2 s outro)
+Topic and audience: what happens to your Bitcoin if the internet goes down (UK preparedness advice + PHP exploitation wave as the news hook); Indonesian crypto holders, especially exchange-only users
+Hook variant / first 8s transcript: A/B variants in hooks.md; released cut: "BITCOIN akan segera SHUTDOWN? Pemerintah Inggris baru saja mengimbau warganya bersiap menghadapi tiga hari gangguan layanan penting…"
+First frame visual: centred headline BITCOIN AKAN SEGERA SHUTDOWN? over a 3D Bitcoin coin held in a web of blue links
 
 ## Real Instagram Insights (never invent missing metrics)
 

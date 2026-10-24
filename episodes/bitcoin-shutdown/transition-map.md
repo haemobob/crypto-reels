@@ -1,14 +1,28 @@
-# Transition map — bitcoin-shutdown
+# Transition map — Bitcoin akan segera shutdown?
 
-The transition between shots must communicate a narrative relationship or a deliberate editorial contrast. Hard cuts are valid.
+Every boundary required by the brief (§6), with the outgoing and incoming frames, why they connect, the technique, the trigger and the sound. Frames at 30 fps; cue times in `audio-map.md`. A mix of continuous camera moves, object handoffs, match cuts and hard cuts; no preset repeats more than twice in a row.
 
-| Boundary | Outgoing composition | Incoming composition | Why they connect | Transition type | Trigger word/frame | Sound cue | QA midframe |
-|---|---|---|---|---|---|---|---|
-| 01 → 02 | | | | | | | |
-| 02 → 03 | | | | | | | |
+| Boundary | Outgoing composition | Incoming composition | Why they connect | Transition type | Trigger | Sound cue |
+|---|---|---|---|---|---|---|
+| 01 → 02 Network connection → government headline | Coin, links snapped, CONNECTION LOST | GOV.UK headline on a paper document | The broken connection is the story's question; the notice is its first evidence | **Object handoff**: one snapped blue line slides across and becomes the underline of the real headline, while the camera pushes into the coin | uk − 12 → uk + 2 (2.0–2.4 s) | Whoosh-deep-short, then paper |
+| 02 inside: document → 72 JAM | Highlighted "three days" | Monument 72 JAM behind the page | The phrase becomes a physical number | **Pull-back reveal**: the page slides aside as the camera retreats | days + 16 → ukinet + 12 | Long boom |
+| 02 → 03 72-hour counter → server lights | 72 JAM monument with service chips | Rows of server racks with blue LEDs | Services depend on infrastructure; the clock "powers" the room | **Dissolve into particles**: 1,280 points sampled from the digits fly to the LEDs, camera flies into the room (hero move 1) | php (9.4 s) | Data whoosh, hum enters |
+| 03 inside: Guardian → NCSC | Guardian clipping, red highlights | NCSC-NL alert card | Attempts → what defenders did | **Forward track** down the aisle; each card slides out of the camera's path | jutaan + 84 / offline − 30 | HUD warnings |
+| 03 → 04 Server error → payment terminal | Hero 503 card filling the frame | Terminal screen PAYMENT FAILED · NO CONNECTION, top-down | Same failure, now where people pay | **Match cut** on a full-frame error screen after a dive into the card | pos (25.5 s) | Riser into the dive, failed-payment beep |
+| 04 Terminal → ATM | Counter with terminal | ATM TEMPORARILY OFFLINE | One more everyday system down | **Hard cut** + strong sideways track | atm (27.05 s) | Swoosh, ATM chime |
+| 04 ATM → bank app | ATM, track ending | Phone with a bank app that won't connect | From machines to the phone in your hand | **Hard cut**, then slow push through near-silence | bank (28.25 s) | App error, then near-silence |
+| 04 → 05 Banking app → Bitcoin wallet | Bank app spinner | Bitcoin wallet on the same phone | The viewer's question: is crypto different? | **Morph on the same screen** (wallet rises into the bank app), slow orbit | question + 4 → + 26 | UI reveal; music drops to a low tone |
+| 05 inside: connected → disconnected | Wallet TERHUBUNG | Wallet TERPUTUS, KIRIM locked | The wallet can't reach the network | **State change** on screen, then a crash push-in that settles | q2 + 6, q3 → q3 + 9 | Disconnect; whoosh + bass drop on "gimana" |
+| 05 → 06 Wallet → distributed nodes | Wallet screen, camera pressed to the glass | Above Jakarta on the night globe | The wallet is one node among thousands | **Zoom-through**: the camera enters the dark screen and emerges above the wallet's own node; pull back to the globe | nocenter (36.3 s) | Deep whoosh, pulses enter |
+| 06 inside: hop → hop | One arc complete | Next arc, wider framing | Each relay passes it on | **Data-line carry**: the camera follows the packet, widening with each hop | relay + 6 / + 36 / + 68 | Ping per hop |
+| 06 → 07 Distributed network → fragmented network | Confirmed block at Frankfurt, green ring | Jakarta, the wallet's links drop red | What changes if your link fails, then if the world's links fail | **Continuous camera**: descent to Jakarta, then pull-back to the split | local (44.0 s), partition (47.5 s) | Disconnect; crackle + impact |
+| 07 → 08 Frozen transaction → hardware wallet | Push onto the frozen packet as the globe goes black | One blue light in darkness → hardware wallet in an off-white studio | The frozen light was never the coin: it is the device that guards the key | **Match cut on a light** at the same screen spot, then a **polarity flip** (black → off-white bloom) and pull-back (hero move 3) | wait − 26 → reveal + 22 | Sudden silence, then the bell on "nggak otomatis hilang" |
+| 08 inside: hardware wallet → blockchain ledger | Hero device with the key | Ten real blocks chained behind | The key proves ownership; the record is on the chain | **Pull-back reveal** with orbit | kepemilikan − 6 → + 40 | Data whoosh |
+| 08 → 09 Blockchain ledger → satellite signal | Chain of blocks | Earth from orbit, satellite | The same blocks can arrive from space | **Beam carry**: a beam rises from the newest block, camera tilts up into a sky that darkens to space; crossfade into the orbital shot | sat − 22 → sat + 2 | Whoosh-deep-light |
+| 09 inside: orbit → ground | Satellite and broadcast cone | Rooftop dish and node screen | Follow the data down | **Descending follow** along the signal | sat + 56 → sat + 104 | Ping on receipt |
+| 09 → 10 Satellite signal → custody comparison | Ground set with the blocked return path | Hardware wallet vs exchange two-shot | Receiving isn't sending; who holds the keys decides access | **Hard cut** on the question "kalau di exchange?" | exchange (68.7 s) | Swoosh |
+| 10 → 11 Custody comparison → final thesis | Push onto the failing exchange | Both devices inside the dark global network, coin rising | Zoom out to the whole system | **Pull-back reveal** (connection lines into the globe), lines and devices fade until only the coin is lit (callback to 01) | sum (73.8 s) → final + 30 | Whoosh, soft boom, heartbeat |
+| 11 → 12 Final thesis → outro | Lone coin under the final question | Branded outro | Signature | Fade to outro after the score's cut to silence | 85.4 s | Silence |
 
-## Transition vocabulary
-Hard cut · Polarity flip · Thesis interruption · Match cut · Object handoff · Progressive construction · Data-line carry · Reframe · Selective 3D portal · Licensed B-roll punctuation.
-
-## Test
-Review last 3 frames of outgoing shot, transition midpoint, first 3 frames of incoming shot. Check object position, luminance flash, type visibility, cut rhythm, SFX timing and story logic.
+## QA midframes
+Checked on the encoded MP4 (before / mid / after each boundary): see `qa-report.md` Part B.
