@@ -1,8 +1,8 @@
 /**
  * npm run srt -- <id>
  * Writes episodes/<id>/<id>.srt from captions.json: one short line per cue (≤ 42 characters), broken at
- * sentence ends and pauses; long sentences are split evenly, preferring commas and never right after a word
- * that leans on the next one ("di", "tiga", "belum"…). Narration starts at frame 0, so these are video times.
+ * sentence ends and pauses; long sentences are split evenly, preferring colons and commas and never right after a
+ * word that leans on the next one ("di", "belum", any part of a spoken number…). Narration starts at frame 0, so these are video times.
  */
 import {writeFileSync} from 'node:fs';
 import path from 'node:path';
@@ -12,8 +12,12 @@ import {episodeDir, p, readJson, requireEpisodeId} from './lib';
 const MAX_CHARS = 42;
 const PAUSE_BREAK = 0.6;
 const MIN_SECONDS = 0.8;
-/** Indonesian words that read badly at the end of a line: prepositions, conjunctions, numbers, auxiliaries. */
-const LEANS_FORWARD = new Set(['di', 'ke', 'dari', 'pada', 'untuk', 'dan', 'yang', 'kalau', 'satu', 'dua', 'tiga', 'akan', 'bisa', 'belum', 'nggak', 'tidak', 'tetap', 'perlu', 'juga', 'seluruh', 'sejumlah']);
+/** Indonesian words that read badly at the end of a line: prepositions, conjunctions, auxiliaries, pronouns used as subjects, and every part of a spoken number (a line never breaks inside "dua puluh koma sembilan"). */
+const LEANS_FORWARD = new Set([
+  'di', 'ke', 'dari', 'pada', 'untuk', 'dan', 'yang', 'kalau', 'akan', 'bisa', 'belum', 'nggak', 'tidak', 'tetap', 'perlu', 'juga', 'seluruh', 'sejumlah',
+  'lo', 'gue', 'jadi', 'cuma', 'hanya', 'tinggal', 'seberapa', 'lebih', 'masih', 'udah', 'sudah', 'kasih',
+  'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas', 'seratus', 'seribu', 'puluh', 'belas', 'ratus', 'ribu', 'juta', 'miliar', 'triliun', 'koma',
+]);
 
 const id = requireEpisodeId();
 const {words} = readJson<Captions>(path.join(episodeDir(id), 'captions.json'));
@@ -35,8 +39,9 @@ const splitBalanced = (ws: Word[]): Word[][] => {
       const l = join(ws.slice(j, i)).length;
       if (l > MAX_CHARS) continue;
       const last = ws[i - 1].text;
-      const comma = i < ws.length && /,$/.test(last) ? -40 : 0;
-      const leans = i < ws.length && LEANS_FORWARD.has(last.toLowerCase()) ? 60 : 0;
+      // Prefer breaks after a colon, then after a comma; avoid breaking after a word that leans on the next.
+      const comma = i < ws.length && /[:;]$/.test(last) ? -200 : i < ws.length && /,$/.test(last) ? -40 : 0;
+      const leans = i < ws.length && LEANS_FORWARD.has(last.toLowerCase()) ? 150 : 0;
       const cost = best[j] + (l - target) ** 2 + comma + leans + 60;
       if (cost < best[i]) {
         best[i] = cost;
