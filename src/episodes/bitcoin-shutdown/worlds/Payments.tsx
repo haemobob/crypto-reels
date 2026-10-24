@@ -70,7 +70,8 @@ export const PaymentsWorld = ({b}: {b: PayBeats}) => {
     // Hard cut to the ATM: strong sideways track left → right.
     {f: b.atm, pos: [ATM_X - 1.4, 1.5, 3.6], look: [ATM_X - 0.5, 1.45, 0], fov: 40, shift: 60},
     {f: b.bank - 2, pos: [ATM_X + 1.0, 1.5, 3.4], look: [ATM_X + 0.1, 1.45, 0], fov: 40, shift: 60, ease: 'out'},
-    // Cut to the phone: the banking error, slow push through the near-silence.
+    {f: b.bank, pos: [ATM_X + 1.0, 1.5, 3.4], look: [ATM_X + 0.1, 1.45, 0], fov: 40, shift: 60},
+    // Hard cut to the phone (same frame): the banking error, slow push through the near-silence.
     {f: b.bank, pos: [PHONE_X + 0.35, 1.2, 3.3], look: [PHONE_X, 1.18, 0], fov: 40, shift: 60},
     {f: b.question, pos: [PHONE_X + 0.15, 1.16, 3.0], look: [PHONE_X, 1.15, 0], fov: 40, shift: 60, ease: 'linear'},
     // The phone becomes a Bitcoin wallet: slow orbit, then a sudden push on "Bitcoin lo gimana?".

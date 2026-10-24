@@ -71,11 +71,12 @@ const ConnectionLost = ({at, until}: {at: number; until: number}) => {
 /** A snapped link from the cold open stretches into the underline of the GOV.UK headline (object handoff). */
 const HandoffLine = ({from, to}: {from: number; to: number}) => {
   const frame = useCurrentFrame();
-  if (frame < from || frame > to + 16) return null;
+  if (frame < from || frame > to + 3) return null;
   const k = interpolate(frame, [from, to], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.inOut});
-  const o = fadeOut(frame, to + 6, 10);
-  // Start: a short broken segment beside the coin. End: the underline under the page title.
-  const x0 = interpolate(k, [0, 1], [690, 77]), x1 = interpolate(k, [0, 1], [760, 797]), y = interpolate(k, [0, 1], [1080, 1195]);
+  const o = fadeOut(frame, to, 3);
+  // Start: a short broken segment beside the coin. End: exactly on the page's own underline under the title,
+  // which takes over (the page keeps moving, so this line must not linger).
+  const x0 = interpolate(k, [0, 1], [690, 288]), x1 = interpolate(k, [0, 1], [760, 765]), y = interpolate(k, [0, 1], [1080, 1168]);
   const color = k < 0.35 ? colors.negative : colors.electric;
   return (
     <svg width={1080} height={1920} style={{position: 'absolute', inset: 0, opacity: o}}>
@@ -227,7 +228,7 @@ const Scene = () => {
           {from: space.satsend, content: <>KIRIM TRANSAKSI? <Red>PERLU JALUR LAIN</Red></>, size: 66},
         ]}
       />
-      <Tagline frame={frame} from={SAT + 16} to={SAT + 100} color={colors.muted}>SIARAN BLOCKCHAIN 24/7, GRATIS · TELSTAR 18V, 138°BT · ASIA PASIFIK</Tagline>
+      <Tagline frame={frame} from={SAT + 16} to={SAT + 100} color={colors.muted}>SIARAN 24/7, GRATIS · TELSTAR 18V, 138°BT · ASIA PASIFIK</Tagline>
       <Tagline frame={frame} from={space.satsend + 8} to={EXCHANGE - 2} color={colors.muted}>LINK SATELIT INI SATU ARAH: HANYA MENERIMA · BLOCKSTREAM</Tagline>
       <Tagline frame={frame} from={news.jutaan + 8} to={news.offline - 2} color={colors.muted}>PERCOBAAN · NCSC INGGRIS: BELUM ADA LAPORAN PERETASAN BERHASIL</Tagline>
       <Tagline frame={frame} from={news.offline + 8} to={news.notend - 2} color={colors.muted}>SEBAGAI PENCEGAHAN · TERMASUK SITUS PEMERINTAH</Tagline>
@@ -264,7 +265,10 @@ const episode: EpisodeModule = {
   config: config as EpisodeConfig,
   captions: captions as Captions,
   Scene,
-  // The corner logo needs a dark ground: hidden while the reveal is off-white.
-  logoHide: [[cueFrame('reveal') - 2, cueFrame('sat') - 6]],
+  // The corner logo needs a dark ground: hidden while the white GOV.UK page sits under it, and while the reveal is off-white.
+  logoHide: [
+    [cueFrame('uk') + 32, cueFrame('days') + 34],
+    [cueFrame('reveal') - 7, cueFrame('sat') + 1],
+  ],
 };
 export default episode;

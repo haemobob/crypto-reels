@@ -14,7 +14,7 @@ const center = (ctx: Ctx, text: string, x: number, y: number, font: string, colo
   ctx.fillText(text, x, y);
   ctx.textAlign = 'left';
 };
-const errorBadge = (ctx: Ctx, x: number, y: number, r: number, color = colors.negative) => {
+export const errorBadge = (ctx: Ctx, x: number, y: number, r: number, color = colors.negative) => {
   ctx.fillStyle = color;
   ctx.beginPath();
   ctx.arc(x, y, r, 0, Math.PI * 2);

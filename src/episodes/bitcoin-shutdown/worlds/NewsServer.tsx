@@ -88,7 +88,7 @@ export const NewsServerWorld = ({b}: {b: NewsBeats}) => {
       rack: rackTexture(),
       floor: floorTexture(),
       sites: [0, 1, 2, 3, 4, 5].map((i) => siteTexture(i, false)),
-      error: [0, 1, 2, 3, 4, 5].map((i) => siteTexture(i, true)),
+      error: [0, 1, 2, 3, 4, 5].map((i) => siteTexture(i, true, i === HERO_CARD)),
       guardian: clippingTexture(guardian, byline, 'THE GUARDIAN · 22 OKT 2026'),
       ncsc: clippingTexture(ncsc, null, 'NCSC-NL · 21 OKT 2026, DIPERBARUI 23 OKT'),
       bokeh: bokehWall(11, ['#1677FF', '#75C7FF', '#ffffff', '#FF5263']),

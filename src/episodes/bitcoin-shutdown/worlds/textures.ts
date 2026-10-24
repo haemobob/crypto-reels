@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {toTexture} from '../../../three/assets';
+import {errorBadge} from '../../../three/screens';
 import {colors} from '../../../theme/colors';
 import {fonts} from '../../../theme/typography';
 
@@ -90,7 +91,11 @@ export const floorTexture = () => {
 };
 
 /** Generic website mock-ups (no real brands) and their error state. */
-export const siteTexture = (variant: number, error: boolean) => {
+/**
+ * `dark` gives the error page the payment terminal's look (navy, red ✕ centred near the top), so diving into it
+ * and cutting to the terminal's screen is a match cut instead of a white flash.
+ */
+export const siteTexture = (variant: number, error: boolean, dark = false) => {
   const W = 900, H = 600;
   const {c, ctx} = canvasOf(W, H);
   const accent = ['#1677FF', '#0E9F6E', '#7C3AED', '#E11D48', '#0891B2'][variant % 5];
@@ -112,6 +117,33 @@ export const siteTexture = (variant: number, error: boolean) => {
   ctx.fillStyle = '#7a8594';
   ctx.font = `500 18px "${fonts.body}"`;
   ctx.fillText(['website-berita', 'toko-online', 'layanan-publik', 'forum-komunitas', 'portal-sekolah'][variant % 5] + '.contoh', 130, 33);
+  if (error && dark) {
+    ctx.fillStyle = '#0b1220';
+    ctx.fillRect(0, 54, W, H - 54);
+    ctx.fillStyle = '#16233a';
+    ctx.fillRect(0, 0, W, 54);
+    ctx.fillStyle = '#22314d';
+    ctx.beginPath();
+    ctx.roundRect(110, 12, 560, 30, 15);
+    ctx.fill();
+    ctx.fillStyle = '#8fa6c8';
+    ctx.font = `500 18px "${fonts.body}"`;
+    ctx.fillText(['website-berita', 'toko-online', 'layanan-publik', 'forum-komunitas', 'portal-sekolah'][variant % 5] + '.contoh', 130, 33);
+    errorBadge(ctx, W / 2, 192, 68);
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#ffffff';
+    ctx.font = `800 110px "${fonts.heading}"`;
+    ctx.fillText('503', W / 2, 375);
+    ctx.font = `700 34px "${fonts.heading}"`;
+    ctx.fillText('Service Temporarily Unavailable', W / 2, 436);
+    ctx.fillStyle = '#8fa6c8';
+    ctx.font = `500 24px "${fonts.body}"`;
+    ctx.fillText('Situs dimatikan sementara untuk pembaruan keamanan.', W / 2, 486);
+    ctx.textAlign = 'left';
+    ctx.fillStyle = colors.negative;
+    ctx.fillRect(W / 2 - 80, 520, 160, 8);
+    return px(c);
+  }
   if (error) {
     ctx.fillStyle = '#111827';
     ctx.font = `800 150px "${fonts.heading}"`;

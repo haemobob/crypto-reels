@@ -137,7 +137,7 @@ export const RevealWorld = ({b}: {b: RevealBeats}) => {
           <mesh geometry={geo.key} material={mats.key} />
         </group>
       )}
-      <Label3D tex={a.keyLabel} height={0.07} position={[0.62, 0.24, 0.62]} opacity={keyIn * (1 - ramp(frame, b.kepemilikan + 20, b.kepemilikan + 30))} />
+      <Label3D tex={a.keyLabel} height={0.07} position={[0.62, 0.24, 0.62]} opacity={ramp(frame, b.key + 8, b.key + 16) * (1 - ramp(frame, b.kepemilikan + 20, b.kepemilikan + 30))} />
 
       {/* The blockchain: real recent blocks, newest nearest */}
       {a.blocks.map((bk, i) => {

@@ -60,7 +60,7 @@ export const SpaceWorld = ({b}: {b: SpaceBeats}) => {
     return {
       day: toTexture(day), night: toTexture(night), clouds: toTexture(clouds), hero: {texture: toTexture(hero), aspect: hero.width / hero.height},
       node: node.texture, glow: glowTexture(), stars,
-      t: {one: label('SATU ARAH', colors.negative), other: label('JALUR LAIN (MIS. INTERNET)', colors.light), receive: label('TERIMA ✓', colors.positive)},
+      t: {one: label('SATU ARAH', colors.negative), other: label('JALUR LAIN', colors.light), otherSub: label('(MIS. INTERNET)', colors.muted), receive: label('TERIMA ✓', colors.positive)},
     };
   }, 'space');
 
@@ -108,8 +108,9 @@ export const SpaceWorld = ({b}: {b: SpaceBeats}) => {
     // Rooftop receiver: low angle up the beam, then the node's screen.
     {f: toGround, pos: GROUND.clone().add(new THREE.Vector3(1.2, 1.5, 3.2)).toArray() as V3, look: GROUND.clone().add(new THREE.Vector3(0.35, 1.0, 0)).toArray() as V3, fov: 42, shift: -120},
     {f: b.satsend - 6, pos: GROUND.clone().add(new THREE.Vector3(1.6, 1.4, 3.0)).toArray() as V3, look: GROUND.clone().add(new THREE.Vector3(0.4, 0.85, 0)).toArray() as V3, fov: 42, shift: -120},
-    {f: b.satsend + 40, pos: GROUND.clone().add(new THREE.Vector3(1.05, 2.1, 5.2)).toArray() as V3, look: GROUND.clone().add(new THREE.Vector3(1.0, 0.9, -0.6)).toArray() as V3, fov: 44, shift: -120},
-    {f: b.exchange + 2, pos: GROUND.clone().add(new THREE.Vector3(1.1, 2.2, 5.6)).toArray() as V3, look: GROUND.clone().add(new THREE.Vector3(1.0, 0.9, -0.7)).toArray() as V3, fov: 44, shift: -120},
+    // Pull back so the dish, the blocked return, the receiver and the alternative path (with both labels) all fit.
+    {f: b.satsend + 40, pos: GROUND.clone().add(new THREE.Vector3(0.6, 2.1, 7.0)).toArray() as V3, look: GROUND.clone().add(new THREE.Vector3(0.85, 0.7, -0.8)).toArray() as V3, fov: 44, shift: -60},
+    {f: b.exchange + 2, pos: GROUND.clone().add(new THREE.Vector3(0.62, 2.05, 6.6)).toArray() as V3, look: GROUND.clone().add(new THREE.Vector3(0.85, 0.7, -0.8)).toArray() as V3, fov: 44, shift: -60},
   ];
 
   const pulse = (k: number, speed: number) => ((frame * speed + k) % 1 + 1) % 1;
@@ -182,13 +183,14 @@ export const SpaceWorld = ({b}: {b: SpaceBeats}) => {
           <Label3D tex={a.t.receive} height={0.12} position={GROUND.clone().add(new THREE.Vector3(0.75, 0.98, 0.15)).toArray() as V3} opacity={ramp(frame, toGround + 10, toGround + 18) * (1 - ramp(frame, b.satsend + 4, b.satsend + 12))} />
           {/* Trying to send back up: the pulse stops — the satellite link is one-way */}
           {attempt > 0 && !blocked && (
-            <sprite position={DISH.clone().add(new THREE.Vector3(0, 0.3 + 1.3 * attempt, 0)).toArray() as V3} scale={0.3}>
+            <sprite position={DISH.clone().add(new THREE.Vector3(0, 0.3 + 0.8 * attempt, 0)).toArray() as V3} scale={0.3}>
               <spriteMaterial map={a.glow} color={colors.negative} transparent blending={THREE.AdditiveBlending} depthWrite={false} toneMapped={false} />
             </sprite>
           )}
-          <Label3D tex={a.t.one} height={0.13} position={DISH.clone().add(new THREE.Vector3(-0.15, 1.75, 0.2)).toArray() as V3} opacity={blocked ? ramp(frame, b.satsend + 34, b.satsend + 42) : 0} />
+          <Label3D tex={a.t.one} height={0.13} position={DISH.clone().add(new THREE.Vector3(0.5, 1.0, 0.25)).toArray() as V3} opacity={blocked ? ramp(frame, b.satsend + 34, b.satsend + 42) : 0} />
           <primitive object={lines.alt} />
-          <Label3D tex={a.t.other} height={0.11} position={GROUND.clone().add(new THREE.Vector3(2.3, 0.62, -1.9)).toArray() as V3} opacity={altPath} />
+          <Label3D tex={a.t.other} height={0.11} position={GROUND.clone().add(new THREE.Vector3(1.6, 0.8, -0.9)).toArray() as V3} opacity={altPath} />
+          <Label3D tex={a.t.otherSub} height={0.08} position={GROUND.clone().add(new THREE.Vector3(1.6, 0.66, -0.9)).toArray() as V3} opacity={altPath} />
         </group>
       )}
     </World3D>
