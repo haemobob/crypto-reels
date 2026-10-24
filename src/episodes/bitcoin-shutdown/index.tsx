@@ -267,7 +267,7 @@ const episode: EpisodeModule = {
   Scene,
   // The corner logo needs a dark ground: hidden while the white GOV.UK page sits under it, and while the reveal is off-white.
   logoHide: [
-    [cueFrame('uk') + 32, cueFrame('days') + 34],
+    [cueFrame('uk') + 32, cueFrame('days') + 36],
     [cueFrame('reveal') - 7, cueFrame('sat') + 1],
   ],
 };

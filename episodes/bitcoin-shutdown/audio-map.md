@@ -81,4 +81,4 @@ Synthesized (`public/episodes/bitcoin-shutdown/sfx/`): disconnect, crackle, fail
 | Last line | final3 → end | no effects; score cut after the last word |
 
 ## Mix
-The render normalises the whole mix to −14 LUFS integrated, true peak about −1.5 dBTP (`scripts/render.ts`). Measured values of the final file are in `qa-report.md` Part B.
+The render normalises the whole mix to −14 LUFS integrated, true peak about −1.5 dBTP (`scripts/render.ts`). Final file: −14.1 LUFS, −1.3 dBTP, LRA 2.9 LU; silences only where scripted (51.8–52.3 s, 52.9–53.4 s) and after the last word.
