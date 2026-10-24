@@ -88,14 +88,14 @@ export const FanWorld = ({b}: {b: FanBeats}) => {
     // Close on the starting point, then dolly out as the outcomes fan apart.
     {f: b.range - 2, pos: [-0.85, 0.9, 3.4], look: [-0.95, 0.55, 0], fov: 40, shift: -110},
     {f: b.bull - 2, pos: [-0.55, 1.0, 4.4], look: [-0.6, 0.65, 0], fov: 40, shift: -110},
-    {f: b.bull + 28, pos: [0.1, 1.5, 8.3], look: [0.08, 1.15, 0], fov: 40, shift: -180},
-    {f: b.real, pos: [0.15, 1.45, 8.6], look: [0.08, 1.12, 0], fov: 40, shift: -180, ease: 'linear'},
+    {f: b.bull + 28, pos: [0.1, 1.5, 8.3], look: [0.08, 1.15, 0], fov: 40, shift: -158},
+    {f: b.real, pos: [0.15, 1.45, 8.6], look: [0.08, 1.12, 0], fov: 40, shift: -158, ease: 'linear'},
   ];
 
   return (
     <World3D keys={keys} panels={studioPanels.dark} bg="#03070f" fog={['#03070f', 8, 22]} envIntensity={0.5}>
       <ambientLight intensity={0.3} />
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, -4]}>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.25, -4]}>
         <planeGeometry args={[30, 30]} />
         <meshStandardMaterial map={a.floor} roughness={0.6} metalness={0.2} />
       </mesh>
@@ -105,7 +105,7 @@ export const FanWorld = ({b}: {b: FanBeats}) => {
         <meshBasicMaterial color={colors.muted} toneMapped={false} />
       </mesh>
       {[0, 5, 10].map((y, i) => (
-        <Label3D key={y} tex={a.years[i]} height={0.07} position={[X0 + y * X_PER_YEAR, -0.1, 0.05]} opacity={ramp(frame, b.range + 6 + i * 6, b.range + 14 + i * 6)} />
+        <Label3D key={y} tex={a.years[i]} height={0.085} position={[X0 + y * X_PER_YEAR, -0.1, 0.05]} opacity={ramp(frame, b.range + 6 + i * 6, b.range + 14 + i * 6)} />
       ))}
       {[10, 25, 50].map((v, i) => (
         <group key={v}>

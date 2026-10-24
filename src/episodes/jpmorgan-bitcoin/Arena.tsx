@@ -131,9 +131,9 @@ export const ArenaWorld = ({b}: {b: ArenaBeats}) => {
       tile: canvasTexture(512, 360, drawStockTile).texture,
       num: Object.fromEntries(STEPS.map((s) => [s.key, text3D(font, s.label, {size: 0.15, depth: 0.035, bevel: 0.006})])) as Record<string, THREE.BufferGeometry>,
       name: Object.fromEntries(STEPS.map((s) => [s.key, mono(s.name, colors.light, 64)])),
-      vol: {btc: mono('VOLATILITAS 55%', colors.electric), stocks: mono('± 18%', colors.light, 64), gold: mono('± 17%', '#E8B64C', 64)},
+      vol: {btc: mono('± 55%', colors.electric), stocks: mono('± 18%', colors.light, 64), gold: mono('± 17%', '#E8B64C', 64)},
       stack: {n100: mono('100', colors.text), n50: mono('50', colors.negative), n75: mono('75', colors.text), loss: mono('−25%', colors.negative, 80), start: mono('MODAL 100', colors.muted, 56)},
-      ghost: {avg: mono('RATA-RATA 20,9%', colors.light, 64), keep: mono('TERSISA 10%', colors.text, 64)},
+      ghost: {avg: mono('RATA-RATA', colors.light, 56), avgN: mono('20,9%', colors.light, 72), keep: mono('TERSISA', colors.text, 56), keepN: mono('10%', colors.text, 72)},
       dip: mono('−50%', colors.negative, 72),
     };
   }, 'arena');
@@ -168,7 +168,8 @@ export const ArenaWorld = ({b}: {b: ArenaBeats}) => {
 
   // ---- Timeline ----
   const rise = {btc: ramp(frame, b.race - 4, b.race + 12, ease.out), stocks: ramp(frame, b.stocks - 4, b.stocks + 12, ease.out), gold: ramp(frame, b.gold - 4, b.gold + 12, ease.out)};
-  const docIn = ramp(frame, b.now, b.now + 8, ease.out);
+  // The report is there at the cut (it stands between the camera and the coin before it, so it can't fade in early).
+  const docIn = frame >= b.now ? 1 : 0;
   const docOut = ramp(frame, b.race - 18, b.race + 4, ease.inOut);
   const hl = (i: number) => ramp(frame, b.report + 4 + i * 8, b.report + 16 + i * 8, ease.out);
   const coinShow = frame < b.now || frame >= b.race - 10;
@@ -193,13 +194,16 @@ export const ArenaWorld = ({b}: {b: ArenaBeats}) => {
   // Instances for the stack
   const dummy = new THREE.Object3D();
   for (let i = 0; i < 100; i++) {
-    const on = i < stackCount;
-    // Coins leaving fly up and out; coins arriving drop in from above.
-    const leaving = frame >= b.down && i >= 50 && i < 100 && !(i < stackCount);
-    const lift = leaving ? lost * (1.2 + (i - 50) * 0.03) : 0;
-    dummy.position.set(STACK[0] + (leaving ? lost * (0.4 + (i % 7) * 0.08) : 0), STACK[1] + COIN_H * (i + 0.5) + lift, STACK[2]);
+    let x = STACK[0], y = STACK[1] + COIN_H * (i + 0.5), sc = i < stackCount ? 1 : 0.0001;
+    // On "turun" the top half slides off the stack and sinks away; on "naik" coins come back on top.
+    if (frame >= b.down && frame < b.up && i >= 50) {
+      x += 0.55 * lost;
+      y -= COIN_H * 50 * lost * lost;
+      sc = Math.max(0.0001, 1 - lost);
+    }
+    dummy.position.set(x, y, STACK[2]);
     dummy.rotation.set(0, i * 0.37, 0);
-    dummy.scale.setScalar(on || (leaving && lost < 1) ? 1 : 0.0001);
+    dummy.scale.setScalar(sc);
     dummy.updateMatrix();
     stackMesh.setMatrixAt(i, dummy.matrix);
   }
@@ -212,8 +216,8 @@ export const ArenaWorld = ({b}: {b: ArenaBeats}) => {
     {f: 0, pos: [0.42, 1.62, 3.3], look: [0, floatY, 0], fov: 35, shift: -150},
     {f: b.now - 1, pos: [0.3, 1.58, 2.95], look: [0, floatY, 0], fov: 35, shift: -150, ease: 'linear'},
     // Hard cut to the real report, whole; documentary push to its title.
-    {f: b.now, pos: [0.18, 1.1, 7.6], look: [DOC[0], DOC[1], DOC[2]], fov: 35, shift: -150},
-    {f: b.report - 2, pos: [0.1, 1.12, 6.8], look: [DOC[0], DOC[1], DOC[2]], fov: 35, shift: -150, ease: 'linear'},
+    {f: b.now, pos: [0.18, 1.1, 7.6], look: [DOC[0], DOC[1], DOC[2]], fov: 35, shift: -135},
+    {f: b.report - 2, pos: [0.1, 1.12, 7.3], look: [DOC[0], DOC[1], DOC[2]], fov: 35, shift: -135, ease: 'linear'},
     {f: b.report + 26, pos: [-0.16, 1.5, 4.75], look: [-0.16, DOC[1] + 0.43, DOC[2]], fov: 35, shift: -150, ease: 'out'},
     {f: b.race - 18, pos: [-0.16, 1.5, 4.55], look: [-0.16, DOC[1] + 0.43, DOC[2]], fov: 35, shift: -150, ease: 'linear'},
     // Crane up and back as the report drops away and the podium rises.
@@ -338,9 +342,10 @@ export const ArenaWorld = ({b}: {b: ArenaBeats}) => {
         )}
       {tracksIn > 0 && (
         <>
-          <Label3D tex={a.vol.btc} height={0.14} position={[0, 2.3, -4.5]} opacity={ramp(frame, b.vol - 6, b.vol + 6) * (1 - ramp(frame, b.drag - 2, b.drag + 6)) + ramp(frame, b.payoff, b.payoff + 10) * (1 - ramp(frame, b.check, b.check + 10))} />
-          <Label3D tex={a.vol.stocks} height={0.12} position={[STEPS[1].x - 0.42, 1.25, -4.5]} opacity={ramp(frame, b.vol + 8, b.vol + 18) * (1 - ramp(frame, b.drag - 2, b.drag + 6))} />
-          <Label3D tex={a.vol.gold} height={0.12} position={[STEPS[2].x + 0.42, 1.0, -4.5]} opacity={ramp(frame, b.vol + 14, b.vol + 24) * (1 - ramp(frame, b.drag - 2, b.drag + 6))} />
+          {/* Each asset's volatility hangs over its own step, so it reads from the front and from behind */}
+          <Label3D tex={a.vol.btc} height={0.2} position={[0, 1.9, 0]} opacity={ramp(frame, b.vol - 6, b.vol + 6) * (1 - ramp(frame, b.drag - 15, b.drag - 9)) + ramp(frame, b.payoff, b.payoff + 10) * (1 - ramp(frame, b.check, b.check + 10))} />
+          <Label3D tex={a.vol.stocks} height={0.17} position={[STEPS[1].x, 1.33, 0]} opacity={ramp(frame, b.vol + 8, b.vol + 18) * (1 - ramp(frame, b.drag - 15, b.drag - 9))} />
+          <Label3D tex={a.vol.gold} height={0.17} position={[STEPS[2].x, 0.9, 0]} opacity={ramp(frame, b.vol + 14, b.vol + 24) * (1 - ramp(frame, b.drag - 15, b.drag - 9))} />
         </>
       )}
       {/* A coin rides Bitcoin's track */}
@@ -384,8 +389,11 @@ export const ArenaWorld = ({b}: {b: ArenaBeats}) => {
       )}
       {frame >= b.avg && frame < b.range && (
         <>
-          <Label3D tex={a.ghost.avg} height={0.14} position={[1.25, stepH(10) + 1.09 * ghostUp, 0.3]} opacity={ramp(frame, b.avg + 6, b.avg + 14) * (1 - ramp(frame, b.keep, b.keep + 10))} />
-          <Label3D tex={a.ghost.keep} height={0.14} position={[1.25, stepH(10) + 0.16, 0.4]} opacity={ramp(frame, b.keep + 14, b.keep + 22)} />
+          {/* Two short lines, so the labels stay inside the frame on the right */}
+          <Label3D tex={a.ghost.avg} height={0.09} position={[1.15, stepH(10) + 1.09 * ghostUp + 0.13, 0.3]} opacity={ramp(frame, b.avg + 6, b.avg + 14) * (1 - ramp(frame, b.keep, b.keep + 10))} />
+          <Label3D tex={a.ghost.avgN} height={0.16} position={[1.15, stepH(10) + 1.09 * ghostUp, 0.3]} opacity={ramp(frame, b.avg + 6, b.avg + 14) * (1 - ramp(frame, b.keep, b.keep + 10))} />
+          <Label3D tex={a.ghost.keep} height={0.09} position={[1.15, stepH(10) + 0.29, 0.4]} opacity={ramp(frame, b.keep + 14, b.keep + 22)} />
+          <Label3D tex={a.ghost.keepN} height={0.16} position={[1.15, stepH(10) + 0.16, 0.4]} opacity={ramp(frame, b.keep + 14, b.keep + 22)} />
         </>
       )}
     </World3D>

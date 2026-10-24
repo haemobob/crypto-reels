@@ -13,7 +13,7 @@ export const Sound = () => {
       {/* Cold open: the stamp, then it tears off for the report */}
       <Sfx name="cinematic-boom-soft" at={0} volume={0.26} />
       <Sfx name="impact-bass-echo" at={3} volume={0.22} />
-      <Sfx name="paper-wrapper-rip-2" at={c('now') - 1} volume={0.3} />
+      <Sfx name="paper-wrapper-rip-2" at={c('now') - 10} volume={0.3} />
       <Sfx name="paper-movement-2" at={c('now') + 4} volume={0.2} />
       <Sfx name="ui-reveal" at={c('report') + 4} volume={0.14} />
 

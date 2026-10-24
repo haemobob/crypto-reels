@@ -69,9 +69,9 @@ const OpeningTitle = ({until}: {until: number}) => {
 /** The 2017 word, stamped across the coin; it tears off when the forecast arrives. */
 const FraudStamp = ({now}: {now: number}) => {
   const frame = useCurrentFrame();
-  if (frame >= now + 10) return null;
+  if (frame >= now) return null;
   const slam = interpolate(frame, [2, 7], [1.5, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.in});
-  const tear = interpolate(frame, [now, now + 10], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.in});
+  const tear = interpolate(frame, [now - 10, now], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.in});
   return (
     <div style={{position: 'absolute', left: 0, right: 0, top: 1110, display: 'flex', justifyContent: 'center', opacity: fade(frame, 2, 4) * (1 - tear)}}>
       <div style={{transform: `translateY(-50%) rotate(${-12 + 25 * tear}deg) scale(${slam + 0.4 * tear}) translateX(${tear * 260}px)`, padding: '10px 34px', border: `8px solid ${colors.negative}`, borderRadius: 14, color: colors.negative, fontFamily: fonts.heading, fontWeight: 800, fontSize: 112, letterSpacing: '0.06em', background: 'rgba(255,82,99,0.06)', boxShadow: `inset 0 0 0 4px rgba(255,82,99,0.35)`}}>FRAUD</div>
@@ -141,11 +141,12 @@ const Scene = () => {
 
   return (
     <Ground polarity="dark">
-      {(frame < arena.range + 2 || frame >= arena.payoff - 2) && <ArenaWorld b={arena} />}
+      {/* Each next world mounts a few frames early underneath the current one, so its assets are ready at the cut */}
       {frame >= arena.range - 2 && frame < REAL + 2 && <FanWorld b={{range: arena.range, bull: c('bull'), bear: c('bear'), real: REAL}} />}
+      {(frame < arena.range || frame >= arena.payoff - 2) && <ArenaWorld b={arena} />}
+      {frame >= MODEL - 2 && frame < arena.payoff + 2 && <RingWorld b={{model: MODEL, payoff: arena.payoff}} />}
       {light && <AbsoluteFill style={{background: colors.offWhite}} />}
       {light && <RealChart real={REAL} low={LOWC} />}
-      {frame >= MODEL - 2 && frame < arena.payoff + 2 && <RingWorld b={{model: MODEL, payoff: arena.payoff}} />}
 
       <FraudStamp now={arena.now} />
       <OpeningTitle until={arena.report - 2} />
@@ -180,7 +181,7 @@ const Scene = () => {
         cues={[
           {from: MODEL + 2, content: <>JPMORGAN SENDIRI: <Red>BELUM MASUK</Red> PORTOFOLIO</>, size: 64},
           {from: arena.payoff, content: <>RETURN = <Hi>HADIAHNYA</Hi></>, size: 80},
-          {from: arena.ticket, content: <><span style={{fontSize: '0.8em'}}>RETURN = <Hi>HADIAHNYA</Hi></span><br />VOLATILITAS = <Red>HARGA TIKETNYA</Red></>, size: 66},
+          {from: arena.ticket, content: <><span style={{fontSize: '0.8em'}}>RETURN = <Hi>HADIAHNYA</Hi></span><br />VOLATILITAS =<br /><Red>HARGA TIKETNYA</Red></>, size: 66},
           {from: arena.check, content: <>KALAU TURUN SETENGAH, LO <Hi>KUAT NAHAN?</Hi></>, size: 70},
         ]}
       />
@@ -192,7 +193,8 @@ const Scene = () => {
       <Tagline frame={frame} from={LOWC + 10} to={MODEL - 2} color={colors.ink} light>TURUN LEBIH DARI SEPARUH DALAM 9 BULAN</Tagline>
       <Tagline frame={frame} from={MODEL + 10} to={arena.payoff - 2}>“BITCOIN IS NOT INCLUDED AS AN ALLOCATION”</Tagline>
       <TopTag frame={frame} from={arena.race + 6} to={arena.catch - 2}>PROYEKSI JPMORGAN</TopTag>
-      <TopTag frame={frame} from={arena.catch + 10} to={arena.drag - 2}>JALUR = ILUSTRASI</TopTag>
+      <TopTag frame={frame} from={arena.report + 4} to={arena.race - 2}>J.P. MORGAN ASSET MANAGEMENT · LTCMA 2027</TopTag>
+      <TopTag frame={frame} from={arena.catch + 10} to={arena.drag - 2}>JALUR = ILUSTRASI · VOLATILITAS: JPMAM VIA DECRYPT/YAHOO</TopTag>
       <TopTag frame={frame} from={arena.drag + 4} to={arena.avg - 2}>ILUSTRASI</TopTag>
       <TopTag frame={frame} from={arena.range + 4} to={REAL - 2} color={colors.negative}>SIMULASI</TopTag>
       <TopTag frame={frame} from={MODEL + 4} to={arena.payoff - 2}>ILUSTRASI · MODEL 60/40 JPMORGAN</TopTag>
@@ -201,10 +203,10 @@ const Scene = () => {
         light={light}
         text={
           frame < arena.now ? 'JAMIE DIMON, CEO JPMORGAN, SOAL BITCOIN · CNBC, 12 SEP 2017' :
-          frame < arena.race ? 'J.P. MORGAN ASSET MANAGEMENT · LONG-TERM CAPITAL MARKET ASSUMPTIONS 2027 · 19 OKT 2026' :
+          frame < arena.report ? 'J.P. MORGAN ASSET MANAGEMENT · LONG-TERM CAPITAL MARKET ASSUMPTIONS 2027 · 19 OKT 2026' :
+          frame < arena.race ? '' :
           frame < arena.catch ? 'JPMAM LTCMA 2027: BTC 10%, SAHAM AS LARGE CAP 7,5%, EMAS 5,5% PER TAHUN' :
-          frame < arena.drag ? 'VOLATILITAS TAHUNAN: BTC 55%, SAHAM AS ±18%, EMAS ±17% · JPMAM VIA DECRYPT/YAHOO' :
-          frame < arena.avg ? '' :
+          frame < arena.avg + 8 ? '' :
           frame < arena.range ? 'RATA-RATA ARITMETIKA 20,9% VS MAJEMUK 10% · JPMAM VIA DECRYPT, 20 OKT 2026' :
           frame < REAL ? 'SKENARIO BTC JPMAM: −9,7% / 10% / 17% PER TAHUN · VIA COINDESK, 20 OKT 2026' :
           frame < MODEL ? 'BINANCE BTC/USDT MINGGUAN · JAN 2025 – 19 OKT 2026' :
