@@ -10,14 +10,15 @@ import json
 import sys
 
 from fontTools.pens.basePen import decomposeQuadraticSegment
-from fontTools.pens.recordingPen import RecordingPen
+from fontTools.pens.recordingPen import DecomposingRecordingPen
 from fontTools.ttLib import TTFont
 
 CHARS = [chr(c) for c in range(32, 127)] + list('≈×→≠✓✗•–—₿')
 
 
 def outline(glyph_set, name):
-    pen = RecordingPen()
+    # Composite glyphs (e.g. a comma built from other contours) are decomposed into plain outlines.
+    pen = DecomposingRecordingPen(glyph_set)
     glyph_set[name].draw(pen)
     out = []
     cur = (0, 0)

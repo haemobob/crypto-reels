@@ -27,12 +27,21 @@ const expandHeard = (heard: Heard[]): Heard[] =>
     const raw = h.text.replace(/[,;:!?]+$/u, '').replace(/\.$/u, '');
     const ordinal = raw.match(/^ke-?(\d+)$/i);
     const money = raw.match(/^(\$|Rp)?(\d{1,3}(?:[.,]\d{3})+|\d+)$/);
+    // Percentages and decimals (whisper writes "7,5" or "7.5"): "55%" -> "lima puluh lima persen", "7,5" -> "tujuh koma lima".
+    const pct = raw.match(/^(\d+(?:,\d+)?)%$/);
+    const dec = raw.match(/^\d+[.,]\d{1,2}$/);
+    const spell = (n: string) => {
+      const [i, d] = n.split(/[.,]/);
+      return d ? `${terbilang(Number(i))} koma ${[...d].map((c) => terbilang(Number(c))).join(' ')}` : terbilang(Number(i));
+    };
     let spoken: string | undefined;
     const year = raw.match(/^(1[1-9])(\d\d)$/);
     if (/^(Rp|\$)$/i.test(raw)) return [];
     // Years before 2000 are read in pairs: 1996 -> "sembilan belas sembilan puluh enam".
     if (year) spoken = `${terbilang(Number(year[1]))} ${terbilang(Number(year[2]))}`;
     else if (ordinal) spoken = ordinal[1] === '1' ? 'pertama' : `ke${terbilang(Number(ordinal[1]))}`;
+    else if (pct) spoken = `${spell(pct[1])} persen`;
+    else if (dec) spoken = spell(raw);
     else if (money) spoken = `${terbilang(Number(money[2].replace(/[.,]/g, '')))}${money[1] === '$' ? ' dolar' : money[1] ? ' rupiah' : ''}`;
     if (!spoken) return [h];
     const parts = spoken.split(' ');

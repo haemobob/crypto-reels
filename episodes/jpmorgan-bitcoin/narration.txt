@@ -1,0 +1,13 @@
+[[rate:1.12]][[hook]]Bos *JPMorgan* dulu nyebut Bitcoin *penipuan*.
+[[now]]Sekarang, JPMorgan justru memproyeksikan Bitcoin *ngalahin* saham dan emas.
+[[report]]Untuk pertama kalinya, mereka kasih angka:
+[[race]]*sepuluh persen* per tahun. [[stocks]]Saham Amerika, *tujuh koma lima*. [[gold]]Emas, *lima koma lima*.
+[[catch]]Tapi ada angka kedua yang jarang dibahas: *lima puluh lima persen*.
+[[vol]]Itu volatilitasnya, seberapa liar harganya naik turun.
+[[drag]]Dan naik turun itu makan hasil. [[down]]Turun lima puluh persen, [[up]]naik lima puluh persen, [[loss]]lo tetap *rugi* dua puluh lima persen.
+[[avg]]Makanya rata-ratanya dua puluh koma sembilan persen, [[keep]]tapi yang tersisa cuma *sepuluh*.
+[[range]]Skenarionya juga lebar: sepuluh juta, sepuluh tahun, [[bull]]bisa jadi *empat puluh delapan juta*... [[bear]]atau tinggal *tiga koma enam juta*.
+[[real]]Ini bukan teori. Oktober tahun lalu, Bitcoin seratus dua puluh enam ribu dolar. [[low]]Juni kemarin, *lima puluh delapan ribu*.
+[[model]]Bahkan JPMorgan sendiri belum masukin Bitcoin ke model portofolionya.
+[[payoff]]Jadi, return itu hadiahnya. [[ticket]]*Volatilitas* itu harga tiketnya.
+[[check]]Sebelum ikut, tanya diri sendiri: kalau turun setengah, lo *kuat nahan*?

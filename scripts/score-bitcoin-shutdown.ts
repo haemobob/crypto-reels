@@ -10,49 +10,16 @@
  * Every tone carries harmonics up to a few hundred hertz: phone speakers can't reproduce a bare 55 Hz sine,
  * but they do reproduce its overtones, and the ear hears the low note from them.
  */
-import {mkdirSync, readFileSync, rmSync} from 'node:fs';
+import {mkdirSync} from 'node:fs';
 import path from 'node:path';
 import {ffmpegBin, p, run} from './lib';
+import {createScore, fades, harm, n, noise, SR, swell, synth} from './score-lib';
 
-const id = 'bitcoin-shutdown';
-const captions = JSON.parse(readFileSync(p('episodes', id, 'captions.json'), 'utf8')) as {durationSec: number; cues: Record<string, number>; words: Array<{text: string; start: number; end: number}>};
-const c = captions.cues;
-const lastWordEnd = captions.words[captions.words.length - 1].end;
-const outDir = p('public', 'episodes', id);
+const score = createScore('bitcoin-shutdown');
+const c = score.cues;
+const {lastWordEnd, outDir, layer} = score;
 const sfxDir = path.join(outDir, 'sfx');
-const tmp = p('episodes', id, 'voice-cache', 'score-tmp');
-rmSync(tmp, {recursive: true, force: true});
-mkdirSync(tmp, {recursive: true});
 mkdirSync(sfxDir, {recursive: true});
-
-const SR = 48000;
-/** Renders an aevalsrc expression (stereo "left|right") to a WAV, with optional extra filters. */
-const synth = (file: string, seconds: number, expr: string, filters = '') =>
-  run(ffmpegBin(), ['-v', 'error', '-y', '-f', 'lavfi', '-i', `aevalsrc='${expr}':s=${SR}:d=${seconds.toFixed(3)}`, ...(filters ? ['-af', filters] : []), '-c:a', 'pcm_s16le', file]);
-const noise = (file: string, seconds: number, color: string, filters: string) =>
-  run(ffmpegBin(), ['-v', 'error', '-y', '-f', 'lavfi', '-i', `anoisesrc=c=${color}:r=${SR}:d=${seconds.toFixed(3)}:a=0.5`, '-af', `${filters},aformat=channel_layouts=stereo`, '-c:a', 'pcm_s16le', file]);
-const fades = (dur: number, fin: number, fout: number) => `afade=t=in:d=${fin.toFixed(3)},afade=t=out:st=${Math.max(0, dur - fout).toFixed(3)}:d=${fout.toFixed(3)}`;
-const n = (x: number) => x.toFixed(4);
-/** A harmonic tone: amps[k] is the level of harmonic k+1 of f. */
-const harm = (f: number, amps: number[]) => amps.map((a, k) => `${a}*sin(2*PI*${n(f * (k + 1))}*t)`).join('+');
-/** A slow crescendo over d seconds, from `floor` up to 1. */
-const swell = (d: number, floor: number) => `(${floor}+${1 - floor}*t/${n(d)})`;
-
-// ---- Score layers ----
-// Each layer is measured and set to a target loudness (LUFS, before ducking), so the balance is explicit.
-type Layer = {at: number; file: string; gain: number};
-const layers: Layer[] = [];
-const loudness = (file: string) => {
-  const report = run(ffmpegBin(), ['-hide_banner', '-nostats', '-i', file, '-af', 'ebur128', '-f', 'null', '-'], {quiet: true});
-  const all = [...report.matchAll(/I:\s+(-?[\d.]+) LUFS/g)];
-  return Number(all[all.length - 1][1]);
-};
-const atLufs = (file: string, lufs: number) => 10 ** ((lufs - loudness(file)) / 20);
-const layer = (name: string, at: number, dur: number, expr: string, lufs: number, filters = '', fin = Math.min(1.5, dur / 4), fout = Math.min(1.5, dur / 4)) => {
-  const f = path.join(tmp, `${name}.wav`);
-  synth(f, dur, expr, [filters, fades(dur, fin, fout)].filter(Boolean).join(','));
-  layers.push({at, file: f, gain: atLufs(f, lufs)});
-};
 
 // 1. Threat drone, opening → the question: A1 with overtones, a beating detuned partner, slowly breathing.
 const droneDur = c.question - 0.15;
@@ -131,32 +98,20 @@ const endAt = lastWordEnd + 0.08;
 }
 // Air under the opening (filtered noise), the "dark environment".
 {
-  const f = path.join(tmp, 'air.wav');
+  const f = path.join(score.tmp, 'air.wav');
   noise(f, c.question, 'pink', `bandpass=f=320:width_type=o:w=1.2,${fades(c.question, 2, 1)}`);
-  layers.push({at: 0, file: f, gain: atLufs(f, -42)});
+  score.addFile(f, 0, -42);
 }
 
 // Mix, duck under the narration (sidechain), trim at the cut to silence, encode.
-const SCORE_GAIN = 1.0;
-const inputs = layers.flatMap((l) => ['-i', l.file]);
-const voiceIdx = layers.length;
-const chains = layers.map((l, i) => `[${i}:a]volume=${l.gain},adelay=${Math.round(l.at * 1000)}|${Math.round(l.at * 1000)}[l${i}]`).join(';');
-const mix = [
-  chains,
-  `${layers.map((_, i) => `[l${i}]`).join('')}amix=inputs=${layers.length}:normalize=0,volume=${SCORE_GAIN}[m]`,
-  `[${voiceIdx}:a]aformat=sample_rates=${SR}:channel_layouts=stereo[v]`,
-  `[m][v]sidechaincompress=threshold=0.025:ratio=6:attack=30:release=450:knee=4[d]`,
-  `[d]alimiter=limit=0.7,atrim=0:${endAt.toFixed(3)},afade=t=out:st=${(endAt - 0.04).toFixed(3)}:d=0.04[out]`,
-].join(';');
-const scoreFile = path.join(outDir, 'score.mp3');
-run(ffmpegBin(), ['-v', 'error', '-y', ...inputs, '-i', path.join(outDir, 'narration.wav'), '-filter_complex', mix, '-map', '[out]', '-ar', String(SR), '-c:a', 'libmp3lame', '-b:a', '320k', scoreFile]);
+score.write(endAt);
 
 // ---- Sound effects ----
 const sfx = (name: string, seconds: number, expr: string, filters = '') => synth(path.join(sfxDir, `${name}.wav`), seconds, expr, filters);
 // Network disconnect: a falling blip (900 Hz decaying towards 150 Hz).
 sfx('disconnect', 0.45, `0.6*sin(2*PI*(900/4)*(1-exp(-4*t)))*exp(-t*6)|0.6*sin(2*PI*(905/4)*(1-exp(-4*t)))*exp(-t*6)`);
 // Electrical crackle: gated noise bursts.
-run(ffmpegBin(), ['-v', 'error', '-y', '-f', 'lavfi', '-i', `anoisesrc=c=white:r=${SR}:d=0.7:a=0.8`, '-af', `volume='if(lt(mod(t,0.07),0.018),1,0.05)':eval=frame,highpass=f=1500,afade=t=out:st=0.3:d=0.4,aformat=channel_layouts=stereo`, '-c:a', 'pcm_s16le', path.join(sfxDir, 'crackle.wav')]);
+run(ffmpegBin(), ['-v', 'error', '-y', '-f', 'lavfi', '-i', `anoisesrc=c=white:r=${SR}:d=0.7:a=0.8:seed=11`, '-af', `volume='if(lt(mod(t,0.07),0.018),1,0.05)':eval=frame,highpass=f=1500,afade=t=out:st=0.3:d=0.4,aformat=channel_layouts=stereo`, '-c:a', 'pcm_s16le', path.join(sfxDir, 'crackle.wav')]);
 // Failed payment: two short low square-ish beeps.
 sfx('fail-beep', 0.6, `0.5*sgn(sin(2*PI*440*t))*lt(t,0.14)+0.5*sgn(sin(2*PI*330*t))*gte(t,0.22)*lt(t,0.42)|0.5*sgn(sin(2*PI*440*t))*lt(t,0.14)+0.5*sgn(sin(2*PI*330*t))*gte(t,0.22)*lt(t,0.42)`, 'lowpass=f=2400,volume=0.6');
 // ATM notification: three descending soft tones.
@@ -166,4 +121,4 @@ sfx('atm-chime', 0.9, `${chime}|${chime}`, 'afade=t=out:st=0.8:d=0.1');
 sfx('app-error', 0.3, `0.5*sin(2*PI*180*t)*sin(2*PI*30*t)*exp(-t*8)|0.5*sin(2*PI*181*t)*sin(2*PI*30*t)*exp(-t*8)`);
 // Transaction hop: a precise digital ping.
 sfx('hop', 0.35, `0.5*sin(2*PI*1760*t)*exp(-t*18)+0.25*sin(2*PI*2640*t)*exp(-t*24)|0.5*sin(2*PI*1762*t)*exp(-t*18)+0.25*sin(2*PI*2643*t)*exp(-t*24)`);
-console.log(`✔ score.mp3 (${layers.length} layers, ducked under the voice, cut at ${endAt.toFixed(2)} s) and sfx/ in ${path.relative(p(), outDir)}`);
+console.log(`✔ score.mp3 (${score.layers.length} layers, ducked under the voice, cut at ${endAt.toFixed(2)} s) and sfx/ in ${path.relative(p(), outDir)}`);
