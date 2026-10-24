@@ -29,7 +29,7 @@ User's pack `public/sfx/newest/` (user-confirmed free to use, 21 Oct 2026).
 |---|---|---|
 | First frame | 0 | cinematic-boom-soft (0.26) |
 | FRAUD stamp slams | 3 | impact-bass-echo (0.22) |
-| Stamp tears off | now − 1 | paper-wrapper-rip-2 (0.30) |
+| Stamp tears off | now − 10 | paper-wrapper-rip-2 (0.30) |
 | The report appears | now + 4 | paper-movement-2 (0.20) |
 | Highlights on the title | report + 4 | ui-reveal (0.14) |
 | Report drops, podium comes up | race − 12 | whoosh-deep-short (0.18) |
