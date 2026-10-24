@@ -104,8 +104,9 @@ export const FanWorld = ({b}: {b: FanBeats}) => {
         <boxGeometry args={[1, 0.012, 0.012]} />
         <meshBasicMaterial color={colors.muted} toneMapped={false} />
       </mesh>
+      {/* Year marks arrive once the camera has pulled back, so they stay clear of the source line */}
       {[0, 5, 10].map((y, i) => (
-        <Label3D key={y} tex={a.years[i]} height={0.085} position={[X0 + y * X_PER_YEAR, -0.1, 0.05]} opacity={ramp(frame, b.range + 6 + i * 6, b.range + 14 + i * 6)} />
+        <Label3D key={y} tex={a.years[i]} height={0.085} position={[X0 + y * X_PER_YEAR, -0.1, 0.05]} opacity={ramp(frame, b.bull + 22 + i * 3, b.bull + 30 + i * 3)} />
       ))}
       {[10, 25, 50].map((v, i) => (
         <group key={v}>
