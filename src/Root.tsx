@@ -10,13 +10,14 @@ loadBrandFonts();
 export const RemotionRoot = () => (
   <>
     {Object.entries(episodes).map(([id, ep]) => {
-      const seconds = ep.captions.durationSec + (ep.config.tailSeconds ?? 0.6) + (ep.config.outro === false ? 0 : brand.outroSeconds);
+      // Same rounding as CryptoReel (episode until outroFrom, then the outro), so the last frame is never empty.
+      const frames = Math.round((ep.captions.durationSec + (ep.config.tailSeconds ?? 0.6)) * VIDEO.fps) + (ep.config.outro === false ? 0 : Math.round(brand.outroSeconds * VIDEO.fps));
       return (
         <Composition
           key={id}
           id={id}
           component={CryptoReel}
-          durationInFrames={Math.ceil(seconds * VIDEO.fps)}
+          durationInFrames={frames}
           fps={VIDEO.fps}
           width={VIDEO.width}
           height={VIDEO.height}

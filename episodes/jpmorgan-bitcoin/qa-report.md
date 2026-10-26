@@ -30,19 +30,21 @@ Visual-quality audit result: PASS
 
 ## Part B — Visual-quality audit
 
-Checked on stills across every beat during the build, then on the **encoded MP4**. Render 1: one frame per second (65 frames, `output/jpmorgan-bitcoin-review/sheet*.jpg`), about 100 exact frames before/mid/after every boundary in `transition-map.md` (`tr*.jpg`, extracted by frame index), and full-resolution frames at every problem spot. Eight problems found there were fixed (below), re-checked on stills, and checked again on the encoded render 2 (new 1 fps sheets `r2-sheet*.jpg` and 65 transition frames `r2-tr.jpg`). Render 2 showed one leftover (the fan's year marks on the source line, 36.8–39.2 s); the source was corrected and frames 1050–1190, rendered from the corrected source, were spliced into the MP4 (video re-encoded at CRF 16; PSNR 49–58 dB, mean 55.6 dB against render 2 on every frame outside the splice and 52–55 dB at the splice edges, so no colour step; audio stream copied untouched). The spliced frames were checked (`sp-check.jpg`).
+**Render 3 (26 Oct 2026, the user's ElevenLabs take, 68.4 s):** the scenes, score and effects re-timed to the take's cues; checked on stills, then on the encoded MP4: a new 1 fps sheet (72 frames, `r3-sheet*.jpg`) and 68 exact frames before/mid/after every boundary (`r3-tr.jpg`). One fault found: a single black frame after the outro (composition length rounded up while the outro start rounds to nearest). The frame was removed (video re-encoded at CRF 16 to 2,131 frames; ≥ 48 dB PSNR against render 3 on every frame; audio stream copied) and `src/Root.tsx` now uses the same rounding. One change for the take: its held beat before "lima puluh lima persen" would have shown 55% 2.5 s early, so the 55% (and its bass drop and the volatility top tag) now arrive on the spoken word.
+
+Earlier, on the Orus working voice: checked on stills across every beat during the build, then on the **encoded MP4**. Render 1: one frame per second (65 frames, `output/jpmorgan-bitcoin-review/sheet*.jpg`), about 100 exact frames before/mid/after every boundary in `transition-map.md` (`tr*.jpg`, extracted by frame index), and full-resolution frames at every problem spot. Eight problems found there were fixed (below), re-checked on stills, and checked again on the encoded render 2 (new 1 fps sheets `r2-sheet*.jpg` and 65 transition frames `r2-tr.jpg`). Render 2 showed one leftover (the fan's year marks on the source line, 36.8–39.2 s); the source was corrected and frames 1050–1190, rendered from the corrected source, were spliced into the MP4 (video re-encoded at CRF 16; PSNR 49–58 dB, mean 55.6 dB against render 2 on every frame outside the splice and 52–55 dB at the splice edges, so no colour step; audio stream copied untouched). The spliced frames were checked (`sp-check.jpg`).
 
 ### Layout
 - [x] Headlines keep their zone (470–700 px); 3D subjects framed into the stage (y ≈ 720–1450) with view offsets; the report stays between the headline and the source line while it is shown whole.
 - [x] Source lines sit only on clear ground. Where the 3D fills the bottom of the frame (the report push, the crane over the podium, the rides from behind), the credit moves to the top tag (J.P. MORGAN ASSET MANAGEMENT · LTCMA 2027; JALUR = ILUSTRASI · VOLATILITAS: JPMAM VIA DECRYPT/YAHOO) and the source line is off.
 - [x] 3D labels never cross a headline or tagline: the volatility figures hang over each step below the tagline; the ghost-step labels are two short lines inside the right safe edge; the vol labels are gone before the camera flies to the stack; the lost coins slide sideways and sink instead of rising through the captions.
 - [x] Nothing darkens or crops a graphic to make room for text (taglines are small pills).
-- [x] Source image shown whole first: the LTCMA cover whole and readable (3.0–7.7 s) before the push to its title.
-- [x] Opening title centred, rising in, no date/press tag; corner logo from frame 0 (21 Oct decision), hidden on the off-white chart chapter (42.5–50.1 s).
+- [x] Source image shown whole first: the LTCMA cover whole and readable (3.7–8.6 s) before the push to its title.
+- [x] Opening title centred, rising in, no date/press tag; corner logo from frame 0 (21 Oct decision), hidden on the off-white chart chapter (46.6–54.4 s).
 
 ### Opening
-- [x] Statement (0 s: DULU "PENIPUAN". SEKARANG JUARA?) with the credited 2017 quote → real anchor (the LTCMA cover, 3.0 s) → designed podium with the report's numbers (10.2 s) → the abstract rides (15.9 s). The coin at 0–3 s is a realistic render of the public-domain ₿ (asset level 4) carrying the real, credited quote; the real document is on screen at 3.0 s.
-- [x] Opening motion restrained: a slow push on the coin, the stamp, a hard cut, a documentary push on the report. The hero move waits for 15.9 s.
+- [x] Statement (0 s: DULU "PENIPUAN". SEKARANG JUARA?) with the credited 2017 quote → real anchor (the LTCMA cover, 3.7 s) → designed podium with the report's numbers (11.4 s) → the abstract rides (17.4 s). The coin at 0–3 s is a realistic render of the public-domain ₿ (asset level 4) carrying the real, credited quote; the real document is on screen at 3.7 s.
+- [x] Opening motion restrained: a slow push on the coin, the stamp, a hard cut, a documentary push on the report. The hero move waits for 17.4 s.
 - [x] Real assets logged in `sources.md` with origin, date and basis; the cover is unaltered and credited; no publisher masthead imitated; the J.P. Morgan wordmark appears only on the report's own cover.
 
 ### Demonstration and sound-off
@@ -55,18 +57,18 @@ Checked on stills across every beat during the build, then on the **encoded MP4*
 - [x] All claims sourced (S1–S9), event and checked dates recorded; conditional claims visibly conditional; no CTA beyond the 2 s brand outro; no buy/sell advice.
 
 ### Runtime and implementation
-- [x] Duration from the audio (61.9 s narration) and the render (64.5 s file: 0.6 s hold + 2 s outro); inside the episode window (45–62 s of narration).
-- [x] ffprobe: 1080×1920, 30/1 fps, H.264 High (yuvj420p) + AAC 48 kHz stereo, 64.5 s, 1,934 frames; −14.1 LUFS integrated, −1.3 dBTP, LRA 1.8 LU.
-- [x] No missing assets; each next 3D world mounts two frames early underneath the current one, so every cut lands on its cue with the assets loaded (fan at 35.0 s, ring at 50.1 s, arena at 54.1 s); no empty frame at any cut.
-- [x] blackdetect: only the dark outro and two frames at 39.9 s that are the headline handover on the dark fan (lines and labels visible, checked); freezedetect: the deliberate holds on the finished real chart (44.2–47.2 s, 47.8–49.9 s; captions still change) and the static outro; silencedetect: only after the last word.
+- [x] Duration from the audio (68.4 s narration, ElevenLabs take) and the render (71.0 s file: 0.6 s hold + 2 s outro); inside the episode window (45–70 s of narration, widened from 62 s for the take).
+- [x] ffprobe: 1080×1920, 30/1 fps, H.264 High (yuvj420p) + AAC 48 kHz stereo, 71.0 s, 2,131 frames; −14.2 LUFS integrated, −1.1 dBTP, LRA 3.2 LU.
+- [x] No missing assets; each next 3D world mounts two frames early underneath the current one, so every cut lands on its cue with the assets loaded (fan at 37.5 s, ring at 54.4 s, arena at 58.3 s); no empty frame at any cut.
+- [x] blackdetect: only the dark outro and two frames at 43.3 s that are the headline handover on the dark fan (lines and labels visible, checked); freezedetect: the deliberate holds on the finished real chart (47.9–51.7 s, 52.3–54.1 s; captions still change) and the static outro; silencedetect: only after the last word (68.4 s).
 - [x] Numbers and labels verified against S1–S9 and the arithmetic in `script.md` (10 / 7,5 / 5,5; 55 / ±18 / ±17; 20,9 → 10; 48,1 / 25,9 / 3,6 jt; $126,2K / $57,8K / −54%; 60/40).
 
 ### Visual and sound inspection
 - [x] Encoded frames at every beat and every transition (before/mid/after); first 3 s and last 2 s checked frame by frame.
 - [ ] Motion watched in a full render: **NOT REVIEWED** (frames only).
-- [x] Sound measured, not heard: score 9–20 LU under the narration in every section (sidechain-ducked); cut to silence after the last word; effects placed on the on-screen event frames. **Not listened to**: Claude can't hear audio.
+- [x] Sound measured, not heard: score 10–22 LU under the narration in every section on the ElevenLabs take (sidechain-ducked); cut to silence after the last word; effects placed on the on-screen event frames. **Not listened to**: Claude can't hear audio.
 - [x] One dominant visual per beat; camera moves motivated (push on the report, crane over the podium + reverse-angle cut as the hero move, flights between objects in one arena, dolly-out on the fan, callback to the reverse angle).
-- [x] Polarity: one dark arena → off-white only for the real-data proof (42.5–50.1 s) → dark again for the model and the payoff.
+- [x] Polarity: one dark arena → off-white only for the real-data proof (46.6–54.4 s) → dark again for the model and the payoff.
 - [x] Brand: Inter Tight / Inter / JetBrains Mono, brand blues with red/green only for meaning, official logo bug and outro; all assets licensed or own work (`sources.md`).
 
 ## Scores (1–5; any score below 4 → targeted revision and re-check)
@@ -86,12 +88,12 @@ Checked on stills across every beat during the build, then on the **encoded MP4*
 9. Render 2, 36.8–39.2 s: the fan's year marks sat on the source line while the camera was close; they now appear once it has pulled back (spliced, see above).
 
 ## Known limitations
-- Motion not watched and audio not heard (frames and measurements only). Needs one full watch with sound, especially for the Orus voice on "JPMorgan", "return" and "volatilitas", and the synthesized score's character.
-- The working voice is Google Orus; the user's ElevenLabs voice can replace it from `elevenlabs-script.md` (re-aligns automatically; a slower take may need the 45–62 s window widened and a re-render).
+- Motion not watched and audio not heard (frames and measurements only). Needs one full watch with sound, especially: "Emas, lima koma lima" (whisper heard "Mas", so the first syllable may be clipped in the take), whether "lo kuat nahan?" lands as a question, and the synthesized score's character.
+- The voice is the user's ElevenLabs take (Ongky Himawan, 68.4 s, levelled and compressed, no edits). At 71 s the Reel is longer than the 60 s target of most single-idea Reels; the script was not cut for the take.
 - 55% volatility, 20.9% arithmetic return and the bear/bull scenarios come from press coverage of the report (Decrypt, Yahoo Finance, CoinDesk); the PDF itself is access-protected. Each is credited to its outlet on screen; the bear/bull rates rest on CoinDesk alone.
 - The 0–3 s coin is a render, not a photo; Dimon appears only as a credited quote (no portrait, by choice).
 - Hook variant A (consequence, the Rp10 juta fan) was not built; the released opening is variant B.
 - The arena floor reads light grey at grazing angles from behind the podium (environment reflection). Kept: it separates the dark tracks and posts.
 
 ## Final verified artifact path
-`output/jpmorgan-bitcoin.mp4` (render 2 with frames 1050–1190 spliced from the corrected source), 64.5 s, −14.1 LUFS.
+`output/jpmorgan-bitcoin.mp4` (render 3 on the ElevenLabs take, trailing black frame removed), 71.0 s, 2,131 frames, −14.2 LUFS.
