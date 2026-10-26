@@ -53,6 +53,12 @@ const SourceLine = ({text, light = false}: {text: string; light?: boolean}) => (
   <div style={{position: 'absolute', left: 90, right: 90, top: SOURCE_Y, textAlign: 'center', fontFamily: fonts.mono, fontWeight: 500, fontSize: 18, letterSpacing: '0.03em', color: light ? '#5A6B85' : '#7F93B3'}}>{text}</div>
 );
 
+/** Part of a headline that arrives on its spoken word; its slot is kept, so the line doesn't jump. */
+const SpokenAt = ({at, children}: {at: number; children: ReactNode}) => {
+  const frame = useCurrentFrame();
+  return <span style={{opacity: fade(frame, at, 6)}}>{children}</span>;
+};
+
 /** Centred opening title, rising in: the contradiction in five words. */
 const OpeningTitle = ({until}: {until: number}) => {
   const frame = useCurrentFrame();
@@ -129,7 +135,7 @@ const RealChart = ({real, low}: {real: number; low: number}) => {
 
 const Scene = () => {
   const frame = useCurrentFrame();
-  const {cue, narrationEnd} = useCues();
+  const {cue, word, narrationEnd} = useCues();
   const c = (k: string) => cue(k);
   const arena = {
     now: c('now'), report: c('report'), race: c('race'), stocks: c('stocks'), gold: c('gold'), catch: c('catch'), vol: c('vol'),
@@ -137,6 +143,8 @@ const Scene = () => {
     payoff: c('payoff'), ticket: c('ticket'), check: c('check'), end: narrationEnd,
   };
   const REAL = c('real'), LOWC = c('low'), MODEL = c('model');
+  // "…jarang dibahas: lima puluh lima persen": the 55 is shown when it is said.
+  const FIFTY = word('lima', 3);
   const light = frame >= REAL && frame < MODEL;
 
   return (
@@ -156,7 +164,7 @@ const Scene = () => {
         cues={[
           {from: arena.report, content: <>PERTAMA KALI ADA <Hi>BITCOIN</Hi></>, size: 74},
           {from: arena.race, content: <>PROYEKSI <Hi>RETURN</Hi> PER TAHUN</>, size: 68},
-          {from: arena.catch, content: <>ANGKA KEDUA: <Red>55%</Red></>, size: 92},
+          {from: arena.catch, content: <>ANGKA KEDUA: <SpokenAt at={FIFTY}><Red>55%</Red></SpokenAt></>, size: 92},
           {from: arena.vol, content: <><Red>55%</Red> = VOLATILITAS</>, size: 84},
           {from: arena.drag, content: <>NAIK-TURUN <Red>MAKAN HASIL</Red></>, size: 76},
           {from: arena.loss, content: <>−50% LALU +50% = <Red>−25%</Red></>, size: 72},
@@ -194,7 +202,7 @@ const Scene = () => {
       <Tagline frame={frame} from={MODEL + 10} to={arena.payoff - 2}>“BITCOIN IS NOT INCLUDED AS AN ALLOCATION”</Tagline>
       <TopTag frame={frame} from={arena.race + 6} to={arena.catch - 2}>PROYEKSI JPMORGAN</TopTag>
       <TopTag frame={frame} from={arena.report + 4} to={arena.race - 2}>J.P. MORGAN ASSET MANAGEMENT · LTCMA 2027</TopTag>
-      <TopTag frame={frame} from={arena.catch + 10} to={arena.drag - 2}>JALUR = ILUSTRASI · VOLATILITAS: JPMAM VIA DECRYPT/YAHOO</TopTag>
+      <TopTag frame={frame} from={FIFTY + 4} to={arena.drag - 2}>JALUR = ILUSTRASI · VOLATILITAS: JPMAM VIA DECRYPT/YAHOO</TopTag>
       <TopTag frame={frame} from={arena.drag + 4} to={arena.avg - 2}>ILUSTRASI</TopTag>
       <TopTag frame={frame} from={arena.range + 4} to={REAL - 2} color={colors.negative}>SIMULASI</TopTag>
       <TopTag frame={frame} from={MODEL + 4} to={arena.payoff - 2}>ILUSTRASI · MODEL 60/40 JPMORGAN</TopTag>

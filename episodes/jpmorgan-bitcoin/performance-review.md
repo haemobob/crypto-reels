@@ -2,7 +2,7 @@
 
 Episode: jpmorgan-bitcoin — "JPMorgan: Bitcoin 10% per tahun, tapi 55%"
 Published (WIB): NOT YET POSTED (the user controls release)
-Length (s): 64.5 (61.9 s narration + 0.6 s hold + 2 s outro)
+Length (s): 71.1 (68.4 s narration, ElevenLabs take + 0.6 s hold + 2 s outro)
 Topic and audience: JPMorgan's first Bitcoin return forecast (10%/yr vs stocks 7.5%, gold 5.5%) and the 55% volatility behind it; Indonesian crypto buyers and stock/gold investors weighing Bitcoin
 Hook variant / first 8s transcript: A/B variants in hooks.md; released cut (B, authority + contradiction): "Bos JPMorgan dulu nyebut Bitcoin penipuan. Sekarang, JPMorgan justru memproyeksikan Bitcoin ngalahin saham dan emas."
 First frame visual: centred headline DULU "PENIPUAN". / SEKARANG JUARA? over a 3D Bitcoin coin, red FRAUD stamp slamming across it

@@ -1,6 +1,6 @@
 # Script — JPMorgan: Bitcoin 10% per tahun, tapi 55%
 
-Approved wording is `narration.txt` (cues and highlights); delivery tags for ElevenLabs v3 are in `elevenlabs-script.md`. Working voice: Google Chirp 3 HD Orus at rate 1.12, 61.9 s (`audio-map.md`). 151 words, 151 aligned.
+Approved wording is `narration.txt` (cues and highlights); delivery tags for ElevenLabs v3 are in `elevenlabs-script.md`. Voice: the user's ElevenLabs take, "Ongky Himawan – Calm, Deep" (Eleven v3), one continuous take, 68.4 s (`audio-map.md`); first built on the Google Orus working voice (61.9 s). 151 words, 151 aligned.
 
 Bos JPMorgan dulu nyebut Bitcoin penipuan.
 Sekarang, JPMorgan justru memproyeksikan Bitcoin ngalahin saham dan emas.

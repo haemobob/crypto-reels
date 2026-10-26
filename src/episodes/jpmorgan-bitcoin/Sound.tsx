@@ -4,7 +4,7 @@ import {useCues} from '../../lib/cues';
 
 /** Score (synthesized, ducked under the voice) and effects placed on on-screen events (absolute frames). */
 export const Sound = () => {
-  const {cue} = useCues();
+  const {cue, word} = useCues();
   const c = (k: string) => cue(k);
   return (
     <>
@@ -24,7 +24,7 @@ export const Sound = () => {
       ))}
 
       {/* The second number and the ride */}
-      <Sfx name="bass-drop-descend" at={c('catch')} volume={0.2} />
+      <Sfx name="bass-drop-descend" at={word('lima', 3)} volume={0.2} />
       <Sfx name="deep-whoosh" at={c('catch') + 6} volume={0.2} />
       <Sfx name="wheel-spin" at={c('vol')} volume={0.08} frames={120} />
 

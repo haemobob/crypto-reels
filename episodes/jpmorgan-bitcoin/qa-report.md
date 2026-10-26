@@ -5,14 +5,14 @@ Both audits are done **before final rendering** (the user renders the final MP4)
 Retention audit result: PASS
 Visual-quality audit result: PASS
 
-## Part A — Retention audit (script on the working Orus voice, 61.9 s; times from captions.json)
+## Part A — Retention audit (script on the user's ElevenLabs take, Ongky Himawan, 68.4 s; times from captions.json. First passed on the Orus working voice at 61.9 s)
 
 ### Script audit
-- [x] 1. **Hook:** 0.4 s "Bos JPMorgan dulu nyebut Bitcoin penipuan." → 3.0 s "Sekarang, JPMorgan justru memproyeksikan Bitcoin ngalahin saham dan emas." The stake (is Bitcoin now the better bet than stocks and gold?) is clear by 3 s.
-- [x] 2. **Evidence by 5 s:** the real 2027 LTCMA cover (J.P. Morgan Asset Management, 19 Oct 2026) from 3.0 s; Dimon's 2017 quote credited from frame 0.
-- [x] 3. **First payoff by 8–12 s:** 10.2 s "sepuluh persen per tahun", 11.8 s "Saham Amerika, tujuh koma lima", 14.0 s "Emas, lima koma lima".
-- [x] 4. **Reason to continue:** numbers (10.2 s) → "angka kedua yang jarang dibahas: lima puluh lima persen" (15.9 s) → what it means (18.7 s) → why it eats returns (23.1 s) → 20.9% vs 10% (30.3 s) → the rupiah range (35.0 s) → real proof (42.5 s) → JPMorgan's own caution (50.1 s) → the check (54.0–61.9 s).
-- [x] 5. **Concrete nouns:** podium, rollercoaster track, a stack of 100 coins halving, Rp10 juta, a price chart; "volatilitas" is defined in plain words at 18.7 s.
+- [x] 1. **Hook:** 0.1 s "Bos JPMorgan dulu nyebut Bitcoin penipuan." → 3.7 s "Sekarang, JPMorgan justru memproyeksikan Bitcoin ngalahin saham dan emas." The stake (is Bitcoin now the better bet than stocks and gold?) is clear by 3.7 s.
+- [x] 2. **Evidence by 5 s:** the real 2027 LTCMA cover (J.P. Morgan Asset Management, 19 Oct 2026) from 3.7 s; Dimon's 2017 quote credited from frame 0.
+- [x] 3. **First payoff by 8–12 s:** 11.4 s "sepuluh persen per tahun", 13.1 s "Saham Amerika, tujuh koma lima", 15.4 s "Emas, lima koma lima".
+- [x] 4. **Reason to continue:** numbers (11.4 s) → "angka kedua yang jarang dibahas: lima puluh lima persen" (17.4 s) → what it means (21.9 s) → why it eats returns (25.5 s) → 20.9% vs 10% (32.0 s) → the rupiah range (37.5 s) → real proof (46.6 s) → JPMorgan's own caution (54.4 s) → the check (58.3–68.4 s).
+- [x] 5. **Concrete nouns:** podium, rollercoaster track, a stack of 100 coins halving, Rp10 juta, a price chart; "volatilitas" is defined in plain words at 21.9 s.
 - [x] 6. **Cut test:** the first draft (76 s) lost "Di laporan proyeksi jangka panjangnya", "di proyeksi itu", "Dan ini", "Turun lebih dari separuh"; nothing repeats the headline.
 - [x] 7. **Promise/payoff:** "ngalahin saham dan emas?" → yes on return, at the price of 55% volatility; ends on the viewer's own check.
 - [x] 8. **Truth test:** "memproyeksikan" (projects), not "memastikan"; on screen PROYEKSI · BUKAN JAMINAN at the numbers; scenarios and Rp outcomes labelled SIMULASI and attributed; the −50%/+50% example labelled ILUSTRASI; JPMorgan's own refusal to allocate is stated.
@@ -20,13 +20,13 @@ Visual-quality audit result: PASS
 - [x] 10. **Share reason:** the friend who forwards "JPMorgan: Bitcoin beats gold" as a reason to go all in, or the one who only buys gold.
 
 ### Viewer-value gate
-- [x] Understandable in 3 s · reason to care · early payoff (10 s) · each section adds information · mechanism explained (drag, 23–35 s) · no removable sentence · insight worth keeping (hadiah vs harga tiket + self-check) · delivers the promise · no follow/save/share request.
+- [x] Understandable in 3 s · reason to care · early payoff (11.4 s) · each section adds information · mechanism explained (drag, 25.5–37.5 s) · no removable sentence · insight worth keeping (hadiah vs harga tiket + self-check) · delivers the promise · no follow/save/share request.
 
 ### Retention ladder
-0.4 contradiction · 3.0 the forecast · 7.7 first time · 10.2 / 11.8 / 14.0 the three numbers · 15.9 the second number · 18.7 definition · 23.1 swings eat returns · 25.5–28.1 −50 +50 = −25 · 30.3 / 33.0 20.9% → 10% · 35.0–39.9 Rp48 jt or Rp3,6 jt · 42.5 / 47.4 $126K → $58K · 50.1 JPMorgan keeps it out · 54.0 / 56.0 hadiah / harga tiket · 58.2 the check.
+0.1 contradiction · 3.7 the forecast · 8.6 first time · 11.4 / 13.1 / 15.4 the three numbers · 17.4 the second number (55 spoken at 20.1) · 21.9 definition · 25.5 swings eat returns · 27.5–30.1 −50 +50 = −25 · 32.0 / 34.9 20.9% → 10% · 37.5–43.3 Rp48 jt or Rp3,6 jt · 46.6 / 51.9 $126K → $58K · 54.4 JPMorgan keeps it out · 58.3 / 61.0 hadiah / harga tiket · 63.7 the check.
 
 ### Rejection gates
-- [x] Unsupported consequence: NO · first frame lacks stake: NO · logo/3D-only opening: NO (real quote from frame 0, real report from 3 s) · nothing real by 3–8 s: NO · no return by 8–12 s: NO (10.2 s) · padding: NO · disconnected diagrams: NO (one podium world carries numbers → tracks → drag → 20.9%→10%) · ending doesn't answer the opening: NO.
+- [x] Unsupported consequence: NO · first frame lacks stake: NO · logo/3D-only opening: NO (real quote from frame 0, real report from 3.7 s) · nothing real by 3–8 s: NO · no return by 8–12 s: NO (11.4 s) · padding: NO · disconnected diagrams: NO (one podium world carries numbers → tracks → drag → 20.9%→10%) · ending doesn't answer the opening: NO.
 
 ## Part B — Visual-quality audit
 
