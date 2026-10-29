@@ -297,7 +297,7 @@ export const ChartWorld = ({b, children}: {b: ChartBeats; children?: ReactNode})
 
   // Stage 1: the zigzag draws itself; tags land as it reaches each swing.
   const downDraw = ramp(frame, b.s1 + 8, b.up - 6, (t: number) => t);
-  const upDraw = ramp(frame, b.up + 6, b.s2 - 8, (t: number) => t);
+  const upDraw = ramp(frame, b.up + 2, b.up + 50, (t: number) => t);
   geo.down.geometry.instanceCount = Math.round(geo.segs.down * downDraw);
   geo.up.geometry.instanceCount = Math.round(geo.segs.up * upDraw);
   (geo.down.material as LineMaterial).opacity = L1;
@@ -436,7 +436,7 @@ export const ChartWorld = ({b, children}: {b: ChartBeats; children?: ReactNode})
 
       {/* Cold open: every term lands on its spot, then they clear */}
       {a.swarm.map((s, k) => (
-        <ScreenLabel key={k} tex={s.tex} px={k < 3 ? 48 : 40} position={V(s.i, s.p, 0.5 + (k % 3) * 0.04)} opacity={span(frame, swarmAt(k), b.chart + 6)} />
+        <ScreenLabel key={k} tex={s.tex} px={k < 3 ? 48 : 40} position={V(s.i, s.p, 0.5 + (k % 3) * 0.04)} opacity={span(frame, swarmAt(k), b.count + 6)} />
       ))}
 
       {/* 1 · Structure */}
