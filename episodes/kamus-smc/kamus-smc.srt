@@ -1,0 +1,171 @@
+1
+00:00:00,330 --> 00:00:02,045
+Order block, FVG, sweep...
+
+2
+00:00:02,349 --> 00:00:03,420
+istilah smart money concept
+
+3
+00:00:03,460 --> 00:00:04,546
+emang bikin pusing.
+
+4
+00:00:04,883 --> 00:00:06,564
+Kita bedah delapan belas istilahnya,
+
+5
+00:00:06,824 --> 00:00:08,758
+lima tahap, di chart Bitcoin asli.
+
+6
+00:00:09,023 --> 00:00:10,760
+Satu, struktur.
+
+7
+00:00:10,800 --> 00:00:12,100
+Turun: puncak dan lembah
+
+8
+00:00:12,140 --> 00:00:14,242
+makin rendah, lower high, lower low.
+
+9
+00:00:14,420 --> 00:00:15,710
+Naik, kebalikannya:
+
+10
+00:00:15,750 --> 00:00:17,086
+higher high, higher low.
+
+11
+00:00:17,737 --> 00:00:19,182
+Dua, tanda perubahan.
+
+12
+00:00:19,903 --> 00:00:21,210
+Tutup tembus searah trend:
+
+13
+00:00:21,250 --> 00:00:22,120
+break of structure.
+
+14
+00:00:22,605 --> 00:00:24,487
+Melawan arah: change of character,
+
+15
+00:00:24,646 --> 00:00:25,561
+tanda awal berbalik.
+
+16
+00:00:26,197 --> 00:00:27,020
+Tiga, liquidity:
+
+17
+00:00:27,060 --> 00:00:29,291
+tempat stop loss biasanya numpuk.
+
+18
+00:00:29,878 --> 00:00:31,369
+Di bawah low, sell side.
+
+19
+00:00:31,955 --> 00:00:33,338
+Di atas high, buy side.
+
+20
+00:00:33,849 --> 00:00:35,485
+Puncak sejajar, equal high,
+
+21
+00:00:35,645 --> 00:00:36,601
+sering jadi magnet.
+
+22
+00:00:37,152 --> 00:00:38,560
+Satu Juli, Bitcoin nembus low
+
+23
+00:00:38,600 --> 00:00:40,014
+lima puluh delapan ribu,
+
+24
+00:00:40,200 --> 00:00:41,900
+lalu tutup balik ke atas: sweep.
+
+25
+00:00:42,350 --> 00:00:43,660
+Jebakan kecil biar lo entry
+
+26
+00:00:43,700 --> 00:00:45,150
+kecepetan: inducement.
+
+27
+00:00:45,459 --> 00:00:46,300
+Empat, area entry.
+
+28
+00:00:46,340 --> 00:00:47,750
+Order block: candle turun
+
+29
+00:00:47,790 --> 00:00:49,780
+terakhir sebelum harga melesat.
+
+30
+00:00:49,820 --> 00:00:51,690
+Lonjakannya ninggalin celah:
+
+31
+00:00:51,730 --> 00:00:53,665
+imbalance, atau fair value gap.
+
+32
+00:00:54,090 --> 00:00:55,900
+Harga balik ke situ: mitigation.
+
+33
+00:00:56,320 --> 00:00:57,560
+Tapi celah ini, sampai akhir
+
+34
+00:00:57,600 --> 00:00:59,135
+Oktober, belum terisi.
+
+35
+00:00:59,769 --> 00:01:01,320
+Lima, mahal atau murah.
+
+36
+00:01:01,436 --> 00:01:04,470
+Tarik low ke high, bagi dua: equilibrium.
+
+37
+00:01:05,027 --> 00:01:06,283
+Di atas, premium.
+
+38
+00:01:06,772 --> 00:01:08,093
+Di bawah, discount.
+
+39
+00:01:08,767 --> 00:01:11,580
+Awal Agustus, harga mantul di area diskon.
+
+40
+00:01:11,620 --> 00:01:13,327
+Jadi urutannya: struktur,
+
+41
+00:01:13,538 --> 00:01:15,670
+liquidity, sweep, baru area entry.
+
+42
+00:01:15,880 --> 00:01:17,670
+SMC itu cara baca, bukan jaminan:
+
+43
+00:01:17,710 --> 00:01:19,320
+stop loss tetap wajib.

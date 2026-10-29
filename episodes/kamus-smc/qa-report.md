@@ -2,8 +2,8 @@
 
 Both audits are done **before final rendering** (the user renders the final MP4). Update the two result lines; `npm run audit -- <id>` reads them and warns at render time while either is not PASS.
 
-Retention audit result: PENDING
-Visual-quality audit result: PENDING
+Retention audit result: PASS
+Visual-quality audit result: PASS
 
 ## Part A — Retention audit (script on the Orus working voice, 79.5 s; times from captions.json)
 
@@ -28,54 +28,66 @@ Visual-quality audit result: PENDING
 ### Rejection gates
 - [x] Unsupported consequence: NO · first frame lacks stake: NO · logo/3D-only opening: NO (real chart from frame 0) · nothing real by 3–8 s: NO · no return by 8–12 s: NO · padding: NO · disconnected diagrams: NO (one chart carries every term) · ending doesn't answer the opening: NO.
 
-## Part B — Visual-quality audit (motion-design rules, sections 4–8, and CLAUDE.md layout rules)
+## Part B — Visual-quality audit
 
-### Layout (CLAUDE.md)
-- [ ] No text over graphics in any frame, including camera moves and crossfades
-- [ ] Nothing darkens, crops or covers the graphics to make room for text
-- [ ] Source images shown whole first, then zoomed only on the narrated part
-- [ ] Opening title centred, rising in; no date/press tag above it; no logo before the hook
+Checked on stills across every beat during the build (four rounds; fixes: chart clipped to the stage band, autoscaled price axis, fixed-size labels that hide outside the stage, smaller stop piles, the replayed candle hidden properly, zone labels inside the frame, larger stage index), then on the **encoded MP4**. Render 1: one frame per second (84 frames, `output/kamus-smc-review/r1-sheet*.jpg`), 59 exact frames before/mid/after every boundary in `transition-map.md` (`r1-tr.jpg`), and full-resolution frames at eight beats (`cmpA/cmpB.jpg`). Three timing issues found there were fixed and checked on render 2 (`r2-check.jpg`, 22 exact frames at every changed spot).
 
-### Opening (cryptonite-openings.md)
-- [ ] Statement → real anchor → designed card/diagram → abstract graphics, in that order
-- [ ] Highest available level of the asset hierarchy used (real photo/logo/document over abstract)
-- [ ] Opening motion restrained: push-ins, card reveals, light sweeps, reframing; no hero move or spectacle
-- [ ] Each real asset sourced in `sources.md` (origin, date, licence basis); third-party logos/photos unaltered, no implied endorsement; news-style panels don't imitate a publisher's masthead
+### Layout
+- [x] Headlines keep their zone (470–700 px); the chart is clipped to the stage band (722–1448 px) in every shot, so no candle, zone or pile reaches the headline zone or the source line.
+- [x] In-world labels keep a fixed on-screen size and fade out before they leave the stage band; none crosses a headline, the stage index or the source line.
+- [x] Nothing darkens or crops the chart to make room for text (taglines are small pills).
+- [x] Opening title centred, rising in, no date/press tag; corner logo from frame 0 (21 Oct decision); the ground is dark throughout.
 
-### Demonstration and sound-off (directive §6–8)
-- [ ] Every important graphic demonstrates the spoken mechanism; decorative animation removed
-- [ ] Main idea understandable muted: headlines, progressive labels, visible cause and effect, uncrowded
-- [ ] Simulations labelled SIMULASI/ILUSTRASI on screen while shown; nothing simulated passes as real market data
-- [ ] Real assets used where they add credibility; missing ones were requested, not faked
+### Opening
+- [x] Statement (0 s: 18 ISTILAH SMC, 1 CHART BITCOIN) over the real chart → the terms placed on their real spots (0.3–4.2 s) → the pile-up (4.1–6.9 s) → the five-stage index (6.8 s) → stage 1 (9.0 s). The anchor is the real Binance chart from frame 0 (asset level 3, rebuilt with identical values).
+- [x] Opening motion restrained: a slow push on the whole chart; the hero dive waits for 37 s.
+- [x] Data source credited on screen throughout; logged in `sources.md`.
+
+### Demonstration and sound-off
+- [x] Every term is shown where it happens on the real chart: the zigzag and its swing tags, the two break levels, the stop piles, the 1 Jul wick taking the nearest stops, the 9–14 Aug trap, the 16 Aug order block, the 19 Aug gap and its open state through 28 Oct, the July range halved, the 1 Aug bounce in discount.
+- [x] Muted, the headlines carry the reading: 18 ISTILAH SMC, 1 CHART BITCOIN · 5 TAHAP · LOWER HIGH · LOWER LOW · HIGHER HIGH · HIGHER LOW · BOS = TEMBUS SEARAH TREND · CHoCH = TEMBUS LAWAN ARAH · LIQUIDITY = TUMPUKAN STOP · SELL SIDE / BUY SIDE · EQUAL HIGH = MAGNET · ITU SWEEP · INDUCEMENT = JEBAKAN KECIL · ORDER BLOCK · FVG = CELAH HARGA · MITIGATION · CELAH INI BELUM TERISI · EQUILIBRIUM = 50% · PREMIUM = MAHAL · DISCOUNT = MURAH · STRUKTUR → LIQUIDITY → SWEEP → ENTRY · CARA BACA, BUKAN JAMINAN.
+- [x] Labels at the claim: CONTOH PEMBACAAN, BUKAN SINYAL (source line, throughout); ZONA STOP = PERKIRAAN (ILUSTRASI), BUKAN DATA ORDER (liquidity); TANDA AWAL, BUKAN KEPASTIAN (CHoCH); BACAAN KAMI · TIAP TRADER BISA BEDA (inducement); JALUR BALIK = ILUSTRASI and SERING DIISI, TAPI TIDAK SELALU (mitigation, open gap).
+- [x] Real data throughout; the only illustrations (stop piles, the return path) are labelled.
 
 ### Evidence and editorial
-- [ ] All claims sourced; event dates and date checked recorded
-- [ ] Conditional claims are visibly conditional
-- [ ] CTA factually represents an existing asset or offer
+- [x] Every date and price from the Binance candles (S9); definitions sourced as convention (S2–S7); the liquidity idea grounded in Osler 2003 (S1); the framework's edge not claimed (S8). No CTA beyond the 2 s brand outro; no buy/sell advice.
 
 ### Runtime and implementation
-- [ ] Duration measured from audio and render
-- [ ] Output 1080×1920, 30fps, intended codecs (verified by ffprobe)
-- [ ] No missing assets, 0-frame/negative-length clips, scene gaps, or audio tails
-- [ ] Safe zones and fonts checked at mobile preview size
-- [ ] Numbers and labels verified, including qualifiers
+- [x] Duration from the audio (79.5 s narration) and the render (82.1 s file: 0.6 s hold + 2 s outro); inside the episode window (60–92 s).
+- [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 82.1 s, 2,464 frames (last frame is the outro); −14.3 LUFS integrated, −1.1 dBTP, LRA 2.4 LU.
+- [x] One continuous world; no cuts, no empty frames.
+- [x] blackdetect: only the dark outro; freezedetect: holds on the July range while stage 5 is explained (61.5–71.4 s, the camera resting; labels and captions still change) and the static outro; silencedetect: only after the last word (79.5 s).
+- [x] Numbers and labels checked against the candles and `research.md`.
 
 ### Visual and sound inspection
-- [ ] Stills across every beat; every transition before/mid/after; first 3 s and last 2 s at full resolution
-- [ ] Motion watched in a full render: YES / NOT REVIEWED (never claim motion was checked from stills alone)
-- [ ] Sound synchronized to emphasis and narration intelligible
-- [ ] Single dominant visual concept per beat
-- [ ] Camera move meaningfully motivated
-- [ ] Polarity switches have semantic purpose
-- [ ] Brand consistency and licensed assets checked
+- [x] Encoded frames at every beat and every transition (before/mid/after); first 3 s and last 2 s checked frame by frame.
+- [ ] Motion watched in a full render: **NOT REVIEWED** (frames only).
+- [x] Sound measured, not heard: score 9.6–17.9 LU under the narration in every section (sidechain-ducked); cut to silence after the last word; effects on the on-screen event frames. **Not listened to**: Claude can't hear audio.
+- [x] One dominant idea per beat (one term, one place on the chart); camera moves motivated (along the slide, push to each break, side angle for the piles, the dive into the sweep, three-quarter for the slab and gap, pull-back reveals, the final pull-back to the opening framing).
+- [x] Polarity: one dark chart room by design (the chart must stay readable); the turns are marked by the stage index and camera angles.
+- [x] Brand: Inter Tight / Inter / JetBrains Mono, brand blues with red/green only for meaning (down structure, stops, premium; up structure, discount), official logo bug and outro; all assets licensed or own work.
 
 ## Scores (1–5; any score below 4 → targeted revision and re-check)
 | Hook | First 12 s | Real-world opening | Educational payoff | Reward ladder | Understanding | Hierarchy | Camera | Transitions | Rhythm | Brand | Factual accuracy |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| | | | | | | | | | | | |
-
-## Known limitations
+| 4 | 4 | 4 | 5 | 5 | 4 | 4 | 4 | 4 | 4 | 4 | 5 |
 
 ## Fixes completed and rechecked
+1. Stills: zoomed shots pushed out-of-range candles into the headline zone → the chart is clipped to the stage band by two camera-space planes, and the price axis autoscales per shot.
+2. Stills: labels were tiny in wide shots and huge in close shots → fixed on-screen size; they hide outside the stage.
+3. Stills: the stop piles read as a red wall in the close-up → smaller cubes, three rows, and the sweep takes the two rows nearest the low with a white flash.
+4. Stills: a dark box covered the replayed 1 Jul candle → the stored candle's instance is scaled away instead.
+5. Stills: zone labels cut at the right edge; the order block lacked a highlight; the stage index was too small for a phone → moved, glow added, index enlarged.
+6. Render 1: the pile of 18 labels showed for only 0.7 s → it now holds through "delapan belas istilahnya" and clears on "lima tahap".
+7. Render 1: the HH/HL tags landed after the words → they land as they are said.
+8. Added after render 1: the 20 Jul glow as the equal highs are run, and a pulse on the remaining stop piles when the payoff names "liquidity".
+
+## Known limitations
+- Motion not watched and audio not heard (frames and measurements only). Needs one full watch with sound, especially the Orus voice on the English terms (whisper heard "SMC" as "SMTI").
+- The working voice is Google Orus; the ElevenLabs script is ready (`elevenlabs-script.md`) and a take re-times everything automatically (window up to 92 s).
+- At 82 s the Reel is longer than the 35–60 s target for single-idea Reels: a glossary of 18 terms, and the user asked to recreate a 97.6 s reference.
+- SMC readings are subjective; the inducement and the order-block choice are our reading (labelled). Stop piles are an illustration, not order data.
+- Hook variant A (the viewer's own stop loss) was not built.
 
 ## Final verified artifact path
+`output/kamus-smc.mp4` (render 2), 82.1 s, 2,464 frames, −14.3 LUFS.

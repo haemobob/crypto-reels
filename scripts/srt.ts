@@ -15,7 +15,9 @@ const MIN_SECONDS = 0.8;
 /** Indonesian words that read badly at the end of a line: prepositions, conjunctions, auxiliaries, pronouns used as subjects, and every part of a spoken number (a line never breaks inside "dua puluh koma sembilan"). */
 const LEANS_FORWARD = new Set([
   'di', 'ke', 'dari', 'pada', 'untuk', 'dan', 'yang', 'kalau', 'akan', 'bisa', 'belum', 'nggak', 'tidak', 'tetap', 'perlu', 'juga', 'seluruh', 'sejumlah',
-  'lo', 'gue', 'jadi', 'cuma', 'hanya', 'tinggal', 'seberapa', 'lebih', 'masih', 'udah', 'sudah', 'kasih',
+  'lo', 'gue', 'jadi', 'cuma', 'hanya', 'tinggal', 'seberapa', 'lebih', 'masih', 'udah', 'sudah', 'kasih', 'makin', 'sampai', 'nembus',
+  // First words of English trading terms, so a term stays on one line ("smart money concept", "change of character").
+  'smart', 'money', 'change', 'break', 'of', 'fair', 'value', 'order', 'equal', 'sell', 'buy', 'lower', 'higher', 'stop',
   'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas', 'seratus', 'seribu', 'puluh', 'belas', 'ratus', 'ribu', 'juta', 'miliar', 'triliun', 'koma',
 ]);
 
