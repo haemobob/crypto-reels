@@ -1,11 +1,11 @@
 # Cryptonite post-publication retention review
 
-Episode:
-Published (WIB):
-Length (s):
-Topic and audience:
-Hook variant / first 8s transcript:
-First frame visual:
+Episode: kamus-smc — "Kamus SMC: 18 istilah di 1 chart Bitcoin" (adapted from @cuanterusidn's reel structure)
+Published (WIB): NOT YET POSTED (the user controls release)
+Length (s): 82.1 (79.5 s narration on the Orus working voice + 0.6 s hold + 2 s outro)
+Topic and audience: the SMC vocabulary in five stages on a real BTC chart; Indonesian retail crypto traders, beginner to intermediate
+Hook variant / first 8s transcript: variant B (released): "Order block, FVG, sweep... istilah smart money concept emang bikin pusing. Kita bedah delapan belas istilahnya, lima tahap, di chart Bitcoin asli."
+First frame visual: centred headline 18 ISTILAH SMC, / 1 CHART BITCOIN over the real BTC/USDT daily chart (May–Oct 2026) as 3D candles
 
 ## Real Instagram Insights (never invent missing metrics)
 

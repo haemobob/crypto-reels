@@ -354,6 +354,8 @@ export const ChartWorld = ({b, children}: {b: ChartBeats; children?: ReactNode})
     return frame >= b.s4 ? 1 : ramp(wickDown + (frame - b.wNembus - 26 > 0 ? (frame - b.wNembus - 26) / 30 : 0), t0, t0 + 0.35);
   }, L3);
   placePile(geo.bslMesh, geo.bsl, EV.eqh1.p + 40, 1, bslGrow, () => bslTaken, L3);
+  // The payoff's "liquidity" lights the piles that are left.
+  for (const pm of [geo.sslMesh, geo.bslMesh]) (pm.material as THREE.MeshStandardMaterial).emissiveIntensity = 0.3 + 1.1 * pulse(b.wLiq);
 
   const sw = EV.sweep.i;
   // While 1 Jul is replayed, its stored candle is scaled away (and restored on every other frame).
@@ -470,6 +472,8 @@ export const ChartWorld = ({b, children}: {b: ChartBeats; children?: ReactNode})
       <ScreenLabel tex={a.tag.eqh} px={38} position={V((EV.eqh1.i + EV.eqh2.i) / 2, EV.eqh1.p + 2500, 0.4)} opacity={span(frame, b.eqh + 6, b.sweep - 30)} />
       <ScreenLabel tex={a.note.eqh} px={24} position={V((EV.eqh1.i + EV.eqh2.i) / 2, EV.eqh1.p + 3300, 0.4)} opacity={span(frame, b.eqh + 12, b.sweep - 30)} />
       {[EV.eqh1, EV.eqh2].map((e, k) => <Glow key={k} tex={a.glow} px={60} position={V(e.i, e.p, 0.12)} color={colors.light} opacity={L3 * ramp(frame, b.eqh, b.eqh + 10) * (frame < b.sweep - 30 ? 1 : 0.35)} />)}
+      {/* 20–21 Jul run the equal highs: the stops above them are taken */}
+      <Glow tex={a.glow} px={80} position={V(EV.eqhTaken.i, EV.eqhTaken.p, 0.12)} color="#FFFFFF" opacity={ramp(frame, b.eqh + 28, b.eqh + 36) * (1 - ramp(frame, b.sweep - 36, b.sweep - 28))} />
       <ScreenLabel tex={a.tag.sweep} px={54} position={V(sw + 2.6, EV.sweep.low - 700, 0.4)} opacity={span(frame, b.wSweep - 2, b.idm + 6) + pulse(b.wSweepP) * 0.9} />
       <ScreenLabel tex={a.note.sweep} px={24} position={V(sw + 2.6, EV.sweep.low - 1350, 0.4)} opacity={span(frame, b.wSweep + 4, b.idm + 6)} />
       <ScreenLabel tex={a.note.sweepDate} px={24} position={V(sw, EV.sweep.high + 700, 0.4)} opacity={span(frame, b.sweep, b.idm + 6)} />
