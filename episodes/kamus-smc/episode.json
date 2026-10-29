@@ -1,0 +1,9 @@
+{
+  "id": "kamus-smc",
+  "title": "Kamus SMC: 18 istilah di 1 chart Bitcoin",
+  "minSeconds": 60,
+  "maxSeconds": 92,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}

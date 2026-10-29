@@ -5,10 +5,12 @@ import liquidationHeatmap from './liquidation-heatmap';
 import blackrockTokenisasi from './blackrock-tokenisasi';
 import bitcoinShutdown from './bitcoin-shutdown';
 import jpmorganBitcoin from './jpmorgan-bitcoin';
+import kamusSmc from './kamus-smc';
 // @episodes-import (scripts/new-episode.ts adds imports above this line)
 
 export const episodes: Record<string, EpisodeModule> = {
   // @episodes-entry (scripts/new-episode.ts adds entries below this line)
+  'kamus-smc': kamusSmc,
   'jpmorgan-bitcoin': jpmorganBitcoin,
   'bitcoin-shutdown': bitcoinShutdown,
   'blackrock-tokenisasi': blackrockTokenisasi,

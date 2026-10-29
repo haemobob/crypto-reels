@@ -1,0 +1,11 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[rate:1.15]][[hook]]Order block, FVG, sweep... istilah *smart money concept* emang bikin pusing.
+[[chart]]Kita bedah *delapan belas* istilahnya, [[count]]*lima* tahap, di chart Bitcoin asli.
+[[s1]]Satu, struktur. Turun: puncak dan lembah makin rendah, *lower high*, *lower low*. [[up]]Naik, kebalikannya: *higher high*, *higher low*.
+[[s2]]Dua, tanda perubahan. Tutup tembus searah trend: *break of structure*. [[choch]]Melawan arah: *change of character*, tanda awal berbalik.
+[[s3]]Tiga, liquidity: tempat stop loss biasanya numpuk. [[ssl]]Di bawah low, *sell side*. [[bsl]]Di atas high, *buy side*. [[eqh]]Puncak sejajar, *equal high*, sering jadi magnet.
+[[sweep]]Satu Juli, Bitcoin nembus low lima puluh delapan ribu, lalu tutup balik ke atas: *sweep*. [[idm]]Jebakan kecil biar lo entry kecepetan: *inducement*.
+[[s4]]Empat, area entry. *Order block*: candle turun terakhir sebelum harga melesat. [[fvg]]Lonjakannya ninggalin celah: *imbalance*, atau *fair value gap*. [[mitig]]Harga balik ke situ: *mitigation*. [[open]]Tapi celah ini, sampai akhir Oktober, *belum* terisi.
+[[s5]]Lima, mahal atau murah. Tarik low ke high, bagi dua: *equilibrium*. [[prem]]Di atas, *premium*. [[disc]]Di bawah, *discount*. [[aug]]Awal Agustus, harga mantul di area diskon.
+[[payoff]]Jadi urutannya: struktur, liquidity, sweep, baru area entry. [[caveat]]SMC itu cara baca, bukan jaminan: *stop loss* tetap wajib.

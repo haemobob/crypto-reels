@@ -75,7 +75,10 @@ const similarity = (a: string, b: string) => {
 export const alignWords = (script: ScriptWord[], heardRaw: Heard[], totalSec: number): Timed[] => {
   const heard = expandHeard(heardRaw);
   const A = script.map((w) => norm(w.spoken));
+  // A respelled word ("high" → "hai") may still be written in English by whisper: match either form.
+  const A0 = script.map((w) => norm(w.text));
   const B = heard.map((h) => norm(h.text));
+  const sim = (i: number, j: number) => Math.max(similarity(A[i], B[j]), similarity(A0[i], B[j]));
   const n = A.length, m = B.length, GAP = -0.4;
   const score = Array.from({length: n + 1}, () => new Float64Array(m + 1));
   const move = Array.from({length: n + 1}, () => new Uint8Array(m + 1)); // 1 diag, 2 up, 3 left
@@ -83,7 +86,7 @@ export const alignWords = (script: ScriptWord[], heardRaw: Heard[], totalSec: nu
   for (let j = 1; j <= m; j++) (score[0][j] = j * GAP), (move[0][j] = 3);
   for (let i = 1; i <= n; i++)
     for (let j = 1; j <= m; j++) {
-      const s = similarity(A[i - 1], B[j - 1]);
+      const s = sim(i - 1, j - 1);
       const diag = score[i - 1][j - 1] + (s >= 0.6 ? s : -0.6);
       const up = score[i - 1][j] + GAP;
       const left = score[i][j - 1] + GAP;
@@ -95,7 +98,7 @@ export const alignWords = (script: ScriptWord[], heardRaw: Heard[], totalSec: nu
   for (let i = n, j = m; i > 0 || j > 0; ) {
     const mv = move[i][j];
     if (mv === 1) {
-      if (similarity(A[i - 1], B[j - 1]) >= 0.6) out[i - 1] = {start: heard[j - 1].start, end: heard[j - 1].end, matched: true};
+      if (sim(i - 1, j - 1) >= 0.6) out[i - 1] = {start: heard[j - 1].start, end: heard[j - 1].end, matched: true};
       i--, j--;
     } else if (mv === 2) i--;
     else j--;
