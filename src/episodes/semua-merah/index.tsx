@@ -85,8 +85,8 @@ const Scene = () => {
       />
       <Tagline frame={frame} from={b.trade + 10} to={b.price - 2}>ILUSTRASI · TIAP TRANSAKSI ADA PENJUAL & PEMBELI</Tagline>
       <Tagline frame={frame} from={b.bonds + 10} to={b.oil - 2}>YIELD 10 TAHUN 4,94% (−0,04) = HARGA OBLIGASI NAIK</Tagline>
-      <Tagline frame={frame} from={b.metals + 10} to={b.binance - 2}>PENJELASAN ANALIS · BUKAN SATU-SATUNYA SEBAB</Tagline>
-      <Tagline frame={frame} from={b.binance + 10} to={b.liq - 2}>NILAI TERDAMPAK, BUKAN SEMUANYA HILANG</Tagline>
+      <Tagline frame={frame} from={b.metals + 10} to={b.binance - 2}>KATA ANALIS · PELUANG DARI PASAR PREDIKSI</Tagline>
+      <Tagline frame={frame} from={b.binance + 10} to={b.liq - 2}>NILAI TERDAMPAK · ±$3 MILIAR DIBEKUKAN (DILAPORKAN)</Tagline>
       <SourceLine
         text={
           frame < b.green ? 'CAPPNOTES CLOSING LOOK · 30 OKT 2026 · GRAFIK: FRED (S&P), BINANCE (BTC)' :

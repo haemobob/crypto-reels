@@ -312,10 +312,8 @@ export const BoardWorld = ({b}: {b: BoardBeats}) => {
       {/* Triggers */}
       <ScreenLabel tex={a.t.intel} px={40} position={card('chip', -0.62)} opacity={span(frame, b.intel + 4, b.metals)} />
       <ScreenLabel tex={a.t.fed} px={40} position={[-0.875, 0.56 - 0.66, 0.4]} opacity={span(frame, b.metals + 6, b.binance)} />
-      <ScreenLabel tex={a.t.fedNote} px={22} position={[-0.875, 0.56 - 0.9, 0.4]} opacity={span(frame, b.metals + 12, b.binance)} />
-      <ScreenLabel tex={a.t.binance} px={40} position={card('btc', -0.62)} opacity={span(frame, b.binance + 6, Infinity)} />
-      <ScreenLabel tex={a.t.binanceNote} px={22} position={card('btc', -0.86)} opacity={span(frame, b.binance + 12, b.payoff)} />
-      <ScreenLabel tex={a.t.liq} px={36} position={card('btc', -1.12)} opacity={span(frame, b.liq + 4, Infinity)} />
+      <ScreenLabel tex={a.t.binance} px={40} position={card('btc', 0.6)} opacity={span(frame, b.binance + 6, Infinity)} />
+      <ScreenLabel tex={a.t.liq} px={36} position={card('btc', -0.6)} opacity={span(frame, b.liq + 4, Infinity)} />
     </World3D>
   );
 };
