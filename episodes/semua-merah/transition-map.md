@@ -1,14 +1,15 @@
-# Transition map — semua-merah
+# Transition map — Semua merah. Uangnya ke mana?
 
-The transition between shots must communicate a narrative relationship or a deliberate editorial contrast. Hard cuts are valid.
+One world: every boundary is a camera move or a change of layer on the same board. Frames at 30 fps on the Orus voice.
 
-| Boundary | Outgoing composition | Incoming composition | Why they connect | Transition type | Trigger word/frame | Sound cue | QA midframe |
-|---|---|---|---|---|---|---|---|
-| 01 → 02 | | | | | | | |
-| 02 → 03 | | | | | | | |
-
-## Transition vocabulary
-Hard cut · Polarity flip · Thesis interruption · Match cut · Object handoff · Progressive construction · Data-line carry · Reframe · Selective 3D portal · Licensed B-roll punctuation.
+| Boundary | Outgoing | Incoming | Why they connect | Technique | Trigger | Sound |
+|---|---|---|---|---|---|---|
+| 01 → 03 Red tiles → the myth | Four red tiles | Dimmed board, CASH box in front | The popular answer sits in front of the evidence | **Push-in + dim** | myth (f232) | UI reveal |
+| 03 → 04 Myth → trade | CASH box | Two plinths, coin and cash crossing | The answer that replaces the myth | **Strike-through** on the box, objects enter | trade (f319) | Click, coins |
+| 04 → 05 Trade → the whole board | Close on the plinths | Whole board with green tiles | From the mechanism to what really moved | **Hero pull-back reveal** | green (f596) → bonds (f648) | Whoosh, positive chords |
+| 05 → 06 Board → triggers | Whole board | Close on chips, then metals, then Bitcoin | Each red tile has its own cause | **Push-ins** with focus dimming | why (f991), intel, metals, binance | Swoosh, impacts |
+| 06 → 07 Bitcoin → whole board | Close on Bitcoin with its cards | Whole board | Back to the screen the viewer sees on a red day | **Pull-back** (callback to the board) | payoff (f1575) | Whoosh-and-hit |
+| 07 → 08 Check → outro | The two questions | Branded outro | Signature only | Outro component | narration end + tail | Outro |
 
 ## Test
-Review last 3 frames of outgoing shot, transition midpoint, first 3 frames of incoming shot. Check object position, luminance flash, type visibility, cut rhythm, SFX timing and story logic.
+Last 3 frames out, midpoint, first 3 frames in at each boundary (exact frames from the encoded MP4). Results in `qa-report.md` Part B.
