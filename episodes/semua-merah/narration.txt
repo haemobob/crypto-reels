@@ -1,0 +1,8 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[rate:1.12]][[hook]]Tiga puluh Oktober: saham Amerika turun, emas turun, perak turun, Bitcoin juga turun.
+[[q]]Jadi, *uangnya ke mana*?
+[[myth]]Jawaban yang lagi viral: kabur ke cash. [[trade]]Masalahnya, tiap ada yang jual, pasti ada yang beli. [[swap]]Uangnya cuma *pindah tangan*. [[price]]Yang turun itu *harganya*: penjual setuju di harga lebih rendah.
+[[green]]Dan nggak semuanya merah. [[bonds]]Obligasi Amerika *naik*: yield sepuluh tahunnya turun ke empat koma sembilan empat persen. [[oil]]Minyak naik, saham energi dan kebutuhan pokok juga naik. [[dollar]]Dolar? Malah turun tipis.
+[[why]]Terus kenapa yang lain jatuh bareng? Pemicunya *beda-beda*. [[intel]]Saham chip anjlok, Intel turun dua puluh delapan persen. [[metals]]Emas dan perak, kata analis, tertekan peluang suku bunga Amerika naik. [[binance]]Kripto kena insiden keamanan Binance senilai sekitar *enam koma tiga miliar dolar*, [[liq]]dan lebih dari satu setengah miliar dolar posisi leverage dilikuidasi paksa.
+[[payoff]]Jadi kalau layar lo merah semua, jangan tanya uangnya kabur ke mana. [[check]]Tanya dua hal: *apa yang hijau*, dan *siapa yang terpaksa jual*.

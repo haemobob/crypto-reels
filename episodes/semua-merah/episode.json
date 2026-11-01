@@ -1,0 +1,9 @@
+{
+  "id": "semua-merah",
+  "title": "Semua merah. Uangnya ke mana?",
+  "minSeconds": 45,
+  "maxSeconds": 72,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}

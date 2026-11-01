@@ -6,10 +6,12 @@ import blackrockTokenisasi from './blackrock-tokenisasi';
 import bitcoinShutdown from './bitcoin-shutdown';
 import jpmorganBitcoin from './jpmorgan-bitcoin';
 import kamusSmc from './kamus-smc';
+import semuaMerah from './semua-merah';
 // @episodes-import (scripts/new-episode.ts adds imports above this line)
 
 export const episodes: Record<string, EpisodeModule> = {
   // @episodes-entry (scripts/new-episode.ts adds entries below this line)
+  'semua-merah': semuaMerah,
   'kamus-smc': kamusSmc,
   'jpmorgan-bitcoin': jpmorganBitcoin,
   'bitcoin-shutdown': bitcoinShutdown,
