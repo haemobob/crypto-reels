@@ -54,7 +54,7 @@ Checked on stills across every beat during the build (four rounds; fixes: chart 
 
 ### Runtime and implementation
 - [x] Duration from the audio (92.4 s narration, ElevenLabs take after the pause edit) and the render (95.0 s file: 0.6 s hold + 2 s outro); inside the episode window (60–95 s, widened from 92 s for this take).
-- [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 82.1 s, 2,464 frames (last frame is the outro); −14.3 LUFS integrated, −1.1 dBTP, LRA 2.4 LU.
+- [x] ffprobe (render 4, ElevenLabs take): 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 95.0 s, 2,849 frames (last frame is the outro); −14.0 LUFS integrated, −1.0 dBTP, LRA 1.8 LU.
 - [x] One continuous world; no cuts, no empty frames.
 - [x] blackdetect: only the dark outro (92.97–94.93 s); freezedetect (2 s): two short holds while the narration explains (71.5–74.2 s on the July range, 79.7–82.2 s on the 1 Aug bounce; captions and labels still change) and the static outro; silencedetect: only after the last word (92.4 s).
 - [x] Numbers and labels checked against the candles and `research.md`.
@@ -91,4 +91,4 @@ Checked on stills across every beat during the build (four rounds; fixes: chart 
 - Hook variant A (the viewer's own stop loss) was not built.
 
 ## Final verified artifact path
-`output/kamus-smc.mp4` (render 2), 82.1 s, 2,464 frames, −14.3 LUFS.
+`output/kamus-smc.mp4` (render 4, ElevenLabs take, 7 Nov 2026), 95.0 s, 2,849 frames, −14.0 LUFS. Subtitles: `episodes/kamus-smc/kamus-smc.srt` (43 cues).
