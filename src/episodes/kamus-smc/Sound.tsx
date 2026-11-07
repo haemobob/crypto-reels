@@ -30,7 +30,7 @@ export const Sound = () => {
       <Sfx name="hud-electronic-interface-sfx-pack-6" at={c('idm') + 6} volume={0.12} />
 
       {/* Entry areas */}
-      <Sfx name="ui-reveal" at={c('s4') + 10} volume={0.14} />
+      <Sfx name="ui-reveal" at={word('order', 1)} volume={0.14} />
       <Sfx name="data-whoosh" at={c('fvg') + 6} volume={0.16} />
       <Sfx name="transition-swoosh" at={c('open') + 4} volume={0.14} />
 

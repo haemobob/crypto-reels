@@ -31,7 +31,7 @@ const syAt = (frame: number, keys: Shot[]) => {
 
 export type ChartBeats = Record<
   | 'hook' | 'chart' | 'count' | 's1' | 'up' | 's2' | 'choch' | 's3' | 'ssl' | 'bsl' | 'eqh' | 'sweep' | 'idm' | 's4' | 'fvg' | 'mitig' | 'open' | 's5' | 'prem' | 'disc' | 'aug' | 'payoff' | 'caveat' | 'end'
-  | 'wOrder' | 'wFvg' | 'wSweep0' | 'wPusing' | 'wTutupBos' | 'wNembus' | 'wTutup' | 'wSweep' | 'wStruktur' | 'wLiq' | 'wSweepP' | 'wEntry',
+  | 'wOrder' | 'wFvg' | 'wSweep0' | 'wPusing' | 'wTutupBos' | 'wNembus' | 'wTutup' | 'wSweep' | 'wStruktur' | 'wLiq' | 'wSweepP' | 'wEntry' | 'wOb',
   number
 >;
 
@@ -413,7 +413,7 @@ export const ChartWorld = ({b, children}: {b: ChartBeats; children?: ReactNode})
         {Object.values(geo.levels).map((l, k) => <primitive key={k} object={l} />)}
         <primitive object={geo.mit} />
         {/* 4 · order block slab and the gap, open to the right edge */}
-        <Zone i0={EV.ob.i} lo={EV.ob.lo} hi={EV.ob.hi} color={colors.blue} opacity={0.55 * L4 * ramp(frame, b.s4 + 8, b.s4 + 30)} />
+        <Zone i0={EV.ob.i} lo={EV.ob.lo} hi={EV.ob.hi} color={colors.blue} opacity={0.55 * L4 * ramp(frame, b.wOb - 2, b.wOb + 20)} />
         <Zone i0={EV.fvg.i - 1} lo={EV.fvg.lo} hi={EV.fvg.hi} color="#2FB4FF" opacity={0.4 * L4 * ramp(frame, b.fvg + 6, b.fvg + 30)} depth={0.6} />
         {/* 5 · premium / discount over the July range */}
         <Zone i0={EV.sweep.i} i1={EV.hl1.i + 9} lo={EV.range.mid} hi={EV.range.hi} color={colors.negative} opacity={0.22 * L5 * ramp(frame, b.prem, b.prem + 14)} depth={0.3} />
@@ -482,9 +482,9 @@ export const ChartWorld = ({b, children}: {b: ChartBeats; children?: ReactNode})
       {[EV.idm, EV.idmDip].map((e, k) => <Glow key={k} tex={a.glow} px={56} position={V(e.i, e.p, 0.12)} color={k === 0 ? colors.light : STOP} opacity={span(frame, b.idm + 4 + k * 14, b.s4)} />)}
 
       {/* 4 · Entry areas */}
-      <Glow tex={a.glow} px={110} position={V(EV.ob.i, (EV.ob.lo + EV.ob.hi) / 2, 0.15)} color={colors.light} opacity={span(frame, b.s4 + 6, b.fvg + 4) * (0.75 + 0.25 * Math.sin(frame / 6))} />
-      <ScreenLabel tex={a.tag.ob} px={40} position={V(EV.ob.i - 1, EV.ob.lo - 1300, 0.45)} opacity={span(frame, b.s4 + 10, b.fvg + 4) + pulse(b.wEntry) * 0.9} />
-      <ScreenLabel tex={a.note.ob} px={24} position={V(EV.ob.i - 1, EV.ob.lo - 2300, 0.45)} opacity={span(frame, b.s4 + 16, b.fvg + 4)} />
+      <Glow tex={a.glow} px={110} position={V(EV.ob.i, (EV.ob.lo + EV.ob.hi) / 2, 0.15)} color={colors.light} opacity={span(frame, b.wOb - 4, b.fvg + 4) * (0.75 + 0.25 * Math.sin(frame / 6))} />
+      <ScreenLabel tex={a.tag.ob} px={40} position={V(EV.ob.i - 1, EV.ob.lo - 1300, 0.45)} opacity={span(frame, b.wOb, b.fvg + 4) + pulse(b.wEntry) * 0.9} />
+      <ScreenLabel tex={a.note.ob} px={24} position={V(EV.ob.i - 1, EV.ob.lo - 2300, 0.45)} opacity={span(frame, b.wOb + 6, b.fvg + 4)} />
       <ScreenLabel tex={a.tag.fvg} px={46} position={V(EV.fvg.i + 6, (EV.fvg.lo + EV.fvg.hi) / 2 + 500, 0.5)} opacity={span(frame, b.fvg + 14, b.mitig + 4) + pulse(b.wEntry) * 0.9} />
       <ScreenLabel tex={a.note.fvg} px={24} position={V(EV.fvg.i + 6, (EV.fvg.lo + EV.fvg.hi) / 2 - 800, 0.5)} opacity={span(frame, b.fvg + 20, b.s5)} />
       <ScreenLabel tex={a.tag.mitig} px={30} position={V(EV.hh2.i + 12, 67400 - 1800, 0.5)} opacity={span(frame, b.mitig + 18, b.open + 10)} />

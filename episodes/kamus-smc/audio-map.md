@@ -23,7 +23,7 @@
 | Tick | s1 → payoff | −35 | 100 BPM eighths: the chart being read |
 | Resolve | payoff → last word + 0.08 s | −27 | A major add9 with a short echo; cut to silence |
 
-**Measured against the voice** (momentary loudness per cue section): the score sits **9.6–17.9 LU below the narration** in every section (closest: −9.6 LU at "Tiga, liquidity").
+**Measured against the voice** (momentary loudness per cue section, ElevenLabs take): the score sits **12.0–20.6 LU below the narration** in every section (closest: −12.0 LU at the inducement). On the Orus voice it was 9.6–17.9 LU.
 
 ## Sound effects (`src/episodes/kamus-smc/Sound.tsx`, on on-screen events)
 User's pack `public/sfx/newest/` (user-confirmed free to use, 21 Oct 2026).
@@ -42,7 +42,7 @@ User's pack `public/sfx/newest/` (user-confirmed free to use, 21 Oct 2026).
 | The wick spears the pile | "nembus" − 6 / + 22 | deep-whoosh (0.20) / impact-bass-echo (0.22) |
 | SWEEP | "sweep" − 2 | bass-drop-descend (0.18) |
 | Inducement | idm + 6 | HUD 6 (0.12) |
-| Order block | s4 + 10 | ui-reveal (0.14) |
+| Order block | "Order" (2nd) | ui-reveal (0.14) |
 | FVG | fvg + 6 | data-whoosh (0.16) |
 | Gap still open | open + 4 | transition-swoosh (0.14) |
 | Equilibrium | s5 + 30 | ui-reveal (0.12) |

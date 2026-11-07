@@ -84,7 +84,7 @@ const Scene = () => {
     sweep: c('sweep'), idm: c('idm'), s4: c('s4'), fvg: c('fvg'), mitig: c('mitig'), open: c('open'), s5: c('s5'), prem: c('prem'), disc: c('disc'), aug: c('aug'), payoff: c('payoff'),
     caveat: c('caveat'), end: narrationEnd,
     wOrder: word('order', 0), wFvg: word('fvg', 0), wSweep0: word('sweep', 0), wPusing: word('pusing'), wTutupBos: word('tutup', 0), wNembus: word('nembus'),
-    wTutup: word('tutup', 1), wSweep: word('sweep', 1), wStruktur: word('struktur', 1), wLiq: word('liquidity', 1), wSweepP: word('sweep', 2), wEntry: word('entry', 2),
+    wTutup: word('tutup', 1), wSweep: word('sweep', 1), wStruktur: word('struktur', 1), wLiq: word('liquidity', 1), wSweepP: word('sweep', 2), wEntry: word('entry', 2), wOb: word('order', 1),
   };
   const lower = word('lower', 0), brk = word('break'), orderBlock = word('order', 1), equil = word('equilibrium');
 
