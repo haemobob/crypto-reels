@@ -27,4 +27,4 @@ Swap only that word for the respelling, then regenerate (tell me which word you 
 | equilibrium | i-kwi-li-bri-um |
 | mitigation | mi-ti-gei-syen |
 
-Target length: about 80–90 s (the Reel's window allows up to 92 s of narration).
+Target length: about 80–90 s. Used take (7 Nov 2026): 103 s raw, 92.4 s after the pause edit (`audio-map.md`); window 60–95 s.

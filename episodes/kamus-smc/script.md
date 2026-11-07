@@ -1,6 +1,6 @@
 # Script — Kamus SMC: 18 istilah di 1 chart Bitcoin
 
-Approved wording is `narration.txt` (cues and highlights); delivery tags for ElevenLabs v3 are in `elevenlabs-script.md`. Working voice: Google Chirp 3 HD Orus at rate 1.15, 79.5 s (`audio-map.md`). 178 words.
+Approved wording is `narration.txt` (cues and highlights); delivery tags for ElevenLabs v3 are in `elevenlabs-script.md`. Voice: the user's ElevenLabs take (Ongky Himawan – Calm, Deep), 92.4 s after the pause edit (`audio-map.md`). 178 words.
 
 Order block, FVG, sweep... istilah smart money concept emang bikin pusing.
 Kita bedah delapan belas istilahnya, lima tahap, di chart Bitcoin asli.

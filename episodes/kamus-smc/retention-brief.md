@@ -35,4 +35,4 @@ Concept score: 88/100
 - **Misconception:** that SMC is a proven "big players' secret" and that patterns like FVGs always resolve.
 - **Share trigger:** the friend in the trading group who throws around BOS and CHoCH, or the beginner who asked what they mean.
 - **Emotional shape:** relief (the jargon becomes a map) → curiosity (each term found on a real chart) → clarity and a sober rule at the end. No fear, no hype.
-- **Chosen length:** about 75–85 s (window 60–90 s). A glossary of 18 terms in 5 stages is not a single-idea Reel, and the user asked to recreate a 97.6 s reference; each term gets one sentence and one place on the chart, nothing else.
+- **Chosen length:** about 75–85 s planned (window 60–90 s); the ElevenLabs take reads slower (103 s raw, 92.4 s after tightening the pauses), so the window is 60–95 s and the Reel runs about 95 s with the outro. A glossary of 18 terms in 5 stages is not a single-idea Reel, and the user asked to recreate a 97.6 s reference; each term gets one sentence and one place on the chart, nothing else.
