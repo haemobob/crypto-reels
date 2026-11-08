@@ -2,7 +2,7 @@
 
 Episode: semua-merah — "Semua merah. Uangnya ke mana?" (adapted from @mak's reel structure)
 Published (WIB): NOT YET POSTED (the user controls release)
-Length (s): ≈ 63 (60.3 s narration on the Orus working voice + 0.6 s hold + 2 s outro)
+Length (s): ≈ 64.3 (61.6 s narration, the user's ElevenLabs take, + 0.6 s hold + 2 s outro)
 Topic and audience: the 30 Oct 2026 sell-off and where the money "went"; Indonesian crypto/gold/stock holders
 Hook variant / first 8s transcript: variant B (released): "Tiga puluh Oktober: saham Amerika turun, emas turun, perak turun, Bitcoin juga turun. Jadi, uangnya ke mana?"
 First frame visual: centred headline SEMUA MERAH. over the S&P 500 tile (−1,82%, real October chart)

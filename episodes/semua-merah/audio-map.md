@@ -1,10 +1,11 @@
 # Audio map — Semua merah. Uangnya ke mana?
 
 ## Voice
-- **Take (working voice):** Google Cloud TTS, Chirp 3 HD `id-ID-Chirp3-HD-Orus`, from `narration.txt` with `[[rate:1.12]]`. `public/episodes/semua-merah/narration.wav`, **60.28 s**.
-- **ElevenLabs alternative:** `elevenlabs-script.md` (same words, v3 tags). Swap in with `npm run voice -- semua-merah --audio <file>`, then `npx tsx scripts/score-semua-merah.ts`; everything is cue-keyed. Window 45–72 s.
-- **Alignment:** whisper.cpp small: **144 of 151 words matched**. Respellings for Orus (`pronunciations.json`, lowercase keys): cash → kes, yield → yild, leverage → leverej, binance → bainens. Whisper still heard "leverage" as "lefresh": **listen to it**.
-- **Cues (s):** hook 0.38 · q 6.00 · myth 7.74 · trade 10.64 · swap 14.12 · price 15.99 · green 19.87 · bonds 21.59 · oil 26.94 · dollar 30.60 · why 33.02 · intel 36.39 · metals 39.82 · binance 44.43 · liq 48.90 · payoff 52.50 · check 56.78.
+- **Take:** the user's ElevenLabs take (Eleven v3, "Ongky Himawan – Calm, Deep", from the intriguing, slow-opening `elevenlabs-script.md`; received 8 Nov 2026), 61.65 s. Original in `voice-cache/elevenlabs-take1.mp3`.
+- **Edit (no words changed, no cuts):** highpass 60 Hz, gentle compression (2.5:1 from −22 dB), levelled to −18 LUFS, limiter (peak −1.0 dBFS) → `voice-cache/elevenlabs-take1-clean.wav` → `public/episodes/semua-merah/narration.wav`, **61.65 s**. No tag was read aloud and the pauses were already short (longest 0.48 s), so nothing was trimmed.
+- **Superseded:** the Orus working voice (60.28 s); its captions are kept in `voice-cache/captions-orus.json`. An earlier urgent script read as angry and was replaced before a take was made.
+- **Alignment:** whisper.cpp small: **147 of 151 words matched**; unmatched (interpolated between neighbours): two "ke" (heard as "kemana"), "Binance", "setengah". **Not heard by ear**: listen to "Binance", "leverage" and "cash".
+- **Cues (s):** hook 0.07 · q 6.72 · myth 9.08 · trade 11.96 · swap 15.50 · price 17.20 · green 21.23 · bonds 22.93 · oil 27.78 · dollar 31.23 · why 33.49 · intel 36.93 · metals 40.39 · binance 44.64 · liq 49.12 · payoff 53.63 · check 57.64. Last word ends 61.52 s.
 
 ## Score (original, synthesized)
 `npx tsx scripts/score-semua-merah.ts` → `public/episodes/semua-merah/score.mp3` (shared `scripts/score-lib.ts`, sidechain-ducked under the narration, cut 0.08 s after the last word). No samples.

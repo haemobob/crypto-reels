@@ -1,6 +1,6 @@
 # Script — Semua merah. Uangnya ke mana?
 
-Approved wording is `narration.txt`; delivery tags for ElevenLabs v3 are in `elevenlabs-script.md`. Working voice: Google Chirp 3 HD Orus at rate 1.12, 60.3 s. 151 words.
+Approved wording is `narration.txt`; delivery tags for ElevenLabs v3 are in `elevenlabs-script.md`. Voice: the user's ElevenLabs take (Ongky Himawan – Calm, Deep, intriguing read), 61.6 s. 151 words.
 
 Tiga puluh Oktober: saham Amerika turun, emas turun, perak turun, Bitcoin juga turun.
 Jadi, uangnya ke mana?
