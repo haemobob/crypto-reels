@@ -51,14 +51,14 @@ Checked on stills across every beat during the build (three rounds; fixes: board
 - [x] Every number from the 30 Oct close (S1) or the cited crypto reports (S4, S5); charts from FRED/Binance; the reference's wrong claims corrected on screen; no forecast, no CTA.
 
 ### Runtime and implementation
-- [x] Duration from the audio (60.3 s narration) and the render (62.9 s: 0.6 s hold + 2 s outro); inside the window (45–72 s).
-- [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 62.9 s, 1,886 frames (last frame is the outro); −14.1 LUFS, −1.1 dBTP, LRA 1.9 LU.
-- [x] blackdetect: only the outro; freezedetect: short holds while a beat is explained on a resting camera (the longest 4.7 s on the bond beat, 3.1 s on the metals beat; captions change); silencedetect: only after the last word.
+- [x] Duration from the audio (61.6 s narration, the user's ElevenLabs take) and the render (64.3 s: 0.6 s hold + 2 s outro); inside the window (45–72 s).
+- [x] ffprobe (render 3, ElevenLabs take): 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 64.3 s, 1,927 frames (last frame is the outro); −14.1 LUFS, −1.2 dBTP, LRA 2.1 LU.
+- [x] blackdetect: only the outro (62.2–64.2 s); freezedetect (2 s): two short holds while a beat is explained on a resting camera (25.0–27.0 s on the bond beat, 42.3–44.4 s on the metals beat; captions change); silencedetect: only after the last word (61.7 s).
 
 ### Visual and sound inspection
 - [x] Encoded frames at every beat and transition; first 3 s and last 2 s checked frame by frame.
 - [ ] Motion watched in a full render: **NOT REVIEWED** (frames only).
-- [x] Sound measured, not heard: score 11.5–19.3 LU under the narration; effects on on-screen events. **Not listened to**.
+- [x] Sound measured, not heard: score 12.4–19.6 LU under the narration (ElevenLabs take); effects on on-screen events. **Not listened to**.
 - [x] One dominant idea per beat; camera moves motivated (push to the myth, framing the trade, the pull-back reveal, push-ins per trigger, pull-back for the check).
 - [x] Brand: Inter Tight / Inter / JetBrains Mono, red/green only for down/up, official logo bug and outro.
 
@@ -80,4 +80,4 @@ Checked on stills across every beat during the build (three rounds; fixes: board
 - The Binance figures are as reported on 30 Oct; the incident was still developing.
 
 ## Final verified artifact path
-`output/semua-merah.mp4` (render 2), 62.9 s, 1,886 frames, −14.1 LUFS.
+`output/semua-merah.mp4` (render 3, ElevenLabs take, 8 Nov 2026), 64.3 s, 1,927 frames, −14.1 LUFS. Subtitles: `episodes/semua-merah/semua-merah.srt`.
