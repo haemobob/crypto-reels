@@ -2,8 +2,8 @@
 
 Both audits are done **before final rendering** (the user renders the final MP4). Update the two result lines; `npm run audit -- <id>` reads them and warns at render time while either is not PASS.
 
-Retention audit result: PENDING
-Visual-quality audit result: PENDING
+Retention audit result: PASS
+Visual-quality audit result: PASS
 
 ## Part A — Retention audit (script on the Orus working voice, 64.4 s; times from captions.json)
 
@@ -29,4 +29,49 @@ Visual-quality audit result: PENDING
 - [x] Unsupported consequence: NO · first frame lacks stake: NO · logo/3D-only opening: NO (real chart from frame 0) · nothing real by 3–8 s: NO · no return by 8–12 s: NO · padding: NO · disconnected diagrams: NO (one light table, one sheet) · ending doesn't answer the opening: NO.
 
 ## Part B — Visual-quality audit
-(after the build)
+
+Checked on stills during the build (three rounds; fixes: the opening chart narrowed so the price ticks don't sit on the line; taglines moved under two-line headlines; the panel title moved clear of the step markers; the 42% pill, the 2023 low label and the 8/9 Nov labels separated; the check rows shown as placeholders from the start of the verdict), then on the **encoded MP4**: one frame per second (`output/btc-ulang-2021-review/r1-sheet.jpg`, 67 frames) and 24 exact frames before/mid/after every boundary in `transition-map.md` (`r1-tr.jpg`).
+
+### Layout
+- [x] Headlines keep their zone (470–700 px); taglines sit between the headline and the stage; the light table is clipped to the stage (742–1442 px), so no line or label reaches the headline zone or the source line.
+- [x] Labels sit on solid pills or in clear space beside the lines; none crosses a headline.
+- [x] Nothing darkens the charts to make room for text; the tracing sheet is the object being shown, and after it lands it is translucent so today's chart reads through it.
+- [x] Opening title centred, rising in; corner logo from frame 0 on navy, hidden on the off-white chapter (`logoHide`), back for the verdict.
+
+### Opening
+- [x] Statement (BITCOIN NGULANG 2021?) → today's real Binance chart drawing in from 0.4 s (asset level 3) → the claim tag at 5.1 s → the light table and the 2021–23 sheet at 7.7 s → the first answer at 9.4 s.
+- [x] Restrained opening (a draw-on, a pulse); the hero re-scale waits for 16.5 s.
+
+### Demonstration and sound-off
+- [x] Each claim is shown on the data: six numbered steps on both charts; both cycles on one ruler pinned at the final low with crash and rally brackets and day bars; the 42% ruler on the 2023 rally carried onto today's; the 9 Nov close and 8 Nov low on the level; the ATH 179 days later; the 1 CONTOH stamp.
+- [x] Muted, the headlines carry it (see Part A, 9).
+- [x] Labels at the claim: KLAIM VIRAL (the claim is theirs, not ours); dates and prices on every marker; SEMPAT LEBIH DALAM: 47%; SATU SIKLUS DULU ≠ JAMINAN; BACAAN KAMI · BUKAN RAMALAN · BUKAN SARAN INVESTASI.
+
+### Evidence and editorial
+- [x] Every number from Binance BTC/USDT daily (S1); the reference's "exactly 40%", "next stop ATH" and "history on our side" corrected; no forecast, no CTA.
+
+### Runtime and implementation
+- [x] Duration from the audio (64.4 s narration) and the render (67.1 s: 0.6 s hold + 2 s outro); inside the window (50–72 s).
+- [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 67.1 s, 2,011 frames (last frame is the outro); −14.2 LUFS, −1.0 dBTP, LRA 1.8 LU.
+- [x] blackdetect: only the outro (65.0–67.0 s); freezedetect (2 s): short holds while a beat is explained (18.7, 29.5, 33.8, 42.1, 46.0, 50.8 s; 2.0–3.2 s each, captions change); silencedetect: only after the last word (64.5 s).
+
+### Visual and sound inspection
+- [x] Encoded frames at every beat and transition; first 3 s and last 2 s checked.
+- [ ] Motion watched in a full render: **NOT REVIEWED** (frames only).
+- [x] Sound: score layers set per section and sidechain-ducked under the voice; effects on on-screen events. **Not listened to.**
+- [x] One dominant idea per beat; every move motivated (the sheet arriving, landing on one ruler, reframing to the rallies, the ruler carried, reframing out to the ATH).
+- [x] Brand: Inter Tight / Inter / JetBrains Mono, brand blue for today, graphite for the past, red/green only for down/up numbers; official logo bug and outro.
+
+## Scores (1–5; any score below 4 → targeted revision and re-check)
+| Hook | First 12 s | Real-world opening | Educational payoff | Reward ladder | Understanding | Hierarchy | Camera | Transitions | Rhythm | Brand | Factual accuracy |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 4 | 4 | 4 | 5 | 5 | 5 | 4 | 4 | 4 | 4 | 4 | 5 |
+
+## Known limitations
+- Motion not watched and audio not heard. Listen to the Orus voice on "double top", "crash", "rally", "pullback", "all time high" (respelled) and "dip" (whisper heard "deep").
+- The working voice is Google Orus; the ElevenLabs script is ready (`elevenlabs-script.md`).
+- The data ends at the 9 Nov 2026 close; the level and "BTC is there now" are as of 10 Nov 2026 and will age quickly. Post soon, or re-check the last candles before posting.
+- Small labels (17–20 px mono) on the chart are readable at full size; on a phone they are secondary to the headlines.
+
+## Final verified artifact path
+`output/btc-ulang-2021.mp4` (render 1), 67.1 s, 2,011 frames, −14.2 LUFS. Subtitles: `episodes/btc-ulang-2021/btc-ulang-2021.srt`.
