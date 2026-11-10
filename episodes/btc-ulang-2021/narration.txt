@@ -1,0 +1,10 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[rate:1.1]][[hook]]Katanya, Bitcoin lagi ngulang siklus *dua ribu dua puluh satu*, langkah demi langkah. [[claim]]Dan ini dip terakhir sebelum all time high baru.
+[[check]]Kita cek pakai data.
+[[order]]Urutannya memang sama: [[s1]]double top, [[s2]]crash, [[s3]]mantul, [[s4]]kapitulasi, [[s5]]mantul lagi, [[s6]]lalu low terakhir.
+[[size]]Tapi *ukurannya* beda. [[crash]]Crash-nya dulu tujuh puluh delapan persen, sekarang lima puluh empat. [[rally]]Rally-nya: dulu seratus lima persen, sekarang lima puluh satu. [[speed]]Dan jalannya hampir *tiga kali* lebih cepat.
+[[retrace]]Yang menarik: pullback dua ribu dua puluh tiga berhenti di *empat puluh dua persen* dari rally-nya. [[never]]Setelah itu, Bitcoin nggak pernah semurah itu lagi.
+[[level]]Sekarang, empat puluh dua persen itu di sekitar *tujuh puluh lima ribu dolar*. [[now]]Dan Bitcoin lagi di situ, bahkan sempat sedikit lebih dalam.
+[[ath]]Tapi waktu itu, all time high baru datang *enam bulan* kemudian. [[one]]Dan itu cuma satu contoh.
+[[payoff]]Jadi tiap ada yang bilang sejarah berulang, cek tiga hal: *urutannya*, *ukurannya*, dan *levelnya*. [[verdict]]Di sini: urutannya sama, ukurannya jauh lebih kecil, [[fail]]dan kalau Bitcoin bertahan di bawah tujuh puluh lima ribu, analoginya melemah.

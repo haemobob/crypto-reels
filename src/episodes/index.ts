@@ -7,10 +7,12 @@ import bitcoinShutdown from './bitcoin-shutdown';
 import jpmorganBitcoin from './jpmorgan-bitcoin';
 import kamusSmc from './kamus-smc';
 import semuaMerah from './semua-merah';
+import btcUlang2021 from './btc-ulang-2021';
 // @episodes-import (scripts/new-episode.ts adds imports above this line)
 
 export const episodes: Record<string, EpisodeModule> = {
   // @episodes-entry (scripts/new-episode.ts adds entries below this line)
+  'btc-ulang-2021': btcUlang2021,
   'semua-merah': semuaMerah,
   'kamus-smc': kamusSmc,
   'jpmorgan-bitcoin': jpmorganBitcoin,
