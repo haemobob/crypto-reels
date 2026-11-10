@@ -67,6 +67,11 @@ Checked on stills during the build (three rounds; fixes: the opening chart narro
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 4 | 4 | 4 | 5 | 5 | 5 | 4 | 4 | 4 | 4 | 4 | 5 |
 
+## Fixes after the user's review (render 2)
+1. The chart lines ran past the edge of the tracing sheet in the zoomed shots → the old chart is clipped to the sheet and today's chart closes in to the sheet as it lands (14 px inner margin); the ruler now fades out completely when the level line takes over.
+2. In the check card, the number circles sat lower than their titles (centred on title + note) → number, title and result share one centred line; the note sits under the title.
+Checked on stills and on the encoded render 2 (`output/btc-ulang-2021-review/r2-check.jpg`, 12 exact frames).
+
 ## Known limitations
 - Motion not watched and audio not heard. Listen to the Orus voice on "double top", "crash", "rally", "pullback", "all time high" (respelled) and "dip" (whisper heard "deep").
 - The working voice is Google Orus; the ElevenLabs script is ready (`elevenlabs-script.md`).
@@ -74,4 +79,4 @@ Checked on stills during the build (three rounds; fixes: the opening chart narro
 - Small labels (17–20 px mono) on the chart are readable at full size; on a phone they are secondary to the headlines.
 
 ## Final verified artifact path
-`output/btc-ulang-2021.mp4` (render 1), 67.1 s, 2,011 frames, −14.2 LUFS. Subtitles: `episodes/btc-ulang-2021/btc-ulang-2021.srt`.
+`output/btc-ulang-2021.mp4` (render 2), 67.1 s, 2,011 frames, −14.2 LUFS. Subtitles: `episodes/btc-ulang-2021/btc-ulang-2021.srt`.
