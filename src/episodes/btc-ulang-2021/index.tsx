@@ -70,15 +70,14 @@ const CheckCard = ({b, w}: {b: Beats; w: (t: string, n?: number) => number}) => 
         const a = Math.max(0.28 * fade(f, b.payoff + 6, 12), fade(f, r.at - 4, 10));
         const res = fade(f, r.resAt, 10);
         return (
-          <div key={r.n} style={{display: 'flex', alignItems: 'center', gap: 26, height: 150, borderBottom: '1px solid #1E3256', opacity: a, transform: `translateY(${(1 - a) * 24}px)`}}>
-            <div style={{width: 64, height: 64, borderRadius: 32, background: colors.blue, color: '#fff', fontFamily: fonts.mono, fontWeight: 800, fontSize: 32, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{r.n}</div>
-            <div style={{flex: 1}}>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline'}}>
-                <div style={{fontFamily: fonts.heading, fontWeight: 800, fontSize: 58, color: colors.text, letterSpacing: '-0.01em'}}>{r.t}</div>
-                <div style={{fontFamily: fonts.heading, fontWeight: 800, fontSize: 44, opacity: res, letterSpacing: '-0.01em'}}>{r.res}</div>
-              </div>
-              <div style={{fontFamily: fonts.mono, fontWeight: 600, fontSize: 18, color: '#7F93B3', marginTop: 6, opacity: res, letterSpacing: '0.04em'}}>{r.note}</div>
+          <div key={r.n} style={{height: 150, display: 'flex', flexDirection: 'column', justifyContent: 'center', borderBottom: '1px solid #1E3256', opacity: a, transform: `translateY(${(1 - a) * 24}px)`}}>
+            {/* Number, title and result share one line, centred on each other. */}
+            <div style={{display: 'flex', alignItems: 'center', gap: 26, height: 70}}>
+              <div style={{width: 64, height: 64, flexShrink: 0, borderRadius: 32, background: colors.blue, color: '#fff', fontFamily: fonts.mono, fontWeight: 800, fontSize: 32, lineHeight: 1, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{r.n}</div>
+              <div style={{flex: 1, fontFamily: fonts.heading, fontWeight: 800, fontSize: 58, lineHeight: 1, color: colors.text, letterSpacing: '-0.01em'}}>{r.t}</div>
+              <div style={{fontFamily: fonts.heading, fontWeight: 800, fontSize: 44, lineHeight: 1, opacity: res, letterSpacing: '-0.01em'}}>{r.res}</div>
             </div>
+            <div style={{marginLeft: 90, fontFamily: fonts.mono, fontWeight: 600, fontSize: 18, color: '#7F93B3', marginTop: 8, opacity: res, letterSpacing: '0.04em'}}>{r.note}</div>
           </div>
         );
       })}

@@ -35,6 +35,8 @@ const M4: Map = {x0: 90, w: 860, d0: -50, d1: 505, y0: 790, h: 590, r0: 0.9, r1:
 
 const SHEET_B = {x: 104, y: 772, w: 872, h: 296};
 const SHEET_M = {x: 64, y: 752, w: 952, h: 690};
+/** Inner margin of the paper: lines stop this far inside its edge. */
+const PAD = 14;
 
 const INK = colors.ink;
 const GRAPHITE = '#2B3240';
@@ -151,7 +153,7 @@ export const Tracing = ({b}: {b: Beats}) => {
   const rNow = {lo: 1, hi: RALLY.now.hi / LOW_NOW, lv: LEVEL_NOW / LOW_NOW, d: 96};
   const ruler = {d: lerp(rOld.d, rNow.d, move), hi: Math.exp(lerp(Math.log(rOld.hi), Math.log(rNow.hi), move)), lv: Math.exp(lerp(Math.log(rOld.lv), Math.log(rNow.lv), move))};
   // The ruler steps aside once the level line carries the idea.
-  const rulerIn = retraceIn * (1 - 0.75 * ramp(f, b.now - 6, b.now + 8));
+  const rulerIn = retraceIn * (1 - ramp(f, b.now - 6, b.now + 8));
   const levelLineIn = ramp(f, b.level + 30, b.level + 44, ease.out) * levelOut;
   const nowIn = ramp(f, b.now, b.now + 14, ease.out) * levelOut;
   const athIn = ramp(f, b.ath + 36, b.ath + 50, ease.out) * fadeAll;
@@ -170,6 +172,14 @@ export const Tracing = ({b}: {b: Beats}) => {
         <clipPath id="stage">
           <rect x={40} y={742} width={1000} height={700} />
         </clipPath>
+        {/* Lines never leave the paper: the old chart is clipped to the sheet; today's chart to the stage while it sits
+            on the table, closing in to the sheet as the sheet lands on it. */}
+        <clipPath id="sheetClip">
+          <rect x={sh.x + PAD} y={sh.y + PAD} width={sh.w - 2 * PAD} height={sh.h - 2 * PAD} />
+        </clipPath>
+        <clipPath id="nowClip">
+          <rect x={lerp(40, SHEET_M.x + PAD, toM2)} y={lerp(742, SHEET_M.y + PAD, toM2)} width={lerp(1000, SHEET_M.w - 2 * PAD, toM2)} height={lerp(700, SHEET_M.h - 2 * PAD, toM2)} />
+        </clipPath>
       </defs>
 
       {/* Navy opening: price ticks for today's chart. */}
@@ -186,10 +196,12 @@ export const Tracing = ({b}: {b: Beats}) => {
         {light && <Txt x={92} y={1408} size={20} color={BLUE} anchor="start" weight={800} opacity={ramp(f, b.check + 10, b.check + 24) * (1 - 0.3 * toM2)}>2025–2026 · SEKARANG</Txt>}
 
         {/* Today's chart (the base of the light table). */}
-        <path d={ranges(NOW, mNow, nowUpTo)} stroke={nowColor} strokeWidth={2} opacity={0.22} fill="none" />
-        <path d={path(NOW, mNow, nowUpTo)} stroke={nowColor} strokeWidth={3.4} fill="none" strokeLinejoin="round" strokeLinecap="round" />
-        {/* The last few weeks, emphasised when the level is reached. */}
-        {nowIn > 0 && <path d={path(NOW.filter((p) => p.d >= dayNow('2026-09-21')), mNow, 999)} stroke={BLUE} strokeWidth={7} opacity={0.35 * nowIn} fill="none" strokeLinecap="round" />}
+        <g clipPath="url(#nowClip)">
+          <path d={ranges(NOW, mNow, nowUpTo)} stroke={nowColor} strokeWidth={2} opacity={0.22} fill="none" />
+          <path d={path(NOW, mNow, nowUpTo)} stroke={nowColor} strokeWidth={3.4} fill="none" strokeLinejoin="round" strokeLinecap="round" />
+          {/* The last few weeks, emphasised when the level is reached. */}
+          {nowIn > 0 && <path d={path(NOW.filter((p) => p.d >= dayNow('2026-09-21')), mNow, 999)} stroke={BLUE} strokeWidth={7} opacity={0.35 * nowIn} fill="none" strokeLinecap="round" />}
+        </g>
 
         {/* Opening: the last close, pulsing on the claim. */}
         {!light && f > b.hook + 70 && (
@@ -210,8 +222,10 @@ export const Tracing = ({b}: {b: Beats}) => {
               <rect key={k} x={x} y={sh.y - 12} width={70} height={24} fill="#E8DFC8" opacity={0.75} transform={`rotate(${k ? 6 : -6} ${x + 35} ${sh.y})`} />
             ))}
             <Txt x={sh.x + sh.w - 22} y={sh.y + 30} size={20} color={GRAPHITE} anchor="end" weight={800} opacity={(1 - toM2 * 0.3) * (1 - toM3)}>2021–2023 · DULU</Txt>
-            <path d={ranges(OLD, mOldShown, oldUpTo)} stroke={GRAPHITE} strokeWidth={2} opacity={0.2} fill="none" />
-            <path d={path(OLD, mOldShown, oldUpTo)} stroke={GRAPHITE} strokeWidth={2.8} fill="none" strokeLinejoin="round" strokeLinecap="round" />
+            <g clipPath="url(#sheetClip)">
+              <path d={ranges(OLD, mOldShown, oldUpTo)} stroke={GRAPHITE} strokeWidth={2} opacity={0.2} fill="none" />
+              <path d={path(OLD, mOldShown, oldUpTo)} stroke={GRAPHITE} strokeWidth={2.8} fill="none" strokeLinejoin="round" strokeLinecap="round" />
+            </g>
           </g>
         )}
 
