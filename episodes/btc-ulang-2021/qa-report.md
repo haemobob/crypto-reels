@@ -52,8 +52,8 @@ Checked on stills during the build (three rounds; fixes: the opening chart narro
 
 ### Runtime and implementation
 - [x] Duration from the audio (69.3 s narration, the user's ElevenLabs take) and the render (71.9 s: 0.6 s hold + 2 s outro); inside the window (50–72 s).
-- [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 67.1 s, 2,011 frames (last frame is the outro); −14.2 LUFS, −1.0 dBTP, LRA 1.8 LU.
-- [x] blackdetect: only the outro (65.0–67.0 s); freezedetect (2 s): short holds while a beat is explained (18.7, 29.5, 33.8, 42.1, 46.0, 50.8 s; 2.0–3.2 s each, captions change); silencedetect: only after the last word (64.5 s).
+- [x] ffprobe (render 4, ElevenLabs take): 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 71.9 s, 2,156 frames (last frame is the outro); −14.1 LUFS, −1.2 dBTP, LRA 2.5 LU.
+- [x] blackdetect: only the outro (69.9–71.8 s); freezedetect (2 s): short holds while a beat is explained (21.5, 33.2, 37.7, 46.3, 55.3 s; 2.0–2.8 s each, captions change), none in the opening after the fix; silencedetect: only after the last word (69.3 s).
 
 ### Visual and sound inspection
 - [x] Encoded frames at every beat and transition; first 3 s and last 2 s checked.
@@ -83,4 +83,4 @@ Checked on stills and on the encoded render 2 (`output/btc-ulang-2021-review/r2-
 - Small labels (17–20 px mono) on the chart are readable at full size; on a phone they are secondary to the headlines.
 
 ## Final verified artifact path
-`output/btc-ulang-2021.mp4` (render 2), 67.1 s, 2,011 frames, −14.2 LUFS. Subtitles: `episodes/btc-ulang-2021/btc-ulang-2021.srt`.
+`output/btc-ulang-2021.mp4` (render 4, ElevenLabs take, 11 Nov 2026), 71.9 s, 2,156 frames, −14.1 LUFS. Subtitles: `episodes/btc-ulang-2021/btc-ulang-2021.srt`. Cover: `output/btc-ulang-2021-cover.png` / `.jpg` (1080×1920) and `-cover-grid.jpg` (3:4 preview).
