@@ -1,0 +1,9 @@
+{
+  "id": "trader-1-persen",
+  "title": "1% yang nggak nyerah?",
+  "minSeconds": 25,
+  "maxSeconds": 40,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}

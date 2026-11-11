@@ -1,0 +1,9 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[rate:1.08]][[hook]]Katanya, kalau nggak pernah nyerah, lo bakal jadi *satu persen* trader yang menang.
+[[study]]Ada yang ngecek. Hampir *dua puluh ribu* orang mulai day trading futures di Brasil.
+[[one]]Yang cuma sehari: hampir *tiga puluh persen* untung.
+[[mid]]Yang bertahan seratus sampai dua ratus hari: hampir tujuh persen.
+[[long]]Lebih dari tiga ratus hari: cuma *tiga persen*.
+[[trend]]Makin lama bertahan, makin sedikit yang untung. [[learn]]Dan nggak ada bukti mereka makin jago.
+[[payoff]]Jadi sebelum bilang jangan nyerah, cek dulu: setelah biaya, hasil lo udah *positif* belum?
