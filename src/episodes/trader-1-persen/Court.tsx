@@ -187,7 +187,7 @@ export const Court = ({b}: {b: Beats}) => {
           <Txt x={160} y={984} size={26} font={fonts.body} weight={600} color="#C9D3E3" anchor="start" spacing="0">Chague, De-Losso &amp; Giovannetti</Txt>
           <line x1={160} x2={920} y1={1030} y2={1030} stroke="#2A3A5A" strokeWidth={2} />
           <Txt x={160} y={1124} size={110} font={fonts.heading} weight={800} anchor="start" color={colors.electric} spacing="-0.02em">
-            {Math.round(interpolate(f, [b.wCount - 4, b.wCount + 26], [0, 19646], {...clamp, easing: ease.out})).toLocaleString('de-DE')}
+            {Math.round(interpolate(f, [b.study + 8, b.wCount + 20], [0, 19646], {...clamp, easing: ease.out})).toLocaleString('de-DE')}
           </Txt>
           <Txt x={160} y={1206} size={22} color={colors.text} anchor="start">ORANG MULAI DAY TRADING FUTURES INDEKS SAHAM</Txt>
           <Txt x={160} y={1240} size={22} color={colors.text} anchor="start">BRASIL · 2013–2015 · SEMUANYA DIIKUTI</Txt>

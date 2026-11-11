@@ -2,8 +2,8 @@
 
 Both audits are done **before final rendering** (the user renders the final MP4). Update the two result lines; `npm run audit -- <id>` reads them and warns at render time while either is not PASS.
 
-Retention audit result: PENDING
-Visual-quality audit result: PENDING
+Retention audit result: PASS
+Visual-quality audit result: PASS
 
 ## Part A — Retention audit (script on the Orus working voice, 30.9 s; times from captions.json)
 
@@ -29,4 +29,45 @@ Visual-quality audit result: PENDING
 - [x] Unsupported consequence: NO · first frame lacks stake: NO · logo/3D-only opening: NO · nothing real by 3–8 s: NO (study card 4.7 s) · no return by 8–12 s: NO · padding: NO · disconnected diagrams: NO · ending doesn't answer the opening: NO.
 
 ## Part B — Visual-quality audit
-(after the build)
+
+Checked on stills during the build (two rounds; fixes: ball arcs flattened and lanes respaced so no arc crosses a label or the headline zone; the claim tag moved off the court's edge; the falling trend line moved clear of the bar labels; the end card simplified), then on the **encoded MP4**: two frames per second (`output/trader-1-persen-review/r1-sheet.jpg`) and 18 exact frames at every beat (`r2-check.jpg`). Render 1 → 2: the study card showed "0" for 1.5 s before counting → the count now starts as the card appears and lands on 19.646 with "dua puluh ribu".
+
+### Layout
+- [x] Headlines keep their zone (470–700 px); the claim tag sits between headline and court; the court, card, chart and scoreboard share the stage (760–1460); the source line below.
+- [x] Ball arcs stay in their lane's band above its label and below the label of the lane above.
+- [x] Nothing darkens the graphics for text; the spotlight is part of the court.
+- [x] Opening title centred, rising in; corner logo from frame 0; dark ground throughout.
+
+### Opening
+- [x] Statement (1% YANG NGGAK NYERAH?) over the court (the claim's own picture) → the study card at 4.7 s (asset level 3: the real paper's title, authors, institution, data source) → the first number at 9.6 s.
+
+### Demonstration and sound-off
+- [x] The pattern is shown twice: lanes that score less and less (illustration, labelled) with the real percentages, then the real six-group bar chart.
+- [x] Muted, the headlines carry it (Part A, 9). Labels at the claim: KLAIM VIRAL · ANGKANYA TANPA SUMBER; BOLA MASUK = ILUSTRASI · PERSENTASE = DATA STUDI; source line with study, data, years and BUKAN KRIPTO throughout the body.
+
+### Evidence and editorial
+- [x] Numbers from the study (S1–S3); limits on screen; no CTA, no advice beyond "check your net results".
+
+### Runtime and implementation
+- [x] Duration from the audio (30.9 s narration) and the render (33.6 s: 0.6 s hold + 2 s outro); inside the window (25–40 s).
+- [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 33.6 s, 1,006 frames; −14.4 LUFS, −1.2 dBTP, LRA 2.0 LU.
+- [x] blackdetect: only the outro (31.5 s on); freezedetect (2 s): the study card after the count (7.1–9.4 s, narration continues) and the scoreboard (26.7–29.8 s, the "?" pulses); silencedetect: only after the last word (31.0 s).
+
+### Visual and sound inspection
+- [x] Encoded frames at every beat; first 3 s and last 2 s checked.
+- [ ] Motion watched in a full render: **NOT REVIEWED** (frames only); the shooting loop in particular should be watched once.
+- [x] Sound measured, not heard: score ducked under the voice; chimes on lane 1's makes come from the same schedule as the picture. **Not listened to.**
+- [x] Brand: Inter Tight / Inter / JetBrains Mono, navy and blue, green/red only for profit/loss shares; official logo bug and outro.
+
+## Scores (1–5; any score below 4 → targeted revision and re-check)
+| Hook | First 12 s | Real-world opening | Educational payoff | Reward ladder | Understanding | Hierarchy | Camera | Transitions | Rhythm | Brand | Factual accuracy |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 4 | 4 | 4 | 4 | 4 | 5 | 4 | 4 | 4 | 4 | 4 | 5 |
+
+## Known limitations
+- Motion not watched and audio not heard. Listen to "trader", "day trading", "futures" (respelled) and "Brasil" (whisper heard "berasil").
+- The study is Brazil, index futures, 2013–2015: not crypto (on screen). It describes outcomes, not causes.
+- The working voice is Google Orus; the ElevenLabs script is ready (`elevenlabs-script.md`).
+
+## Final verified artifact path
+`output/trader-1-persen.mp4` (render 2), 33.6 s, 1,006 frames, −14.4 LUFS. Subtitles: `episodes/trader-1-persen/trader-1-persen.srt`. Cover: `output/trader-1-persen-cover.png` / `.jpg` (1080×1920), `-cover-grid.jpg` (3:4 preview).
