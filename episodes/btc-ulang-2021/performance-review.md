@@ -2,7 +2,7 @@
 
 Episode:
 Published (WIB):
-Length (s): ≈ 67 (64.4 s narration on the Orus working voice + 0.6 s hold + 2 s outro)
+Length (s): ≈ 71.9 (69.3 s narration, the user's ElevenLabs take, + 0.6 s hold + 2 s outro)
 Topic and audience:
 Hook variant / first 8s transcript:
 First frame visual:

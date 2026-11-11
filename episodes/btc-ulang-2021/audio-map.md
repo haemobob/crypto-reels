@@ -1,10 +1,11 @@
 # Audio map — btc-ulang-2021
 
 ## Voice
-- **Take (working voice):** Google Cloud TTS, Chirp 3 HD `id-ID-Chirp3-HD-Orus`, from `narration.txt` with `[[rate:1.1]]`. `public/episodes/btc-ulang-2021/narration.wav`, **64.44 s**.
-- **ElevenLabs alternative:** `elevenlabs-script.md` (same words, v3 tags, the user's preferred intriguing read). Swap in with `npm run voice -- btc-ulang-2021 --audio <file>`, then `npx tsx scripts/score-btc-ulang-2021.ts`; everything is cue-keyed. Window 50–72 s.
-- **Alignment:** whisper.cpp small: **162 of 165 words matched**; unmatched "dip" (heard "deep") and two "di". Respellings added for Orus (`pronunciations.json`): double → dabel, crash → kresy, rally → reli, pullback → pulbek, all → ol, time → taim. **Not heard by ear**: listen to the English terms.
-- **Cues (s):** hook 0.40 · claim 5.07 · check 7.72 · order 9.41 · s1 10.77 · s2 11.70 · s3 12.36 · s4 13.08 · s5 14.00 · s6 14.93 · size 16.52 · crash 18.14 · rally 21.73 · speed 25.72 · retrace 28.14 · never 32.93 · level 36.03 · now 40.44 · ath 44.50 · one 48.29 · payoff 49.90 · verdict 56.72 · fail 60.36. Last word ends ≈ 64.4 s.
+- **Take:** the user's ElevenLabs take (Eleven v3, "Ongky Himawan – Calm, Deep", from the intriguing `elevenlabs-script.md`; received 11 Nov 2026), 69.33 s. Original in `voice-cache/elevenlabs-take1.mp3`.
+- **Edit (no words changed, no cuts):** highpass 60 Hz, gentle compression (2.5:1 from −22 dB), levelled to −18 LUFS, limiter (peak −1.2 dBFS) → `voice-cache/elevenlabs-take1-clean.wav` → `public/episodes/btc-ulang-2021/narration.wav`, **69.28 s**. No tag read aloud; no pause longer than 0.45 s, so nothing was trimmed.
+- **Superseded:** the Orus working voice (64.44 s); its captions are kept in `voice-cache/captions-orus.json`.
+- **Alignment:** whisper.cpp small: **163 of 165 words matched**; unmatched "dip" (heard "deep") and one "di", interpolated between neighbours. **Not heard by ear**: listen to "dip" and the English terms.
+- **Cues (s):** hook 0.09 · claim 6.67 · check 10.09 · order 11.64 · s1 13.04 · s2 14.02 · s3 14.77 · s4 15.38 · s5 16.65 · s6 17.73 · size 19.07 · crash 20.86 · rally 24.54 · speed 28.54 · retrace 31.51 · never 37.02 · level 40.23 · now 44.62 · ath 48.57 · one 52.48 · payoff 54.52 · verdict 61.03 · fail 64.89. Last word ends 69.2 s.
 
 ## Score (original, synthesized)
 `npx tsx scripts/score-btc-ulang-2021.ts` → `public/episodes/btc-ulang-2021/score.mp3` (shared `scripts/score-lib.ts`, sidechain-ducked under the narration, cut 0.08 s after the last word). No samples.

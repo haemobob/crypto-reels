@@ -25,5 +25,9 @@ export const RemotionRoot = () => (
         />
       );
     })}
+    {/* Reel covers (thumbnails): one still per episode that defines a Cover. */}
+    {Object.entries(episodes).map(([id, ep]) =>
+      ep.Cover ? <Composition key={`cover-${id}`} id={`cover-${id}`} component={ep.Cover} durationInFrames={1} fps={VIDEO.fps} width={VIDEO.width} height={VIDEO.height} /> : null,
+    )}
   </>
 );

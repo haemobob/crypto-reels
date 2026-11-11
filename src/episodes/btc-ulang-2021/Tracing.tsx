@@ -16,14 +16,14 @@ export type Beats = Record<
   number
 >;
 
-type Map = {x0: number; w: number; d0: number; d1: number; y0: number; h: number; r0: number; r1: number};
+export type Map = {x0: number; w: number; d0: number; d1: number; y0: number; h: number; r0: number; r1: number};
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const lerpMap = (a: Map, b: Map, t: number): Map => ({
   x0: lerp(a.x0, b.x0, t), w: lerp(a.w, b.w, t), d0: lerp(a.d0, b.d0, t), d1: lerp(a.d1, b.d1, t),
   y0: lerp(a.y0, b.y0, t), h: lerp(a.h, b.h, t), r0: Math.exp(lerp(Math.log(a.r0), Math.log(b.r0), t)), r1: Math.exp(lerp(Math.log(a.r1), Math.log(b.r1), t)),
 });
-const X = (m: Map, d: number) => m.x0 + ((d - m.d0) / (m.d1 - m.d0)) * m.w;
-const Y = (m: Map, r: number) => m.y0 + m.h * (1 - (Math.log(r) - Math.log(m.r0)) / (Math.log(m.r1) - Math.log(m.r0)));
+export const X = (m: Map, d: number) => m.x0 + ((d - m.d0) / (m.d1 - m.d0)) * m.w;
+export const Y = (m: Map, r: number) => m.y0 + m.h * (1 - (Math.log(r) - Math.log(m.r0)) / (Math.log(m.r1) - Math.log(m.r0)));
 
 // Rulers (screen px). Stage band 740–1430.
 const A_NOW: Map = {x0: 90, w: 800, d0: -368, d1: 136, y0: 800, h: 560, r0: 0.93, r1: 2.3};
@@ -48,7 +48,7 @@ const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 const ramp = (f: number, a: number, b: number, e = ease.inOut) => interpolate(f, [a, b], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: e});
 const span = (f: number, a: number, b: number, inLen = 8, outLen = 8) => (b <= a ? 0 : Math.min(ramp(f, a, a + inLen, ease.out), 1 - ramp(f, b - outLen, b, ease.inOut)));
 
-const path = (pts: Pt[], m: Map, upTo: number) => {
+export const path = (pts: Pt[], m: Map, upTo: number) => {
   let s = '';
   for (const p of pts) {
     if (p.d > upTo) break;
@@ -56,7 +56,7 @@ const path = (pts: Pt[], m: Map, upTo: number) => {
   }
   return s;
 };
-const ranges = (pts: Pt[], m: Map, upTo: number) => {
+export const ranges = (pts: Pt[], m: Map, upTo: number) => {
   let s = '';
   for (const p of pts) {
     if (p.d > upTo) break;

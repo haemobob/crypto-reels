@@ -5,13 +5,13 @@ Both audits are done **before final rendering** (the user renders the final MP4)
 Retention audit result: PASS
 Visual-quality audit result: PASS
 
-## Part A — Retention audit (script on the Orus working voice, 64.4 s; times from captions.json)
+## Part A — Retention audit (re-checked on the user's ElevenLabs take, 69.3 s, 11 Nov 2026; times from captions.json. First pass on the Orus working voice, 64.4 s)
 
 ### Script audit
-- [x] 1. **Hook:** 0.4 s "Katanya, Bitcoin lagi ngulang siklus dua ribu dua puluh satu, langkah demi langkah." + 5.1 s "Dan ini dip terakhir sebelum all time high baru." The claim and its promise are clear in 3–7 s, over today's real chart.
+- [x] 1. **Hook:** 0.1 s "Katanya, Bitcoin lagi ngulang siklus dua ribu dua puluh satu, langkah demi langkah." + 6.7 s "Dan ini dip terakhir sebelum all time high baru." The claim and its promise are clear in 3–7 s, over today's real chart.
 - [x] 2. **Evidence by 5 s:** today's real BTC daily chart (Binance, to 9 Nov 2026) from frame 0, source line on screen.
-- [x] 3. **First payoff by 8–12 s:** 9.4 s "Urutannya memang sama: double top, crash, mantul, kapitulasi…" with the six steps numbered on both real charts (10.8–15.3 s).
-- [x] 4. **Reason to continue:** order matches (9.4 s) → but the size doesn't (16.5 s): crash, rally, speed → the 2023 pullback's 42% (28.1 s) → that level today, BTC on it now (36.0 s) → the caveat (44.5 s) → the check and the condition (49.9 s).
+- [x] 3. **First payoff by 8–12 s:** 11.6 s "Urutannya memang sama: double top, crash, mantul, kapitulasi…" with the six steps numbered on both real charts (13.0–18.1 s). At the edge of the window because of the slow, intriguing opening the user chose.
+- [x] 4. **Reason to continue:** order matches (11.6 s) → but the size doesn't (19.1 s): crash, rally, speed → the 2023 pullback's 42% (31.5 s) → that level today, BTC on it now (40.2 s) → the caveat (48.6 s) → the check and the condition (54.5 s).
 - [x] 5. **Concrete nouns:** two charts, numbered steps, a tracing sheet laid on top, a ruler moved from one chart to the other.
 - [x] 6. **Cut test:** draft (192 words) lost the dates of the two lows (on screen instead), "dari masa lalu", "di chart sekarang", "beberapa hari terakhir"; nothing repeats the headline.
 - [x] 7. **Promise/payoff:** "ngulang siklus 2021… dip terakhir?" → order yes, size no, level ≈ $75 rb now, ATH took 6 months, one example → three checks and the condition.
@@ -20,10 +20,10 @@ Visual-quality audit result: PASS
 - [x] 10. **Share reason:** the friend who posted "last dip before ATH".
 
 ### Viewer-value gate
-- [x] Understandable in 3 s · reason to care · early payoff (9.4–15 s) · each section adds information · the comparison is shown on real data · no removable sentence · a reusable check · delivers the promise · no follow/save/share request.
+- [x] Understandable in 3 s · reason to care · early payoff (11.6–18 s) · each section adds information · the comparison is shown on real data · no removable sentence · a reusable check · delivers the promise · no follow/save/share request.
 
 ### Retention ladder
-0.4 the claim · 5.1 the promise · 7.7 the check starts · 9.4 order matches (six steps to 15.3) · 16.5 size differs · 18.1 crash −78/−54 · 21.7 rally +105/+51 · 25.7 ≈3× faster · 28.1 2023 stopped at 42% · 32.9 never that cheap again · 36.0 42% today ≈ $75 rb · 40.4 BTC is there now, dipped deeper · 44.5 ATH 6 months later · 48.3 one example · 49.9 three checks · 56.7 verdict · 60.4 the condition.
+0.1 the claim · 6.7 the promise · 10.1 the check starts · 11.6 order matches (six steps to 18.1) · 19.1 size differs · 20.9 crash −78/−54 · 24.5 rally +105/+51 · 28.5 ≈3× faster · 31.5 2023 stopped at 42% · 37.0 never that cheap again · 40.2 42% today ≈ $75 rb · 44.6 BTC is there now, dipped deeper · 48.6 ATH 6 months later · 52.5 one example · 54.5 three checks · 61.0 verdict · 64.9 the condition.
 
 ### Rejection gates
 - [x] Unsupported consequence: NO · first frame lacks stake: NO · logo/3D-only opening: NO (real chart from frame 0) · nothing real by 3–8 s: NO · no return by 8–12 s: NO · padding: NO · disconnected diagrams: NO (one light table, one sheet) · ending doesn't answer the opening: NO.
@@ -73,8 +73,8 @@ Checked on stills during the build (three rounds; fixes: the opening chart narro
 Checked on stills and on the encoded render 2 (`output/btc-ulang-2021-review/r2-check.jpg`, 12 exact frames).
 
 ## Known limitations
-- Motion not watched and audio not heard. Listen to the Orus voice on "double top", "crash", "rally", "pullback", "all time high" (respelled) and "dip" (whisper heard "deep").
-- The working voice is Google Orus; the ElevenLabs script is ready (`elevenlabs-script.md`).
+- Motion not watched and audio not heard. Listen to the ElevenLabs take on "dip" (whisper heard "deep") and the English terms.
+- Voice: the user's ElevenLabs take (11 Nov 2026), levelled only, no cuts.
 - The data ends at the 9 Nov 2026 close; the level and "BTC is there now" are as of 10 Nov 2026 and will age quickly. Post soon, or re-check the last candles before posting.
 - Small labels (17–20 px mono) on the chart are readable at full size; on a phone they are secondary to the headlines.
 

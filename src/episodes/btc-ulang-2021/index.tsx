@@ -10,6 +10,7 @@ import type {Captions, EpisodeConfig} from '../../lib/types';
 import {colors} from '../../theme/colors';
 import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
+import {Cover} from './Cover';
 import {Sound} from './Sound';
 import {Tracing, type Beats} from './Tracing';
 
@@ -165,5 +166,6 @@ const episode: EpisodeModule = {
   Scene,
   // The corner logo needs a dark ground: hidden while the light table is on.
   logoHide: [[F('check'), F('payoff') + 4]],
+  Cover,
 };
 export default episode;

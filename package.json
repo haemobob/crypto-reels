@@ -15,7 +15,8 @@
     "srt": "tsx scripts/srt.ts",
     "audio": "tsx scripts/make-audio.ts",
     "import-sfx": "tsx scripts/import-sfx.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "cover": "tsx scripts/cover.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^9.8.2",
