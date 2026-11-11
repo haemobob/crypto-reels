@@ -51,7 +51,7 @@ Checked on stills during the build (three rounds; fixes: the opening chart narro
 - [x] Every number from Binance BTC/USDT daily (S1); the reference's "exactly 40%", "next stop ATH" and "history on our side" corrected; no forecast, no CTA.
 
 ### Runtime and implementation
-- [x] Duration from the audio (64.4 s narration) and the render (67.1 s: 0.6 s hold + 2 s outro); inside the window (50–72 s).
+- [x] Duration from the audio (69.3 s narration, the user's ElevenLabs take) and the render (71.9 s: 0.6 s hold + 2 s outro); inside the window (50–72 s).
 - [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 67.1 s, 2,011 frames (last frame is the outro); −14.2 LUFS, −1.0 dBTP, LRA 1.8 LU.
 - [x] blackdetect: only the outro (65.0–67.0 s); freezedetect (2 s): short holds while a beat is explained (18.7, 29.5, 33.8, 42.1, 46.0, 50.8 s; 2.0–3.2 s each, captions change); silencedetect: only after the last word (64.5 s).
 
@@ -71,6 +71,10 @@ Checked on stills during the build (three rounds; fixes: the opening chart narro
 1. The chart lines ran past the edge of the tracing sheet in the zoomed shots → the old chart is clipped to the sheet and today's chart closes in to the sheet as it lands (14 px inner margin); the ruler now fades out completely when the level line takes over.
 2. In the check card, the number circles sat lower than their titles (centred on title + note) → number, title and result share one centred line; the note sits under the title.
 Checked on stills and on the encoded render 2 (`output/btc-ulang-2021-review/r2-check.jpg`, 12 exact frames).
+
+## ElevenLabs take (11 Nov 2026, renders 3–4)
+- Render 3 on the take: one frame per second (`r3-sheet.jpg`) and 33 exact frames before/after every cue (`r3-tr.jpg`): every reveal lands on its word.
+- Fix: with the slower opening the chart finished drawing at 3 s and held still to 6.7 s (freezedetect 3.1–6.7 s) → the draw now spans the whole first line and ends just before the claim (render 4).
 
 ## Known limitations
 - Motion not watched and audio not heard. Listen to the ElevenLabs take on "dip" (whisper heard "deep") and the English terms.
