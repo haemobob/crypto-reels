@@ -9,10 +9,10 @@ Visual-quality audit result: PASS
 - [x] The narration/caption/payoff rules are set aside by the user's explicit brief (`retention-brief.md`).
 
 ## Part B — Visual-quality audit
-Checked on stills during the build (14 frames; fix: the court now shows from frame 0 instead of fading in) and on the encoded MP4 (12 exact frames, `output/nggak-nyerah-loop-review/r1-check.jpg`).
+Checked on stills during the build (14 frames; fix: the court now shows from frame 0 instead of fading in) and on the encoded MP4 (12 exact frames, `output/nggak-nyerah-loop-review/r1-check.jpg`). Version 2 (crypto/trader theme): stills (8 frames; fix: TRADER tag and result candles enlarged for phones) and the encoded render 2 (`r2-check.jpg`).
 - [x] Layout: three lanes 400 px apart; each ball arc stays inside its lane; labels clear of the arcs; logo bug top-left; brand line bottom.
 - [x] Story reads without sound: lane 1 stops after one miss (ball left on the floor, figure slumped), lane 2 after four, lane 3 scores on the seventh shot (rim and net glow, label glows, jump with arms up).
-- [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 15.1 s, 450 frames; −14.3 LUFS, −1.3 dBTP, LRA 2.7 LU.
+- [x] ffprobe (render 2): 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 15.1 s, 450 frames; −14.3 LUFS, −1.4 dBTP.
 - [x] blackdetect/freezedetect: only the outro.
 - [ ] Motion watched in a full render: **NOT REVIEWED** (frames only).
 - [x] Sound measured, not heard: foley on the schedule's frames; **not listened to**.
