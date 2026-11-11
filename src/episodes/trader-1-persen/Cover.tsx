@@ -44,7 +44,7 @@ const Card = ({x, label, value, color}: {x: number; label: string; value: string
   <>
     <div style={{position: 'absolute', left: x, width: 400, top: 770, textAlign: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 52, color: colors.text, letterSpacing: '-0.01em'}}>{label}</div>
     <div style={{position: 'absolute', left: x, top: 850, width: 400, height: 380, borderRadius: 28, background: '#0B1730', boxShadow: `0 0 0 3px ${color}, 0 24px 60px rgba(0,0,0,0.55)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-      <div style={{fontFamily: fonts.heading, fontWeight: 800, fontSize: 132, color, letterSpacing: '-0.03em', lineHeight: 1}}>{value}</div>
+      <div style={{fontFamily: fonts.heading, fontWeight: 800, fontSize: 112, color, letterSpacing: '-0.03em', lineHeight: 1}}>{value}</div>
       <div style={{fontFamily: fonts.mono, fontWeight: 700, fontSize: 30, color: '#9FB3D6', marginTop: 18, letterSpacing: '0.08em'}}>UNTUNG</div>
     </div>
   </>
