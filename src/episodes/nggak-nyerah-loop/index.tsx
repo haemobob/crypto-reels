@@ -1,4 +1,4 @@
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill, Audio, staticFile} from 'remotion';
 import captions from '../../../episodes/nggak-nyerah-loop/captions.json';
 import config from '../../../episodes/nggak-nyerah-loop/episode.json';
 import type {EpisodeModule} from '../../lib/episode-module';
@@ -15,5 +15,8 @@ const Scene = () => (
   </AbsoluteFill>
 );
 
-const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene};
+/** Music and foley across the whole Reel, so the closing chord rings out under the logo instead of stopping at the outro. */
+const Soundtrack = () => <Audio src={staticFile('episodes/nggak-nyerah-loop/score.mp3')} />;
+
+const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene, Soundtrack};
 export default episode;

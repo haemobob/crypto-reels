@@ -53,12 +53,23 @@ chords.forEach(([notes, name], k) => {
   const dur = Math.min(bar + 0.3, make - at + 0.3);
   music(name, at, dur, pad(notes, 0.05), -29, 'lowpass=f=2200', 0.15, 0.3);
 });
-music('lift', make, total - make, pad([130.81, 196, 261.63, 293.66, 329.63], 0.05), -26, 'aecho=0.8:0.6:160|240:0.25|0.18,lowpass=f=3600', 0.05, 1.2);
-// Beat: a soft kick on each beat and a hat on the off-beats, from the first bar to the end.
+// The ending: the groove runs to the end of the court (sceneEnd), then one final hit as the logo appears, and a
+// closing chord that rings out under the outro on its own decay (no long fade, no cut).
+const sceneEnd = SCENE_FRAMES / FPS;
+music('lift', make, sceneEnd + 0.4 - make, pad([130.81, 196, 261.63, 293.66, 329.63], 0.05), -26, 'aecho=0.8:0.6:160|240:0.25|0.18,lowpass=f=3600', 0.05, 0.5);
+// Beat: a soft kick on each beat and a hat on the off-beats, until the court ends.
 const kick = `sin(2*PI*(52+90*exp(-mod(t,${BEAT})*28))*mod(t,${BEAT}))*exp(-mod(t,${BEAT})*10)*0.9`;
-music('kick', 0, total, `${kick}|${kick}`, -29, 'lowpass=f=400', 0.8, 1.0);
+music('kick', 0, sceneEnd, `${kick}|${kick}`, -29, 'lowpass=f=400', 0.8, 0.12);
 const hat = `(random(0)*2-1)*exp(-mod(t+${BEAT / 2},${BEAT})*55)*0.5`;
-music('hat', bar, total - bar, `${hat}|${hat}`, -36, 'highpass=f=6500', 0.6, 1.0);
+music('hat', bar, sceneEnd - 0.3 - bar, `${hat}|${hat}`, -36, 'highpass=f=6500', 0.6, 0.3);
+{
+  // Final hit: a low boom and a C add9 chord struck once, decaying naturally across the 2 s outro.
+  const notes = [65.41, 130.81, 196, 261.63, 329.63, 392];
+  const chord = (d: number) => notes.map((f, k) => harm(f + d, [0.06 / (k + 1) ** 0.25, 0.022, 0.01])).join('+');
+  const boom = `0.5*sin(2*PI*55*t)*exp(-t*3.2)+0.25*sin(2*PI*110*t)*exp(-t*4)`;
+  const expr = `(${chord(0)})*exp(-t*1.35)+${boom}|(${chord(0.5)})*exp(-t*1.35)+${boom}`;
+  music('final', sceneEnd, total - sceneEnd, expr, -23, 'aecho=0.8:0.55:210|330:0.3|0.2,lowpass=f=4200', 0.004, 0.25);
+}
 // A crash on the make.
 {
   const f = path.join(tmp, 'crash.wav');
@@ -81,7 +92,7 @@ for (const e of events()) layers.push({at: e.t, file: file[e.kind], gain: gains[
 // --- Mix (no voice, nothing to duck), cut at the end of the outro with a short fade.
 const inputs = layers.flatMap((l) => ['-i', l.file]);
 const chains = layers.map((l, i) => `[${i}:a]aformat=sample_rates=${SR}:channel_layouts=stereo,volume=${l.gain.toFixed(4)},adelay=${Math.round(l.at * 1000)}|${Math.round(l.at * 1000)}[l${i}]`).join(';');
-const mix = `${chains};${layers.map((_, i) => `[l${i}]`).join('')}amix=inputs=${layers.length}:normalize=0,alimiter=limit=0.8,atrim=0:${total.toFixed(3)},afade=t=out:st=${(total - 0.6).toFixed(3)}:d=0.6[out]`;
+const mix = `${chains};${layers.map((_, i) => `[l${i}]`).join('')}amix=inputs=${layers.length}:normalize=0,alimiter=limit=0.8,atrim=0:${total.toFixed(3)},afade=t=out:st=${(total - 0.25).toFixed(3)}:d=0.25[out]`;
 const out = path.join(outDir, 'score.mp3');
 run(ffmpegBin(), ['-v', 'error', '-y', ...inputs, '-filter_complex', mix, '-map', '[out]', '-ar', String(SR), '-c:a', 'libmp3lame', '-b:a', '320k', out]);
 console.log(`✔ score.mp3 (${layers.length} layers: music + ${events().length} foley events, make at ${make.toFixed(2)} s, ${total.toFixed(1)} s) in public/episodes/${id}`);
