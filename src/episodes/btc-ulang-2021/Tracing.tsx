@@ -112,7 +112,9 @@ export const Tracing = ({b}: {b: Beats}) => {
   const mNow = later(lerpMap(lerpMap(A_NOW, B_NOW, toB), M2, toM2));
 
   // --- How much of each series is drawn (days from its final low).
-  const nowUpTo = interpolate(f, [b.hook, b.hook + 80], [-368, 140], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.inOut});
+  // Today's chart draws across the whole opening line, finishing just before the claim (never in under 80 frames).
+  const drawEnd = Math.max(b.hook + 80, b.claim - 8);
+  const nowUpTo = interpolate(f, [b.hook, drawEnd], [-368, 140], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.inOut});
   const oldUpTo =
     f < b.rally ? 4 : f < b.retrace ? interpolate(f, [b.rally, b.rally + 34], [4, 236], {extrapolateRight: 'clamp', easing: ease.inOut})
       : f < b.ath ? interpolate(f, [b.retrace + 6, b.retrace + 40], [236, 336], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.inOut})
@@ -204,11 +206,11 @@ export const Tracing = ({b}: {b: Beats}) => {
         </g>
 
         {/* Opening: the last close, pulsing on the claim. */}
-        {!light && f > b.hook + 70 && (
+        {!light && f > drawEnd - 10 && (
           <g>
             <circle cx={lastX} cy={lastY} r={9 * pulse(b.claim)} fill={colors.electric} opacity={0.9} />
             <circle cx={lastX} cy={lastY} r={22 * pulse(b.claim)} fill="none" stroke={colors.electric} strokeWidth={2} opacity={0.5 * ramp(f, b.claim, b.claim + 10)} />
-            <Txt x={lastX - 16} y={lastY + 40} size={20} color={colors.text} anchor="end" opacity={ramp(f, b.hook + 70, b.hook + 84)}>{`9 NOV · ${fmt(NOW_LAST.price)}`}</Txt>
+            <Txt x={lastX - 16} y={lastY + 40} size={20} color={colors.text} anchor="end" opacity={ramp(f, drawEnd - 10, drawEnd + 4)}>{`9 NOV · ${fmt(NOW_LAST.price)}`}</Txt>
           </g>
         )}
 
