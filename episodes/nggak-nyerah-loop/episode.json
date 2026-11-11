@@ -1,0 +1,9 @@
+{
+  "id": "nggak-nyerah-loop",
+  "title": "Nggak nyerah (loop tanpa suara narasi)",
+  "minSeconds": 10,
+  "maxSeconds": 16,
+  "captions": "none",
+  "tailSeconds": 0,
+  "outro": true
+}

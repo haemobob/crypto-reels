@@ -15,7 +15,8 @@ export const validate = (id: string) => {
   const captions = readJson<Captions>(path.join(episodeDir(id), 'captions.json'));
   const minS = episode.minSeconds ?? 0;
   const maxS = episode.maxSeconds ?? 30;
-  if (captions.words.length === 0) problems.push('No voice yet: run npm run voice');
+  // A wordless Reel (captions "none", user's choice) has no voice by design; its durationSec is the scene length.
+  if (captions.words.length === 0 && episode.captions !== 'none') problems.push('No voice yet: run npm run voice');
   if (captions.durationSec < minS || captions.durationSec > maxS)
     problems.push(`Narration ${captions.durationSec.toFixed(1)} s is outside ${minS}–${maxS} s`);
 

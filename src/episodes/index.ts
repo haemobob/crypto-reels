@@ -9,10 +9,12 @@ import kamusSmc from './kamus-smc';
 import semuaMerah from './semua-merah';
 import btcUlang2021 from './btc-ulang-2021';
 import trader1Persen from './trader-1-persen';
+import nggakNyerahLoop from './nggak-nyerah-loop';
 // @episodes-import (scripts/new-episode.ts adds imports above this line)
 
 export const episodes: Record<string, EpisodeModule> = {
   // @episodes-entry (scripts/new-episode.ts adds entries below this line)
+  'nggak-nyerah-loop': nggakNyerahLoop,
   'trader-1-persen': trader1Persen,
   'btc-ulang-2021': btcUlang2021,
   'semua-merah': semuaMerah,
