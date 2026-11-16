@@ -81,4 +81,7 @@ Visual-quality audit result: PASS
 - Voice: the Orus working voice. The ElevenLabs script is in `elevenlabs-script.md`.
 
 ## Final verified artifact path
-(render 2, below)
+`output/poc-bitcoin.mp4` (render 2, Orus voice, 16 Nov 2026): 62.6 s, 1,875 frames, 1080×1920, 30 fps, H.264 + AAC, −14.2 LUFS, −1.1 dBTP.
+- Render 2 changed only the hold beat's timing. It was checked on 12 exact frames of the encoded file (`output/poc-bitcoin-review/r2-check.jpg`).
+- Subtitles: `episodes/poc-bitcoin/poc-bitcoin.srt` (33 cues).
+- Cover: `output/poc-bitcoin-cover.png` / `.jpg`, plus the grid crop `-cover-grid.jpg`.
