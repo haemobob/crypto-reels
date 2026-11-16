@@ -21,7 +21,7 @@ export const Sound = () => {
       <Sfx name="whoosh-deep-short" at={c('rally')} volume={0.14} />
       <Sfx name="impact-bass-echo" at={c('stop') + 6} volume={0.13} />
       <Sfx name="bass-drop-descend" at={c('drop') + 2} volume={0.13} />
-      <Sfx name="ni-sound-cute-interface-bubble-pop-synth-chord-positive-notification" at={c('hold') + 30} volume={0.1} />
+      <Sfx name="ni-sound-cute-interface-bubble-pop-synth-chord-positive-notification" at={word('tutup', 0)} volume={0.1} />
       <Sfx name="hud-electronic-interface-sfx-pack-1" at={c('why') + 2} volume={0.1} />
       <Sfx name="whoosh-and-hit-2" at={c('pay') - 2} volume={0.14} />
       <Sfx name="hud-electronic-interface-sfx-pack-6" at={c('fail') + 2} volume={0.1} />

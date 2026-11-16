@@ -205,7 +205,7 @@ export const Profile = ({b}: {b: Beats}) => {
       <Pill x={X(iTop) - 24} y={Y(87396) - 34} text="$87.396" bg={colors.bg} color={GOLD} anchor="end" opacity={tag(o87, b.stop)} />
       <Pill x={X(iTop) - 24} y={Y(87396) - 76} text="0,5% DI BAWAH POC" bg={colors.blue} anchor="end" size={19} opacity={appear(f, b.stop + 16) * calm} />
       <Pill x={X(iLow) - 24} y={Y(62006) + 34} text="$62.006" bg={colors.bg} color={GOLD} anchor="end" opacity={tag(o62, b.hold)} />
-      <Pill x={X(iLow) - 24} y={Y(62006) + 76} text="15 NOV TUTUP $65.351 · DI ATAS POC" bg={colors.positive} color={colors.bg} anchor="end" size={18} opacity={appear(f, b.hold + 34) * calm} />
+      <Pill x={X(iLow) - 24} y={Y(62006) + 76} text="15 NOV TUTUP $65.351 · DI ATAS POC" bg={colors.positive} color={colors.bg} anchor="end" size={18} opacity={appear(f, b.hold + 70) * calm} />
       <Pill x={X0 + W} y={Y(57800) + 28} text="LOW JULI $57.800" bg={colors.negative} anchor="end" opacity={appear(f, b.fail + 4)} />
     </svg>
   );

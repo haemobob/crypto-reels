@@ -6,7 +6,7 @@ import {fonts} from '../../theme/typography';
 
 /**
  * Reel cover (1080×1920), channel grid style (CLAUDE.md, covers): navy, logo on top, the question with the key word
- * in colour, one central visual: the real BTC line with the two points of control as gold lines.
+ * in colour, one central visual: the real BTC line (May–Nov 2026) with the two points of control as gold lines.
  */
 type Day = [string, number, number, number];
 const data = raw as unknown as {daily: Day[]};
@@ -28,10 +28,10 @@ export const Cover = () => {
       <div style={{position: 'absolute', top: 300, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
         <BrandLogo width={260} />
       </div>
-      <div style={{position: 'absolute', top: 400, left: 40, right: 40, textAlign: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 104, letterSpacing: '-0.02em', lineHeight: 1.0, color: colors.text}}>
-        2 LEVEL BITCOIN
+      <div style={{position: 'absolute', top: 405, left: 30, right: 30, textAlign: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 96, letterSpacing: '-0.02em', lineHeight: 1.02, color: colors.text}}>
+        KENAPA BITCOIN
         <br />
-        <span style={{color: GOLD}}>PALING PENTING?</span>
+        <span style={{color: colors.electric}}>BERHENTI</span> DI SINI?
       </div>
       <svg width={1080} height={1920} style={{position: 'absolute', inset: 0}}>
         <rect x={x0 - 20} y={y0 - 30} width={w + 40} height={h + 60} rx={26} fill="#0B1730" stroke="#2A3A5A" strokeWidth={2} />

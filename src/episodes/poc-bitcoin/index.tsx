@@ -41,7 +41,7 @@ const Scene = () => {
   const {cue, word, narrationEnd} = useCues();
   const c = (k: string) => cue(k);
   const b: Beats = {
-    hook: c('hook'), nocoin: c('nocoin'), poc: c('poc'), summer: c('summer'), bear: c('bear'), rally: c('rally'), stop: c('stop'), drop: c('drop'), hold: c('hold'),
+    hook: c('hook'), nocoin: c('nocoin'), poc: c('poc'), summer: c('summer'), bear: c('bear'), rally: c('rally'), stop: c('stop'), drop: c('drop'), hold: word('berhenti', 3),
     why: c('why'), pay: c('pay'), fail: c('fail'), end: narrationEnd, w87: word('delapan', 0), w62: word('enam', 0),
   };
   const source =
