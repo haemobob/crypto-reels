@@ -1,0 +1,8 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[rate:1.1]][[hook]]Bitcoin jatuh *dua puluh sembilan persen* dari puncaknya. Banyak yang bilang: ini *bear trap*, kayak dua ribu dua puluh tiga.
+[[def]]Bear trap itu: support jebol, orang panik jual, lalu harga langsung berbalik dan menjebak mereka.
+[[t23]]Februari dua ribu dua puluh tiga: dua puncak, sampai dua puluh lima ribu. [[break23]]Maret, support jebol, harga jatuh ke sembilan belas koma lima ribu, [[vol23]]volume jual hampir dua kali lipat. [[fed]]Lalu pemerintah AS menjamin deposan bank yang kolaps. [[rev23]]Tiga hari kemudian, Bitcoin balik di atas support. [[high23]]Seminggu, tembus puncak.
+[[t26]]Sekarang mirip: dua puncak di delapan puluh tujuh ribu, [[break26]]support *tujuh puluh sembilan koma delapan ribu* jebol, lalu jatuh ke enam puluh dua ribu. [[press]]Volume dua kali lipat, lebih dari satu miliar dolar posisi dilikuidasi, mayoritas long, [[etf]]dan ETF bitcoin terus dijual.
+[[miss]]Tekanan jualnya sudah ada. Yang belum: *pembaliknya*.
+[[pay]]Jadi ini baru bear trap kalau Bitcoin balik ke atas *tujuh puluh sembilan koma delapan ribu* dan bertahan. [[fail]]Kalau malah bikin low baru di bawah enam puluh dua ribu, analogi dua ribu dua puluh tiga gagal.
