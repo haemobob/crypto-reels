@@ -1,7 +1,7 @@
 # QA report — bear-trap-2026
 
-Retention audit result: PENDING
-Visual-quality audit result: PENDING
+Retention audit result: PASS
+Visual-quality audit result: PASS
 
 ## Part A — Retention audit (Orus working voice, 63.0 s; times from captions.json)
 - [x] 1. **Hook:** 0.7 s "Bitcoin jatuh dua puluh sembilan persen dari puncaknya. Banyak yang bilang: ini bear trap, kayak dua ribu dua puluh tiga." over the real chart with the −29% bracket.
@@ -22,4 +22,25 @@ Visual-quality audit result: PENDING
 - [x] None triggered.
 
 ## Part B — Visual-quality audit
-(after the render)
+
+Checked on stills during the build (two rounds; fixes: headline line breaks; the 2026 price scale raised so the liquidation/ETF tags sit above the candles; the failure label moved above its line) and on the encoded MP4 (one frame per second `output/bear-trap-2026-review/r1-sheet.jpg`; 12 exact frames at the transitions `r2-tr.jpg`). Render 1 → 2: the opening chart held still 3.9–8.3 s → a slow 7% push-in toward the drop during the first line (restrained opening motion); no freeze left in the opening.
+
+- [x] Layout: headlines in their zone; the anatomy row under the micro captions; candles 790–1260 and volume 1310–1420; every tag on its own pill clear of the candles; source line credits Binance, the 12 Mar 2023 statement and the 2026 flow sources at the moment they are used.
+- [x] Opening: the real 2026 chart from the first second, the −29% bracket, the title; the 2023 chart by 8.5 s.
+- [x] Demonstration: each part of the trap is drawn on real candles as it is named (rings, support, red breakdown and volume, the 12 Mar marker, green reversal, ✓ 13 MAR / ✓ 17 MAR); 2026 gets ✓ ✓ ✓ and a "?" box; the condition path labelled ILUSTRASI.
+- [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 65.6 s, 1,967 frames; −14.1 LUFS, −1.1 dBTP.
+- [x] blackdetect: only the outro; freezedetect (2 s): short holds while a beat is explained (9.4, 22.7 s); silencedetect: only after the last word.
+- [ ] Motion watched in a full render: **NOT REVIEWED** (frames only).
+- [x] Sound measured, not heard. **Not listened to**: "bear trap" (heard as "bertrep"), "support", "ETF", "long".
+
+## Scores
+| Hook | First 12 s | Real-world opening | Educational payoff | Reward ladder | Understanding | Hierarchy | Camera | Transitions | Rhythm | Brand | Factual accuracy |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 5 | 4 | 5 | 4 | 5 | 5 | 4 | 4 | 4 | 4 | 4 | 5 |
+
+## Known limitations
+- Data to the 15 Nov 2026 close; the levels ($79,800 / $62,006) are what to watch from here, and the post ages quickly.
+- Working voice is Orus; the ElevenLabs script is ready.
+
+## Final verified artifact path
+`output/bear-trap-2026.mp4` (render 2), 65.6 s, 1,967 frames, −14.1 LUFS. Subtitles `episodes/bear-trap-2026/bear-trap-2026.srt`. Cover `output/bear-trap-2026-cover.png` / `.jpg`.

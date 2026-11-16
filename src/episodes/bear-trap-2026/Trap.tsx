@@ -162,7 +162,13 @@ export const Trap = ({b}: {b: Beats}) => {
 
       {/* ===== 2026 ===== */}
       {show26 > 0.01 && (
-        <g opacity={show26}>
+        // In the hook, a slow push-in toward the drop keeps the opening line moving (restrained opening motion).
+        <g opacity={show26} transform={hookPhase ? (() => {
+          const k = 1 + 0.07 * ramp(f, b.hook + 56, b.def + 4, ease.inOut);
+          const ox = sx(F26, d26('2026-11-15'));
+          const oy = sy(F26, 70000);
+          return `translate(${ox} ${oy}) scale(${k}) translate(${-ox} ${-oy})`;
+        })() : undefined}>
           <Candles fr={F26} upTo={up26} red={f >= b.press || hookPhase ? [d26('2026-11-12'), d26('2026-11-15')] : undefined} />
           {/* Hook: the −29% from the high, at a glance. */}
           {hookPhase && (
