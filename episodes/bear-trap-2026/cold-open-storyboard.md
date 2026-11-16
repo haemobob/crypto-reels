@@ -1,34 +1,16 @@
 # Cold open 0–12 s — bear-trap-2026
 
-Build and review this as its own mini-story before animating the rest (retention rules, Rule 3). Checkpoints are editorial, not fixed edit points. Order (opening rules): statement → real-world anchor → designed card/diagram → explanation; restrained motion only.
+| Time | Job | Narration | Visual | Evidence |
+|---|---|---|---|---|
+| 0–8.5 s | Interrupt + substantiate | "Bitcoin jatuh dua puluh sembilan persen dari puncaknya. Banyak yang bilang: ini bear trap, kayak dua ribu dua puluh tiga." | **BEAR TRAP KAYAK 2023?**; today's real daily candles draw in with volume; the −29% bracket from $87,396 to $62,006; the last three red candles and their volume bars | BINANCE BTC/USDT · HARIAN · S/D 15 NOV 2026 |
+| 8.5–14.5 s | First answer | "Bear trap itu: support jebol, orang panik jual, lalu harga langsung berbalik dan menjebak mereka." | The chart switches to 2023 (year chip); the anatomy row appears: 1 DUA PUNCAK · 2 SUPPORT JEBOL · 3 TEKANAN JUAL · 4 BERBALIK | Definition |
 
-| Time | Job | Narration (exact) | Main visual + headline | Evidence on screen (source, date, qualifier) | Audio |
-|---|---|---|---|---|---|
-| 0–1.5 s | Interrupt: bold statement, scale or contradiction in large clean type | | | | |
-| 1.5–4 s | Substantiate: the real anchor (photo, logo, chart, document) with its fact, date or number | | | | |
-| 4–8 s | First answer: the anchor becomes a designed card/diagram carrying one concrete fact (a reward, not another teaser) | | | | |
-| 8–12 s | Open the next consequential question that leads into the mechanism | | | | |
-
-## What the viewer knows / still wants to know
 | Second | Knows | Open question |
 |---|---|---|
-| 0 | | |
-| 1 | | |
-| 3 | | |
-| 5 | | |
-| 8 | | |
-| 12 | | |
+| 0 | The question: bear trap like 2023? | What's happening? |
+| 1–3 | BTC's real chart; −29% | Is it a trap? |
+| 5 | People compare it with 2023 | What happened in 2023? |
+| 8 | (narration on the claim) | What is a bear trap exactly? |
+| 12 | The four parts of a bear trap | Did 2023 have them? |
 
-Reject the cold open if it gives zero educational value by 8 s, or if it re-introduces the topic ("second intro") at 8–15 s.
-
-## The three questions (answered by the end of the cold open)
-- Who or what is this about:
-- Why it is important:
-- Why keep watching:
-
-## Animatic review (stills, sound off)
-- First frame legible as a thumbnail, one dominant subject:
-- Evidence object animating in the first 3 s (counter, document, marker, ID card) where the subject warrants it:
-- Recognisably real by second 3–5; no pure abstract 3D or generic motion graphics before second 8:
-- Feels like premium financial editorial, not a generic animated explainer:
-- Approved to animate the rest: YES / NO (why)
+- Approved to animate the rest: YES (16 Nov 2026, working voice).
