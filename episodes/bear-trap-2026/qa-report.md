@@ -3,10 +3,10 @@
 Retention audit result: PASS
 Visual-quality audit result: PASS
 
-## Part A — Retention audit (Orus working voice, 63.0 s; times from captions.json)
-- [x] 1. **Hook:** 0.7 s "Bitcoin jatuh dua puluh sembilan persen dari puncaknya. Banyak yang bilang: ini bear trap, kayak dua ribu dua puluh tiga." over the real chart with the −29% bracket.
+## Part A — Retention audit (re-checked on the user's ElevenLabs take, 65.0 s, 16 Nov 2026; first pass on the Orus voice, 63.0 s)
+- [x] 1. **Hook:** 0.1 s "Bitcoin jatuh dua puluh sembilan persen dari puncaknya. Banyak yang bilang: ini bear trap, kayak dua ribu dua puluh tiga." over the real chart with the −29% bracket.
 - [x] 2. **Evidence by 5 s:** the real Binance chart from the first second.
-- [x] 3. **First payoff by 8–12 s:** 8.5 s the definition, with the four parts on screen.
+- [x] 3. **First payoff by 8–12 s:** 7.8 s the definition, with the four parts on screen.
 - [x] 4. **Reason to continue:** 2023's four parts (14.5–33 s: highs, break to $19,549, volume ×1.8, the 12 Mar backstop, back above support in 3 days, above the high in 7) → 2026's three (33.4–49 s: highs, break to $62,006, volume ×2.1, liquidations, ETF selling) → the missing fourth (49.2 s) → the levels (52.7 s, 58.0 s).
 - [x] 5. **Concrete nouns:** two peaks, a broken floor, red volume bars, a question-mark box.
 - [x] 6. **Cut test:** no sentence without a number or a step; the April 2023 +59% stays off (not needed for the test).
@@ -40,7 +40,7 @@ Checked on stills during the build (two rounds; fixes: headline line breaks; the
 
 ## Known limitations
 - Data to the 15 Nov 2026 close; the levels ($79,800 / $62,006) are what to watch from here, and the post ages quickly.
-- Working voice is Orus; the ElevenLabs script is ready.
+- Voice: the user's ElevenLabs take (16 Nov 2026), levelled only.
 
 ## Final verified artifact path
 `output/bear-trap-2026.mp4` (render 2), 65.6 s, 1,967 frames, −14.1 LUFS. Subtitles `episodes/bear-trap-2026/bear-trap-2026.srt`. Cover `output/bear-trap-2026-cover.png` / `.jpg`.
