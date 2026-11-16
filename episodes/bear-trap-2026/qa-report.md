@@ -28,7 +28,7 @@ Checked on stills during the build (two rounds; fixes: headline line breaks; the
 - [x] Layout: headlines in their zone; the anatomy row under the micro captions; candles 790–1260 and volume 1310–1420; every tag on its own pill clear of the candles; source line credits Binance, the 12 Mar 2023 statement and the 2026 flow sources at the moment they are used.
 - [x] Opening: the real 2026 chart from the first second, the −29% bracket, the title; the 2023 chart by 8.5 s.
 - [x] Demonstration: each part of the trap is drawn on real candles as it is named (rings, support, red breakdown and volume, the 12 Mar marker, green reversal, ✓ 13 MAR / ✓ 17 MAR); 2026 gets ✓ ✓ ✓ and a "?" box; the condition path labelled ILUSTRASI.
-- [x] ffprobe: 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 65.6 s, 1,967 frames; −14.1 LUFS, −1.1 dBTP.
+- [x] ffprobe (render 3, ElevenLabs take): 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 67.7 s, 2,028 frames; −14.1 LUFS, −1.2 dBTP. One frame per beat checked on the encoded file (`r3-check.jpg`).
 - [x] blackdetect: only the outro; freezedetect (2 s): short holds while a beat is explained (9.4, 22.7 s); silencedetect: only after the last word.
 - [ ] Motion watched in a full render: **NOT REVIEWED** (frames only).
 - [x] Sound measured, not heard. **Not listened to**: "bear trap" (heard as "bertrep"), "support", "ETF", "long".
@@ -43,4 +43,4 @@ Checked on stills during the build (two rounds; fixes: headline line breaks; the
 - Voice: the user's ElevenLabs take (16 Nov 2026), levelled only.
 
 ## Final verified artifact path
-`output/bear-trap-2026.mp4` (render 2), 65.6 s, 1,967 frames, −14.1 LUFS. Subtitles `episodes/bear-trap-2026/bear-trap-2026.srt`. Cover `output/bear-trap-2026-cover.png` / `.jpg`.
+`output/bear-trap-2026.mp4` (render 3, ElevenLabs take, 16 Nov 2026), 67.7 s, 2,028 frames, −14.1 LUFS. Subtitles `episodes/bear-trap-2026/bear-trap-2026.srt`. Cover `output/bear-trap-2026-cover.png` / `.jpg`.
