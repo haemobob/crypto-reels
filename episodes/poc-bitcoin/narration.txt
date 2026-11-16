@@ -1,0 +1,10 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[rate:1.1]][[hook]]Rally terakhir Bitcoin berhenti di *delapan puluh tujuh ribu*. Lalu jatuhnya berhenti di *enam puluh dua ribu*. [[nocoin]]Dua level itu bukan kebetulan.
+[[poc]]Namanya *point of control*: harga tempat volume paling banyak diperdagangkan dalam satu rentang.
+[[summer]]Pertengahan Juni sampai Agustus, Bitcoin jalan di tempat. Point of control-nya: sekitar *enam puluh empat ribu*.
+[[bear]]Waktu Bitcoin turun dari puncak, Oktober sampai Januari, point of control-nya sekitar *delapan puluh delapan ribu*.
+[[rally]]Agustus, Bitcoin naik tiga puluh enam persen dari enam puluh empat ribu, [[stop]]dan berhenti di delapan puluh tujuh ribu, tepat di bawah point of control yang di atas.
+[[drop]]Dari situ turun dua puluh sembilan persen, [[hold]]sejauh ini berhenti di enam puluh dua ribu, lalu tutup lagi di atas point of control yang di bawah.
+[[why]]Di level seperti ini, banyak orang pernah beli dan jual, jadi harga sering bereaksi di sana.
+[[pay]]Jadi sekarang, awasi dua angka: *enam puluh empat ribu* di bawah, *delapan puluh delapan ribu* di atas. [[fail]]Kalau enam puluh empat ribu jebol, level berikutnya: low Juli, lima puluh tujuh koma delapan ribu.

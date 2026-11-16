@@ -1,0 +1,9 @@
+{
+  "id": "poc-bitcoin",
+  "title": "Point of control: 2 level Bitcoin",
+  "minSeconds": 50,
+  "maxSeconds": 72,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}
