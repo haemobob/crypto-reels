@@ -8,5 +8,5 @@
   - This one is new in three ways: a single line chart with horizontal volume bars (the first volume profile in the channel); a single hero move (a data-space reframe from the full 14 months onto Apr–Nov 2026, where the chart re-scales but type and strokes keep their size); and gold as the accent for the levels, with blue staying the brand.
 - **Framework:** Remotion (2D SVG).
 - **Polarity:** navy throughout. There is no chapter flip because it is one argument on one chart.
-- **Hero move:** the reframe at "Agustus…" (27.8 s), where the rally between the two lines is about to be described.
+- **Hero move:** the reframe at "Agustus…" (29.3 s), where the rally between the two lines is about to be described.
 - **Asset hierarchy:** level 3, a real chart from real data. No photo or logo applies.
