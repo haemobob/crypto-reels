@@ -48,6 +48,16 @@ Visual-quality audit result: PASS
 
 **Encoded MP4, render 1.** One frame per second: `output/poc-bitcoin-review/r1-sheet.jpg`. 26 exact frames at the transitions: `r1-tr.jpg`. Full-resolution 0 s, 3 s, 43.5 s, 59.9 s: `r1-full.jpg`. Render 1 → 2: "−29%…" was on screen for only 1.2 s. The "…BERHENTI DI POC BAWAH" beat (headline, ring, SFX) is now keyed to the spoken "berhenti" (38.3 s), and the close-above pill to "tutup" (40.7 s).
 
+**ElevenLabs take, render 3** (66.1 s voice). Reviewed on the encoded file: a one-frame-per-second sheet in `output/poc-bitcoin-review/r3-sheet.jpg` and 22 exact frames in `r3-tr.jpg`. Layout was unchanged and clean.
+
+The slower read left reveals ahead of their words, with holds of up to 5 s (freezedetect: 17.4–22.4 s and 34.4–38.6 s). Render 3 → 4 keyed every reveal to its spoken word:
+- the two POC lines, their pills and the stage-2 headlines on "sekitar" (20.8 s, 27.5 s); their beats now open with "JALAN DI TEMPAT" and "TURUN DARI PUNCAK";
+- "+36%" on "tiga" (31.0 s);
+- "0,5% DI BAWAH POC" on "tepat" (36.4 s);
+- the close-above pill on "tutup" (44.8 s);
+- the July-low line on "low" (63.4 s);
+- at the payoff, each level lights up as it is named (56.0 s, 57.8 s).
+
 - [x] **Layout:**
   - micro captions at y ≈ 384;
   - headlines in their zone (centred at 590);
@@ -61,8 +71,8 @@ Visual-quality audit result: PASS
   - the gold POC line extends as the level is named;
   - green and red paths draw as the moves are narrated;
   - the two reactions are ringed at the moment of the claim;
-  - the July-low line arrives with "jebol".
-- [x] **Camera:** one motivated move, the reframe at "Agustus" (27.8 s, 40 frames), connecting the rally to both levels. Otherwise locked.
+  - the July-low line arrives with "low Juli".
+- [x] **Camera:** one motivated move, the reframe at "Agustus" (29.3 s, 40 frames), connecting the rally to both levels. Otherwise locked.
 - [x] **ffprobe (render 1):** 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 62.6 s; −14.2 LUFS, −1.2 dBTP.
 - [x] **blackdetect:** only the outro (60.5–62.5 s).
 - [x] **silencedetect:** only after the last word (59.99 s).
@@ -78,7 +88,7 @@ Visual-quality audit result: PASS
 ## Known limitations
 - The data runs to the 15 Nov 2026 close. The $62K low is one day old ("sejauh ini" in the voice, "15 NOV" on screen), and the post ages quickly.
 - The volume profile is our approximation from hourly candles. Tick-based profiles may differ by a few hundred dollars, so it is shown as "≈" and narrated as "sekitar".
-- Voice: the Orus working voice. The ElevenLabs script is in `elevenlabs-script.md`.
+- Voice: the user's ElevenLabs take (17 Nov 2026), levelled only. The Orus working voice is superseded.
 
 ## Final verified artifact path
 `output/poc-bitcoin.mp4` (render 2, Orus voice, 16 Nov 2026): 62.6 s, 1,875 frames, 1080×1920, 30 fps, H.264 + AAC, −14.2 LUFS, −1.1 dBTP.

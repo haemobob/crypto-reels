@@ -12,7 +12,7 @@ import {fonts} from '../../theme/typography';
  * the chart. One camera move: at the rally the view reframes onto Apr–Nov 2026, where both levels and the moves between
  * them are (the chart is re-scaled, so type and strokes stay the same size). Keyed to narration cues.
  */
-export type Beats = Record<'hook' | 'nocoin' | 'poc' | 'summer' | 'bear' | 'rally' | 'stop' | 'drop' | 'hold' | 'why' | 'pay' | 'fail' | 'end' | 'w87' | 'w62', number>;
+export type Beats = Record<'hook' | 'nocoin' | 'poc' | 'summer' | 'bear' | 'rally' | 'stop' | 'drop' | 'hold' | 'why' | 'pay' | 'fail' | 'end' | 'w87' | 'w62' | 's64' | 'b88' | 'up36' | 'under' | 'tutup' | 'p64' | 'p88' | 'low', number>;
 
 type Day = [string, number, number, number];
 type Prof = {from: string; to: string; step: number; bins: Array<[number, number]>; poc: number; poc250: number};
@@ -154,7 +154,7 @@ export const Profile = ({b}: {b: Beats}) => {
         {/* Built while the definition is spoken: the summer range is the example. */}
         <ProfileBars v={v} p={data.summer} maxW={150 + 60 * k} grow={ramp(f, b.poc + 20, b.poc + 80)} o={appear(f, b.poc + 14)} />
         <ProfileBars v={v} p={data.bear} maxW={240} grow={ramp(f, b.bear + 4, b.bear + 44)} o={appear(f, b.bear)} />
-        {[[data.summer, appear(f, b.summer + 40, 24)], [data.bear, appear(f, b.bear + 40, 24)]].map(([p, o]) => {
+        {[[data.summer, appear(f, b.s64, 24)], [data.bear, appear(f, b.b88, 24)]].map(([p, o]) => {
           const pr = p as Prof;
           const oo = o as number;
           if (oo <= 0.01) return null;
@@ -168,6 +168,11 @@ export const Profile = ({b}: {b: Beats}) => {
             <rect x={X0} y={bearPill - 7} width={W} height={14} fill={GOLD} opacity={0.4} />
           </g>
         )}
+        {/* The payoff: each level lights up as it is named, and stays lit. */}
+        {([[summerPill, b.p64], [bearPill, b.p88]] as const).map(([y, at]) => {
+          const o = appear(f, at, 8);
+          return o <= 0.01 ? null : <rect key={at} x={X0} y={y - 9} width={W} height={18} fill={GOLD} opacity={0.22 * o} />;
+        })}
 
         {/* Each day's high–low range, faint, under the closing-price line. */}
         <g opacity={0.3}>
@@ -184,7 +189,7 @@ export const Profile = ({b}: {b: Beats}) => {
         <Ring v={v} i={iLow} p={62006} o={ring(o62, b.hold)} />
 
         {/* What comes next if $64K breaks: the July low. */}
-        {f >= b.fail && <line x1={X(iJul)} x2={X0 + W} y1={Y(57800)} y2={Y(57800)} stroke={colors.negative} strokeWidth={3} strokeDasharray="8 7" opacity={appear(f, b.fail)} />}
+        {f >= b.low && <line x1={X(iJul)} x2={X0 + W} y1={Y(57800)} y2={Y(57800)} stroke={colors.negative} strokeWidth={3} strokeDasharray="8 7" opacity={appear(f, b.low)} />}
       </g>
 
       {ticks.map(({p, y, inside}) =>
@@ -195,18 +200,18 @@ export const Profile = ({b}: {b: Beats}) => {
       {/* Labels: range names, POC values, the two extremes and what happened there. */}
       <T x={X(idx(data.summer.from)) + 80} y={Y(data.summer.bins[data.summer.bins.length - 1][0] + data.summer.step) - 22} size={18} color="#9FB3D6" opacity={appear(f, b.summer) * calm}>15 JUN – 18 AGU</T>
       <T x={X(idx(data.bear.from)) + 140} y={Y(data.bear.bins[data.bear.bins.length - 1][0] + data.bear.step) - 22} size={18} color="#9FB3D6" opacity={appear(f, b.bear) * (1 - k)}>6 OKT 25 – 31 JAN 26</T>
-      <Pill x={X0 + W} y={bearPill - 28} text="POC ≈ $87.900" bg={GOLD} color={colors.bg} anchor="end" opacity={appear(f, b.bear + 40, 24)} />
+      <Pill x={X0 + W} y={bearPill - 28} text="POC ≈ $87.900" bg={GOLD} color={colors.bg} anchor="end" opacity={appear(f, b.b88, 24)} />
       {/* Right end in the full view; in the reframed view it moves left, clear of the $62K low at the right edge. */}
-      <Pill x={lerp(X0 + W - 183, X(idx('2026-08-24')), k)} y={summerPill + 28} text="POC ≈ $64.100" bg={GOLD} color={colors.bg} anchor="start" opacity={appear(f, b.summer + 40, 24)} />
+      <Pill x={lerp(X0 + W - 183, X(idx('2026-08-24')), k)} y={summerPill + 28} text="POC ≈ $64.100" bg={GOLD} color={colors.bg} anchor="start" opacity={appear(f, b.s64, 24)} />
 
-      <Pill x={X(idx('2026-08-23'))} y={Y(72000)} text="+36%" bg={colors.positive} color={colors.bg} size={24} anchor="start" opacity={appear(f, b.rally + 30) * calm} />
+      <Pill x={X(idx('2026-08-23'))} y={Y(72000)} text="+36%" bg={colors.positive} color={colors.bg} size={24} anchor="start" opacity={appear(f, b.up36) * calm} />
       <Pill x={X(idx('2026-10-28'))} y={Y(71000)} text="−29%" bg={colors.negative} size={24} anchor="end" opacity={appear(f, b.drop + 24) * calm} />
 
       <Pill x={X(iTop) - 24} y={Y(87396) - 34} text="$87.396" bg={colors.bg} color={GOLD} anchor="end" opacity={tag(o87, b.stop)} />
-      <Pill x={X(iTop) - 24} y={Y(87396) - 76} text="0,5% DI BAWAH POC" bg={colors.blue} anchor="end" size={19} opacity={appear(f, b.stop + 16) * calm} />
+      <Pill x={X(iTop) - 24} y={Y(87396) - 76} text="0,5% DI BAWAH POC" bg={colors.blue} anchor="end" size={19} opacity={appear(f, b.under) * calm} />
       <Pill x={X(iLow) - 24} y={Y(62006) + 34} text="$62.006" bg={colors.bg} color={GOLD} anchor="end" opacity={tag(o62, b.hold)} />
-      <Pill x={X(iLow) - 24} y={Y(62006) + 76} text="15 NOV TUTUP $65.351 · DI ATAS POC" bg={colors.positive} color={colors.bg} anchor="end" size={18} opacity={appear(f, b.hold + 70) * calm} />
-      <Pill x={X0 + W} y={Y(57800) + 28} text="LOW JULI $57.800" bg={colors.negative} anchor="end" opacity={appear(f, b.fail + 4)} />
+      <Pill x={X(iLow) - 24} y={Y(62006) + 76} text="15 NOV TUTUP $65.351 · DI ATAS POC" bg={colors.positive} color={colors.bg} anchor="end" size={18} opacity={appear(f, b.tutup) * calm} />
+      <Pill x={X0 + W} y={Y(57800) + 28} text="LOW JULI $57.800" bg={colors.negative} anchor="end" opacity={appear(f, b.low + 4)} />
     </svg>
   );
 };

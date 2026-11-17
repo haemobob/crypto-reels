@@ -43,6 +43,7 @@ const Scene = () => {
   const b: Beats = {
     hook: c('hook'), nocoin: c('nocoin'), poc: c('poc'), summer: c('summer'), bear: c('bear'), rally: c('rally'), stop: c('stop'), drop: c('drop'), hold: word('berhenti', 3),
     why: c('why'), pay: c('pay'), fail: c('fail'), end: narrationEnd, w87: word('delapan', 0), w62: word('enam', 0),
+    s64: word('sekitar', 0), b88: word('sekitar', 1), up36: word('tiga', 0), under: word('tepat', 0), tutup: word('tutup', 0), p64: word('enam', 5), p88: word('delapan', 4), low: word('low', 0),
   };
   const source =
     frame < b.poc ? 'BINANCE BTC/USDT · HARIAN · 15 SEP 2025 – 15 NOV 2026'
@@ -58,8 +59,10 @@ const Scene = () => {
         cues={[
           {from: b.nocoin, content: <>BUKAN <Hi>KEBETULAN</Hi></>, size: 100},
           {from: b.poc, content: <><Gold>POINT OF CONTROL</Gold>:<br />HARGA DENGAN VOLUME<br />TERBANYAK</>, size: 66},
-          {from: b.summer, content: <>JUN–AGU: POC<br /><Gold>≈ $64.100</Gold></>, size: 88},
-          {from: b.bear, content: <>OKT–JAN: POC<br /><Gold>≈ $87.900</Gold></>, size: 88},
+          {from: b.summer, content: <>JUN–AGU:<br />JALAN DI TEMPAT</>, size: 88},
+          {from: b.s64, content: <>JUN–AGU: POC<br /><Gold>≈ $64.100</Gold></>, size: 88},
+          {from: b.bear, content: <>OKT–JAN:<br />TURUN DARI PUNCAK</>, size: 88},
+          {from: b.b88, content: <>OKT–JAN: POC<br /><Gold>≈ $87.900</Gold></>, size: 88},
           {from: b.rally, content: <><Green>+36%</Green> DARI POC BAWAH…</>, size: 84},
           {from: b.stop, content: <>…BERHENTI DI<br /><Gold>POC ATAS</Gold></>, size: 92},
           {from: b.drop, content: <><Red>−29%</Red>…</>, size: 110},

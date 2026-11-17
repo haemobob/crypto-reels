@@ -1,131 +1,131 @@
 1
-00:00:00,322 --> 00:00:02,140
+00:00:00,100 --> 00:00:02,580
 Rally terakhir Bitcoin berhenti
 
 2
-00:00:02,180 --> 00:00:03,146
+00:00:02,620 --> 00:00:03,767
 di delapan puluh tujuh ribu.
 
 3
-00:00:03,745 --> 00:00:05,290
+00:00:04,175 --> 00:00:05,690
 Lalu jatuhnya berhenti
 
 4
-00:00:05,330 --> 00:00:06,485
+00:00:05,730 --> 00:00:06,791
 di enam puluh dua ribu.
 
 5
-00:00:07,019 --> 00:00:08,668
+00:00:07,051 --> 00:00:09,015
 Dua level itu bukan kebetulan.
 
 6
-00:00:09,041 --> 00:00:10,680
+00:00:09,279 --> 00:00:11,011
 Namanya point of control:
 
 7
-00:00:10,720 --> 00:00:12,240
+00:00:11,220 --> 00:00:13,250
 harga tempat volume paling banyak
 
 8
-00:00:12,280 --> 00:00:13,772
+00:00:13,290 --> 00:00:15,124
 diperdagangkan dalam satu rentang.
 
 9
-00:00:14,395 --> 00:00:15,980
+00:00:15,442 --> 00:00:17,380
 Pertengahan Juni sampai Agustus,
 
 10
-00:00:16,020 --> 00:00:17,542
+00:00:17,420 --> 00:00:19,139
 Bitcoin jalan di tempat.
 
 11
-00:00:18,049 --> 00:00:19,190
+00:00:19,444 --> 00:00:20,720
 Point of control-nya:
 
 12
-00:00:19,230 --> 00:00:20,701
+00:00:20,760 --> 00:00:22,283
 sekitar enam puluh empat ribu.
 
 13
-00:00:21,303 --> 00:00:23,540
+00:00:22,626 --> 00:00:24,900
 Waktu Bitcoin turun dari puncak, Oktober
 
 14
-00:00:23,580 --> 00:00:25,910
+00:00:24,940 --> 00:00:27,450
 sampai Januari, point of control-nya
 
 15
-00:00:25,950 --> 00:00:27,444
+00:00:27,490 --> 00:00:29,078
 sekitar delapan puluh delapan ribu.
 
 16
-00:00:27,843 --> 00:00:29,110
+00:00:29,344 --> 00:00:30,980
 Agustus, Bitcoin naik
 
 17
-00:00:29,150 --> 00:00:30,344
+00:00:31,020 --> 00:00:32,267
 tiga puluh enam persen dari enam
 
 18
-00:00:30,384 --> 00:00:32,150
+00:00:32,307 --> 00:00:34,380
 puluh empat ribu, dan berhenti
 
 19
-00:00:32,190 --> 00:00:34,241
+00:00:34,420 --> 00:00:36,583
 di delapan puluh tujuh ribu, tepat
 
 20
-00:00:34,391 --> 00:00:36,067
+00:00:36,733 --> 00:00:38,605
 di bawah point of control yang di atas.
 
 21
-00:00:36,350 --> 00:00:37,530
+00:00:38,813 --> 00:00:41,703
 Dari situ turun dua puluh sembilan persen,
 
 22
-00:00:37,570 --> 00:00:39,784
+00:00:41,973 --> 00:00:43,663
 sejauh ini berhenti di enam puluh
 
 23
-00:00:39,824 --> 00:00:41,530
+00:00:43,703 --> 00:00:45,770
 dua ribu, lalu tutup lagi di atas
 
 24
-00:00:41,570 --> 00:00:43,175
+00:00:45,810 --> 00:00:47,553
 point of control yang di bawah.
 
 25
-00:00:43,593 --> 00:00:44,812
+00:00:47,778 --> 00:00:49,450
 Di level seperti ini, banyak
 
 26
-00:00:44,930 --> 00:00:46,320
+00:00:49,490 --> 00:00:51,260
 orang pernah beli dan jual,
 
 27
-00:00:46,360 --> 00:00:48,340
+00:00:51,300 --> 00:00:53,380
 jadi harga sering bereaksi di sana.
 
 28
-00:00:48,793 --> 00:00:50,410
+00:00:53,480 --> 00:00:55,960
 Jadi sekarang, awasi dua angka:
 
 29
-00:00:50,450 --> 00:00:52,220
+00:00:56,000 --> 00:00:57,750
 enam puluh empat ribu di bawah,
 
 30
-00:00:52,260 --> 00:00:54,300
+00:00:57,790 --> 00:00:59,824
 delapan puluh delapan ribu di atas.
 
 31
-00:00:54,490 --> 00:00:56,650
+00:01:00,115 --> 00:01:02,010
 Kalau enam puluh empat ribu jebol,
 
 32
-00:00:56,690 --> 00:00:58,328
+00:01:02,050 --> 00:01:04,320
 level berikutnya: low Juli,
 
 33
-00:00:58,368 --> 00:00:59,995
+00:01:04,360 --> 00:01:06,240
 lima puluh tujuh koma delapan ribu.
