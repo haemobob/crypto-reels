@@ -12,10 +12,12 @@ import trader1Persen from './trader-1-persen';
 import nggakNyerahLoop from './nggak-nyerah-loop';
 import bearTrap2026 from './bear-trap-2026';
 import pocBitcoin from './poc-bitcoin';
+import bentukVolume from './bentuk-volume';
 // @episodes-import (scripts/new-episode.ts adds imports above this line)
 
 export const episodes: Record<string, EpisodeModule> = {
   // @episodes-entry (scripts/new-episode.ts adds entries below this line)
+  'bentuk-volume': bentukVolume,
   'poc-bitcoin': pocBitcoin,
   'bear-trap-2026': bearTrap2026,
   'nggak-nyerah-loop': nggakNyerahLoop,
