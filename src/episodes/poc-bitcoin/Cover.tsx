@@ -28,10 +28,12 @@ export const Cover = () => {
       <div style={{position: 'absolute', top: 300, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
         <BrandLogo width={260} />
       </div>
-      <div style={{position: 'absolute', top: 405, left: 30, right: 30, textAlign: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 96, letterSpacing: '-0.02em', lineHeight: 1.02, color: colors.text}}>
-        KENAPA BITCOIN
+      {/* Same wording as the Reel's first frame: the two real turning points, then the question. */}
+      <div style={{position: 'absolute', top: 410, left: 30, right: 30, textAlign: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 100, letterSpacing: '-0.02em', lineHeight: 1.02, color: colors.text}}>
+        <div style={{fontSize: 60, marginBottom: 12}}>BITCOIN BERHENTI DI</div>
+        $87 RB &amp; $62 RB.
         <br />
-        <span style={{color: colors.electric}}>BERHENTI</span> DI SINI?
+        <span style={{color: colors.electric}}>KEBETULAN?</span>
       </div>
       <svg width={1080} height={1920} style={{position: 'absolute', inset: 0}}>
         <rect x={x0 - 20} y={y0 - 30} width={w + 40} height={h + 60} rx={26} fill="#0B1730" stroke="#2A3A5A" strokeWidth={2} />
