@@ -73,10 +73,10 @@ The slower read left reveals ahead of their words, with holds of up to 5 s (free
   - the two reactions are ringed at the moment of the claim;
   - the July-low line arrives with "low Juli".
 - [x] **Camera:** one motivated move, the reframe at "Agustus" (29.3 s, 40 frames), connecting the rally to both levels. Otherwise locked.
-- [x] **ffprobe (render 1):** 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 62.6 s; −14.2 LUFS, −1.2 dBTP.
-- [x] **blackdetect:** only the outro (60.5–62.5 s).
-- [x] **silencedetect:** only after the last word (59.99 s).
-- [x] **freezedetect (2 s):** holds of 2.3–2.9 s on the stop, the hold and the payoff, where the micro captions keep moving.
+- [x] **ffprobe (render 4, ElevenLabs take):** 1080×1920, 30/1 fps, H.264 + AAC 48 kHz stereo, 68.8 s, 2,061 frames; −14.1 LUFS, −1.3 dBTP. Twelve exact frames at the re-keyed beats were checked on the encoded file (`output/poc-bitcoin-review/r4-check.jpg`).
+- [x] **blackdetect:** only the outro (66.7–68.7 s).
+- [x] **silencedetect:** only after the last word (66.2 s).
+- [x] **freezedetect (2 s, render 4):** seven holds of 2.0–3.3 s (on the definition, the summer range, the rally, the hold, and the next-level line), with the micro captions moving throughout.
 - [ ] **Motion watched in a full render:** **NOT REVIEWED** (frames only).
 - [x] **Sound:** measured, not heard. **Not listened to:** "point of control" (poin of kontrol), "rally" (reli), "low Juli".
 
@@ -91,7 +91,6 @@ The slower read left reveals ahead of their words, with holds of up to 5 s (free
 - Voice: the user's ElevenLabs take (17 Nov 2026), levelled only. The Orus working voice is superseded.
 
 ## Final verified artifact path
-`output/poc-bitcoin.mp4` (render 2, Orus voice, 16 Nov 2026): 62.6 s, 1,875 frames, 1080×1920, 30 fps, H.264 + AAC, −14.2 LUFS, −1.1 dBTP.
-- Render 2 changed only the hold beat's timing. It was checked on 12 exact frames of the encoded file (`output/poc-bitcoin-review/r2-check.jpg`).
-- Subtitles: `episodes/poc-bitcoin/poc-bitcoin.srt` (33 cues).
+`output/poc-bitcoin.mp4` (render 4, the user's ElevenLabs take, 17 Nov 2026): 68.8 s, 2,061 frames, 1080×1920, 30 fps, H.264 + AAC, −14.1 LUFS, −1.3 dBTP.
+- Subtitles: `episodes/poc-bitcoin/poc-bitcoin.srt` (33 cues, re-timed to this take).
 - Cover: `output/poc-bitcoin-cover.png` / `.jpg`, plus the grid crop `-cover-grid.jpg`.
