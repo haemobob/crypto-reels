@@ -1,0 +1,26 @@
+[intrigued] Bitcoin mantul lima persen dari enam puluh dua ribu. Kelihatannya pembeli sudah balik.
+
+Tapi bentuk volumenya bilang lain.
+
+[explaining] Volumenya menumpuk di atas, tipis di bawah: bentuk P. Dan open interest di OKX malah turun: tanda short yang tutup posisi, bukan posisi baru.
+
+Bentuk volume kasih tahu siapa yang pegang kendali. Gemuk: harga yang disepakati. Tipis: harga yang cuma dilewati.
+
+[storytelling] Dua belas November, bentuk b: turun, lalu volume menumpuk di bawah. Penjual pegang kendali, dan besoknya turun lagi.
+
+Empat belas November: panjang dan tipis. Turun enam persen, volume tersebar sepanjang jalan. Jangan tebak dasarnya: low-nya jebol besoknya.
+
+[serious] Untuk bentuk P, pembeli harus jaga area tipis di bawah, sekitar enam puluh tiga setengah ribu. Kemarin, harga bertahan di atasnya.
+
+Kemarin bentuknya D: volume di tengah, kedua sisi sepakat. Tepinya, enam puluh tiga koma sembilan dan enam puluh lima koma tujuh ribu, jadi batas hari ini.
+
+[calm, confident] Bentuknya bukan sinyal. Tapi dia kasih tahu siapa yang pegang kendali, dan di mana batasnya.
+
+----------------------------------------------------------------
+PRONUNCIATION NOTES (not part of the text to paste)
+Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · no CAPS · target 55–62 s (window 45–70 s)
+- "bentuk P", "bentuk b", "bentuk D": the letters as Indonesian letter names (pe, be, de).
+- "open interest": English. If it comes out odd, keep the take and tell me.
+- "OKX": letter by letter (o-ka-eks).
+- "short", "low-nya": English words, Indonesian trader style ("syort", "lou-nya").
+- If the voice reads the first tag aloud, keep the take; I'll cut it.

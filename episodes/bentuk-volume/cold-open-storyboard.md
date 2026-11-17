@@ -1,34 +1,18 @@
-# Cold open 0–12 s — bentuk-volume
+# Cold-open storyboard — bentuk-volume (0–12 s, working Orus voice, 60.4 s)
 
-Build and review this as its own mini-story before animating the rest (retention rules, Rule 3). Checkpoints are editorial, not fixed edit points. Order (opening rules): statement → real-world anchor → designed card/diagram → explanation; restrained motion only.
+Order: statement → real anchor → designed diagram → explanation.
 
-| Time | Job | Narration (exact) | Main visual + headline | Evidence on screen (source, date, qualifier) | Audio |
-|---|---|---|---|---|---|
-| 0–1.5 s | Interrupt: bold statement, scale or contradiction in large clean type | | | | |
-| 1.5–4 s | Substantiate: the real anchor (photo, logo, chart, document) with its fact, date or number | | | | |
-| 4–8 s | First answer: the anchor becomes a designed card/diagram carrying one concrete fact (a reward, not another teaser) | | | | |
-| 8–12 s | Open the next consequential question that leads into the mechanism | | | | |
+| s | Picture | Narration | Viewer knows | Open question |
+|---|---|---|---|---|
+| 0 | Title "MANTUL 5%. / PEMBELI BALIK?" rising in; the empty 15 Nov chart frame with price grid; logo bug | "Bitcoin mantul…" | Something bounced 5%; are buyers back? | Who's buying? |
+| 1 | Real Binance 5-minute line draws across 15 Nov | "…lima persen dari enam puluh dua ribu" | It's Bitcoin, real data, yesterday's bounce | — |
+| 2 | Gold ring on the $62,006 low; "+5,4%" pill at the close | "Kelihatannya pembeli sudah balik." | The size of the bounce, from where | Is it real buying? |
+| 5 | Title → "BENTUK VOLUMENYA BILANG LAIN"; the day's volume profile grows on the right edge, POC bar gold | "Tapi bentuk volumenya bilang lain." | There's a way to read who traded where | What does it say? |
+| 7–10 | "BENTUK P: VOLUME DI ATAS", gold "P" over the profile | "Volumenya menumpuk di atas, tipis di bawah: bentuk P." | The shape: fat on top, thin below | So what? |
+| 11–15 | OKX open-interest panel under the chart: 33,686 → 32,600 BTC, "−3,2%"; "OPEN INTEREST TURUN = SHORT TUTUP POSISI" | "Dan open interest di OKX malah turun…" | First answer: the bounce looks like shorts closing, not new positions | What do the other shapes say? |
 
-## What the viewer knows / still wants to know
-| Second | Knows | Open question |
-|---|---|---|
-| 0 | | |
-| 1 | | |
-| 3 | | |
-| 5 | | |
-| 8 | | |
-| 12 | | |
+- **Who / what:** yesterday's Bitcoin bounce. **Why it matters:** it may not be buyers coming back. **Why keep watching:** to learn the four shapes and today's limits.
+- **First-frame test:** "MANTUL 5%. PEMBELI BALIK?" is readable in about a second.
+- **Real by second 3:** the real chart is drawn by 2.3 s.
 
-Reject the cold open if it gives zero educational value by 8 s, or if it re-introduces the topic ("second intro") at 8–15 s.
-
-## The three questions (answered by the end of the cold open)
-- Who or what is this about:
-- Why it is important:
-- Why keep watching:
-
-## Animatic review (stills, sound off)
-- First frame legible as a thumbnail, one dominant subject:
-- Evidence object animating in the first 3 s (counter, document, marker, ID card) where the subject warrants it:
-- Recognisably real by second 3–5; no pure abstract 3D or generic motion graphics before second 8:
-- Feels like premium financial editorial, not a generic animated explainer:
-- Approved to animate the rest: YES / NO (why)
+Approved to animate the rest: YES (stills reviewed with the sound off, 17 Nov 2026; awaiting the user's visual sign-off at Gate 2).

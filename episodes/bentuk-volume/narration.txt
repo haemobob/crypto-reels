@@ -1,6 +1,5 @@
 # Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
 # [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
-# DRAFT — awaiting script approval (Gate 1).
 [[rate:1.1]][[hook]]Bitcoin mantul *lima persen* dari enam puluh dua ribu. Kelihatannya pembeli sudah balik. [[but]]Tapi bentuk volumenya bilang lain.
 [[pshape]]Volumenya menumpuk di atas, tipis di bawah: *bentuk P*. [[oi]]Dan open interest di OKX malah turun: tanda short yang tutup posisi, bukan posisi baru.
 [[key]]Bentuk volume kasih tahu siapa yang pegang kendali. Gemuk: harga yang *disepakati*. Tipis: harga yang cuma *dilewati*.

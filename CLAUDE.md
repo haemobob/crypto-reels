@@ -122,6 +122,8 @@ Narration uses Google Cloud Text-to-Speech, voice `id-ID-Chirp3-HD-Orus`, the sa
 
 Supplied takes: a voice recorded or generated elsewhere (e.g. ElevenLabs on the user's account) can replace the synthesised one with `npm run voice -- <id> --audio <file>`; it must read `narration.txt` word for word, and the same alignment builds the captions. `btc-mirip-2023` uses the user's ElevenLabs take ("Ongky Himawan – Calm, Deep", 21 Oct 2026).
 
+ElevenLabs setup the user generates with (recorded 17 Nov 2026): model **Eleven v3**, voice "Ongky Himawan – Calm, Deep", Stability **Natural**, intriguing and slow delivery, **no CAPS**. The voice text (`voice/<id>.txt`) uses v3 bracketed audio tags (no SSML `<break>` tags). It has one scene per paragraph, numbers written as spoken, and a PRONUNCIATION NOTES section below the text to paste. Its spoken words match `narration.txt` exactly.
+
 ### Framework and logo (user decision, 20 Oct 2026)
 - Remotion is the default framework for every Reel. HyperFrames may be used instead for a Reel when it suits that piece better; record the choice and the reason in the episode's `brief.md`.
 - `public/brand/logo.png` is the official 2000×667 logo with a transparent background (white wordmark, blue gem as the "O"). Use `logoBlend: 'normal'`, not `'screen'`. It needs a dark ground: on off-white chapters keep it off screen (don't crop or recolour it); ask the user for a dark-text version if one is needed.
