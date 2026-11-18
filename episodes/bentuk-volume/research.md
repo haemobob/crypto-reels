@@ -7,7 +7,7 @@
   - 13–14 Nov: long and thin
   - 15 Nov: P
   - 16 Nov: D
-- **When:** 12–16 Nov 2026 (UTC days). Data fetched 17 Nov 2026 around 04:00 UTC.
+- **When:** 12–17 Nov 2026 (UTC days). Data fetched 17 Nov 2026 around 04:00 UTC, plus 17 Nov's full day on 18 Nov at 05:14 UTC. The script was revised on 18 Nov: "kemarin" and "hari ini" became dates, and the 17 Nov test of the thin area was added.
 - **Why it matters:** the 15 Nov bounce (+5.4% from $62,006) looks like buyers returning. But volume piled up at the top (P), and OKX open interest fell during the rise. That is consistent with short covering rather than new positions, which is the textbook caveat on P shapes.
 - **How:** our own profiles from Binance 5-minute candles. Each candle's volume is spread evenly over its high–low range, in 30 bins per day. Shapes are classified by where the POC and the volume sit (`evidence/day-shapes.py`) and checked by eye.
 
@@ -27,9 +27,9 @@
 | "A sign of shorts closing, not new positions" | Interpretation (OI falls while price rises; one exchange) | S2, S3 | — |
 | 12 Nov: open $74,015, close $71,460, volume heaviest at the bottom ($71.4–72.1K) → b. The next day fell 4.4% (close $68,314) | Fact / calculation | S1 | 2026-11-17 |
 | 14 Nov: −6.1% ($68,314 → $64,150), range 2.8× the 20-day median, volume spread along the range → long and thin. Its low ($63,320) broke the next day ($62,006) | Fact / calculation | S1 | 2026-11-17 |
-| P reading: buyers defend the thin area below (~$63.5K); 16 Nov low $63,905 stayed above it | Reading (heuristic) + fact | S1, S3 | 2026-11-17 |
+| P reading: buyers defend the thin area below (~$63.5K; 15 Nov's thinnest bins $63,106–63,794) | Reading (heuristic) | S1, S3 | 2026-11-17 |
 | 16 Nov: POC ~$64,890 in the middle of $63,905–65,696 → D | Calculation | S1 | 2026-11-17 |
-| The edges $63.9K / $65.7K are "today's limits" | Reading | — | — |
+| 17 Nov: fell below 16 Nov's range to $63,336 (15:50 UTC), inside the thin area; no 5-minute close below $63,106 (lowest close $63,421); closed $64,947, above the thin area ("jatuh ke area tipis itu… lalu ditutup lagi di atasnya") | Fact (data) | S1 | 2026-11-18 |
 
 ## Nuance kept off screen (honest notes)
 - On 12 Nov (the b day), OKX OI **rose** 5.5% as price fell: new shorts, not long liquidation. So we say "penjual pegang kendali" (sellers in control) and do not say "long liquidation" for that day.

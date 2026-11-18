@@ -10,15 +10,17 @@ Bentuk volume kasih tahu siapa yang pegang kendali. Gemuk: harga yang disepakati
 
 Empat belas November: panjang dan tipis. Turun enam persen, volume tersebar sepanjang jalan. Jangan tebak dasarnya: low-nya jebol besoknya.
 
-[serious] Untuk bentuk P, pembeli harus jaga area tipis di bawah, sekitar enam puluh tiga setengah ribu. Kemarin, harga bertahan di atasnya.
+[serious] Untuk bentuk P, pembeli harus jaga area tipis di bawah, sekitar enam puluh tiga setengah ribu.
 
-Kemarin bentuknya D: volume di tengah, kedua sisi sepakat. Tepinya, enam puluh tiga koma sembilan dan enam puluh lima koma tujuh ribu, jadi batas hari ini.
+Enam belas November bentuknya D: volume di tengah, kedua sisi sepakat.
+
+Tujuh belas November, harga jatuh ke area tipis itu, enam puluh tiga koma tiga ribu, lalu ditutup lagi di atasnya.
 
 [calm, confident] Bentuknya bukan sinyal. Tapi dia kasih tahu siapa yang pegang kendali, dan di mana batasnya.
 
 ----------------------------------------------------------------
 PRONUNCIATION NOTES (not part of the text to paste)
-Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · no CAPS · target 55–62 s (window 45–70 s)
+Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · no CAPS · target 58–68 s (window 45–72 s)
 - "bentuk P", "bentuk b", "bentuk D": the letters as Indonesian letter names (pe, be, de).
 - "open interest": English. If it comes out odd, keep the take and tell me.
 - "OKX": letter by letter (o-ka-eks).

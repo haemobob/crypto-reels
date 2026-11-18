@@ -5,6 +5,7 @@
 [[key]]Bentuk volume kasih tahu siapa yang pegang kendali. Gemuk: harga yang *disepakati*. Tipis: harga yang cuma *dilewati*.
 [[bshape]]Dua belas November, *bentuk b*: turun, lalu volume menumpuk di bawah. Penjual pegang kendali, dan besoknya turun lagi.
 [[thin]]Empat belas November: *panjang dan tipis*. Turun enam persen, volume tersebar sepanjang jalan. Jangan tebak dasarnya: low-nya jebol besoknya.
-[[guard]]Untuk bentuk P, pembeli harus jaga area tipis di bawah, sekitar *enam puluh tiga setengah ribu*. Kemarin, harga bertahan di atasnya.
-[[dshape]]Kemarin bentuknya *D*: volume di tengah, kedua sisi sepakat. [[edges]]Tepinya, enam puluh tiga koma sembilan dan enam puluh lima koma tujuh ribu, jadi batas hari ini.
+[[guard]]Untuk bentuk P, pembeli harus jaga area tipis di bawah, sekitar *enam puluh tiga setengah ribu*.
+[[dshape]]Enam belas November bentuknya *D*: volume di tengah, kedua sisi sepakat.
+[[test]]Tujuh belas November, harga jatuh ke area tipis itu, *enam puluh tiga koma tiga ribu*, [[held]]lalu ditutup lagi di atasnya.
 [[pay]]Bentuknya bukan sinyal. Tapi dia kasih tahu siapa yang pegang kendali, dan di mana batasnya.

@@ -10,6 +10,7 @@ import type {Captions, EpisodeConfig} from '../../lib/types';
 import {colors} from '../../theme/colors';
 import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
+import {Cover} from './Cover';
 import {Week, type Beats} from './Week';
 
 // Layout (screen px): micro captions y≈384, headline zone centred at 590, chart 780–1280 with day labels at 1310,
@@ -40,14 +41,14 @@ const Scene = () => {
   const {cue, word, narrationEnd} = useCues();
   const c = (k: string) => cue(k);
   const b: Beats = {
-    hook: c('hook'), but: c('but'), pshape: c('pshape'), oi: c('oi'), key: c('key'), bshape: c('bshape'), thin: c('thin'), guard: c('guard'), dshape: c('dshape'), edges: c('edges'), pay: c('pay'), end: narrationEnd,
-    w62: word('enam', 0), fat: word('gemuk', 0), thinW: word('tipis', 1), turunLagi: word('turun', 2), enam: word('enam', 1), jebol: word('jebol', 0), bertahan: word('bertahan', 0),
+    hook: c('hook'), but: c('but'), pshape: c('pshape'), oi: c('oi'), key: c('key'), bshape: c('bshape'), thin: c('thin'), guard: c('guard'), dshape: c('dshape'), test: c('test'), held: c('held'), pay: c('pay'), end: narrationEnd,
+    w62: word('enam', 0), fat: word('gemuk', 0), thinW: word('tipis', 1), turunLagi: word('turun', 2), enam: word('enam', 1), jebol: word('jebol', 0), w633: word('enam', 4),
   };
   const source =
     frame < b.oi ? 'BINANCE BTC/USDT · CANDLE 5 MENIT · 15 NOV 2026 (UTC)'
       : frame < b.key ? 'OPEN INTEREST: OKX BTC-USDT-SWAP, PER JAM · HARGA: BINANCE BTC/USDT'
         : frame < b.pay ? 'PROFIL VOLUME PER HARI (UTC) DARI CANDLE 5 MENIT BINANCE BTC/USDT'
-          : 'DATA S/D 17 NOV 2026 · BACAAN, BUKAN SINYAL · BUKAN SARAN INVESTASI';
+          : 'DATA S/D TUTUP 17 NOV 2026 · BACAAN, BUKAN SINYAL · BUKAN SARAN INVESTASI';
   return (
     <AbsoluteFill style={{backgroundColor: colors.bg}}>
       <Week b={b} />
@@ -64,7 +65,8 @@ const Scene = () => {
           {from: b.thin, content: <>14 NOV: <Gold>PANJANG &amp; TIPIS</Gold><br />JANGAN TEBAK DASARNYA</>, size: 62},
           {from: b.guard, content: <>BENTUK P: JAGA<br /><Gold>AREA TIPIS ≈ $63,5 RB</Gold></>, size: 76},
           {from: b.dshape, content: <>16 NOV: <Gold>BENTUK D</Gold><br />KEDUA SISI SEPAKAT</>, size: 80},
-          {from: b.edges, content: <>BATAS HARI INI:<br /><Gold>$63,9 RB – $65,7 RB</Gold></>, size: 84},
+          {from: b.test, content: <>17 NOV: TURUN KE<br /><Gold>AREA TIPIS</Gold></>, size: 88},
+          {from: b.held, content: <>…TUTUP LAGI<br /><Green>DI ATASNYA</Green></>, size: 92},
           {from: b.pay, content: <>BENTUK ≠ SINYAL.<br />TAPI KASIH TAHU<br /><Hi>SIAPA PEGANG KENDALI</Hi></>, size: 64},
         ]}
       />
@@ -73,5 +75,5 @@ const Scene = () => {
   );
 };
 
-const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene};
+const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene, Cover};
 export default episode;

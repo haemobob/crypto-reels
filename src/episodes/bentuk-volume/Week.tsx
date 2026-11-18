@@ -12,7 +12,7 @@ import {fonts} from '../../theme/typography';
  * re-scaled in data space, so type and strokes keep their size. Keyed to narration cues and words.
  */
 export type Beats = Record<
-  | 'hook' | 'but' | 'pshape' | 'oi' | 'key' | 'fat' | 'thinW' | 'bshape' | 'turunLagi' | 'thin' | 'enam' | 'jebol' | 'guard' | 'bertahan' | 'dshape' | 'edges' | 'pay' | 'end' | 'w62',
+  | 'hook' | 'but' | 'pshape' | 'oi' | 'key' | 'fat' | 'thinW' | 'bshape' | 'turunLagi' | 'thin' | 'enam' | 'jebol' | 'guard' | 'dshape' | 'test' | 'w633' | 'held' | 'pay' | 'end' | 'w62',
   number
 >;
 
@@ -36,8 +36,8 @@ const V: Record<string, ViewDef> = {
   d1213: {i0: -8, i1: 586, p0: 67300, p1: 74800},
   d14: {i0: 568, i1: 900, p0: 61600, p1: 68900},
   d1516: {i0: 856, i1: 1448, p0: 61600, p1: 66600},
-  d16: {i0: 1144, i1: 1600, p0: 63300, p1: 66200},
-  all: {i0: -10, i1: 1452, p0: 61200, p1: 75200},
+  d1617: {i0: 1140, i1: 1736, p0: 62900, p1: 66200},
+  all: {i0: -10, i1: 1740, p0: 61200, p1: 75200},
 };
 type View = {X: (i: number) => number; Y: (p: number) => number; i0: number; i1: number};
 const mix = (a: ViewDef, b: ViewDef, t: number): View => {
@@ -121,13 +121,13 @@ const Band = ({v, a, b, from, to, o, label, color = GOLD, labelSide = 'left'}: {
   );
 };
 
-const LABELS = ['12 NOV', '13 NOV', '14 NOV', '15 NOV', '16 NOV', '17 NOV · HARI INI'];
+const LABELS = ['12 NOV', '13 NOV', '14 NOV', '15 NOV', '16 NOV', '17 NOV'];
 
 export const Week = ({b}: {b: Beats}) => {
   const f = useCurrentFrame();
   // The frame moves to the day being described (each move ~1.2 s, ease in-out).
   const keys: Array<[number, ViewDef]> = [
-    [0, V.d15], [b.bshape, V.d12], [b.turunLagi, V.d1213], [b.thin, V.d14], [b.guard, V.d1516], [b.dshape, V.d16], [b.pay, V.all],
+    [0, V.d15], [b.bshape, V.d12], [b.turunLagi, V.d1213], [b.thin, V.d14], [b.guard, V.d1516], [b.dshape, V.d1617], [b.pay, V.all],
   ];
   let k = 0;
   while (k + 1 < keys.length && f >= keys[k + 1][0]) k++;
@@ -138,7 +138,8 @@ export const Week = ({b}: {b: Beats}) => {
   // Line: days 12–14 are already there (off-frame at first); 15 Nov draws during the hook; 16 Nov draws at "Kemarin".
   const d15draw = interpolate(f, [b.hook, b.hook + 54], [864, 1151], {...clampOpts, easing: ease.inOut});
   const d16draw = interpolate(f, [b.guard + 50, b.guard + 90], [1151, 1439], {...clampOpts, easing: ease.inOut});
-  const drawn = f < b.guard + 50 ? d15draw : d16draw;
+  const d17draw = interpolate(f, [b.test, b.test + 54], [1439, 1727], {...clampOpts, easing: ease.inOut});
+  const drawn = f < b.guard + 50 ? d15draw : f < b.test ? d16draw : d17draw;
 
   // Price grid: $1K steps when zoomed in, $2K when the whole week is in frame.
   const span = view.i1 - view.i0;
@@ -148,10 +149,10 @@ export const Week = ({b}: {b: Beats}) => {
 
   const iLow15 = 864 + 21; // 01:45 UTC, $62,006
   const iLow14 = 576 + 274; // 22:50 UTC, $63,320
-  const iLow16 = 1152 + 149; // 12:25 UTC, $63,905
+  const iLow17 = 1440 + 190; // 15:50 UTC, $63,336
   const [t15a, t15b] = data.thin15;
   const day15 = DAYS[3];
-  const day16 = DAYS[4];
+  const day17 = DAYS[5];
   const oiOn = between(f, b.oi, b.bshape - 6);
   const settled = (at: number) => appear(f, at + 30, 12); // after a move lands
 
@@ -171,8 +172,6 @@ export const Week = ({b}: {b: Beats}) => {
         {[1, 2, 3, 4, 5].map((d) => (
           <line key={d} x1={X(d * PER)} x2={X(d * PER)} y1={TOP - 40} y2={TOP + H + 20} stroke="#1E3157" strokeWidth={2} strokeDasharray="5 7" />
         ))}
-        {/* Today: no data yet, only the column. */}
-        <rect x={X(1440)} y={TOP - 40} width={Math.max(0, X(1728) - X(1440))} height={H + 60} fill={colors.blue} opacity={0.05} />
 
         {/* Profiles: each appears when its shape is named. 15 Nov builds during "bentuk volumenya". */}
         <Profile v={view} di={3} grow={ramp(f, b.but + 4, b.but + 50)} o={appear(f, b.but)} />
@@ -180,12 +179,13 @@ export const Week = ({b}: {b: Beats}) => {
         <Profile v={view} di={1} grow={ramp(f, b.pay, b.pay + 30)} o={appear(f, b.pay) * 0.8} />
         <Profile v={view} di={2} grow={ramp(f, b.thin + 20, b.thin + 60)} o={appear(f, b.thin + 16)} />
         <Profile v={view} di={4} grow={ramp(f, b.dshape + 26, b.dshape + 66)} o={appear(f, b.dshape + 22)} />
+        <Profile v={view} di={5} grow={ramp(f, b.pay, b.pay + 30)} o={appear(f, b.pay) * 0.8} />
 
         {/* Key: fat = agreed, thin = passed through (15 Nov). */}
         <Band v={view} a={64413} b={65650} from={864} to={1152} o={between(f, b.fat, b.bshape - 4)} label="GEMUK: DISEPAKATI" />
         <Band v={view} a={t15a} b={t15b} from={864} to={1152} o={between(f, b.thinW, b.bshape - 4)} label="TIPIS: DILEWATI" color={colors.light} />
         {/* Guard: the P's thin area, carried into 16 Nov. */}
-        <Band v={view} a={t15a} b={t15b} from={864} to={1440} o={between(f, b.guard + 20, b.dshape - 4)} label="AREA TIPIS ≈ $63,5 RB" />
+        <Band v={view} a={t15a} b={t15b} from={864} to={1728} o={between(f, b.guard + 20, b.pay - 4)} label="AREA TIPIS ≈ $63,5 RB" />
 
         {/* 13 Nov: "besoknya turun lagi". */}
         {f >= b.turunLagi + 8 && <path d={path(view, 288, 288 + 287 * ramp(f, b.turunLagi + 8, b.turunLagi + 40))} stroke={colors.negative} strokeWidth={5} fill="none" strokeLinejoin="round" opacity={vanish(f, b.thin + 20, 16)} />}
@@ -198,10 +198,6 @@ export const Week = ({b}: {b: Beats}) => {
         </g>
         <path d={path(view, 0, drawn)} stroke={colors.electric} strokeWidth={2.6} fill="none" strokeLinejoin="round" />
 
-        {/* 16 Nov's edges, carried into today. */}
-        {[day16.l, day16.h].map((p) => (
-          <line key={p} x1={X(1152)} x2={X(1440) + (X(1728) - X(1440)) * ramp(f, b.edges + 4, b.edges + 30)} y1={Y(p)} y2={Y(p)} stroke={GOLD} strokeWidth={3} strokeDasharray="10 7" opacity={appear(f, b.edges) * vanish(f, b.pay, 14)} />
-        ))}
         {/* 14 Nov's low, broken the next day. */}
         <line x1={X(iLow14)} x2={X(iLow14) + (X(iLow15 + 12) - X(iLow14)) * ramp(f, b.jebol - 6, b.jebol + 14)} y1={Y(63320)} y2={Y(63320)} stroke={colors.negative} strokeWidth={2.5} strokeDasharray="7 6" opacity={between(f, b.enam + 20, b.guard)} />
       </g>
@@ -215,8 +211,8 @@ export const Week = ({b}: {b: Beats}) => {
       {LABELS.map((l, d) => {
         const x = (Math.max(X0, X(d * PER)) + Math.min(X0 + W, X((d + 1) * PER))) / 2;
         const visible = Math.min(X0 + W, X((d + 1) * PER)) - Math.max(X0, X(d * PER));
-        const o = interpolate(visible, [60, 140], [0, 1], clampOpts) * (d === 5 ? appear(f, b.dshape + 30) * vanish(f, b.pay, 10) : 1);
-        return <T key={l} x={x} y={TOP + H + 30} size={19} color={d === 5 ? colors.light : '#6A80A6'} opacity={o}>{l}</T>;
+        const o = interpolate(visible, [60, 140], [0, 1], clampOpts) * (d === 5 ? appear(f, b.dshape + 30) : 1);
+        return <T key={l} x={x} y={TOP + H + 30} size={19} color="#6A80A6" opacity={o}>{l}</T>;
       })}
 
       {/* Shape names above each profile. */}
@@ -248,14 +244,11 @@ export const Week = ({b}: {b: Beats}) => {
       <Pill x={X(iLow14) - 24} y={Y(63320) + 32} text="LOW $63.320" bg={colors.bg} color={GOLD} anchor="end" opacity={appear(f, b.enam + 20) * vanish(f, b.guard, 8)} />
       <Ring x={X(iLow15)} y={Y(62006)} o={appear(f, b.jebol + 8) * vanish(f, b.guard, 8)} color={colors.negative} />
       <Pill x={X(iLow15) - 24} y={Y(62006) + 4} text="JEBOL: $62.006" bg={colors.negative} anchor="end" size={18} opacity={appear(f, b.jebol + 8) * vanish(f, b.guard, 8)} />
-      {/* Guard: 16 Nov's low stayed above the thin area. */}
-      <Ring x={X(iLow16)} y={Y(63905)} o={appear(f, b.bertahan) * vanish(f, b.dshape, 8)} color={colors.positive} />
-      <Pill x={X(iLow16)} y={Y(t15a) + 30} text="LOW 16 NOV $63.905" bg={colors.positive} color={colors.bg} size={18} opacity={appear(f, b.bertahan) * vanish(f, b.dshape, 8)} />
-      {/* Edges, into today. */}
-      {[[day16.h, -26, '$65.696'], [day16.l, 28, '$63.905']].map(([p, dy, t]) => (
-        <Pill key={t as string} x={X0 + W - 6} y={Y(p as number) + (dy as number)} text={t as string} bg={GOLD} color={colors.bg} size={19} anchor="end" opacity={appear(f, b.edges + 20) * vanish(f, b.pay, 10)} />
-      ))}
-
+      {/* 17 Nov: into the thin area, then closed back above it. */}
+      <Ring x={X(iLow17)} y={Y(63336)} o={appear(f, b.w633) * vanish(f, b.pay, 8)} />
+      <Pill x={X(iLow17) - 26} y={Y(63336) + 4} text="17 NOV LOW $63.336" bg={colors.bg} color={GOLD} anchor="end" size={18} opacity={appear(f, b.w633) * vanish(f, b.pay, 8)} />
+      <Ring x={X(1727)} y={Y(day17.c)} o={appear(f, b.held + 6) * vanish(f, b.pay, 8)} color={colors.positive} />
+      <Pill x={X(1727) - 24} y={Y(day17.c) - 36} text="TUTUP $64.947" bg={colors.positive} color={colors.bg} anchor="end" size={18} opacity={appear(f, b.held + 6) * vanish(f, b.pay, 8)} />
       {/* Open interest under the 15 Nov chart: it fell while price rose. */}
       {oiOn > 0.01 && (
         <g opacity={oiOn}>
