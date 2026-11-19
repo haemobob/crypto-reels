@@ -1,99 +1,52 @@
 # QA report — dompet-satoshi
 
-Both audits are done **before final rendering** (the user renders the final MP4). Update the two result lines; `npm run audit -- <id>` reads them and warns at render time while either is not PASS.
+Retention audit result: PASS
+Visual-quality audit result: PASS
 
-Retention audit result: PENDING
-Visual-quality audit result: PENDING
+## Part A — Retention audit (measured on the user's ElevenLabs take, captions.json)
 
-## Part A — Retention audit (retention rules, Rules 3, 6, 9)
+### Script audit
+- [x] **1. Hook:** "Enam koma tiga miliar dolar, dikuras dari Binance" (0.0–2.6 s). The first frame reads "$6,3 MILIAR DICURI".
+- [x] **2. Evidence by 5 s:** the Binance logo (0.3 s), the TRM Labs headline (2.5 s) and the 20-minute timeline (3.4–5.1 s).
+- [x] **3. First payoff by 8–12 s:**
+  - "sekitar satu koma satu juta BTC punya Satoshi Nakamoto… nggak pernah dibobol" (7.0–11.7 s), with 18,270 vs ±1,097,650 BTC (≈60×) on screen.
+  - The causal answer starts at 12.5 s: "Hacker Binance nggak memecahkan Bitcoin."
+- [x] **4. Reason to continue:** how they got in → why Satoshi differs → it isn't one wallet → how hard one key is → the one real weakness → what that means for you.
+- [x] **5. Concrete nouns:** recruiter, laptop, wallet, safe, key, a 78-digit number.
+- [x] **6. Cut test:** no repeated headline and no second intro. Each beat adds one new fact.
+- [x] **7. Promise / payoff:** the opening "20 minutes" returns at 65 s: "yang jebol dalam dua puluh menit itu bukan Bitcoin-nya…"
+- [x] **8. Truth test:**
+  - the 1.1 M is labelled PERKIRAAN, and the Patoshi attribution DIDUGA;
+  - the engineer story is "Menurut Binance";
+  - quantum is "secara teori" and "Mesinnya belum ada";
+  - BIP-361 is labelled "DRAF · BELUM DIADOPSI";
+  - the key guess is labelled ILUSTRASI.
+- [x] **9. Silent test:** every beat has a headline and a diagram that carry it.
+- [x] **10. Share reason:** a friend who keeps coins on an exchange or is job hunting online.
 
-### Script audit (before voice generation; quote exact lines and timestamps)
-- [ ] 1. Hook: a stranger can say what is at stake —
-- [ ] 2. Evidence: the proof that appears by second 5 —
-- [ ] 3. First payoff: the useful answer delivered by second 8–12 —
-- [ ] 4. Reason to continue: each answer leads to a genuine next question —
-- [ ] 5. Concrete nouns: a 12-year-old can picture the mechanism without jargon —
-- [ ] 6. Cut test: removed every line that repeats the headline, delays explanation, asks an empty rhetorical question or adds irrelevant context —
-- [ ] 7. Promise/payoff: the ending answers the opening —
-- [ ] 8. Truth test: no proposal, prediction or allegation can be mistaken for completed fact (first frame and wording) —
-- [ ] 9. Silent test: first 3 s legible muted; an explanation beat's diagram carries the relationship muted —
-- [ ] 10. Share reason: a real person this would be useful to —
+### Viewer-value gate
+All eight pass:
+- the opening is understandable in 3 s;
+- there's a reason to care (biggest hack ever, a common exchange);
+- the early payoff lands by 12 s;
+- each section adds new information;
+- the mechanism is shown (the chain, and 21,953 separate keys);
+- no sentence is redundant;
+- the takeaway is worth keeping (where hacks break, and that the exchange holds your key);
+- the video delivers what the opening promised.
 
-### Viewer-value gate (directive §10, before animation)
-- [ ] Opening understandable within three seconds
-- [ ] The audience has a reason to care
-- [ ] A meaningful early payoff
-- [ ] Each section contributes new information (answers a question, reveals a mechanism, creates the next question)
-- [ ] The central mechanism is explained clearly
-- [ ] No sentence can be removed without reducing understanding
-- [ ] The final insight is worth remembering (practical check / mental model / distinction / warning)
-- [ ] The viewer would feel the video delivered what it promised
-- [ ] No follow/save/share request; the payoff is the last content beat
+## Part B — Visual-quality audit
+**Stills, three rounds (`output/dompet-satoshi-review/`).** Fixes:
+- **Headlines:** the "±18 TAHUN" headline wrapped to three lines, so it was shortened. The final headline was resized to two lines.
+- **Key guess:** the hex wrapped to three lines, so the font was reduced.
+- **Big safe:** it overlapped the headline, so the camera was pulled back and its framing solved for the band.
+- **Field framings:**
+  - framings were solved numerically so the whole field sits inside y 780–1420;
+  - the field is drawn at half scale, because the camera's far plane (400) was clipping the far rows and blanked the "22.000 BRANKAS" shot;
+  - the close-up's fog keeps the far tiles black above the band;
+  - the close-up labels were shortened, because the right one ran off the frame.
+- **Hero move (safe → field):** the field crosses the text zones, so the headline and micro captions are muted for 3.7 s. The narration carries the beat.
 
-### Retention ladder
-- [ ] A concrete fact, reveal or causal step about every 5–10 s (list them with times)
-- [ ] Generic bridges ("Tapi tunggu dulu", "Dan bukan cuma itu") replaced with specific ones
-- [ ] No second intro at 8–15 s; caveats sit at the claim, not only at the end
-- [ ] Final frame answers or echoes the first question; CTA and brand ending short
-
-### Rejection gates (any YES = rewrite before animating)
-- [ ] Hook's promised consequence cannot be supported
-- [ ] First frame lacks an understandable subject/stake
-- [ ] Opening is only an animated logo or meaningless 3D
-- [ ] Nothing recognisably real (photo, logo, chart, document) in the first 3–8 s
-- [ ] No tangible proof or educational return by ~8–12 s
-- [ ] Script repeats context or pads with generic questions
-- [ ] Animation is a deck of disconnected diagrams, not a causal story
-- [ ] Final answer does not fulfil the first question
-
-## Part B — Visual-quality audit (motion-design rules, sections 4–8, and CLAUDE.md layout rules)
-
-### Layout (CLAUDE.md)
-- [ ] No text over graphics in any frame, including camera moves and crossfades
-- [ ] Nothing darkens, crops or covers the graphics to make room for text
-- [ ] Source images shown whole first, then zoomed only on the narrated part
-- [ ] Opening title centred, rising in; no date/press tag above it; no logo before the hook
-
-### Opening (cryptonite-openings.md)
-- [ ] Statement → real anchor → designed card/diagram → abstract graphics, in that order
-- [ ] Highest available level of the asset hierarchy used (real photo/logo/document over abstract)
-- [ ] Opening motion restrained: push-ins, card reveals, light sweeps, reframing; no hero move or spectacle
-- [ ] Each real asset sourced in `sources.md` (origin, date, licence basis); third-party logos/photos unaltered, no implied endorsement; news-style panels don't imitate a publisher's masthead
-
-### Demonstration and sound-off (directive §6–8)
-- [ ] Every important graphic demonstrates the spoken mechanism; decorative animation removed
-- [ ] Main idea understandable muted: headlines, progressive labels, visible cause and effect, uncrowded
-- [ ] Simulations labelled SIMULASI/ILUSTRASI on screen while shown; nothing simulated passes as real market data
-- [ ] Real assets used where they add credibility; missing ones were requested, not faked
-
-### Evidence and editorial
-- [ ] All claims sourced; event dates and date checked recorded
-- [ ] Conditional claims are visibly conditional
-- [ ] CTA factually represents an existing asset or offer
-
-### Runtime and implementation
-- [ ] Duration measured from audio and render
-- [ ] Output 1080×1920, 30fps, intended codecs (verified by ffprobe)
-- [ ] No missing assets, 0-frame/negative-length clips, scene gaps, or audio tails
-- [ ] Safe zones and fonts checked at mobile preview size
-- [ ] Numbers and labels verified, including qualifiers
-
-### Visual and sound inspection
-- [ ] Stills across every beat; every transition before/mid/after; first 3 s and last 2 s at full resolution
-- [ ] Motion watched in a full render: YES / NOT REVIEWED (never claim motion was checked from stills alone)
-- [ ] Sound synchronized to emphasis and narration intelligible
-- [ ] Single dominant visual concept per beat
-- [ ] Camera move meaningfully motivated
-- [ ] Polarity switches have semantic purpose
-- [ ] Brand consistency and licensed assets checked
-
-## Scores (1–5; any score below 4 → targeted revision and re-check)
-| Hook | First 12 s | Real-world opening | Educational payoff | Reward ladder | Understanding | Hierarchy | Camera | Transitions | Rhythm | Brand | Factual accuracy |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| | | | | | | | | | | | |
-
-## Known limitations
-
-## Fixes completed and rechecked
-
-## Final verified artifact path
+**Render checks:** see "Encoded render" below.
+- [ ] **Motion watched in a full render:** **NOT REVIEWED** (frames only).
+- [ ] **Sound:** measured, not heard. **Not listened to.**

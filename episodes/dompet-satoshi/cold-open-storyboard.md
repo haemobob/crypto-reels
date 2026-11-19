@@ -1,4 +1,4 @@
-# Cold open 0–12 s — dompet-satoshi (estimated timing; no voice yet)
+# Cold open 0–12 s — dompet-satoshi (timings from the user's ElevenLabs take)
 
 | Time | Job | Narration (exact) | Main visual + headline | Evidence on screen | Audio |
 |---|---|---|---|---|---|
@@ -22,5 +22,9 @@
 - **Why it matters:** the biggest theft ever, three weeks old; the same exchange many viewers use.
 - **Why keep watching:** why one pile of coins was drained and the bigger one never was.
 
-## Animatic review
-To be filled at preview stage (stills, sound off).
+## Animatic review (stills, sound off)
+- **First frame:** "$6,3 MILIAR DICURI" alone, centred. One subject, the stake readable in a second.
+- **Real by second 3:** the Binance logo from 0.3 s, the TRM Labs headline from 2.5 s, and the 20-minute timeline from 3.4 s.
+- **Measured:** "Tapi" at 5.3 s; "1,1 juta BTC… Satoshi" at 7.0–9.2 s with the bars and the whitepaper; "nggak pernah dibobol" at 11.7 s; the answer begins at 12.5 s.
+- **No abstract 3D before second 8:** the 3D starts at 30.3 s.
+- **Approved to animate the rest:** YES. The user approved the script and supplied the voice.

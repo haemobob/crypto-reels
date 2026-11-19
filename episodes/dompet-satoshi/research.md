@@ -32,7 +32,7 @@ User brief: with the recent cyberattacks, why has Satoshi Nakamoto's ~1M BTC nev
 - **Attribution — an estimate, not a confirmed balance.**
   - Sergio Demián Lerner found a mining pattern in early blocks (the "Patoshi" pattern; first published 2013, refined later).
   - Jameson Lopp curated the block list.
-  - Public dataset (bensig/patoshi-addresses, commit 414637c): **21,953 blocks**, heights 3 to 49,973. Each coinbase pays **50 BTC** to its own **P2PK** output (a raw public key), for **1,097,650 BTC** in total.
+  - Public dataset (bensig/patoshi-addresses, commit 414637c): **21,953 blocks**, heights 3 to 49,973. Each coinbase pays the **50 BTC** block reward to its own **P2PK** output (a raw public key), for **1,097,650 BTC** in rewards; four blocks also carry fees, so the outputs hold 1,097,652.49 BTC.
   - Reported as "~1.1 million BTC"; other estimates run from 600,000 BTC.
 - **Dates (mempool.space API):**
   - block 3: 9 Jan 2009 03:02 UTC;

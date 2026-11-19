@@ -1,6 +1,1096 @@
 {
-  "durationSec": 35,
-  "words": [],
-  "cues": {},
-  "timing": "PLACEHOLDER: no voice yet (run npm run voice)"
+  "durationSec": 75.28,
+  "timing": "supplied take clean.wav; whisper.cpp 1.7.5 small, aligned to narration.txt (178/180 words matched, rest interpolated)",
+  "words": [
+    {
+      "text": "Enam",
+      "start": 0.02,
+      "end": 0.253,
+      "highlight": false
+    },
+    {
+      "text": "koma",
+      "start": 0.253,
+      "end": 0.487,
+      "highlight": false
+    },
+    {
+      "text": "tiga",
+      "start": 0.487,
+      "end": 0.72,
+      "highlight": false
+    },
+    {
+      "text": "miliar",
+      "start": 0.72,
+      "end": 1.26,
+      "highlight": false
+    },
+    {
+      "text": "dolar,",
+      "start": 1.26,
+      "end": 1.89,
+      "highlight": false
+    },
+    {
+      "text": "dikuras",
+      "start": 1.89,
+      "end": 2.34,
+      "highlight": false
+    },
+    {
+      "text": "dari",
+      "start": 2.34,
+      "end": 2.6,
+      "highlight": false
+    },
+    {
+      "text": "Binance.",
+      "start": 2.6,
+      "end": 3.032,
+      "highlight": true
+    },
+    {
+      "text": "Kebanyakan",
+      "start": 3.37,
+      "end": 3.81,
+      "highlight": false
+    },
+    {
+      "text": "cuma",
+      "start": 3.81,
+      "end": 4.02,
+      "highlight": false
+    },
+    {
+      "text": "dalam",
+      "start": 4.02,
+      "end": 4.4,
+      "highlight": false
+    },
+    {
+      "text": "dua",
+      "start": 4.4,
+      "end": 4.505,
+      "highlight": true
+    },
+    {
+      "text": "puluh",
+      "start": 4.505,
+      "end": 4.68,
+      "highlight": false
+    },
+    {
+      "text": "menit.",
+      "start": 4.68,
+      "end": 4.865,
+      "highlight": true
+    },
+    {
+      "text": "Tapi",
+      "start": 5.29,
+      "end": 6.45,
+      "highlight": false
+    },
+    {
+      "text": "sekitar",
+      "start": 6.45,
+      "end": 7,
+      "highlight": false
+    },
+    {
+      "text": "satu",
+      "start": 7,
+      "end": 7.223,
+      "highlight": true
+    },
+    {
+      "text": "koma",
+      "start": 7.223,
+      "end": 7.447,
+      "highlight": false
+    },
+    {
+      "text": "satu",
+      "start": 7.447,
+      "end": 7.67,
+      "highlight": false
+    },
+    {
+      "text": "juta",
+      "start": 7.67,
+      "end": 7.99,
+      "highlight": false
+    },
+    {
+      "text": "BTC",
+      "start": 7.99,
+      "end": 8.32,
+      "highlight": true
+    },
+    {
+      "text": "punya",
+      "start": 8.32,
+      "end": 8.71,
+      "highlight": false
+    },
+    {
+      "text": "Satoshi",
+      "start": 8.71,
+      "end": 9.18,
+      "highlight": true
+    },
+    {
+      "text": "Nakamoto,",
+      "start": 9.18,
+      "end": 9.95,
+      "highlight": true
+    },
+    {
+      "text": "hampir",
+      "start": 9.95,
+      "end": 10.29,
+      "highlight": false
+    },
+    {
+      "text": "delapan",
+      "start": 10.29,
+      "end": 10.506,
+      "highlight": false
+    },
+    {
+      "text": "belas",
+      "start": 10.506,
+      "end": 10.66,
+      "highlight": false
+    },
+    {
+      "text": "tahun",
+      "start": 10.66,
+      "end": 10.98,
+      "highlight": false
+    },
+    {
+      "text": "nggak",
+      "start": 10.98,
+      "end": 11.17,
+      "highlight": false
+    },
+    {
+      "text": "pernah",
+      "start": 11.17,
+      "end": 11.55,
+      "highlight": false
+    },
+    {
+      "text": "dibobol.",
+      "start": 11.66,
+      "end": 12.159,
+      "highlight": false
+    },
+    {
+      "text": "Hacker",
+      "start": 12.485,
+      "end": 12.67,
+      "highlight": false
+    },
+    {
+      "text": "Binance",
+      "start": 12.67,
+      "end": 13.1,
+      "highlight": false
+    },
+    {
+      "text": "nggak",
+      "start": 13.1,
+      "end": 13.3,
+      "highlight": false
+    },
+    {
+      "text": "memecahkan",
+      "start": 13.3,
+      "end": 13.96,
+      "highlight": false
+    },
+    {
+      "text": "Bitcoin.",
+      "start": 13.96,
+      "end": 14.607,
+      "highlight": false
+    },
+    {
+      "text": "Menurut",
+      "start": 14.957,
+      "end": 15.24,
+      "highlight": false
+    },
+    {
+      "text": "Binance,",
+      "start": 15.24,
+      "end": 16.04,
+      "highlight": false
+    },
+    {
+      "text": "mereka",
+      "start": 16.04,
+      "end": 16.38,
+      "highlight": false
+    },
+    {
+      "text": "menipu",
+      "start": 16.38,
+      "end": 16.75,
+      "highlight": true
+    },
+    {
+      "text": "satu",
+      "start": 16.75,
+      "end": 17,
+      "highlight": false
+    },
+    {
+      "text": "engineer",
+      "start": 17,
+      "end": 17.49,
+      "highlight": true
+    },
+    {
+      "text": "lewat",
+      "start": 17.49,
+      "end": 17.8,
+      "highlight": false
+    },
+    {
+      "text": "wawancara",
+      "start": 17.8,
+      "end": 18.34,
+      "highlight": false
+    },
+    {
+      "text": "kerja",
+      "start": 18.34,
+      "end": 18.65,
+      "highlight": false
+    },
+    {
+      "text": "palsu,",
+      "start": 18.65,
+      "end": 18.98,
+      "highlight": false
+    },
+    {
+      "text": "lalu",
+      "start": 19.2,
+      "end": 19.31,
+      "highlight": false
+    },
+    {
+      "text": "menguasai",
+      "start": 19.31,
+      "end": 19.91,
+      "highlight": false
+    },
+    {
+      "text": "hot",
+      "start": 19.91,
+      "end": 20.12,
+      "highlight": true
+    },
+    {
+      "text": "wallet:",
+      "start": 20.12,
+      "end": 20.544,
+      "highlight": true
+    },
+    {
+      "text": "dompet",
+      "start": 20.98,
+      "end": 21.16,
+      "highlight": false
+    },
+    {
+      "text": "yang",
+      "start": 21.16,
+      "end": 21.45,
+      "highlight": false
+    },
+    {
+      "text": "selalu",
+      "start": 21.45,
+      "end": 21.89,
+      "highlight": false
+    },
+    {
+      "text": "online.",
+      "start": 21.89,
+      "end": 22.477,
+      "highlight": false
+    },
+    {
+      "text": "Koin",
+      "start": 22.888,
+      "end": 22.938,
+      "highlight": false
+    },
+    {
+      "text": "Satoshi",
+      "start": 23.128,
+      "end": 23.33,
+      "highlight": false
+    },
+    {
+      "text": "nggak",
+      "start": 23.33,
+      "end": 23.54,
+      "highlight": false
+    },
+    {
+      "text": "pernah",
+      "start": 23.54,
+      "end": 23.96,
+      "highlight": false
+    },
+    {
+      "text": "dipindah.",
+      "start": 23.96,
+      "end": 24.57,
+      "highlight": false
+    },
+    {
+      "text": "Nggak",
+      "start": 24.906,
+      "end": 24.956,
+      "highlight": false
+    },
+    {
+      "text": "ada",
+      "start": 25.206,
+      "end": 25.256,
+      "highlight": false
+    },
+    {
+      "text": "hot",
+      "start": 25.386,
+      "end": 25.436,
+      "highlight": false
+    },
+    {
+      "text": "wallet,",
+      "start": 25.566,
+      "end": 25.96,
+      "highlight": false
+    },
+    {
+      "text": "nggak",
+      "start": 25.96,
+      "end": 26.09,
+      "highlight": false
+    },
+    {
+      "text": "ada",
+      "start": 26.09,
+      "end": 26.26,
+      "highlight": false
+    },
+    {
+      "text": "karyawan.",
+      "start": 26.26,
+      "end": 26.92,
+      "highlight": false
+    },
+    {
+      "text": "Satu-satunya",
+      "start": 27.24,
+      "end": 27.97,
+      "highlight": false
+    },
+    {
+      "text": "jalan:",
+      "start": 27.97,
+      "end": 28.61,
+      "highlight": false
+    },
+    {
+      "text": "menebak",
+      "start": 28.61,
+      "end": 29.03,
+      "highlight": true
+    },
+    {
+      "text": "kunci",
+      "start": 29.03,
+      "end": 29.44,
+      "highlight": false
+    },
+    {
+      "text": "privatnya.",
+      "start": 29.44,
+      "end": 29.979,
+      "highlight": true
+    },
+    {
+      "text": "Dan",
+      "start": 30.302,
+      "end": 30.52,
+      "highlight": false
+    },
+    {
+      "text": "itu",
+      "start": 30.52,
+      "end": 30.8,
+      "highlight": false
+    },
+    {
+      "text": "bukan",
+      "start": 30.8,
+      "end": 31.26,
+      "highlight": false
+    },
+    {
+      "text": "satu",
+      "start": 31.26,
+      "end": 31.65,
+      "highlight": false
+    },
+    {
+      "text": "dompet.",
+      "start": 31.65,
+      "end": 32.049,
+      "highlight": false
+    },
+    {
+      "text": "Menurut",
+      "start": 32.317,
+      "end": 32.73,
+      "highlight": false
+    },
+    {
+      "text": "pola",
+      "start": 32.73,
+      "end": 33.01,
+      "highlight": false
+    },
+    {
+      "text": "temuan",
+      "start": 33.01,
+      "end": 33.43,
+      "highlight": false
+    },
+    {
+      "text": "peneliti",
+      "start": 33.43,
+      "end": 33.99,
+      "highlight": false
+    },
+    {
+      "text": "Sergio",
+      "start": 33.99,
+      "end": 34.43,
+      "highlight": false
+    },
+    {
+      "text": "Lerner,",
+      "start": 34.43,
+      "end": 34.94,
+      "highlight": false
+    },
+    {
+      "text": "koinnya",
+      "start": 34.94,
+      "end": 35.4,
+      "highlight": false
+    },
+    {
+      "text": "tersebar",
+      "start": 35.4,
+      "end": 35.93,
+      "highlight": false
+    },
+    {
+      "text": "di",
+      "start": 35.93,
+      "end": 36.08,
+      "highlight": false
+    },
+    {
+      "text": "sekitar",
+      "start": 36.08,
+      "end": 36.53,
+      "highlight": false
+    },
+    {
+      "text": "dua",
+      "start": 36.53,
+      "end": 36.77,
+      "highlight": true
+    },
+    {
+      "text": "puluh",
+      "start": 36.77,
+      "end": 37.17,
+      "highlight": false
+    },
+    {
+      "text": "dua",
+      "start": 37.17,
+      "end": 37.41,
+      "highlight": false
+    },
+    {
+      "text": "ribu",
+      "start": 37.41,
+      "end": 37.73,
+      "highlight": true
+    },
+    {
+      "text": "blok",
+      "start": 37.73,
+      "end": 37.99,
+      "highlight": false
+    },
+    {
+      "text": "awal.",
+      "start": 37.99,
+      "end": 38.097,
+      "highlight": false
+    },
+    {
+      "text": "Masing-masing",
+      "start": 38.387,
+      "end": 39.34,
+      "highlight": false
+    },
+    {
+      "text": "lima",
+      "start": 39.34,
+      "end": 39.553,
+      "highlight": false
+    },
+    {
+      "text": "puluh",
+      "start": 39.553,
+      "end": 39.82,
+      "highlight": false
+    },
+    {
+      "text": "BTC,",
+      "start": 39.82,
+      "end": 40.47,
+      "highlight": false
+    },
+    {
+      "text": "dengan",
+      "start": 40.47,
+      "end": 40.86,
+      "highlight": false
+    },
+    {
+      "text": "kunci",
+      "start": 40.86,
+      "end": 41.18,
+      "highlight": false
+    },
+    {
+      "text": "berbeda.",
+      "start": 41.18,
+      "end": 41.577,
+      "highlight": false
+    },
+    {
+      "text": "Dua",
+      "start": 41.892,
+      "end": 42.116,
+      "highlight": false
+    },
+    {
+      "text": "puluh",
+      "start": 42.116,
+      "end": 42.576,
+      "highlight": false
+    },
+    {
+      "text": "dua",
+      "start": 42.576,
+      "end": 42.852,
+      "highlight": false
+    },
+    {
+      "text": "ribu",
+      "start": 42.852,
+      "end": 43.22,
+      "highlight": false
+    },
+    {
+      "text": "brankas.",
+      "start": 43.22,
+      "end": 43.775,
+      "highlight": false
+    },
+    {
+      "text": "Untuk",
+      "start": 44.058,
+      "end": 44.42,
+      "highlight": false
+    },
+    {
+      "text": "membuka",
+      "start": 44.42,
+      "end": 44.96,
+      "highlight": false
+    },
+    {
+      "text": "satu",
+      "start": 44.96,
+      "end": 45.25,
+      "highlight": false
+    },
+    {
+      "text": "saja,",
+      "start": 45.25,
+      "end": 45.567,
+      "highlight": false
+    },
+    {
+      "text": "jumlah",
+      "start": 45.764,
+      "end": 46.1,
+      "highlight": false
+    },
+    {
+      "text": "kemungkinan",
+      "start": 46.1,
+      "end": 46.64,
+      "highlight": false
+    },
+    {
+      "text": "kuncinya",
+      "start": 46.64,
+      "end": 47.08,
+      "highlight": false
+    },
+    {
+      "text": "angka",
+      "start": 47.08,
+      "end": 47.34,
+      "highlight": false
+    },
+    {
+      "text": "sepanjang",
+      "start": 47.34,
+      "end": 48.38,
+      "highlight": false
+    },
+    {
+      "text": "tujuh",
+      "start": 48.38,
+      "end": 48.554,
+      "highlight": true
+    },
+    {
+      "text": "puluh",
+      "start": 48.554,
+      "end": 48.727,
+      "highlight": false
+    },
+    {
+      "text": "delapan",
+      "start": 48.727,
+      "end": 48.97,
+      "highlight": false
+    },
+    {
+      "text": "digit.",
+      "start": 48.97,
+      "end": 49.19,
+      "highlight": true
+    },
+    {
+      "text": "Tapi",
+      "start": 49.611,
+      "end": 49.8,
+      "highlight": false
+    },
+    {
+      "text": "ada",
+      "start": 49.8,
+      "end": 49.99,
+      "highlight": false
+    },
+    {
+      "text": "satu",
+      "start": 49.99,
+      "end": 50.27,
+      "highlight": false
+    },
+    {
+      "text": "celah",
+      "start": 50.27,
+      "end": 50.56,
+      "highlight": false
+    },
+    {
+      "text": "yang",
+      "start": 50.56,
+      "end": 50.82,
+      "highlight": false
+    },
+    {
+      "text": "mulai",
+      "start": 50.82,
+      "end": 51.13,
+      "highlight": false
+    },
+    {
+      "text": "dikhawatirkan:",
+      "start": 51.13,
+      "end": 51.886,
+      "highlight": false
+    },
+    {
+      "text": "format",
+      "start": 52.227,
+      "end": 52.57,
+      "highlight": false
+    },
+    {
+      "text": "awal",
+      "start": 52.57,
+      "end": 52.85,
+      "highlight": false
+    },
+    {
+      "text": "ini",
+      "start": 52.85,
+      "end": 53.07,
+      "highlight": false
+    },
+    {
+      "text": "memajang",
+      "start": 53.07,
+      "end": 53.65,
+      "highlight": false
+    },
+    {
+      "text": "kunci",
+      "start": 53.65,
+      "end": 54.01,
+      "highlight": true
+    },
+    {
+      "text": "publiknya.",
+      "start": 54.01,
+      "end": 54.94,
+      "highlight": true
+    },
+    {
+      "text": "Komputer",
+      "start": 55.05,
+      "end": 55.58,
+      "highlight": false
+    },
+    {
+      "text": "kuantum",
+      "start": 55.58,
+      "end": 56.14,
+      "highlight": false
+    },
+    {
+      "text": "besar,",
+      "start": 56.14,
+      "end": 56.58,
+      "highlight": false
+    },
+    {
+      "text": "secara",
+      "start": 56.58,
+      "end": 57.02,
+      "highlight": false
+    },
+    {
+      "text": "teori,",
+      "start": 57.02,
+      "end": 57.47,
+      "highlight": false
+    },
+    {
+      "text": "bisa",
+      "start": 57.47,
+      "end": 57.68,
+      "highlight": false
+    },
+    {
+      "text": "menghitung",
+      "start": 57.68,
+      "end": 58.28,
+      "highlight": false
+    },
+    {
+      "text": "kunci",
+      "start": 58.28,
+      "end": 58.57,
+      "highlight": false
+    },
+    {
+      "text": "privat",
+      "start": 58.57,
+      "end": 58.94,
+      "highlight": false
+    },
+    {
+      "text": "dari",
+      "start": 58.94,
+      "end": 59.19,
+      "highlight": false
+    },
+    {
+      "text": "situ.",
+      "start": 59.19,
+      "end": 59.487,
+      "highlight": false
+    },
+    {
+      "text": "Mesinnya",
+      "start": 59.816,
+      "end": 60.31,
+      "highlight": false
+    },
+    {
+      "text": "belum",
+      "start": 60.31,
+      "end": 60.74,
+      "highlight": false
+    },
+    {
+      "text": "ada.",
+      "start": 60.74,
+      "end": 61.15,
+      "highlight": false
+    },
+    {
+      "text": "Tapi",
+      "start": 61.15,
+      "end": 61.42,
+      "highlight": false
+    },
+    {
+      "text": "sudah",
+      "start": 61.42,
+      "end": 61.76,
+      "highlight": false
+    },
+    {
+      "text": "ada",
+      "start": 61.76,
+      "end": 61.96,
+      "highlight": false
+    },
+    {
+      "text": "draf",
+      "start": 61.96,
+      "end": 62.29,
+      "highlight": false
+    },
+    {
+      "text": "untuk",
+      "start": 62.29,
+      "end": 62.6,
+      "highlight": false
+    },
+    {
+      "text": "membekukan",
+      "start": 62.6,
+      "end": 63.27,
+      "highlight": true
+    },
+    {
+      "text": "koin",
+      "start": 63.27,
+      "end": 63.54,
+      "highlight": false
+    },
+    {
+      "text": "model",
+      "start": 63.54,
+      "end": 63.88,
+      "highlight": false
+    },
+    {
+      "text": "lama",
+      "start": 63.88,
+      "end": 64.15,
+      "highlight": false
+    },
+    {
+      "text": "ini.",
+      "start": 64.15,
+      "end": 64.255,
+      "highlight": false
+    },
+    {
+      "text": "Jadi",
+      "start": 64.569,
+      "end": 64.7,
+      "highlight": false
+    },
+    {
+      "text": "yang",
+      "start": 64.7,
+      "end": 64.98,
+      "highlight": false
+    },
+    {
+      "text": "jebol",
+      "start": 64.98,
+      "end": 65.33,
+      "highlight": false
+    },
+    {
+      "text": "dalam",
+      "start": 65.33,
+      "end": 65.68,
+      "highlight": false
+    },
+    {
+      "text": "dua",
+      "start": 65.68,
+      "end": 65.834,
+      "highlight": false
+    },
+    {
+      "text": "puluh",
+      "start": 65.834,
+      "end": 66.09,
+      "highlight": false
+    },
+    {
+      "text": "menit",
+      "start": 66.09,
+      "end": 66.45,
+      "highlight": false
+    },
+    {
+      "text": "itu",
+      "start": 66.45,
+      "end": 66.66,
+      "highlight": false
+    },
+    {
+      "text": "bukan",
+      "start": 66.66,
+      "end": 67.03,
+      "highlight": false
+    },
+    {
+      "text": "Bitcoin-nya,",
+      "start": 67.03,
+      "end": 67.619,
+      "highlight": false
+    },
+    {
+      "text": "melainkan",
+      "start": 67.9,
+      "end": 68.51,
+      "highlight": false
+    },
+    {
+      "text": "tempat",
+      "start": 68.51,
+      "end": 68.92,
+      "highlight": true
+    },
+    {
+      "text": "kunci",
+      "start": 68.92,
+      "end": 69.29,
+      "highlight": false
+    },
+    {
+      "text": "disimpan,",
+      "start": 69.29,
+      "end": 70,
+      "highlight": true
+    },
+    {
+      "text": "dan",
+      "start": 70,
+      "end": 70.12,
+      "highlight": false
+    },
+    {
+      "text": "orang",
+      "start": 70.12,
+      "end": 70.42,
+      "highlight": true
+    },
+    {
+      "text": "yang",
+      "start": 70.42,
+      "end": 70.66,
+      "highlight": false
+    },
+    {
+      "text": "memegangnya.",
+      "start": 70.66,
+      "end": 71.395,
+      "highlight": true
+    },
+    {
+      "text": "Kalau",
+      "start": 71.691,
+      "end": 71.88,
+      "highlight": false
+    },
+    {
+      "text": "kripto",
+      "start": 71.88,
+      "end": 72.4,
+      "highlight": false
+    },
+    {
+      "text": "lo",
+      "start": 72.4,
+      "end": 72.4,
+      "highlight": false
+    },
+    {
+      "text": "di",
+      "start": 72.52,
+      "end": 72.57,
+      "highlight": false
+    },
+    {
+      "text": "exchange,",
+      "start": 72.64,
+      "end": 73.183,
+      "highlight": false
+    },
+    {
+      "text": "kuncinya",
+      "start": 73.383,
+      "end": 73.9,
+      "highlight": false
+    },
+    {
+      "text": "dipegang",
+      "start": 73.9,
+      "end": 74.53,
+      "highlight": false
+    },
+    {
+      "text": "exchange.",
+      "start": 74.53,
+      "end": 75.26,
+      "highlight": false
+    }
+  ],
+  "cues": {
+    "hook": 0.02,
+    "satoshi": 5.29,
+    "how": 12.485,
+    "still": 22.888,
+    "split": 30.302,
+    "digits": 41.892,
+    "quantum": 49.611,
+    "payoff": 64.569
+  }
 }
