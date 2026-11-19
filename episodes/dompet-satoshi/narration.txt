@@ -1,6 +1,6 @@
 # Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
 # [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
-# DRAFT for Gate 1 (script approval), 19 Nov 2026.
+# Approved by the user ("script"), 19 Nov 2026.
 
 [[hook]] Enam koma tiga miliar dolar, dikuras dari *Binance*. Kebanyakan cuma dalam *dua puluh menit*.
 
