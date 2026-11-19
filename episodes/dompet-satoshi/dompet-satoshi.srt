@@ -1,0 +1,151 @@
+1
+00:00:00,020 --> 00:00:01,850
+Enam koma tiga miliar dolar,
+
+2
+00:00:01,890 --> 00:00:03,132
+dikuras dari Binance.
+
+3
+00:00:03,370 --> 00:00:04,965
+Kebanyakan cuma dalam dua puluh menit.
+
+4
+00:00:05,290 --> 00:00:08,280
+Tapi sekitar satu koma satu juta BTC
+
+5
+00:00:08,320 --> 00:00:10,250
+punya Satoshi Nakamoto, hampir
+
+6
+00:00:10,290 --> 00:00:12,259
+delapan belas tahun nggak pernah dibobol.
+
+7
+00:00:12,485 --> 00:00:14,707
+Hacker Binance nggak memecahkan Bitcoin.
+
+8
+00:00:14,957 --> 00:00:16,710
+Menurut Binance, mereka menipu
+
+9
+00:00:16,750 --> 00:00:18,610
+satu engineer lewat wawancara kerja
+
+10
+00:00:18,650 --> 00:00:20,644
+palsu, lalu menguasai hot wallet:
+
+11
+00:00:20,980 --> 00:00:22,577
+dompet yang selalu online.
+
+12
+00:00:22,888 --> 00:00:24,670
+Koin Satoshi nggak pernah dipindah.
+
+13
+00:00:24,906 --> 00:00:27,020
+Nggak ada hot wallet, nggak ada karyawan.
+
+14
+00:00:27,240 --> 00:00:28,570
+Satu-satunya jalan:
+
+15
+00:00:28,610 --> 00:00:30,079
+menebak kunci privatnya.
+
+16
+00:00:30,302 --> 00:00:32,149
+Dan itu bukan satu dompet.
+
+17
+00:00:32,317 --> 00:00:34,390
+Menurut pola temuan peneliti Sergio
+
+18
+00:00:34,430 --> 00:00:36,490
+Lerner, koinnya tersebar di sekitar
+
+19
+00:00:36,530 --> 00:00:38,197
+dua puluh dua ribu blok awal.
+
+20
+00:00:38,387 --> 00:00:40,430
+Masing-masing lima puluh BTC,
+
+21
+00:00:40,470 --> 00:00:41,677
+dengan kunci berbeda.
+
+22
+00:00:41,892 --> 00:00:43,875
+Dua puluh dua ribu brankas.
+
+23
+00:00:44,058 --> 00:00:45,667
+Untuk membuka satu saja,
+
+24
+00:00:45,764 --> 00:00:47,300
+jumlah kemungkinan kuncinya angka
+
+25
+00:00:47,340 --> 00:00:49,290
+sepanjang tujuh puluh delapan digit.
+
+26
+00:00:49,611 --> 00:00:51,090
+Tapi ada satu celah yang mulai
+
+27
+00:00:51,130 --> 00:00:52,810
+dikhawatirkan: format awal
+
+28
+00:00:52,850 --> 00:00:55,010
+ini memajang kunci publiknya.
+
+29
+00:00:55,050 --> 00:00:57,430
+Komputer kuantum besar, secara teori,
+
+30
+00:00:57,470 --> 00:00:59,587
+bisa menghitung kunci privat dari situ.
+
+31
+00:00:59,816 --> 00:01:01,110
+Mesinnya belum ada.
+
+32
+00:01:01,150 --> 00:01:03,230
+Tapi sudah ada draf untuk membekukan
+
+33
+00:01:03,270 --> 00:01:04,355
+koin model lama ini.
+
+34
+00:01:04,569 --> 00:01:06,620
+Jadi yang jebol dalam dua puluh menit itu
+
+35
+00:01:06,660 --> 00:01:09,250
+bukan Bitcoin-nya, melainkan tempat kunci
+
+36
+00:01:09,290 --> 00:01:11,495
+disimpan, dan orang yang memegangnya.
+
+37
+00:01:11,691 --> 00:01:13,283
+Kalau kripto lo di exchange,
+
+38
+00:01:13,383 --> 00:01:15,360
+kuncinya dipegang exchange.

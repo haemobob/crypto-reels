@@ -47,6 +47,15 @@ All eight pass:
   - the close-up labels were shortened, because the right one ran off the frame.
 - **Hero move (safe → field):** the field crosses the text zones, so the headline and micro captions are muted for 3.7 s. The narration carries the beat.
 
-**Render checks:** see "Encoded render" below.
+**Encoded render 1 (19 Nov 2026):** `output/dompet-satoshi.mp4`, with a 1-fps contact sheet at `output/dompet-satoshi-review/r1-sheet.jpg`.
+- [x] **ffprobe:** 1080×1920, 30 fps, H.264 + AAC, 77.9 s, 2,336 frames (75.28 s of narration + 0.6 s tail + 2 s outro).
+- [x] **Loudness:** −14.2 LUFS, true peak −1.3 dBTP.
+- [x] **blackdetect:** only the outro (75.9–77.8 s).
+- [x] **freezedetect (2 s):** two deliberate holds:
+  - 10.2–12.3 s, the 60× comparison with the whitepaper, while "nggak pernah dibobol" is spoken;
+  - 73.4–75.6 s, the final card.
+- [x] **Layout:** the text zones are clear in every sampled frame, apart from the muted hero move (32–35 s). The logo is hidden on the off-white chapter.
+- [x] **Cover:** `output/dompet-satoshi-cover.png` / `.jpg` / `-cover-grid.jpg`. The two-line question with "NGGAK DIBOBOL?" in blue, and the film's 3D close-up with the real keys of blocks 3–5.
+- [x] **SRT:** `episodes/dompet-satoshi/dompet-satoshi.srt` (38 cues).
 - [ ] **Motion watched in a full render:** **NOT REVIEWED** (frames only).
 - [ ] **Sound:** measured, not heard. **Not listened to.**

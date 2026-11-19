@@ -5,32 +5,32 @@ import {fonts} from '../../theme/typography';
 import {asset} from './Docs';
 
 /**
- * Reel cover (1080×1920), channel grid style: navy, logo on top, a two-line question with the key word in blue, one
- * central visual: the real block-3 coinbase on mempool.space (Satoshi-era coins, 50 BTC, never spent) under the
- * stolen-vs-untouched comparison.
+ * Reel cover (1080×1920), channel grid style: navy, logo on top, a two-line question with the key words in blue, one
+ * central visual: the film's own 3D close-up of the Patoshi blocks (blocks 3, 4, 5 with their real keys).
  */
 export const Cover = () => (
   <AbsoluteFill style={{background: `linear-gradient(180deg, ${colors.bg} 0%, #070F22 55%, #03070F 100%)`}}>
     <div style={{position: 'absolute', top: 290, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
       <BrandLogo width={240} />
     </div>
-    <div style={{position: 'absolute', top: 390, left: 30, right: 30, textAlign: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 90, letterSpacing: '-0.02em', lineHeight: 1.02, color: colors.text}}>
-      KENAPA DOMPET SATOSHI
+    <div style={{position: 'absolute', top: 390, left: 30, right: 30, textAlign: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 104, letterSpacing: '-0.02em', lineHeight: 1.0, color: colors.text}}>
+      KENAPA SATOSHI
       <br />
-      <span style={{color: colors.electric}}>NGGAK PERNAH DIBOBOL?</span>
+      <span style={{color: colors.electric}}>NGGAK DIBOBOL?</span>
     </div>
-    <div style={{position: 'absolute', left: 90, top: 680, width: 900}}>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', fontFamily: fonts.mono, fontWeight: 700, color: '#A8BDD8', fontSize: 24, letterSpacing: '0.03em'}}>
-        <span>BINANCE, 29 OKT 2026</span>
-        <span style={{color: colors.negative, fontSize: 40, fontFamily: fonts.heading, fontWeight: 800}}>$6,3 MILIAR DICURI</span>
-      </div>
-      <div style={{marginTop: 26, height: 560, borderRadius: 22, overflow: 'hidden', border: '4px solid rgba(255,255,255,0.9)', position: 'relative', background: '#0B0F19'}}>
-        <Img src={asset('mempool-block3.jpg')} style={{position: 'absolute', width: 2200 * 0.62, left: -1060 * 0.62 + 40, top: -1600 * 0.62, maxWidth: 'none'}} />
-      </div>
-      <div style={{marginTop: 22, textAlign: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 46, color: '#FFFFFF'}}>
-        ±1,1 JUTA BTC · <span style={{color: colors.positive}}>BELUM PERNAH DIPINDAH</span>
-      </div>
-      <div style={{marginTop: 10, textAlign: 'center', fontFamily: fonts.mono, fontWeight: 600, fontSize: 20, color: '#7F93B3', letterSpacing: '0.04em'}}>BLOK 3, 9 JAN 2009 · MEMPOOL.SPACE · PERKIRAAN: POLA PATOSHI</div>
+    <div style={{position: 'absolute', top: 640, left: 0, right: 0, textAlign: 'center'}}>
+      <span style={{display: 'inline-block', padding: '10px 22px', borderRadius: 12, border: `3px solid ${colors.negative}`, background: 'rgba(255,82,99,0.12)', fontFamily: fonts.heading, fontWeight: 800, fontSize: 40, color: '#FFFFFF'}}>
+        BINANCE: <span style={{color: colors.negative}}>$6,3 MILIAR</span> DICURI
+      </span>
+    </div>
+    <div style={{position: 'absolute', left: 90, top: 740, width: 900, height: 600, borderRadius: 24, overflow: 'hidden', border: '4px solid rgba(255,255,255,0.9)', boxShadow: '0 30px 90px rgba(0,0,0,0.65)', background: '#000'}}>
+      <Img src={asset('cover-vaults.jpg')} style={{position: 'absolute', width: 1080, left: -120, top: -10, maxWidth: 'none'}} />
+    </div>
+    <div style={{position: 'absolute', top: 1380, left: 30, right: 30, textAlign: 'center', fontFamily: fonts.heading, fontWeight: 800, fontSize: 44, lineHeight: 1.08, color: '#FFFFFF', whiteSpace: 'nowrap'}}>
+      ±1,1 JUTA BTC · <span style={{color: colors.positive}}>BELUM PERNAH DIPINDAH</span>
+    </div>
+    <div style={{position: 'absolute', top: 1460, left: 0, right: 0, textAlign: 'center', fontFamily: fonts.mono, fontWeight: 600, fontSize: 21, color: '#7F93B3', letterSpacing: '0.04em'}}>
+      21.953 BLOK POLA PATOSHI (PERKIRAAN) · HACK BINANCE 29 OKT 2026
     </div>
   </AbsoluteFill>
 );
