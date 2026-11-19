@@ -14,10 +14,12 @@ import bearTrap2026 from './bear-trap-2026';
 import pocBitcoin from './poc-bitcoin';
 import bentukVolume from './bentuk-volume';
 import satuMeja from './satu-meja';
+import mulaiKonsisten from './mulai-konsisten';
 // @episodes-import (scripts/new-episode.ts adds imports above this line)
 
 export const episodes: Record<string, EpisodeModule> = {
   // @episodes-entry (scripts/new-episode.ts adds entries below this line)
+  'mulai-konsisten': mulaiKonsisten,
   'satu-meja': satuMeja,
   'bentuk-volume': bentukVolume,
   'poc-bitcoin': pocBitcoin,
