@@ -7,7 +7,7 @@
   - 13–14 Nov: long and thin
   - 15 Nov: P
   - 16 Nov: D
-- **When:** 12–17 Nov 2026 (UTC days). Data fetched 17 Nov 2026 around 04:00 UTC, plus 17 Nov's full day on 18 Nov at 05:14 UTC. The script was revised on 18 Nov: "kemarin" and "hari ini" became dates, and the 17 Nov test of the thin area was added.
+- **When:** 12–18 Nov 2026 (UTC days). Data fetched 17 Nov 2026 around 04:00 UTC, plus 17 Nov's full day on 18 Nov at 05:14 UTC. The script was revised on 18 Nov: "kemarin" and "hari ini" became dates, and the 17 Nov test of the thin area was added.
 - **Why it matters:** the 15 Nov bounce (+5.4% from $62,006) looks like buyers returning. But volume piled up at the top (P), and OKX open interest fell during the rise. That is consistent with short covering rather than new positions, which is the textbook caveat on P shapes.
 - **How:** our own profiles from Binance 5-minute candles. Each candle's volume is spread evenly over its high–low range, in 30 bins per day. Shapes are classified by where the POC and the volume sit (`evidence/day-shapes.py`) and checked by eye.
 
@@ -30,8 +30,12 @@
 | P reading: buyers defend the thin area below (~$63.5K; 15 Nov's thinnest bins $63,106–63,794) | Reading (heuristic) | S1, S3 | 2026-11-17 |
 | 16 Nov: POC ~$64,890 in the middle of $63,905–65,696 → D | Calculation | S1 | 2026-11-17 |
 | 17 Nov: fell below 16 Nov's range to $63,336 (15:50 UTC), inside the thin area; no 5-minute close below $63,106 (lowest close $63,421); closed $64,947, above the thin area ("jatuh ke area tipis itu… lalu ditutup lagi di atasnya") | Fact (data) | S1 | 2026-11-18 |
+| 18 Nov (after the voice was recorded; shown on screen only): the thin area broke. The first 5-minute close below $63,106 came at 15:45 UTC; low $62,063 (22:55 UTC), close $63,068 | Fact (data) | S1 (`evidence/binance-btcusdt-5m-2026-11-18.json`) | 2026-11-19 |
 
 ## Nuance kept off screen (honest notes)
 - On 12 Nov (the b day), OKX OI **rose** 5.5% as price fell: new shorts, not long liquidation. So we say "penjual pegang kendali" (sellers in control) and do not say "long liquidation" for that day.
 - 13 Nov's OI fell 9.2% while price fell (long liquidation). We don't need it in the script.
 - One exchange's OI is a slice of the market. On screen it is "OI OKX".
+
+## Update at voice lock (19 Nov 2026)
+The user's take ends the story at 17 Nov (the thin area held). On 18 Nov it broke: close $63,068, low $62,063, almost back to the 15 Nov low. So the payoff beat shows 18 Nov in red with "18 NOV: JEBOL → $62.063" and the headline "BENTUK ≠ SINYAL: 18 NOV, AREA TIPIS JEBOL", during the spoken "Bentuknya bukan sinyal". The data line reads "DATA S/D TUTUP 18 NOV 2026". A narrated version would need one more spoken line and a new take (offered to the user).

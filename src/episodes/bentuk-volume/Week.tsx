@@ -12,7 +12,7 @@ import {fonts} from '../../theme/typography';
  * re-scaled in data space, so type and strokes keep their size. Keyed to narration cues and words.
  */
 export type Beats = Record<
-  | 'hook' | 'but' | 'pshape' | 'oi' | 'key' | 'fat' | 'thinW' | 'bshape' | 'turunLagi' | 'thin' | 'enam' | 'jebol' | 'guard' | 'dshape' | 'test' | 'w633' | 'held' | 'pay' | 'end' | 'w62',
+  | 'hook' | 'but' | 'pshape' | 'oi' | 'key' | 'fat' | 'thinW' | 'bshape' | 'turunLagi' | 'thin' | 'enam' | 'jebol' | 'guard' | 'dshape' | 'test' | 'w633' | 'held' | 'pay' | 'tapi' | 'end' | 'w62',
   number
 >;
 
@@ -37,7 +37,7 @@ const V: Record<string, ViewDef> = {
   d14: {i0: 568, i1: 900, p0: 61600, p1: 68900},
   d1516: {i0: 856, i1: 1448, p0: 61600, p1: 66600},
   d1617: {i0: 1140, i1: 1736, p0: 62900, p1: 66200},
-  all: {i0: -10, i1: 1740, p0: 61200, p1: 75200},
+  all: {i0: -10, i1: 2028, p0: 61200, p1: 75200},
 };
 type View = {X: (i: number) => number; Y: (p: number) => number; i0: number; i1: number};
 const mix = (a: ViewDef, b: ViewDef, t: number): View => {
@@ -121,7 +121,7 @@ const Band = ({v, a, b, from, to, o, label, color = GOLD, labelSide = 'left'}: {
   );
 };
 
-const LABELS = ['12 NOV', '13 NOV', '14 NOV', '15 NOV', '16 NOV', '17 NOV'];
+const LABELS = ['12 NOV', '13 NOV', '14 NOV', '15 NOV', '16 NOV', '17 NOV', '18 NOV'];
 
 export const Week = ({b}: {b: Beats}) => {
   const f = useCurrentFrame();
@@ -150,6 +150,7 @@ export const Week = ({b}: {b: Beats}) => {
   const iLow15 = 864 + 21; // 01:45 UTC, $62,006
   const iLow14 = 576 + 274; // 22:50 UTC, $63,320
   const iLow17 = 1440 + 190; // 15:50 UTC, $63,336
+  const iLow18 = 1728 + 275; // 22:55 UTC, $62,063
   const [t15a, t15b] = data.thin15;
   const day15 = DAYS[3];
   const day17 = DAYS[5];
@@ -185,7 +186,7 @@ export const Week = ({b}: {b: Beats}) => {
         <Band v={view} a={64413} b={65650} from={864} to={1152} o={between(f, b.fat, b.bshape - 4)} label="GEMUK: DISEPAKATI" />
         <Band v={view} a={t15a} b={t15b} from={864} to={1152} o={between(f, b.thinW, b.bshape - 4)} label="TIPIS: DILEWATI" color={colors.light} />
         {/* Guard: the P's thin area, carried into 16 Nov. */}
-        <Band v={view} a={t15a} b={t15b} from={864} to={1728} o={between(f, b.guard + 20, b.pay - 4)} label="AREA TIPIS ≈ $63,5 RB" />
+        <Band v={view} a={t15a} b={t15b} from={864} to={f >= b.pay ? 2016 : 1728} o={appear(f, b.guard + 20)} label="AREA TIPIS ≈ $63,5 RB" />
 
         {/* 13 Nov: "besoknya turun lagi". */}
         {f >= b.turunLagi + 8 && <path d={path(view, 288, 288 + 287 * ramp(f, b.turunLagi + 8, b.turunLagi + 40))} stroke={colors.negative} strokeWidth={5} fill="none" strokeLinejoin="round" opacity={vanish(f, b.thin + 20, 16)} />}
@@ -197,6 +198,7 @@ export const Week = ({b}: {b: Beats}) => {
           )}
         </g>
         <path d={path(view, 0, drawn)} stroke={colors.electric} strokeWidth={2.6} fill="none" strokeLinejoin="round" />
+        {f >= b.pay && <path d={path(view, 1727, 1727 + 288 * ramp(f, b.pay + 4, b.pay + 34))} stroke={colors.negative} strokeWidth={3.5} fill="none" strokeLinejoin="round" />}
 
         {/* 14 Nov's low, broken the next day. */}
         <line x1={X(iLow14)} x2={X(iLow14) + (X(iLow15 + 12) - X(iLow14)) * ramp(f, b.jebol - 6, b.jebol + 14)} y1={Y(63320)} y2={Y(63320)} stroke={colors.negative} strokeWidth={2.5} strokeDasharray="7 6" opacity={between(f, b.enam + 20, b.guard)} />
@@ -249,6 +251,9 @@ export const Week = ({b}: {b: Beats}) => {
       <Pill x={X(iLow17) - 26} y={Y(63336) + 4} text="17 NOV LOW $63.336" bg={colors.bg} color={GOLD} anchor="end" size={18} opacity={appear(f, b.w633) * vanish(f, b.pay, 8)} />
       <Ring x={X(1727)} y={Y(day17.c)} o={appear(f, b.held + 6) * vanish(f, b.pay, 8)} color={colors.positive} />
       <Pill x={X(1727) - 24} y={Y(day17.c) - 36} text="TUTUP $64.947" bg={colors.positive} color={colors.bg} anchor="end" size={18} opacity={appear(f, b.held + 6) * vanish(f, b.pay, 8)} />
+      {/* 18 Nov (after the script was recorded): the thin area broke, down to $62,063. */}
+      <Ring x={X(iLow18)} y={Y(62063)} o={appear(f, b.pay + 30)} color={colors.negative} />
+      <Pill x={X(iLow18) - 22} y={Y(62063) + 4} text="18 NOV: JEBOL → $62.063" bg={colors.negative} anchor="end" size={18} opacity={appear(f, b.pay + 30)} />
       {/* Open interest under the 15 Nov chart: it fell while price rose. */}
       {oiOn > 0.01 && (
         <g opacity={oiOn}>

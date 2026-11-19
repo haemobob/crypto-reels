@@ -1,6 +1,25 @@
 # Audio map — bentuk-volume
 
-- Voice: see voice.json; take measured by npm run voice
-- Duration (measured):
-- Cue times: captions.json
-- Music / SFX cue points and licences:
+- **Take:** the user's ElevenLabs take, received 19 Nov 2026. Eleven v3, "Ongky Himawan – Calm, Deep", read from `voice/bentuk-volume.txt`. 68.21 s, inside the 45–72 s window.
+  - Levelled only: highpass 60 Hz, 2.5:1 compression, −18 LUFS, limiter. No cuts; no tag was read aloud.
+  - Original: `voice-cache/elevenlabs-take1.mp3`.
+  - The Orus working voice is superseded (`voice-cache/captions-orus.json`).
+- **Alignment:** 156 of 158 words matched. Whisper missed "setengah" and one "di"; their timings are interpolated. **Not heard by ear.**
+- **Cues (s):** hook 0.13 · but 5.79 · pshape 8.24 · oi 12.40 · key 18.28 · bshape 26.51 · thin 35.06 · guard 44.67 · dshape 50.45 · test 55.23 · held 60.39 · pay 62.36 · "Tapi" 64.06 · last word 68.20.
+- **Score:** `scripts/score-bentuk-volume.ts`, original synthesis with no samples, ducked under the voice and cut after the last word:
+  - E minor add9 under the bounce;
+  - A minor 7 with a soft tick while the shape is read;
+  - D minor with a low pulse under the falling days;
+  - C major as the thin area holds;
+  - an unresolved D sus2 under the 18 Nov break and the takeaway.
+- **SFX:** the user's pack (`public/sfx/newest/`, cleared 21 Oct 2026), placed on on-screen events in `Sound.tsx`:
+  - the $62K ring;
+  - the profile reveals;
+  - the open-interest readout;
+  - the two bands;
+  - the day-to-day moves;
+  - 13 Nov's drop;
+  - the 14 Nov low break;
+  - the 17 Nov ring and its close;
+  - the 18 Nov break;
+  - the takeaway hit.

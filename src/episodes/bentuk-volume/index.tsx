@@ -11,6 +11,7 @@ import {colors} from '../../theme/colors';
 import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
 import {Cover} from './Cover';
+import {Sound} from './Sound';
 import {Week, type Beats} from './Week';
 
 // Layout (screen px): micro captions y≈384, headline zone centred at 590, chart 780–1280 with day labels at 1310,
@@ -42,13 +43,13 @@ const Scene = () => {
   const c = (k: string) => cue(k);
   const b: Beats = {
     hook: c('hook'), but: c('but'), pshape: c('pshape'), oi: c('oi'), key: c('key'), bshape: c('bshape'), thin: c('thin'), guard: c('guard'), dshape: c('dshape'), test: c('test'), held: c('held'), pay: c('pay'), end: narrationEnd,
-    w62: word('enam', 0), fat: word('gemuk', 0), thinW: word('tipis', 1), turunLagi: word('turun', 2), enam: word('enam', 1), jebol: word('jebol', 0), w633: word('enam', 4),
+    w62: word('enam', 0), fat: word('gemuk', 0), thinW: word('tipis', 1), turunLagi: word('turun', 2), enam: word('enam', 1), jebol: word('jebol', 0), w633: word('enam', 4), tapi: word('tapi', 1),
   };
   const source =
     frame < b.oi ? 'BINANCE BTC/USDT · CANDLE 5 MENIT · 15 NOV 2026 (UTC)'
       : frame < b.key ? 'OPEN INTEREST: OKX BTC-USDT-SWAP, PER JAM · HARGA: BINANCE BTC/USDT'
         : frame < b.pay ? 'PROFIL VOLUME PER HARI (UTC) DARI CANDLE 5 MENIT BINANCE BTC/USDT'
-          : 'DATA S/D TUTUP 17 NOV 2026 · BACAAN, BUKAN SINYAL · BUKAN SARAN INVESTASI';
+          : 'DATA S/D TUTUP 18 NOV 2026 · BACAAN, BUKAN SINYAL · BUKAN SARAN INVESTASI';
   return (
     <AbsoluteFill style={{backgroundColor: colors.bg}}>
       <Week b={b} />
@@ -67,10 +68,12 @@ const Scene = () => {
           {from: b.dshape, content: <>16 NOV: <Gold>BENTUK D</Gold><br />KEDUA SISI SEPAKAT</>, size: 80},
           {from: b.test, content: <>17 NOV: TURUN KE<br /><Gold>AREA TIPIS</Gold></>, size: 88},
           {from: b.held, content: <>…TUTUP LAGI<br /><Green>DI ATASNYA</Green></>, size: 92},
-          {from: b.pay, content: <>BENTUK ≠ SINYAL.<br />TAPI KASIH TAHU<br /><Hi>SIAPA PEGANG KENDALI</Hi></>, size: 64},
+          {from: b.pay, content: <>BENTUK ≠ SINYAL:<br />18 NOV, AREA TIPIS <Red>JEBOL</Red></>, size: 70},
+          {from: b.tapi, content: <>TAPI KASIH TAHU<br /><Hi>SIAPA PEGANG KENDALI</Hi><br />&amp; DI MANA BATASNYA</>, size: 64},
         ]}
       />
       <div style={{position: 'absolute', left: 80, right: 80, top: SOURCE_Y, textAlign: 'center', fontFamily: fonts.mono, fontWeight: 500, fontSize: 18, letterSpacing: '0.03em', color: '#7F93B3', lineHeight: 1.4}}>{source}</div>
+      <Sound />
     </AbsoluteFill>
   );
 };
