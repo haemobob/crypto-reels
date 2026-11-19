@@ -12,4 +12,4 @@
 - **First-frame test:** a five-word title naming three famous people plus "satu meja".
 - **Real by second 3:** the Kremlin photo is on screen from 0.9 s.
 
-Approved to animate the rest: pending the user's review of the preview frames (Gate 2).
+Approved to animate the rest: YES (preview frames and a draft MP4 were sent; the user supplied the voice, 19 Nov 2026).
