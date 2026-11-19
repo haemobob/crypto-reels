@@ -1,2 +1,10 @@
 # Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
 # [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+[[hook]]Tiga negara dengan *senjata nuklir* terbanyak di dunia, untuk pertama kalinya duduk di *satu meja*.
+[[where]]Sembilan belas November, di Shenzhen, China: Trump, Putin, dan Xi Jinping. [[decl]]Di akhir pertemuan, mereka menyepakati *deklarasi bersama* soal perdamaian.
+[[turn]]Tapi di luar ruangan itu, peta dunia sedang *bergeser*.
+[[japan]]Amerika dilaporkan minta Jepang membayar *hampir tiga kali lipat* untuk menampung pasukannya.
+[[russia]]Bulan lalu, Amerika melonggarkan *sanksi diesel* Rusia, setelah Trump dan Putin sepakat soal pasokan.
+[[europe]]Di Eropa, militer mulai mencari pengganti software perang dari *Palantir*, perusahaan Amerika. [[macron]]Dan Macron bilang: dukungan Amerika untuk Ukraina *sudah tidak ada*.
+[[jets]]Sementara itu, dua pesawat yang diduga milik Rusia masuk *wilayah udara Jepang*. [[taiwan]]Dan menurut pejabat Taiwan, China mengerahkan *lebih dari seratus kapal* di sekitar Taiwan.
+[[pay]]Jadi, tatanan dunia baru? Belum tentu. Deklarasi itu baru *niat*, bukan perjanjian. [[watch]]Yang perlu diawasi: apa yang terjadi *setelah* foto jabat tangan.

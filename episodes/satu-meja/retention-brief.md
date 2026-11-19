@@ -1,43 +1,25 @@
 # Retention brief — satu-meja
 
-Written before any full script (viewer-value directive §1 and retention rules, Rule 1).
+## Viewer reward
+- **Who it is for:** Indonesian Instagram viewers who follow markets and world news. The user chose a pure world-news Reel, with no crypto tie-in.
+- **Their question:** "Trump, Putin and Xi met. Is this a 'new world order'?"
+- **What exactly they learn:**
+  - what actually happened in Shenzhen (the first trilateral, a declaration on peace);
+  - the five real shifts around it: Japan, Russia's diesel, Europe and Palantir, Macron on Ukraine, Russian aircraft and Chinese ships;
+  - that a declaration is intent, not a treaty.
+- **What they keep:** a one-minute map of the week, and a check: watch what happens after the photo, not the photo.
 
-## Viewer reward (answer concretely first)
-Weak: "The viewer learns about cryptocurrency." Strong: "The viewer learns how to identify two warning signs of low liquidity before buying an altcoin."
+## Concept scorecard (1–5)
+| Viewer relevance | Educational payoff | Retention structure | Credibility | Visual explanation | Total ×4 |
+|---|---|---|---|---|---|
+| 4 | 4 | 5 | 5 | 5 | 92 |
 
-- **Who it is for**:
-- **Viewer's problem, question or misconception**:
-- **What exactly they learn** (know, understand, or be able to do after watching):
-- **Why it matters to an Indonesian crypto investor**:
-- **What they keep afterwards** (practical check / mental model / comparison / warning; the reason to save it):
-
-## Discovery sequence
-- **Early useful insight** (by 8–12 s):
-- **Visual demonstration** (the mechanism shown, not decorated):
-- **Final takeaway** (the last content beat; answers the opening):
-- **Real assets the mechanism needs** (and which ones the user must supply):
-
-## Concept scorecard (1–5 each; score = sum × 4)
-Rework the angle when any criterion is below 3, or Educational payoff or Credibility is below 4. An editorial filter, not a prediction.
-
-| Criterion | Question | Score | Why |
-|---|---|---|---|
-| Viewer relevance | Would an Indonesian crypto investor care? | | |
-| Educational payoff | Does the viewer leave with a useful insight? | | |
-| Retention structure | Is there a clear reason to watch each section? | | |
-| Credibility | Are facts and examples accurate and properly framed? | | |
-| Visual explanation | Do the graphics clarify how something works? | | |
-
-Concept score: /100
-
-## Retention brief (V3) If the topic is only "news happened" with no viewer-facing consequence, reframe the angle instead of manufacturing stakes.
-
-- **Audience** (exactly who should care):
-- **Consequence** ("Why should I spend a minute on this?", one sentence):
-- **Counterintuitive fact** (verified surprise or contradiction, if the evidence supports one):
-- **Evidence** (exact person / event / date / number that makes the premise credible, with source):
-- **One-sentence payoff** (what the viewer understands by the end):
-- **Misconception** (what the viewer might wrongly believe now):
-- **Share trigger** (who a viewer would send this to, and why it is useful to them):
-- **Emotional shape** (concern / curiosity / surprise / relief / clarity; no fabricated fear):
-- **Chosen length** (the shortest runtime that keeps the mechanism and payoff; most single-idea Reels 35–60 s, 60–90+ s only when earned or requested) and why:
+## V3 brief
+- **Consequence:** the three biggest nuclear powers met while the US's alliances shifted.
+- **Counterintuitive fact:** while Trump got the summit photo, US allies were being asked to pay more (Japan) or were moving away (Europe, Ukraine).
+- **Evidence:** the Kremlin readout and photos, SIPRI 2026, and Reuters, SCMP and the Japan MoD for each beat.
+- **One-sentence payoff:** a declaration is intent, not a treaty; watch what happens after the handshake.
+- **Misconception:** that a summit photo equals a "new world order", or that the reference's dramatic details (the hug, the missile timing) happened.
+- **Share trigger:** the friend who forwards "new world order" posts.
+- **Emotional shape:** awe (one table) → unease (the map shifts) → a calm, grounded check.
+- **Chosen length:** about 56–64 s (window 45–72 s). The reference ran 84 s; ours drops three unverified claims and the CTA.
