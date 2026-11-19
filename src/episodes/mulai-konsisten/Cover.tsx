@@ -11,9 +11,9 @@ import {Wall} from './Wall';
  */
 export const Cover = () => (
   <AbsoluteFill style={{backgroundColor: colors.bg}}>
-    {/* Frame 326: the builder stands on the finished wall; the waiter still has his level on the first brick. */}
+    {/* Frame 386: the builder stands on the finished wall; the waiter (frozen at 372) still has his level on his first brick. */}
     <div style={{position: 'absolute', inset: 0, transform: 'translateY(190px)'}}>
-      <Wall at={326} labels={false} />
+      <Wall at={386} waiterAt={372} labels={false} />
     </div>
     <div style={{position: 'absolute', top: 290, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
       <BrandLogo width={240} />

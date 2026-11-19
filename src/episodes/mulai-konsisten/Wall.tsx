@@ -2,12 +2,13 @@ import {interpolate, useCurrentFrame} from 'remotion';
 import {colors} from '../../theme/colors';
 import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
-import {BRICK_H, BRICK_W, COLS, DROP, FLOOR, GONE, LAST, LEAVE, LOOK, ROW_H, ROWS, STAND, WAIT_CYCLE, WAITER_STANDS, WALL_W, WALL_X, brick, placeAt, waitPhase} from './schedule';
+import {BRICK_H, BRICK_W, DROP, FLOOR, HOP, LAST, LOOK, PLAN, ROW_H, ROWS, WAIT_CYCLE, WAITER_STANDS, WAVE, WALL_W, WALL_X, standAt, waitPhase} from './schedule';
 
 /**
  * Wordless scene, our own animation after a reference clip's idea (Neuron Visuals, "perfectionist vs action taker"):
  * left, the waiter keeps lifting, nudging and levelling one brick ("NUNGGU ENTRY SEMPURNA"); right, the builder lays
- * brick after brick, rising with the wall ("MULAI & KONSISTEN"), then looks back and climbs over. Cryptonite colours;
+ * brick after brick, standing on what he has laid and rising with the wall ("MULAI & KONSISTEN"), then turns and
+ * waves down at the waiter, who finally stands up. Cryptonite colours;
  * no numbers, no prices, no promise of returns.
  */
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -29,7 +30,7 @@ const Brick = ({x, y, o = 1, glow = 0}: {x: number; y: number; o?: number; glow?
 
 type Pose = {x: number; base: number; bend: number; reach: number; head: number; kneel: number; arms?: 'carry' | 'level' | 'down' | 'wave'};
 /** A stick figure. base = feet level; bend 0..1 leans forward; reach moves the hands out; kneel 0..1 drops onto one knee. */
-const Figure = ({x, base, bend, reach, head, kneel, arms = 'down', facing = 1, clipTop}: Pose & {facing?: number; clipTop?: number}) => {
+const Figure = ({x, base, bend, reach, head, kneel, arms = 'down', facing = 1, wave = 0}: Pose & {facing?: number; wave?: number}) => {
   const s = facing;
   const hipY = base - lerp(72, 40, kneel);
   const torso = 70;
@@ -42,10 +43,10 @@ const Figure = ({x, base, bend, reach, head, kneel, arms = 'down', facing = 1, c
   const knee = {x: x + s * lerp(18, 30, kneel), y: lerp(base - 36, base - 8, kneel)};
   const knee2 = {x: x - s * lerp(10, 2, kneel), y: lerp(base - 36, base - 40, kneel)};
   const foot2 = {x: x - s * lerp(14, 36, kneel), y: base};
-  const waveHand = {x: neck.x + s * 30, y: neck.y - 60};
+  const waveHand = {x: neck.x + s * (26 + 16 * Math.sin(wave)), y: neck.y - 58 + 6 * Math.cos(wave)};
   const h1 = arms === 'wave' ? waveHand : hand;
   return (
-    <g stroke={INK} strokeWidth={9} strokeLinecap="round" strokeLinejoin="round" fill="none" clipPath={clipTop !== undefined ? 'url(#builder-clip)' : undefined}>
+    <g stroke={INK} strokeWidth={9} strokeLinecap="round" strokeLinejoin="round" fill="none">
       <circle cx={headC.x} cy={headC.y} r={22} fill={INK} stroke="none" />
       <line x1={neck.x} y1={neck.y} x2={x} y2={hipY} />
       <polyline points={`${x},${hipY} ${knee.x},${knee.y} ${knee.x + s * 4},${base}`} />
@@ -65,42 +66,55 @@ const Level = ({x, y, bubble, tilt}: {x: number; y: number; bubble: number; tilt
   </g>
 );
 
-/** `at` freezes the scene at a frame (used by the cover); `labels` hides the two labels. */
-export const Wall = ({at, labels = true}: {at?: number; labels?: boolean} = {}) => {
+/** `at` freezes the scene at a frame (used by the cover), `waiterAt` freezes the waiter at another; `labels` hides the two labels. */
+export const Wall = ({at, waiterAt, labels = true}: {at?: number; waiterAt?: number; labels?: boolean} = {}) => {
   const cf = useCurrentFrame();
   const f = at ?? cf;
-  const n = Math.max(0, Math.min(ROWS * COLS, Math.floor((f - placeAt(0)) / (placeAt(1) - placeAt(0))) + 1));
-  const rowsDone = Math.floor(Math.min(n, ROWS * COLS) / COLS);
-
-  // --- The builder: behind the wall, rising with it; his torso shows above the top row.
-  const cur = Math.min(n, ROWS * COLS - 1);
-  const target = brick(cur);
-  const prev = brick(Math.max(0, cur - 1));
-  const tIn = ramp(f, placeAt(cur) - 4, placeAt(cur) + 2);
-  const bx = lerp(prev.x, target.x, tIn) + BRICK_W / 2 - 34;
-  const rise = interpolate(f, [placeAt(0), LAST], [0, ROWS], clamp);
-  const smoothRows = Math.min(rise, rowsDone + ramp(f, placeAt(rowsDone * COLS) - 6, placeAt(rowsDone * COLS)));
-  const topY = FLOOR - smoothRows * ROW_H;
-  const phase = f < LAST ? ((f - placeAt(0)) % (placeAt(1) - placeAt(0))) / (placeAt(1) - placeAt(0)) : 0;
-  const bend = f < LAST ? 0.35 + 0.35 * Math.sin(phase * Math.PI) : 0;
-  // After the wall: stand on top, look back, walk to the far edge, climb down the far side.
-  const standUp = ramp(f, LAST, STAND + 8);
-  const lookBack = ramp(f, LOOK, LOOK + 8) * (1 - ramp(f, LEAVE - 4, LEAVE + 4));
-  const walk = ramp(f, LEAVE, LEAVE + 26, ease.inOut);
-  const down = ramp(f, LEAVE + 22, GONE, ease.in);
-  const wallTop = FLOOR - ROWS * ROW_H;
-  const builderBase = f < LAST ? topY + 36 : lerp(wallTop + 36, wallTop + 2, standUp) + down * 260;
-  // He climbs down the far side behind the wall, so the wall hides him.
-  const builderX = f < LAST ? bx : lerp(bx, WALL_X + WALL_W - 60, walk);
-  const facing = lookBack > 0.5 ? -1 : 1;
+  // --- The builder stands ON the bricks he has laid (schedule.ts PLAN): lays the row around him, steps up, lays the brick
+  // he stood on. Then looks back, walks to the far edge, jumps down to the floor and walks off.
+  const P = PLAN.places;
+  let k = -1;
+  for (let i = 0; i < P.length; i++) if (P[i].at <= f) k = i;
+  const placing = k >= 0 && f < P[k].at + DROP ? P[k] : null;
+  const next = P[Math.min(k + 1, P.length - 1)];
+  let pos = standAt(0, 0);
+  let hopping = 0;
+  for (const st of PLAN.steps) {
+    if (f >= st.at + HOP) pos = st.to;
+    else if (f >= st.at) {
+      const t = ease.inOut((f - st.at) / HOP);
+      pos = {x: lerp(st.from.x, st.to.x, t), base: lerp(st.from.base, st.to.base, t) - Math.sin(Math.PI * t) * 26};
+      hopping = 1;
+      break;
+    } else break;
+  }
+  let facing = Math.sign((placing ?? next).x + BRICK_W / 2 - pos.x) || 1;
+  let bend = placing ? 0.75 * Math.sin(Math.PI * ((f - placing.at) / DROP)) + 0.2 : 0.2 + hopping * 0.1;
+  let reach = placing ? 0.8 : 0.35;
+  let wave = 0;
+  let arms: 'carry' | 'down' | 'wave' = 'carry';
+  if (f >= LAST) {
+    // Wall done: he straightens up on top, turns to the waiter and waves down at him.
+    pos = standAt(PLAN.endCol, ROWS);
+    bend = interpolate(f, [LAST, LAST + 6], [0.3, 0], clamp);
+    reach = 0.2;
+    arms = f >= WAVE ? 'wave' : 'down';
+    facing = f >= LOOK ? -1 : facing;
+    wave = (f - WAVE) * 0.45;
+  }
+  // The brick he carries: at his chest between placements, then swung down into place.
+  const hand = {x: pos.x + facing * 34 - BRICK_W / 2, y: pos.base - 112};
+  const carried = f < LAST && (placing || k < P.length - 1) ? (placing ? {x: lerp(hand.x, placing.x, ease.inOut((f - placing.at) / DROP)), y: lerp(hand.y, placing.y, ease.inOut((f - placing.at) / DROP))} : hand) : null;
+  const rowDone = Array.from({length: ROWS}, (_, r) => Math.max(...P.filter((q) => q.row === r).map((q) => q.at)) + DROP);
 
   // --- The waiter: kneeling at his single brick; lift, nudge, set, level, check.
-  const wp = waitPhase(f);
+  const wf = waiterAt ?? f;
+  const wp = waitPhase(wf);
   const lift = interpolate(wp, [0, 8, 16, 20], [0, 1, 1, 0], clamp);
-  const nudge = Math.sin(Math.floor((f - 10) / WAIT_CYCLE) * 2.1) * 8 * ramp(wp, 6, 14);
+  const nudge = Math.sin(Math.floor((wf - 10) / WAIT_CYCLE) * 2.1) * 8 * ramp(wp, 6, 14);
   const levelOn = interpolate(wp, [22, 28, 46, 52], [0, 1, 1, 0], clamp);
-  const bubble = Math.sin(wp * 0.45) * (1 - ramp(wp, 28, 44)) * 1 + Math.sin(Math.floor((f - 10) / WAIT_CYCLE)) * 0.6 * ramp(wp, 36, 44);
-  const stands = ramp(f, WAITER_STANDS, WAITER_STANDS + 14);
+  const bubble = Math.sin(wp * 0.45) * (1 - ramp(wp, 28, 44)) * 1 + Math.sin(Math.floor((wf - 10) / WAIT_CYCLE)) * 0.6 * ramp(wp, 36, 44);
+  const stands = ramp(wf, WAITER_STANDS, WAITER_STANDS + 14);
   const wx = 290;
   const wb = {x: 330 + nudge, y: FLOOR - BRICK_H - lift * 26};
 
@@ -115,25 +129,19 @@ export const Wall = ({at, labels = true}: {at?: number; labels?: boolean} = {}) 
 
   const scene = (mirror = false) => (
     <g>
-      {/* Builder first (behind the wall), clipped to above the floor. */}
-      {f < GONE + 2 && <Figure x={builderX} base={builderBase} bend={bend} reach={f < LAST ? 0.6 + 0.4 * Math.sin(phase * Math.PI) : 0.2} head={lookBack * 1.5} kneel={0} arms={f < LAST ? 'carry' : lookBack > 0.5 ? 'wave' : 'down'} facing={facing} clipTop={mirror ? undefined : 0} />}
-      {/* The brick in the builder's hands, then dropping into place. */}
-      {f < LAST && n < ROWS * COLS && (() => {
-        const t = ramp(f, placeAt(cur), placeAt(cur) + DROP, ease.in);
-        const from = {x: target.x + 10, y: topY - 70};
-        return <Brick x={lerp(from.x, target.x, t)} y={lerp(from.y, target.y, t)} />;
-      })()}
       {/* The wall, brick by brick, with a short glow as each one lands. */}
       <g clipPath="url(#wall-clip)">
-        {Array.from({length: ROWS * COLS}, (_, i) => {
-          if (f < placeAt(i) + DROP) return null;
-          const b = brick(i);
-          const glow = 1 - ramp(f, placeAt(i) + DROP, placeAt(i) + DROP + 10);
-          return <Brick key={i} x={b.x} y={b.y} glow={glow} />;
+        {P.map((q, i) => {
+          if (f < q.at + DROP) return null;
+          const glow = 1 - ramp(f, q.at + DROP, q.at + DROP + 10);
+          return <Brick key={i} x={q.x} y={q.y} glow={glow} />;
         })}
         {/* Half bricks closing the staggered rows on the left. */}
-        {Array.from({length: ROWS}, (_, r) => (r % 2 === 1 && f >= placeAt(r * COLS + COLS - 1) + DROP ? <Brick key={`h${r}`} x={WALL_X - BRICK_W / 2 - 4} y={FLOOR - (r + 1) * ROW_H + 4} /> : null))}
+        {Array.from({length: ROWS}, (_, r) => (r % 2 === 1 && f >= rowDone[r] ? <Brick key={`h${r}`} x={WALL_X - BRICK_W / 2 - 4} y={FLOOR - (r + 1) * ROW_H + 4} /> : null))}
       </g>
+      {/* The builder, standing on what he has built, and the brick he is carrying. */}
+      <Figure x={pos.x} base={pos.base} bend={bend} reach={reach} head={f >= LOOK ? 0.8 : 0} kneel={0} arms={arms} facing={facing} wave={wave} />
+      {carried && <Brick x={carried.x} y={carried.y} />}
       {/* The waiter, his one brick and his level. */}
       <Brick x={wb.x} y={wb.y} />
       <Figure x={wx} base={FLOOR} bend={lerp(0.55 + 0.1 * lift, 0, stands)} reach={lerp(0.55, 0.1, stands)} head={lerp(levelOn * 1.2, 1.6, stands)} kneel={1 - stands} arms="level" />
@@ -146,9 +154,6 @@ export const Wall = ({at, labels = true}: {at?: number; labels?: boolean} = {}) 
       <defs>
         <clipPath id="wall-clip">
           <rect x={WALL_X} y={0} width={WALL_W} height={FLOOR} />
-        </clipPath>
-        <clipPath id="builder-clip">
-          <rect x={0} y={0} width={1080} height={FLOOR} />
         </clipPath>
         <linearGradient id="reflect-fade" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#fff" stopOpacity="0.32" />
