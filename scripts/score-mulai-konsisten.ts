@@ -64,13 +64,13 @@ const step = shot('step', 0.18, `(0.7*sin(2*PI*90*t)*exp(-t*26))|(0.7*sin(2*PI*9
 const drop = path.join(tmp, 'drop.wav');
 noise(drop, 0.35, 'brown', 'lowpass=f=500,afade=t=out:st=0.02:d=0.3');
 const file = {brick: clack, level: tick, step, drop};
-const gains = {brick: 0.3, level: 0.26, step: 0.42, drop: 0.6};
+const gains = {brick: 0.22, level: 0.24, step: 0.38, drop: 0.55};
 for (const e of events()) layers.push({at: e.t, file: file[e.kind], gain: gains[e.kind]});
 
 // --- Mix (no voice), cut at the end of the outro with a short fade.
 const inputs = layers.flatMap((l) => ['-i', l.file]);
 const chains = layers.map((l, i) => `[${i}:a]aformat=sample_rates=${SR}:channel_layouts=stereo,volume=${l.gain.toFixed(4)},adelay=${Math.round(l.at * 1000)}|${Math.round(l.at * 1000)}[l${i}]`).join(';');
-const mix = `${chains};${layers.map((_, i) => `[l${i}]`).join('')}amix=inputs=${layers.length}:normalize=0,acompressor=threshold=-20dB:ratio=3:attack=2:release=60,alimiter=limit=0.7,atrim=0:${total.toFixed(3)},afade=t=out:st=${(total - 0.25).toFixed(3)}:d=0.25[out]`;
+const mix = `${chains};${layers.map((_, i) => `[l${i}]`).join('')}amix=inputs=${layers.length}:normalize=0,acompressor=threshold=-20dB:ratio=3:attack=2:release=60,alimiter=limit=0.6,atrim=0:${total.toFixed(3)},afade=t=out:st=${(total - 0.25).toFixed(3)}:d=0.25[out]`;
 const out = path.join(outDir, 'score.mp3');
 run(ffmpegBin(), ['-v', 'error', '-y', ...inputs, '-filter_complex', mix, '-map', '[out]', '-ar', String(SR), '-c:a', 'libmp3lame', '-b:a', '320k', out]);
 console.log(`✔ score.mp3 (${layers.length} layers: music + ${events().length} foley events, wall done at ${done.toFixed(2)} s, ${total.toFixed(1)} s) in public/episodes/${id}`);

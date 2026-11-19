@@ -2,6 +2,7 @@ import {AbsoluteFill} from 'remotion';
 import {BrandLogo} from '../../components/BrandLogo';
 import {colors} from '../../theme/colors';
 import {fonts} from '../../theme/typography';
+import {LAST} from './schedule';
 import {Wall} from './Wall';
 
 /**
@@ -11,9 +12,9 @@ import {Wall} from './Wall';
  */
 export const Cover = () => (
   <AbsoluteFill style={{backgroundColor: colors.bg}}>
-    {/* Frame 386: the builder stands on the finished wall; the waiter (frozen at 372) still has his level on his first brick. */}
+    {/* Just after the last brick: the builder stands on the finished wall; the waiter (frozen at 372) still has his level on his first brick. */}
     <div style={{position: 'absolute', inset: 0, transform: 'translateY(190px)'}}>
-      <Wall at={386} waiterAt={372} labels={false} />
+      <Wall at={LAST + 12} waiterAt={372} labels={false} />
     </div>
     <div style={{position: 'absolute', top: 290, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
       <BrandLogo width={240} />

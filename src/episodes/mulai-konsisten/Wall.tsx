@@ -2,7 +2,7 @@ import {interpolate, useCurrentFrame} from 'remotion';
 import {colors} from '../../theme/colors';
 import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
-import {BRICK_H, BRICK_W, DROP, FLOOR, HOP, LAST, LOOK, PLAN, ROW_H, ROWS, WAIT_CYCLE, WAITER_STANDS, WAVE, WALL_W, WALL_X, standAt, waitPhase} from './schedule';
+import {BRICK_H, BRICK_W, FLOOR, HOP, LAST, LOOK, PLAN, ROWS, WAIT_CYCLE, WAITER_STANDS, WAVE, WALL_W, WALL_X, levelBase, waitPhase} from './schedule';
 
 /**
  * Wordless scene, our own animation after a reference clip's idea (Neuron Visuals, "perfectionist vs action taker"):
@@ -18,13 +18,13 @@ const GOLD = '#FFD166';
 const INK = colors.text;
 const STAGE = 1.4;
 
-const Brick = ({x, y, o = 1, glow = 0}: {x: number; y: number; o?: number; glow?: number}) =>
+const Brick = ({x, y, w = BRICK_W, o = 1, glow = 0}: {x: number; y: number; w?: number; o?: number; glow?: number}) =>
   o <= 0.01 ? null : (
     <g opacity={o}>
-      <rect x={x} y={y} width={BRICK_W} height={BRICK_H} rx={4} fill="#1366E0" />
-      <rect x={x} y={y} width={BRICK_W} height={9} rx={4} fill="#4FA3FF" />
-      <rect x={x} y={y + BRICK_H - 6} width={BRICK_W} height={6} rx={3} fill="#0C4BA8" />
-      {glow > 0.01 && <rect x={x - 3} y={y - 3} width={BRICK_W + 6} height={BRICK_H + 6} rx={6} fill="none" stroke="#9FD3FF" strokeWidth={3} opacity={glow} />}
+      <rect x={x} y={y} width={w} height={BRICK_H} rx={4} fill="#1366E0" />
+      <rect x={x} y={y} width={w} height={9} rx={4} fill="#4FA3FF" />
+      <rect x={x} y={y + BRICK_H - 6} width={w} height={6} rx={3} fill="#0C4BA8" />
+      {glow > 0.01 && <rect x={x - 3} y={y - 3} width={w + 6} height={BRICK_H + 6} rx={6} fill="none" stroke="#9FD3FF" strokeWidth={3} opacity={glow} />}
     </g>
   );
 
@@ -75,9 +75,9 @@ export const Wall = ({at, waiterAt, labels = true}: {at?: number; waiterAt?: num
   const P = PLAN.places;
   let k = -1;
   for (let i = 0; i < P.length; i++) if (P[i].at <= f) k = i;
-  const placing = k >= 0 && f < P[k].at + DROP ? P[k] : null;
+  const placing = k >= 0 && f < P[k].land ? P[k] : null;
   const next = P[Math.min(k + 1, P.length - 1)];
-  let pos = standAt(0, 0);
+  let pos = {x: WALL_X + BRICK_W / 2, base: FLOOR};
   let hopping = 0;
   for (const st of PLAN.steps) {
     if (f >= st.at + HOP) pos = st.to;
@@ -88,24 +88,25 @@ export const Wall = ({at, waiterAt, labels = true}: {at?: number; waiterAt?: num
       break;
     } else break;
   }
-  let facing = Math.sign((placing ?? next).x + BRICK_W / 2 - pos.x) || 1;
-  let bend = placing ? 0.75 * Math.sin(Math.PI * ((f - placing.at) / DROP)) + 0.2 : 0.2 + hopping * 0.1;
+  let facing = Math.sign((placing ?? next).x + (placing ?? next).w / 2 - pos.x) || 1;
+  let bend = placing ? 0.75 * Math.sin(Math.PI * ((f - placing.at) / (placing.land - placing.at))) + 0.2 : 0.2 + hopping * 0.1;
   let reach = placing ? 0.8 : 0.35;
   let wave = 0;
   let arms: 'carry' | 'down' | 'wave' = 'carry';
   if (f >= LAST) {
     // Wall done: he straightens up on top, turns to the waiter and waves down at him.
-    pos = standAt(PLAN.endCol, ROWS);
+    pos = {x: PLAN.endX, base: levelBase(ROWS)};
     bend = interpolate(f, [LAST, LAST + 6], [0.3, 0], clamp);
     reach = 0.2;
     arms = f >= WAVE ? 'wave' : 'down';
     facing = f >= LOOK ? -1 : facing;
     wave = (f - WAVE) * 0.45;
   }
-  // The brick he carries: at his chest between placements, then swung down into place.
-  const hand = {x: pos.x + facing * 34 - BRICK_W / 2, y: pos.base - 112};
-  const carried = f < LAST && (placing || k < P.length - 1) ? (placing ? {x: lerp(hand.x, placing.x, ease.inOut((f - placing.at) / DROP)), y: lerp(hand.y, placing.y, ease.inOut((f - placing.at) / DROP))} : hand) : null;
-  const rowDone = Array.from({length: ROWS}, (_, r) => Math.max(...P.filter((q) => q.row === r).map((q) => q.at)) + DROP);
+  // The brick he carries (full or half, the size of the next one he lays): at his chest, then swung down into place.
+  const held = placing ?? next;
+  const hand = {x: pos.x + facing * 34 - held.w / 2, y: pos.base - 112};
+  const swing = placing ? ease.inOut((f - placing.at) / (placing.land - placing.at)) : 0;
+  const carried = f < LAST && (placing || k < P.length - 1) ? {x: lerp(hand.x, held.x, swing), y: lerp(hand.y, held.y, swing), w: held.w} : null;
 
   // --- The waiter: kneeling at his single brick; lift, nudge, set, level, check.
   const wf = waiterAt ?? f;
@@ -129,19 +130,15 @@ export const Wall = ({at, waiterAt, labels = true}: {at?: number; waiterAt?: num
 
   const scene = (mirror = false) => (
     <g>
-      {/* The wall, brick by brick, with a short glow as each one lands. */}
-      <g clipPath="url(#wall-clip)">
-        {P.map((q, i) => {
-          if (f < q.at + DROP) return null;
-          const glow = 1 - ramp(f, q.at + DROP, q.at + DROP + 10);
-          return <Brick key={i} x={q.x} y={q.y} glow={glow} />;
-        })}
-        {/* Half bricks closing the staggered rows on the left. */}
-        {Array.from({length: ROWS}, (_, r) => (r % 2 === 1 && f >= rowDone[r] ? <Brick key={`h${r}`} x={WALL_X - BRICK_W / 2 - 4} y={FLOOR - (r + 1) * ROW_H + 4} /> : null))}
-      </g>
+      {/* The wall, brick by brick (running bond, half bricks at the ends of odd rows), with a short glow as each lands. */}
+      {P.map((q, i) => {
+        if (f < q.land) return null;
+        const glow = 1 - ramp(f, q.land, q.land + 10);
+        return <Brick key={i} x={q.x} y={q.y} w={q.w} glow={glow} />;
+      })}
       {/* The builder, standing on what he has built, and the brick he is carrying. */}
       <Figure x={pos.x} base={pos.base} bend={bend} reach={reach} head={f >= LOOK ? 0.8 : 0} kneel={0} arms={arms} facing={facing} wave={wave} />
-      {carried && <Brick x={carried.x} y={carried.y} />}
+      {carried && <Brick x={carried.x} y={carried.y} w={carried.w} />}
       {/* The waiter, his one brick and his level. */}
       <Brick x={wb.x} y={wb.y} />
       <Figure x={wx} base={FLOOR} bend={lerp(0.55 + 0.1 * lift, 0, stands)} reach={lerp(0.55, 0.1, stands)} head={lerp(levelOn * 1.2, 1.6, stands)} kneel={1 - stands} arms="level" />
@@ -152,9 +149,6 @@ export const Wall = ({at, waiterAt, labels = true}: {at?: number; waiterAt?: num
   return (
     <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
       <defs>
-        <clipPath id="wall-clip">
-          <rect x={WALL_X} y={0} width={WALL_W} height={FLOOR} />
-        </clipPath>
         <linearGradient id="reflect-fade" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#fff" stopOpacity="0.32" />
           <stop offset="0.5" stopColor="#fff" stopOpacity="0" />

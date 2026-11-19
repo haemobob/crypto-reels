@@ -22,17 +22,24 @@ Visual-quality audit result: PASS
 - on top he turns and waves down at the waiter, who finally stands up, so there is no jump off the frame edge;
 - the cover is now frame 386 (builder on the finished wall), with the waiter frozen at 372 (level on).
 
-**Encoded render 3:** two frames per second in `output/mulai-konsisten-review/r3-sheet.jpg`. Every frame has his feet on a brick top or the floor.
+**Render 4 (user note, 19 Nov 2026: "why 3 centre then suddenly becomes even"):** the staggered rows were faked. They were full bricks shifted half a brick, clipped at the wall edge, with a left half brick that only popped in when the row was done. So a row being built looked like three centred bricks that suddenly snapped flush. Rebuilt as a real running bond:
+- each odd row is a half brick, three full bricks and a half brick, so both ends are flush at every moment;
+- he carries and places each brick at its true size (half bricks are smaller in his hands);
+- before stepping up he lays every brick not under his feet, then steps onto the nearest full brick of the new row, then lays the one or two bricks where he stood;
+- 49 bricks in all;
+- no clipping anywhere.
+
+**Encoded render 4:** a zoomed sheet of the wall at four frames per second, `output/mulai-konsisten-review/r4-wall.jpg`. Both ends are flush in every frame, and his feet are always on a brick top or the floor.
 
 - [x] **Layout:** labels at y 360–440 inside the safe area; the stage on a floor at 1360 with a soft reflection; logo bug top-left.
-- [x] **Story reads without sound:** 44 bricks laid one by one, with the builder rising on each row he lays; the waiter's lift, nudge, set and level cycle repeats; the builder turns and waves from the top; the waiter stands.
+- [x] **Story reads without sound:** 49 bricks (running bond, half bricks at the ends) laid one by one, with the builder rising on each row he lays; the waiter's lift, nudge, set and level cycle repeats; the builder turns and waves from the top; the waiter stands.
 - [x] **ffprobe:** 1080×1920, 30 fps, H.264 + AAC, 17.1 s, 510 frames (15 s scene + 2 s outro).
-- [x] **Loudness (render 3):** −14.0 LUFS. True peak −0.8 dBTP, a little above the −1 dBTP target, from the brick-clack transients. The clacks were already lowered and a compressor added in render 2.
+- [x] **Loudness (render 4):** −14.0 LUFS, true peak −0.9 dBTP. That is a little above the −1 dBTP target, from the brick-clack transients. For render 4 the clacks were lowered again and the score limiter set to 0.6; render 3 measured −0.6 dBTP.
 - [x] **blackdetect:** only the outro (15.0–17.0 s).
 - [x] **freezedetect (1.5 s):** no holds.
 - [ ] **Motion watched in a full render:** **NOT REVIEWED** (frames only).
 - [x] **Sound:** measured, not heard. Foley on the schedule's frames. **Not listened to.**
 
 ## Final verified artifact path
-`output/mulai-konsisten.mp4` (render 3, 19 Nov 2026), 17.1 s, 510 frames, −14.0 LUFS.
+`output/mulai-konsisten.mp4` (render 4, 19 Nov 2026), 17.1 s, 510 frames, −14.0 LUFS.
 - Cover: `output/mulai-konsisten-cover.png` / `.jpg`, plus `-cover-grid.jpg`.
