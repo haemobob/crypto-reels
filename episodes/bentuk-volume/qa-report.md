@@ -97,3 +97,10 @@ Visual-quality audit result: PASS
 - One exchange's open interest (OKX). Binance's and Bybit's futures data are geo-restricted from the build environment.
 - Volume profiles are our approximation from 5-minute candles. Tick-based profiles can differ slightly.
 - The post ages quickly. The data runs to the 18 Nov close.
+
+## Final verified artifact path
+`output/bentuk-volume.mp4` (render 2, the user's ElevenLabs take, 19 Nov 2026): 70.9 s, 2,124 frames, 1080×1920, 30 fps, H.264 + AAC, −14.2 LUFS, −1.3 dBTP.
+- **freezedetect:** longest hold 2.8 s.
+- **Re-keyed beat:** checked on 12 exact frames of the encoded file (`output/bentuk-volume-review/r2-check.jpg`).
+- **Subtitles:** `episodes/bentuk-volume/bentuk-volume.srt` (33 cues).
+- **Cover:** `output/bentuk-volume-cover.png` / `.jpg`, plus the grid crop `-cover-grid.jpg`.
