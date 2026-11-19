@@ -1,0 +1,9 @@
+{
+  "id": "dompet-satoshi",
+  "title": "Kenapa dompet Satoshi nggak pernah dibobol",
+  "minSeconds": 60,
+  "maxSeconds": 88,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}

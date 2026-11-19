@@ -1,0 +1,19 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+# DRAFT for Gate 1 (script approval), 19 Nov 2026.
+
+[[hook]] Enam koma tiga miliar dolar, dikuras dari *Binance*. Kebanyakan cuma dalam *dua puluh menit*.
+
+[[satoshi]] Tapi sekitar *satu koma satu juta BTC* punya *Satoshi Nakamoto*, hampir delapan belas tahun nggak pernah dibobol.
+
+[[how]] Hacker Binance nggak memecahkan Bitcoin. Menurut Binance, mereka *menipu satu engineer* lewat wawancara kerja palsu, lalu menguasai *hot wallet*: dompet yang selalu online.
+
+[[still]] Koin Satoshi nggak pernah dipindah. Nggak ada hot wallet, nggak ada karyawan. Satu-satunya jalan: *menebak kunci privatnya*.
+
+[[split]] Dan itu bukan satu dompet. Menurut pola temuan peneliti Sergio Lerner, koinnya tersebar di sekitar *dua puluh dua ribu* blok awal. Masing-masing lima puluh BTC, dengan kunci berbeda.
+
+[[digits]] Dua puluh dua ribu brankas. Untuk membuka satu saja, jumlah kemungkinan kuncinya angka sepanjang *tujuh puluh delapan digit*.
+
+[[quantum]] Tapi ada satu celah yang mulai dikhawatirkan: format awal ini memajang *kunci publiknya*. Komputer kuantum besar, secara teori, bisa menghitung kunci privat dari situ. Mesinnya belum ada. Tapi sudah ada draf untuk *membekukan* koin model lama ini.
+
+[[payoff]] Jadi yang jebol dalam dua puluh menit itu bukan Bitcoin-nya, melainkan *tempat kunci disimpan*, dan *orang yang memegangnya*. Kalau kripto lo di exchange, kuncinya dipegang exchange.
