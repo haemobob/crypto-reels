@@ -1,6 +1,21 @@
 # Audio map — satu-meja
 
-- Voice: see voice.json; take measured by npm run voice
-- Duration (measured):
-- Cue times: captions.json
-- Music / SFX cue points and licences:
+- **Take:** the user's ElevenLabs take, received 19 Nov 2026. Eleven v3, "Ongky Himawan – Calm, Deep", read from `voice/satu-meja.txt`. 62.67 s, inside the 45–72 s window.
+  - Levelled only: highpass 60 Hz, 2.5:1 compression, −18 LUFS, limiter. No cuts; no tag was read aloud.
+  - The original is in `voice-cache/elevenlabs-take1.mp3`.
+  - The previews used estimated timing (`voice-cache/captions-estimated.json`), because there was no working voice: the Google key was not present in this container.
+- **Alignment:** 139 of 139 words matched. **Not heard by ear.**
+- **Cues (s):** hook 0.07 · where 6.52 · decl 12.36 · turn 16.96 · japan 20.85 · russia 26.09 · europe 32.25 · macron 37.63 · jets 41.77 · taiwan 46.74 · pay 52.04 · watch 58.47 · last word 62.6.
+- **Score:** `scripts/score-satu-meja.ts`, original synthesis, ducked under the voice and cut after the last word:
+  - a grave D minor under "one table";
+  - B♭maj7 with a restless tick while the map shifts;
+  - G minor with a low pulse under the aircraft and ships;
+  - an open D sus2 under the payoff.
+- **SFX:** the user's pack, placed on events in `Sound.tsx`:
+  - the photo reveal;
+  - the portraits;
+  - the map flights;
+  - the declaration card;
+  - the airspace hit;
+  - the ships;
+  - the payoff hit.

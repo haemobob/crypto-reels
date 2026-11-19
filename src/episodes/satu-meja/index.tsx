@@ -11,6 +11,8 @@ import {colors} from '../../theme/colors';
 import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
 import {InfoCard, life, PhotoCard, Portrait} from './Cards';
+import {Cover} from './Cover';
+import {Sound} from './Sound';
 import {Pin, Tag, useView, WorldMap, type Highlight, type ViewDef} from './WorldMap';
 
 // Layout (screen px): micro captions y≈384, headline zone centred at 590, map framed around y 1000,
@@ -173,7 +175,9 @@ const Scene = () => {
       </div>
       <InfoCard from={b.wilayah} to={b.taiwan} source="KEMENHAN JEPANG · 17 NOV 2026" accent={colors.negative} tag="DIDUGA RUSIA">2 pesawat masuk wilayah udara Jepang, ±3 menit masing-masing</InfoCard>
       <InfoCard from={b.seratus + 10} to={b.pay} source="REUTERS · 13 NOV 2026" accent={colors.negative} tag="ILUSTRASI POSISI">Lebih dari 100 kapal militer & penjaga pantai China, menurut pejabat Taiwan</InfoCard>
-      <PhotoCard src="k03.jpg" from={b.pay + 20} to={b.end + 30} credit="FOTO: KREMLIN.RU · SHENZHEN, 19 NOV 2026" focus="55% 40%" push={0.05} />
+      <PhotoCard src="k03.jpg" from={b.pay + 20} to={b.watch + 4} credit="FOTO: KREMLIN.RU · SHENZHEN, 19 NOV 2026" focus="55% 40%" push={0.05} />
+      {/* Callback: the opening photo returns as "the handshake photo" to watch beyond. */}
+      <PhotoCard src="k01.jpg" from={b.watch} to={b.end + 30} credit="FOTO: KREMLIN.RU · SHENZHEN, 19 NOV 2026" focus="50% 45%" push={0.09} />
 
       <OpeningTitle until={b.where} />
       <HeadlineTrack
@@ -195,9 +199,10 @@ const Scene = () => {
         ]}
       />
       <div style={{position: 'absolute', left: 60, right: 60, top: SOURCE_Y, textAlign: 'center', fontFamily: fonts.mono, fontWeight: 500, fontSize: 18, letterSpacing: '0.03em', color: '#9FB3D6', lineHeight: 1.4, textShadow: '0 2px 8px rgba(0,0,0,0.9)'}}>{source}</div>
+      <Sound />
     </AbsoluteFill>
   );
 };
 
-const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene};
+const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene, Cover};
 export default episode;

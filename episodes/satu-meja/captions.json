@@ -1,854 +1,854 @@
 {
- "durationSec": 59.902,
- "timing": "ESTIMATED (no voice yet) — replace with the aligned take",
- "words": [
-  {
-   "text": "Tiga",
-   "start": 0.15,
-   "end": 0.444,
-   "highlight": false
-  },
-  {
-   "text": "negara",
-   "start": 0.474,
-   "end": 0.88,
-   "highlight": false
-  },
-  {
-   "text": "dengan",
-   "start": 0.91,
-   "end": 1.204,
-   "highlight": false
-  },
-  {
-   "text": "senjata",
-   "start": 1.234,
-   "end": 1.64,
-   "highlight": true
-  },
-  {
-   "text": "nuklir",
-   "start": 1.67,
-   "end": 1.964,
-   "highlight": true
-  },
-  {
-   "text": "terbanyak",
-   "start": 1.994,
-   "end": 2.4,
-   "highlight": false
-  },
-  {
-   "text": "di",
-   "start": 2.43,
-   "end": 2.612,
-   "highlight": false
-  },
-  {
-   "text": "dunia,",
-   "start": 2.642,
-   "end": 2.936,
-   "highlight": false
-  },
-  {
-   "text": "untuk",
-   "start": 3.096,
-   "end": 3.39,
-   "highlight": false
-  },
-  {
-   "text": "pertama",
-   "start": 3.42,
-   "end": 3.826,
-   "highlight": false
-  },
-  {
-   "text": "kalinya",
-   "start": 3.856,
-   "end": 4.262,
-   "highlight": false
-  },
-  {
-   "text": "duduk",
-   "start": 4.292,
-   "end": 4.586,
-   "highlight": false
-  },
-  {
-   "text": "di",
-   "start": 4.616,
-   "end": 4.798,
-   "highlight": false
-  },
-  {
-   "text": "satu",
-   "start": 4.828,
-   "end": 5.122,
-   "highlight": true
-  },
-  {
-   "text": "meja.",
-   "start": 5.152,
-   "end": 5.446,
-   "highlight": true
-  },
-  {
-   "text": "Sembilan",
-   "start": 6.066,
-   "end": 6.472,
-   "highlight": false
-  },
-  {
-   "text": "belas",
-   "start": 6.502,
-   "end": 6.796,
-   "highlight": false
-  },
-  {
-   "text": "November,",
-   "start": 6.826,
-   "end": 7.232,
-   "highlight": false
-  },
-  {
-   "text": "di",
-   "start": 7.392,
-   "end": 7.574,
-   "highlight": false
-  },
-  {
-   "text": "Shenzhen,",
-   "start": 7.604,
-   "end": 7.898,
-   "highlight": false
-  },
-  {
-   "text": "China:",
-   "start": 8.058,
-   "end": 8.352,
-   "highlight": false
-  },
-  {
-   "text": "Trump,",
-   "start": 8.512,
-   "end": 8.694,
-   "highlight": false
-  },
-  {
-   "text": "Putin,",
-   "start": 8.854,
-   "end": 9.148,
-   "highlight": false
-  },
-  {
-   "text": "dan",
-   "start": 9.308,
-   "end": 9.49,
-   "highlight": false
-  },
-  {
-   "text": "Xi",
-   "start": 9.52,
-   "end": 9.702,
-   "highlight": false
-  },
-  {
-   "text": "Jinping.",
-   "start": 9.732,
-   "end": 10.026,
-   "highlight": false
-  },
-  {
-   "text": "Di",
-   "start": 10.646,
-   "end": 10.828,
-   "highlight": false
-  },
-  {
-   "text": "akhir",
-   "start": 10.858,
-   "end": 11.152,
-   "highlight": false
-  },
-  {
-   "text": "pertemuan,",
-   "start": 11.182,
-   "end": 11.588,
-   "highlight": false
-  },
-  {
-   "text": "mereka",
-   "start": 11.748,
-   "end": 12.154,
-   "highlight": false
-  },
-  {
-   "text": "menyepakati",
-   "start": 12.184,
-   "end": 12.814,
-   "highlight": false
-  },
-  {
-   "text": "deklarasi",
-   "start": 12.844,
-   "end": 13.362,
-   "highlight": true
-  },
-  {
-   "text": "bersama",
-   "start": 13.392,
-   "end": 13.798,
-   "highlight": true
-  },
-  {
-   "text": "soal",
-   "start": 13.828,
-   "end": 14.01,
-   "highlight": false
-  },
-  {
-   "text": "perdamaian.",
-   "start": 14.04,
-   "end": 14.446,
-   "highlight": false
-  },
-  {
-   "text": "Tapi",
-   "start": 15.066,
-   "end": 15.36,
-   "highlight": false
-  },
-  {
-   "text": "di",
-   "start": 15.39,
-   "end": 15.572,
-   "highlight": false
-  },
-  {
-   "text": "luar",
-   "start": 15.602,
-   "end": 15.784,
-   "highlight": false
-  },
-  {
-   "text": "ruangan",
-   "start": 15.814,
-   "end": 16.108,
-   "highlight": false
-  },
-  {
-   "text": "itu,",
-   "start": 16.138,
-   "end": 16.432,
-   "highlight": false
-  },
-  {
-   "text": "peta",
-   "start": 16.592,
-   "end": 16.886,
-   "highlight": false
-  },
-  {
-   "text": "dunia",
-   "start": 16.916,
-   "end": 17.21,
-   "highlight": false
-  },
-  {
-   "text": "sedang",
-   "start": 17.24,
-   "end": 17.534,
-   "highlight": false
-  },
-  {
-   "text": "bergeser.",
-   "start": 17.564,
-   "end": 17.97,
-   "highlight": true
-  },
-  {
-   "text": "Amerika",
-   "start": 18.59,
-   "end": 19.108,
-   "highlight": false
-  },
-  {
-   "text": "dilaporkan",
-   "start": 19.138,
-   "end": 19.656,
-   "highlight": false
-  },
-  {
-   "text": "minta",
-   "start": 19.686,
-   "end": 19.98,
-   "highlight": false
-  },
-  {
-   "text": "Jepang",
-   "start": 20.01,
-   "end": 20.304,
-   "highlight": false
-  },
-  {
-   "text": "membayar",
-   "start": 20.334,
-   "end": 20.74,
-   "highlight": false
-  },
-  {
-   "text": "hampir",
-   "start": 20.77,
-   "end": 21.064,
-   "highlight": true
-  },
-  {
-   "text": "tiga",
-   "start": 21.094,
-   "end": 21.388,
-   "highlight": false
-  },
-  {
-   "text": "kali",
-   "start": 21.418,
-   "end": 21.712,
-   "highlight": false
-  },
-  {
-   "text": "lipat",
-   "start": 21.742,
-   "end": 22.036,
-   "highlight": true
-  },
-  {
-   "text": "untuk",
-   "start": 22.066,
-   "end": 22.36,
-   "highlight": false
-  },
-  {
-   "text": "menampung",
-   "start": 22.39,
-   "end": 22.796,
-   "highlight": false
-  },
-  {
-   "text": "pasukannya.",
-   "start": 22.826,
-   "end": 23.344,
-   "highlight": false
-  },
-  {
-   "text": "Bulan",
-   "start": 23.964,
-   "end": 24.258,
-   "highlight": false
-  },
-  {
-   "text": "lalu,",
-   "start": 24.288,
-   "end": 24.582,
-   "highlight": false
-  },
-  {
-   "text": "Amerika",
-   "start": 24.742,
-   "end": 25.26,
-   "highlight": false
-  },
-  {
-   "text": "melonggarkan",
-   "start": 25.29,
-   "end": 25.808,
-   "highlight": false
-  },
-  {
-   "text": "sanksi",
-   "start": 25.838,
-   "end": 26.132,
-   "highlight": true
-  },
-  {
-   "text": "diesel",
-   "start": 26.162,
-   "end": 26.456,
-   "highlight": true
-  },
-  {
-   "text": "Rusia,",
-   "start": 26.486,
-   "end": 26.78,
-   "highlight": false
-  },
-  {
-   "text": "setelah",
-   "start": 26.94,
-   "end": 27.346,
-   "highlight": false
-  },
-  {
-   "text": "Trump",
-   "start": 27.376,
-   "end": 27.558,
-   "highlight": false
-  },
-  {
-   "text": "dan",
-   "start": 27.588,
-   "end": 27.77,
-   "highlight": false
-  },
-  {
-   "text": "Putin",
-   "start": 27.8,
-   "end": 28.094,
-   "highlight": false
-  },
-  {
-   "text": "sepakat",
-   "start": 28.124,
-   "end": 28.53,
-   "highlight": false
-  },
-  {
-   "text": "soal",
-   "start": 28.56,
-   "end": 28.742,
-   "highlight": false
-  },
-  {
-   "text": "pasokan.",
-   "start": 28.772,
-   "end": 29.178,
-   "highlight": false
-  },
-  {
-   "text": "Di",
-   "start": 29.798,
-   "end": 29.98,
-   "highlight": false
-  },
-  {
-   "text": "Eropa,",
-   "start": 30.01,
-   "end": 30.416,
-   "highlight": false
-  },
-  {
-   "text": "militer",
-   "start": 30.576,
-   "end": 30.982,
-   "highlight": false
-  },
-  {
-   "text": "mulai",
-   "start": 31.012,
-   "end": 31.306,
-   "highlight": false
-  },
-  {
-   "text": "mencari",
-   "start": 31.336,
-   "end": 31.742,
-   "highlight": false
-  },
-  {
-   "text": "pengganti",
-   "start": 31.772,
-   "end": 32.178,
-   "highlight": false
-  },
-  {
-   "text": "software",
-   "start": 32.208,
-   "end": 32.614,
-   "highlight": false
-  },
-  {
-   "text": "perang",
-   "start": 32.644,
-   "end": 32.938,
-   "highlight": false
-  },
-  {
-   "text": "dari",
-   "start": 32.968,
-   "end": 33.262,
-   "highlight": false
-  },
-  {
-   "text": "Palantir,",
-   "start": 33.292,
-   "end": 33.698,
-   "highlight": true
-  },
-  {
-   "text": "perusahaan",
-   "start": 33.858,
-   "end": 34.376,
-   "highlight": false
-  },
-  {
-   "text": "Amerika.",
-   "start": 34.406,
-   "end": 34.924,
-   "highlight": false
-  },
-  {
-   "text": "Dan",
-   "start": 35.544,
-   "end": 35.726,
-   "highlight": false
-  },
-  {
-   "text": "Macron",
-   "start": 35.756,
-   "end": 36.05,
-   "highlight": false
-  },
-  {
-   "text": "bilang:",
-   "start": 36.08,
-   "end": 36.374,
-   "highlight": false
-  },
-  {
-   "text": "dukungan",
-   "start": 36.534,
-   "end": 36.94,
-   "highlight": false
-  },
-  {
-   "text": "Amerika",
-   "start": 36.97,
-   "end": 37.488,
-   "highlight": false
-  },
-  {
-   "text": "untuk",
-   "start": 37.518,
-   "end": 37.812,
-   "highlight": false
-  },
-  {
-   "text": "Ukraina",
-   "start": 37.842,
-   "end": 38.248,
-   "highlight": false
-  },
-  {
-   "text": "sudah",
-   "start": 38.278,
-   "end": 38.572,
-   "highlight": true
-  },
-  {
-   "text": "tidak",
-   "start": 38.602,
-   "end": 38.896,
-   "highlight": false
-  },
-  {
-   "text": "ada.",
-   "start": 38.926,
-   "end": 39.22,
-   "highlight": true
-  },
-  {
-   "text": "Sementara",
-   "start": 39.84,
-   "end": 40.358,
-   "highlight": false
-  },
-  {
-   "text": "itu,",
-   "start": 40.388,
-   "end": 40.682,
-   "highlight": false
-  },
-  {
-   "text": "dua",
-   "start": 40.842,
-   "end": 41.024,
-   "highlight": false
-  },
-  {
-   "text": "pesawat",
-   "start": 41.054,
-   "end": 41.46,
-   "highlight": false
-  },
-  {
-   "text": "yang",
-   "start": 41.49,
-   "end": 41.672,
-   "highlight": false
-  },
-  {
-   "text": "diduga",
-   "start": 41.702,
-   "end": 42.108,
-   "highlight": false
-  },
-  {
-   "text": "milik",
-   "start": 42.138,
-   "end": 42.432,
-   "highlight": false
-  },
-  {
-   "text": "Rusia",
-   "start": 42.462,
-   "end": 42.756,
-   "highlight": false
-  },
-  {
-   "text": "masuk",
-   "start": 42.786,
-   "end": 43.08,
-   "highlight": false
-  },
-  {
-   "text": "wilayah",
-   "start": 43.11,
-   "end": 43.516,
-   "highlight": true
-  },
-  {
-   "text": "udara",
-   "start": 43.546,
-   "end": 43.952,
-   "highlight": false
-  },
-  {
-   "text": "Jepang.",
-   "start": 43.982,
-   "end": 44.276,
-   "highlight": true
-  },
-  {
-   "text": "Dan",
-   "start": 44.896,
-   "end": 45.078,
-   "highlight": false
-  },
-  {
-   "text": "menurut",
-   "start": 45.108,
-   "end": 45.514,
-   "highlight": false
-  },
-  {
-   "text": "pejabat",
-   "start": 45.544,
-   "end": 45.95,
-   "highlight": false
-  },
-  {
-   "text": "Taiwan,",
-   "start": 45.98,
-   "end": 46.274,
-   "highlight": false
-  },
-  {
-   "text": "China",
-   "start": 46.434,
-   "end": 46.728,
-   "highlight": false
-  },
-  {
-   "text": "mengerahkan",
-   "start": 46.758,
-   "end": 47.276,
-   "highlight": false
-  },
-  {
-   "text": "lebih",
-   "start": 47.306,
-   "end": 47.6,
-   "highlight": true
-  },
-  {
-   "text": "dari",
-   "start": 47.63,
-   "end": 47.924,
-   "highlight": false
-  },
-  {
-   "text": "seratus",
-   "start": 47.954,
-   "end": 48.36,
-   "highlight": false
-  },
-  {
-   "text": "kapal",
-   "start": 48.39,
-   "end": 48.684,
-   "highlight": true
-  },
-  {
-   "text": "di",
-   "start": 48.714,
-   "end": 48.896,
-   "highlight": false
-  },
-  {
-   "text": "sekitar",
-   "start": 48.926,
-   "end": 49.332,
-   "highlight": false
-  },
-  {
-   "text": "Taiwan.",
-   "start": 49.362,
-   "end": 49.656,
-   "highlight": false
-  },
-  {
-   "text": "Jadi,",
-   "start": 50.276,
-   "end": 50.57,
-   "highlight": false
-  },
-  {
-   "text": "tatanan",
-   "start": 50.73,
-   "end": 51.136,
-   "highlight": false
-  },
-  {
-   "text": "dunia",
-   "start": 51.166,
-   "end": 51.46,
-   "highlight": false
-  },
-  {
-   "text": "baru?",
-   "start": 51.49,
-   "end": 51.784,
-   "highlight": false
-  },
-  {
-   "text": "Belum",
-   "start": 52.104,
-   "end": 52.398,
-   "highlight": false
-  },
-  {
-   "text": "tentu.",
-   "start": 52.428,
-   "end": 52.722,
-   "highlight": false
-  },
-  {
-   "text": "Deklarasi",
-   "start": 53.042,
-   "end": 53.56,
-   "highlight": false
-  },
-  {
-   "text": "itu",
-   "start": 53.59,
-   "end": 53.884,
-   "highlight": false
-  },
-  {
-   "text": "baru",
-   "start": 53.914,
-   "end": 54.208,
-   "highlight": false
-  },
-  {
-   "text": "niat,",
-   "start": 54.238,
-   "end": 54.42,
-   "highlight": true
-  },
-  {
-   "text": "bukan",
-   "start": 54.58,
-   "end": 54.874,
-   "highlight": false
-  },
-  {
-   "text": "perjanjian.",
-   "start": 54.904,
-   "end": 55.31,
-   "highlight": false
-  },
-  {
-   "text": "Yang",
-   "start": 55.93,
-   "end": 56.112,
-   "highlight": false
-  },
-  {
-   "text": "perlu",
-   "start": 56.142,
-   "end": 56.436,
-   "highlight": false
-  },
-  {
-   "text": "diawasi:",
-   "start": 56.466,
-   "end": 56.872,
-   "highlight": false
-  },
-  {
-   "text": "apa",
-   "start": 57.032,
-   "end": 57.326,
-   "highlight": false
-  },
-  {
-   "text": "yang",
-   "start": 57.356,
-   "end": 57.538,
-   "highlight": false
-  },
-  {
-   "text": "terjadi",
-   "start": 57.568,
-   "end": 57.974,
-   "highlight": false
-  },
-  {
-   "text": "setelah",
-   "start": 58.004,
-   "end": 58.41,
-   "highlight": true
-  },
-  {
-   "text": "foto",
-   "start": 58.44,
-   "end": 58.734,
-   "highlight": false
-  },
-  {
-   "text": "jabat",
-   "start": 58.764,
-   "end": 59.058,
-   "highlight": false
-  },
-  {
-   "text": "tangan.",
-   "start": 59.088,
-   "end": 59.382,
-   "highlight": false
+  "durationSec": 62.667771,
+  "timing": "supplied take clean.wav; whisper.cpp 1.7.5 small, aligned to narration.txt (139/139 words matched, rest interpolated)",
+  "words": [
+    {
+      "text": "Tiga",
+      "start": 0.07,
+      "end": 0.28,
+      "highlight": false
+    },
+    {
+      "text": "negara",
+      "start": 0.28,
+      "end": 0.7,
+      "highlight": false
+    },
+    {
+      "text": "dengan",
+      "start": 0.7,
+      "end": 1.13,
+      "highlight": false
+    },
+    {
+      "text": "senjata",
+      "start": 1.13,
+      "end": 1.64,
+      "highlight": true
+    },
+    {
+      "text": "nuklir",
+      "start": 1.64,
+      "end": 2.04,
+      "highlight": true
+    },
+    {
+      "text": "terbanyak",
+      "start": 2.04,
+      "end": 2.68,
+      "highlight": false
+    },
+    {
+      "text": "di",
+      "start": 2.68,
+      "end": 2.82,
+      "highlight": false
+    },
+    {
+      "text": "dunia,",
+      "start": 2.82,
+      "end": 3.139,
+      "highlight": false
+    },
+    {
+      "text": "untuk",
+      "start": 3.452,
+      "end": 3.72,
+      "highlight": false
+    },
+    {
+      "text": "pertama",
+      "start": 3.72,
+      "end": 4.29,
+      "highlight": false
+    },
+    {
+      "text": "kalinya",
+      "start": 4.29,
+      "end": 5.01,
+      "highlight": false
+    },
+    {
+      "text": "duduk",
+      "start": 5.01,
+      "end": 5.41,
+      "highlight": false
+    },
+    {
+      "text": "di",
+      "start": 5.41,
+      "end": 5.57,
+      "highlight": false
+    },
+    {
+      "text": "satu",
+      "start": 5.57,
+      "end": 5.85,
+      "highlight": true
+    },
+    {
+      "text": "meja.",
+      "start": 5.85,
+      "end": 5.982,
+      "highlight": true
+    },
+    {
+      "text": "Sembilan",
+      "start": 6.516,
+      "end": 6.708,
+      "highlight": false
+    },
+    {
+      "text": "belas",
+      "start": 6.708,
+      "end": 6.95,
+      "highlight": false
+    },
+    {
+      "text": "November,",
+      "start": 6.95,
+      "end": 7.97,
+      "highlight": false
+    },
+    {
+      "text": "di",
+      "start": 7.97,
+      "end": 8.14,
+      "highlight": false
+    },
+    {
+      "text": "Shenzhen,",
+      "start": 8.14,
+      "end": 8.98,
+      "highlight": false
+    },
+    {
+      "text": "China:",
+      "start": 8.98,
+      "end": 9.1,
+      "highlight": false
+    },
+    {
+      "text": "Trump,",
+      "start": 9.602,
+      "end": 10.35,
+      "highlight": false
+    },
+    {
+      "text": "Putin,",
+      "start": 10.35,
+      "end": 10.97,
+      "highlight": false
+    },
+    {
+      "text": "dan",
+      "start": 10.97,
+      "end": 11.24,
+      "highlight": false
+    },
+    {
+      "text": "Xi",
+      "start": 11.24,
+      "end": 11.45,
+      "highlight": false
+    },
+    {
+      "text": "Jinping.",
+      "start": 11.45,
+      "end": 11.915,
+      "highlight": false
+    },
+    {
+      "text": "Di",
+      "start": 12.359,
+      "end": 12.409,
+      "highlight": false
+    },
+    {
+      "text": "akhir",
+      "start": 12.39,
+      "end": 12.76,
+      "highlight": false
+    },
+    {
+      "text": "pertemuan,",
+      "start": 12.76,
+      "end": 13.54,
+      "highlight": false
+    },
+    {
+      "text": "mereka",
+      "start": 13.54,
+      "end": 13.85,
+      "highlight": false
+    },
+    {
+      "text": "menyepakati",
+      "start": 13.85,
+      "end": 14.44,
+      "highlight": false
+    },
+    {
+      "text": "deklarasi",
+      "start": 14.44,
+      "end": 15.12,
+      "highlight": true
+    },
+    {
+      "text": "bersama",
+      "start": 15.12,
+      "end": 15.66,
+      "highlight": true
+    },
+    {
+      "text": "soal",
+      "start": 15.66,
+      "end": 15.96,
+      "highlight": false
+    },
+    {
+      "text": "perdamaian.",
+      "start": 15.96,
+      "end": 16.566,
+      "highlight": false
+    },
+    {
+      "text": "Tapi",
+      "start": 16.962,
+      "end": 17.21,
+      "highlight": false
+    },
+    {
+      "text": "di",
+      "start": 17.21,
+      "end": 17.33,
+      "highlight": false
+    },
+    {
+      "text": "luar",
+      "start": 17.33,
+      "end": 17.67,
+      "highlight": false
+    },
+    {
+      "text": "ruangan",
+      "start": 17.67,
+      "end": 18.27,
+      "highlight": false
+    },
+    {
+      "text": "itu,",
+      "start": 18.27,
+      "end": 18.568,
+      "highlight": false
+    },
+    {
+      "text": "peta",
+      "start": 18.774,
+      "end": 18.98,
+      "highlight": false
+    },
+    {
+      "text": "dunia",
+      "start": 18.98,
+      "end": 19.36,
+      "highlight": false
+    },
+    {
+      "text": "sedang",
+      "start": 19.36,
+      "end": 19.82,
+      "highlight": false
+    },
+    {
+      "text": "bergeser.",
+      "start": 19.82,
+      "end": 20.455,
+      "highlight": true
+    },
+    {
+      "text": "Amerika",
+      "start": 20.85,
+      "end": 21.18,
+      "highlight": false
+    },
+    {
+      "text": "dilaporkan",
+      "start": 21.18,
+      "end": 21.79,
+      "highlight": false
+    },
+    {
+      "text": "minta",
+      "start": 21.79,
+      "end": 22.1,
+      "highlight": false
+    },
+    {
+      "text": "Jepang",
+      "start": 22.1,
+      "end": 22.52,
+      "highlight": false
+    },
+    {
+      "text": "membayar",
+      "start": 22.52,
+      "end": 23,
+      "highlight": false
+    },
+    {
+      "text": "hampir",
+      "start": 23,
+      "end": 23.4,
+      "highlight": true
+    },
+    {
+      "text": "tiga",
+      "start": 23.4,
+      "end": 23.54,
+      "highlight": false
+    },
+    {
+      "text": "kali",
+      "start": 23.54,
+      "end": 23.88,
+      "highlight": false
+    },
+    {
+      "text": "lipat",
+      "start": 23.88,
+      "end": 24.32,
+      "highlight": true
+    },
+    {
+      "text": "untuk",
+      "start": 24.32,
+      "end": 24.62,
+      "highlight": false
+    },
+    {
+      "text": "menampung",
+      "start": 24.62,
+      "end": 25.16,
+      "highlight": false
+    },
+    {
+      "text": "pasukannya.",
+      "start": 25.16,
+      "end": 25.756,
+      "highlight": false
+    },
+    {
+      "text": "Bulan",
+      "start": 26.088,
+      "end": 26.31,
+      "highlight": false
+    },
+    {
+      "text": "lalu,",
+      "start": 26.31,
+      "end": 26.73,
+      "highlight": false
+    },
+    {
+      "text": "Amerika",
+      "start": 26.73,
+      "end": 27.26,
+      "highlight": false
+    },
+    {
+      "text": "melonggarkan",
+      "start": 27.26,
+      "end": 28.06,
+      "highlight": false
+    },
+    {
+      "text": "sanksi",
+      "start": 28.06,
+      "end": 28.48,
+      "highlight": true
+    },
+    {
+      "text": "diesel",
+      "start": 28.48,
+      "end": 28.9,
+      "highlight": true
+    },
+    {
+      "text": "Rusia,",
+      "start": 28.9,
+      "end": 29.34,
+      "highlight": false
+    },
+    {
+      "text": "setelah",
+      "start": 29.34,
+      "end": 29.75,
+      "highlight": false
+    },
+    {
+      "text": "Trump",
+      "start": 29.75,
+      "end": 30.11,
+      "highlight": false
+    },
+    {
+      "text": "dan",
+      "start": 30.11,
+      "end": 30.32,
+      "highlight": false
+    },
+    {
+      "text": "Putin",
+      "start": 30.32,
+      "end": 30.68,
+      "highlight": false
+    },
+    {
+      "text": "sepakat",
+      "start": 30.68,
+      "end": 31.17,
+      "highlight": false
+    },
+    {
+      "text": "soal",
+      "start": 31.17,
+      "end": 31.44,
+      "highlight": false
+    },
+    {
+      "text": "pasokan.",
+      "start": 31.44,
+      "end": 31.913,
+      "highlight": false
+    },
+    {
+      "text": "Di",
+      "start": 32.252,
+      "end": 32.302,
+      "highlight": false
+    },
+    {
+      "text": "Eropa,",
+      "start": 32.372,
+      "end": 32.69,
+      "highlight": false
+    },
+    {
+      "text": "militer",
+      "start": 32.69,
+      "end": 33.13,
+      "highlight": false
+    },
+    {
+      "text": "mulai",
+      "start": 33.13,
+      "end": 33.44,
+      "highlight": false
+    },
+    {
+      "text": "mencari",
+      "start": 33.44,
+      "end": 33.88,
+      "highlight": false
+    },
+    {
+      "text": "pengganti",
+      "start": 33.88,
+      "end": 34.44,
+      "highlight": false
+    },
+    {
+      "text": "software",
+      "start": 34.44,
+      "end": 35.02,
+      "highlight": false
+    },
+    {
+      "text": "perang",
+      "start": 35.02,
+      "end": 35.33,
+      "highlight": false
+    },
+    {
+      "text": "dari",
+      "start": 35.33,
+      "end": 35.58,
+      "highlight": false
+    },
+    {
+      "text": "Palantir,",
+      "start": 35.58,
+      "end": 36.31,
+      "highlight": true
+    },
+    {
+      "text": "perusahaan",
+      "start": 36.31,
+      "end": 36.84,
+      "highlight": false
+    },
+    {
+      "text": "Amerika.",
+      "start": 36.84,
+      "end": 37.358,
+      "highlight": false
+    },
+    {
+      "text": "Dan",
+      "start": 37.635,
+      "end": 37.72,
+      "highlight": false
+    },
+    {
+      "text": "Macron",
+      "start": 37.72,
+      "end": 38.13,
+      "highlight": false
+    },
+    {
+      "text": "bilang:",
+      "start": 38.13,
+      "end": 38.601,
+      "highlight": false
+    },
+    {
+      "text": "dukungan",
+      "start": 38.813,
+      "end": 39.27,
+      "highlight": false
+    },
+    {
+      "text": "Amerika",
+      "start": 39.27,
+      "end": 39.73,
+      "highlight": false
+    },
+    {
+      "text": "untuk",
+      "start": 39.73,
+      "end": 40.06,
+      "highlight": false
+    },
+    {
+      "text": "Ukraina",
+      "start": 40.06,
+      "end": 40.51,
+      "highlight": false
+    },
+    {
+      "text": "sudah",
+      "start": 40.51,
+      "end": 40.83,
+      "highlight": true
+    },
+    {
+      "text": "tidak",
+      "start": 40.83,
+      "end": 41.17,
+      "highlight": false
+    },
+    {
+      "text": "ada.",
+      "start": 41.17,
+      "end": 41.469,
+      "highlight": true
+    },
+    {
+      "text": "Sementara",
+      "start": 41.765,
+      "end": 42.31,
+      "highlight": false
+    },
+    {
+      "text": "itu,",
+      "start": 42.31,
+      "end": 42.66,
+      "highlight": false
+    },
+    {
+      "text": "dua",
+      "start": 42.66,
+      "end": 42.87,
+      "highlight": false
+    },
+    {
+      "text": "pesawat",
+      "start": 42.87,
+      "end": 43.36,
+      "highlight": false
+    },
+    {
+      "text": "yang",
+      "start": 43.36,
+      "end": 43.64,
+      "highlight": false
+    },
+    {
+      "text": "diduga",
+      "start": 43.64,
+      "end": 44.05,
+      "highlight": false
+    },
+    {
+      "text": "milik",
+      "start": 44.05,
+      "end": 44.41,
+      "highlight": false
+    },
+    {
+      "text": "Rusia",
+      "start": 44.41,
+      "end": 44.76,
+      "highlight": false
+    },
+    {
+      "text": "masuk",
+      "start": 44.76,
+      "end": 45.1,
+      "highlight": false
+    },
+    {
+      "text": "wilayah",
+      "start": 45.1,
+      "end": 45.6,
+      "highlight": true
+    },
+    {
+      "text": "udara",
+      "start": 45.6,
+      "end": 45.95,
+      "highlight": false
+    },
+    {
+      "text": "Jepang.",
+      "start": 45.95,
+      "end": 46.464,
+      "highlight": true
+    },
+    {
+      "text": "Dan",
+      "start": 46.739,
+      "end": 46.84,
+      "highlight": false
+    },
+    {
+      "text": "menurut",
+      "start": 46.84,
+      "end": 47.26,
+      "highlight": false
+    },
+    {
+      "text": "pejabat",
+      "start": 47.26,
+      "end": 47.68,
+      "highlight": false
+    },
+    {
+      "text": "Taiwan,",
+      "start": 47.68,
+      "end": 48.31,
+      "highlight": false
+    },
+    {
+      "text": "China",
+      "start": 48.31,
+      "end": 48.56,
+      "highlight": false
+    },
+    {
+      "text": "mengerahkan",
+      "start": 48.56,
+      "end": 49.25,
+      "highlight": false
+    },
+    {
+      "text": "lebih",
+      "start": 49.25,
+      "end": 49.57,
+      "highlight": true
+    },
+    {
+      "text": "dari",
+      "start": 49.57,
+      "end": 49.82,
+      "highlight": false
+    },
+    {
+      "text": "seratus",
+      "start": 49.82,
+      "end": 50.4,
+      "highlight": false
+    },
+    {
+      "text": "kapal",
+      "start": 50.4,
+      "end": 50.71,
+      "highlight": true
+    },
+    {
+      "text": "di",
+      "start": 50.71,
+      "end": 50.85,
+      "highlight": false
+    },
+    {
+      "text": "sekitar",
+      "start": 50.85,
+      "end": 51.27,
+      "highlight": false
+    },
+    {
+      "text": "Taiwan.",
+      "start": 51.27,
+      "end": 51.567,
+      "highlight": false
+    },
+    {
+      "text": "Jadi,",
+      "start": 52.041,
+      "end": 52.44,
+      "highlight": false
+    },
+    {
+      "text": "tatanan",
+      "start": 52.44,
+      "end": 53.05,
+      "highlight": false
+    },
+    {
+      "text": "dunia",
+      "start": 53.05,
+      "end": 53.48,
+      "highlight": false
+    },
+    {
+      "text": "baru?",
+      "start": 53.48,
+      "end": 53.866,
+      "highlight": false
+    },
+    {
+      "text": "Belum",
+      "start": 54.292,
+      "end": 54.54,
+      "highlight": false
+    },
+    {
+      "text": "tentu.",
+      "start": 54.54,
+      "end": 55.028,
+      "highlight": false
+    },
+    {
+      "text": "Deklarasi",
+      "start": 55.382,
+      "end": 55.94,
+      "highlight": false
+    },
+    {
+      "text": "itu",
+      "start": 55.94,
+      "end": 56.17,
+      "highlight": false
+    },
+    {
+      "text": "baru",
+      "start": 56.17,
+      "end": 56.48,
+      "highlight": false
+    },
+    {
+      "text": "niat,",
+      "start": 56.48,
+      "end": 57.08,
+      "highlight": true
+    },
+    {
+      "text": "bukan",
+      "start": 57.08,
+      "end": 57.4,
+      "highlight": false
+    },
+    {
+      "text": "perjanjian.",
+      "start": 57.4,
+      "end": 58.136,
+      "highlight": false
+    },
+    {
+      "text": "Yang",
+      "start": 58.465,
+      "end": 58.67,
+      "highlight": false
+    },
+    {
+      "text": "perlu",
+      "start": 58.67,
+      "end": 59.11,
+      "highlight": false
+    },
+    {
+      "text": "diawasi:",
+      "start": 59.11,
+      "end": 59.89,
+      "highlight": false
+    },
+    {
+      "text": "apa",
+      "start": 59.89,
+      "end": 60.11,
+      "highlight": false
+    },
+    {
+      "text": "yang",
+      "start": 60.11,
+      "end": 60.36,
+      "highlight": false
+    },
+    {
+      "text": "terjadi",
+      "start": 60.36,
+      "end": 60.83,
+      "highlight": false
+    },
+    {
+      "text": "setelah",
+      "start": 60.83,
+      "end": 61.29,
+      "highlight": true
+    },
+    {
+      "text": "foto",
+      "start": 61.29,
+      "end": 61.65,
+      "highlight": false
+    },
+    {
+      "text": "jabat",
+      "start": 61.65,
+      "end": 61.89,
+      "highlight": false
+    },
+    {
+      "text": "tangan.",
+      "start": 61.89,
+      "end": 62.6,
+      "highlight": false
+    }
+  ],
+  "cues": {
+    "hook": 0.07,
+    "where": 6.516,
+    "decl": 12.359,
+    "turn": 16.962,
+    "japan": 20.85,
+    "russia": 26.088,
+    "europe": 32.252,
+    "macron": 37.635,
+    "jets": 41.765,
+    "taiwan": 46.739,
+    "pay": 52.041,
+    "watch": 58.465
   }
- ],
- "cues": {
-  "hook": 0.15,
-  "where": 6.066,
-  "decl": 10.646,
-  "turn": 15.066,
-  "japan": 18.59,
-  "russia": 23.964,
-  "europe": 29.798,
-  "macron": 35.544,
-  "jets": 39.84,
-  "taiwan": 44.896,
-  "pay": 50.276,
-  "watch": 55.93
- }
 }
