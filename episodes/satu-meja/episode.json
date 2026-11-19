@@ -1,0 +1,9 @@
+{
+  "id": "satu-meja",
+  "title": "satu-meja",
+  "minSeconds": 35,
+  "maxSeconds": 60,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}

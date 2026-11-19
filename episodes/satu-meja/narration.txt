@@ -1,0 +1,2 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
