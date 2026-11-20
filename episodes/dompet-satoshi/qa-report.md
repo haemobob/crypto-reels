@@ -47,6 +47,13 @@ All eight pass:
   - the close-up labels were shortened, because the right one ran off the frame.
 - **Hero move (safe → field):** the field crosses the text zones, so the headline and micro captions are muted for 3.7 s. The narration carries the beat.
 
+**Encoded render 2 (20 Nov 2026, after the cut):** `output/dompet-satoshi.mp4`, with sheets at `output/dompet-satoshi-review/r2-sheet.jpg` (1 fps) and `r2-cut.jpg` (5 fps across the cut, 10–16 s).
+- [x] **ffprobe:** 1080×1920, 30 fps, H.264 + AAC, 67.6 s, 2,026 frames (64.92 s of narration + 0.6 s tail + 2 s outro).
+- [x] **Loudness:** −14.2 LUFS, true peak −1.0 dBTP.
+- [x] **blackdetect:** only the outro (65.5–67.5 s).
+- [x] **freezedetect (2 s):** the 60× comparison hold (10.2–12.3 s) and the final card (62.5–65.3 s).
+- [x] **The cut (12.4 s):** an 8-frame crossfade from the Satoshi bars to block 3 on mempool.space. The voice cut sits inside a pause, with no click (30 ms fades).
+
 **Encoded render 1 (19 Nov 2026, before the cut):** `output/dompet-satoshi.mp4`, with a 1-fps contact sheet at `output/dompet-satoshi-review/r1-sheet.jpg`.
 - [x] **ffprobe:** 1080×1920, 30 fps, H.264 + AAC, 77.9 s, 2,336 frames (75.28 s of narration + 0.6 s tail + 2 s outro).
 - [x] **Loudness:** −14.2 LUFS, true peak −1.3 dBTP.
@@ -56,6 +63,6 @@ All eight pass:
   - 73.4–75.6 s, the final card.
 - [x] **Layout:** the text zones are clear in every sampled frame, apart from the muted hero move (32–35 s). The logo is hidden on the off-white chapter.
 - [x] **Cover:** `output/dompet-satoshi-cover.png` / `.jpg` / `-cover-grid.jpg`. The two-line question with "NGGAK DIBOBOL?" in blue, and the film's 3D close-up with the real keys of blocks 3–5.
-- [x] **SRT:** `episodes/dompet-satoshi/dompet-satoshi.srt` (38 cues).
+- [x] **SRT:** `episodes/dompet-satoshi/dompet-satoshi.srt` (38 cues; 33 after the cut).
 - [ ] **Motion watched in a full render:** **NOT REVIEWED** (frames only).
 - [ ] **Sound:** measured, not heard. **Not listened to.**
