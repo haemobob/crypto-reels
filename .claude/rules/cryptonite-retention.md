@@ -57,6 +57,12 @@ Build the full script as a sequence of *knowledge gains*, not chapters that mere
 - Replace generic transitions ('Tapi tunggu dulu', 'Dan bukan cuma itu') with specific bridges ('Masalahnya, dana yang mengikuti indeks harus menyesuaikan portofolio').
 - Each beat must justify its time. If it adds neither understanding nor a necessary pause/contrast, cut it.
 - Avoid the "second intro" problem: never reintroduce the topic at 8–15 seconds.
+- **Re-hook every 15–25 seconds** (20 Nov 2026, from the 0x100x study: "And here is what almost nobody is pricing in" at ~30 s, "the part nobody is talking about" at ~65 s).
+  - It is a spoken, specific open loop that promises the next bigger reveal, and it is paid within 10–20 s.
+  - Examples: "Tapi bagian yang jarang dibahas: …", "Dan di sinilah masalahnya: …".
+  - Never generic, never unpaid.
+- **Cut process that isn't the answer.** A beat that explains how something happened, when the viewer's question is why it matters, is filler (the user cut such a beat from dompet-satoshi).
+- **One spine.** One real object or number travels from the hook to the payoff and returns with a new meaning.
 - Front-load the strongest *substantiated* idea; place important caveats at the time of the claim, not only at the end.
 - Do not promise 'hidden investment winners' when you only have a speculative business-category hypothesis.
 

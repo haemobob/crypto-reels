@@ -84,6 +84,13 @@ If accessibility or client instructions require traditional subtitles, offer an 
 
 ## 4. Cinematography: restrained by default, spectacular by exception
 
+> **Superseded on pace and camera (20 Nov 2026).** The living-frame rules in `reference/retention-playbook.md` and the `reel-motion` skill win where this section conflicts:
+> - the world keeps moving in every shot;
+> - titles land and hold;
+> - there is no locked frame with parked cards.
+>
+> What still holds from this section: type stays screen-facing and readable, the key number gets a stable read, and no spin, jittery handheld or decorative orbiting.
+
 The reference footage uses mostly frontal or gentle three-quarter compositions, sparse objects and **quiet cameras**. Think editorial product cinematography, not a drone flying around a metaverse.
 
 - Default: locked camera + animated diagram/object, mild dolly, subtle lateral track, or small orbit. Use roughly 40–70mm-equivalent perspective as a starting aesthetic for 3D institutional objects; tune based on readability.
@@ -96,6 +103,12 @@ The reference footage uses mostly frontal or gentle three-quarter compositions, 
 **Every camera move must answer one of:** What has changed? What is connected? What is being compared? Where is the audience going? Why should attention shift?
 
 ## 5. Transitions: the edit has to mean something
+
+> **20 Nov 2026:**
+> - every seam has a cause on screen;
+> - use 3–5 kinds per Reel (`reel-motion` §3);
+> - at most a third of the seams between beats are hard cuts;
+> - never crossfade two layouts in the same spot (the slide-show seam).
 
 Plan each boundary *before* building the adjacent shots. For every change record **outgoing frame state → semantic relationship → transition technique → incoming frame state → narration sync word → sound cue**.
 

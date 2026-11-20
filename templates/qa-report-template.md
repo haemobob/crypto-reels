@@ -80,6 +80,8 @@ Visual-quality audit result: PENDING
 
 ### Visual and sound inspection
 - [ ] Stills across every beat; every transition before/mid/after; first 3 s and last 2 s at full resolution
+- [ ] Pace (`npm run pace -- <id>`): still time __% (≤ 25%) · longest still __ s (≤ 1.5 s; thesis holds listed) · median event gap __ s (≤ 2.5 s), max __ s (≤ 4 s) · first change __ s (≤ 1 s)
+- [ ] Living frame: every shot has a moving world, a subject acting, and words that land and hold. Seams have causes, using 3–5 kinds. No void with floating cards, no fade-in-and-park, no breathing loops (`reel-motion` skill).
 - [ ] Motion watched in a full render: YES / NOT REVIEWED (never claim motion was checked from stills alone)
 - [ ] Sound synchronized to emphasis and narration intelligible
 - [ ] Single dominant visual concept per beat

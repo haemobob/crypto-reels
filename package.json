@@ -16,7 +16,8 @@
     "audio": "tsx scripts/make-audio.ts",
     "import-sfx": "tsx scripts/import-sfx.ts",
     "typecheck": "tsc --noEmit",
-    "cover": "tsx scripts/cover.ts"
+    "cover": "tsx scripts/cover.ts",
+    "pace": "tsx scripts/pace.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^9.8.2",

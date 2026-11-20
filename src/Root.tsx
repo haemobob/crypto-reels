@@ -1,5 +1,6 @@
 import {Composition} from 'remotion';
 import {CryptoReel} from './compositions/CryptoReel';
+import {MotionKitDemo} from './compositions/MotionKitDemo';
 import {episodes} from './episodes';
 import {brand} from './theme/brand';
 import {VIDEO} from './theme/layout';
@@ -25,6 +26,8 @@ export const RemotionRoot = () => (
         />
       );
     })}
+    {/* Reference for the living-frame kit (src/components/motion.tsx, skill reel-motion). */}
+    <Composition id="motion-kit" component={MotionKitDemo} durationInFrames={210} fps={VIDEO.fps} width={VIDEO.width} height={VIDEO.height} />
     {/* Reel covers (thumbnails): one still per episode that defines a Cover. */}
     {Object.entries(episodes).map(([id, ep]) =>
       ep.Cover ? <Composition key={`cover-${id}`} id={`cover-${id}`} component={ep.Cover} durationInFrames={1} fps={VIDEO.fps} width={VIDEO.width} height={VIDEO.height} /> : null,
