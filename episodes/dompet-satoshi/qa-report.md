@@ -10,14 +10,14 @@ Visual-quality audit result: PASS
 - [x] **2. Evidence by 5 s:** the Binance logo (0.3 s), the TRM Labs headline (2.5 s) and the 20-minute timeline (3.4–5.1 s).
 - [x] **3. First payoff by 8–12 s:**
   - "sekitar satu koma satu juta BTC punya Satoshi Nakamoto… nggak pernah dibobol" (7.0–11.7 s), with 18,270 vs ±1,097,650 BTC (≈60×) on screen.
-  - The causal answer starts at 12.5 s: "Hacker Binance nggak memecahkan Bitcoin."
-- [x] **4. Reason to continue:** how they got in → why Satoshi differs → it isn't one wallet → how hard one key is → the one real weakness → what that means for you.
+  - The answer starts at 12.5 s: "Koin Satoshi nggak pernah dipindah. Nggak ada hot wallet, nggak ada karyawan."
+  - 20 Nov cut: the "how Binance was hacked" beat (10.4 s) was removed as outdated filler at the user's request.
+- [x] **4. Reason to continue:** why Satoshi's coins differ (never moved, nothing online, nobody to trick) → it isn't one wallet → how hard one key is → the one real weakness → what that means for you.
 - [x] **5. Concrete nouns:** recruiter, laptop, wallet, safe, key, a 78-digit number.
 - [x] **6. Cut test:** no repeated headline and no second intro. Each beat adds one new fact.
 - [x] **7. Promise / payoff:** the opening "20 minutes" returns at 65 s: "yang jebol dalam dua puluh menit itu bukan Bitcoin-nya…"
 - [x] **8. Truth test:**
   - the 1.1 M is labelled PERKIRAAN, and the Patoshi attribution DIDUGA;
-  - the engineer story is "Menurut Binance";
   - quantum is "secara teori" and "Mesinnya belum ada";
   - BIP-361 is labelled "DRAF · BELUM DIADOPSI";
   - the key guess is labelled ILUSTRASI.
@@ -47,7 +47,7 @@ All eight pass:
   - the close-up labels were shortened, because the right one ran off the frame.
 - **Hero move (safe → field):** the field crosses the text zones, so the headline and micro captions are muted for 3.7 s. The narration carries the beat.
 
-**Encoded render 1 (19 Nov 2026):** `output/dompet-satoshi.mp4`, with a 1-fps contact sheet at `output/dompet-satoshi-review/r1-sheet.jpg`.
+**Encoded render 1 (19 Nov 2026, before the cut):** `output/dompet-satoshi.mp4`, with a 1-fps contact sheet at `output/dompet-satoshi-review/r1-sheet.jpg`.
 - [x] **ffprobe:** 1080×1920, 30 fps, H.264 + AAC, 77.9 s, 2,336 frames (75.28 s of narration + 0.6 s tail + 2 s outro).
 - [x] **Loudness:** −14.2 LUFS, true peak −1.3 dBTP.
 - [x] **blackdetect:** only the outro (75.9–77.8 s).

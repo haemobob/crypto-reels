@@ -9,20 +9,19 @@
   - The one real long-term worry is quantum computers reading exposed public keys, and there is already a draft to freeze such coins.
 - **Why it matters to an Indonesian crypto investor:**
   - Most of them hold on exchanges, where the exchange holds the keys.
-  - Fake-recruiter job scams are common, and the same trick hit Binance's engineer.
 - **What they keep:** a mental model, "hacks break where the key lives and the person who uses it, not Bitcoin's math", plus a check: on an exchange, the exchange holds your keys.
 
 ## Discovery sequence
-- **Early useful insight (by 8–12 s):** the hack went through a person and an online hot wallet, not through Bitcoin's math.
+- **Early useful insight (by 8–12 s):** Satoshi's coins have never moved: there is no online wallet and no staff to trick, so the only way in is guessing a key. (20 Nov: the "how Binance was hacked" beat was cut as outdated filler.)
 - **Visual demonstration:**
-  - the chain fake recruiter → laptop → hot wallet → funds out;
-  - then the 3D field of 21,953 real Patoshi blocks, each a separate 50-BTC lock, built from the actual dataset;
+  - block 3 on mempool.space, never spent, with "hot wallet" and "staff" crossed out;
+  - the 3D field of 21,953 real Patoshi blocks, each a separate 50-BTC lock, built from the actual dataset;
   - then the 78-digit number;
   - then a real P2PK public key from block 3 with "KUNCI PUBLIK TERLIHAT".
 - **Final takeaway:** the 20-minute theft broke a key store and a person, not Bitcoin; on an exchange, the exchange holds your keys.
 - **Real assets:**
   - Binance logo;
-  - TRM Labs / NPR headlines in designed panels;
+  - the TRM Labs headline in a designed panel;
   - the Bitcoin whitepaper's title page;
   - real block data (mempool.space);
   - the Patoshi dataset;
@@ -50,6 +49,6 @@ Concept score: 84/100
   - the Patoshi dataset, checked on mempool.space on 19 Nov 2026.
 - **One-sentence payoff:** Bitcoin wasn't broken; key storage and people were.
 - **Misconception:** "Bitcoin got hacked", or "Satoshi has one super-secure wallet".
-- **Share trigger:** a friend who keeps everything on an exchange, or who is job hunting online.
+- **Share trigger:** a friend who keeps everything on an exchange.
 - **Emotional shape:** alarm (20 minutes) → surprise (the untouched coins) → clarity → a sober caveat → a practical check.
-- **Chosen length:** 65–80 s. Two linked stories (the hack and Satoshi's storage) plus the honest caveat; the user asked for both the "why" and the breakdown. A shorter cut would drop either the breakdown or the quantum caveat.
+- **Chosen length:** about 65 s after the 20 Nov cut (was 75 s). Two linked stories (the hack and Satoshi's storage) plus the honest caveat; the user asked for both the "why" and the breakdown. A shorter cut would drop either the breakdown or the quantum caveat.

@@ -1,8 +1,8 @@
 /**
  * Original synthesized score for dompet-satoshi (no samples), timed from the narration cues and ducked under the voice
  * (scripts/score-lib.ts): an urgent low pulse under the 20-minute hack, a cold still chord for Satoshi's untouched
- * coins, a slow swell when the one wallet becomes 22,000 safes, a thin uneasy pad under the quantum caveat, and an
- * open resolved chord under the payoff.
+ * coins (held until the split), a slow swell when the one wallet becomes 22,000 safes, a thin uneasy pad under the
+ * quantum caveat, and an open resolved chord under the payoff.
  *
  *   npx tsx scripts/score-dompet-satoshi.ts
  */
@@ -21,13 +21,8 @@ const beat = (f: number, period: number, decay: number) => `0.5*sin(2*PI*${f}*t)
 // The hack: E minor, an urgent heartbeat pulse.
 layer('hack', c.hook, c.satoshi - c.hook + 0.4, pad([82.41, 123.47, 164.81, 196], 0.05), -30, 'lowpass=f=1400', 0.05, 0.4);
 layer('pulse', c.hook, c.satoshi - c.hook, `${beat(55, 0.42, 16)}|${beat(55, 0.42, 16)}`, -29, 'lowpass=f=600', 0.02, 0.3);
-// Satoshi's coins: a cold, still C major 7 (no pulse).
-layer('still', c.satoshi, c.how - c.satoshi + 0.4, pad([65.41, 130.81, 164.81, 246.94], 0.05, 0.05), -30, 'lowpass=f=2400', 0.3, 0.4);
-// How Binance fell: back to E minor with a ticking pulse.
-layer('how', c.how, c.still - c.how + 0.4, pad([82.41, 123.47, 164.81, 196], 0.05), -31, 'lowpass=f=1500', 0.3, 0.4);
-layer('tick', c.how, c.still - c.how, `${beat(1180, 0.5, 40)}*0.4|${beat(1183, 0.5, 40)}*0.4`, -38, 'highpass=f=600', 0.3, 0.4);
-// Never moved, guessing a key: the cold chord again.
-layer('still2', c.still, c.split - c.still + 0.4, pad([65.41, 130.81, 164.81, 246.94], 0.05, 0.05), -30, 'lowpass=f=2400', 0.3, 0.4);
+// Satoshi's coins, never moved, only a key to guess: one cold, still C major 7 (no pulse), held until the split.
+layer('still', c.satoshi, c.split - c.satoshi + 0.4, pad([65.41, 130.81, 164.81, 246.94], 0.05, 0.05), -30, 'lowpass=f=2400', 0.3, 0.4);
 // 22,000 safes: a slow swell into A minor add9, held through the digits.
 layer('field', c.split, c.quantum - c.split + 0.4, pad([55, 110, 164.81, 246.94, 261.63], 0.05, 0.04), -28, 'lowpass=f=2600', 1.5, 0.5);
 // The caveat: a thin uneasy pad (F lydian colour).

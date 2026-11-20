@@ -2,24 +2,21 @@
 
 - **Framework:** Remotion, with React Three Fiber for one 3D sequence.
 - **Visual subject:** the keys, and where they live.
-  - The Binance hack is shown through the real things: the Binance logo, TRM Labs' and NPR's headlines, and the reported 20-minute timeline.
+  - The Binance hack is shown through the real things: the Binance logo, TRM Labs' headline, and the reported 20-minute timeline.
   - Satoshi has no photo and is not given one. His coins are shown as data: the whitepaper's title page, block 3's real transaction on mempool.space, and all 21,953 Patoshi blocks.
 - **Visual concept:** "online vs untouched".
-  - The hack is a chain of people and machines that are online: fake recruiter → "assignment" → laptop → hot wallet.
+  - The hack is only the hook: a theft that happened through what is online. (The attack-chain beat was cut on 20 Nov at the user's request.)
   - Satoshi's coins are one safe that turns out to be 21,953 small safes, sitting still.
   - The caveat is the one thing that is visible about them: the public key.
 - **Different from recent episodes:**
   - the first real 3D data field (every safe is one real block);
   - the first document-window zooms into a live block explorer;
-  - a real CC photo of a quantum computer;
-  - the attack-chain diagram.
+  - a real CC photo of a quantum computer.
   - Recent episodes were chart-led (poc-bitcoin, bentuk-volume), map-led (satu-meja) or stick figures (mulai-konsisten).
 - **Opening asset level:** 2–3 (logo, document headlines, real on-chain numbers).
 - **Visual nouns:**
   - a theft timeline (20:05 → 20:25 UTC);
   - two bars on one scale (18,270 vs ±1,097,650 BTC);
-  - an intact lock;
-  - the attack chain;
   - the block explorer, the real public key and the guess counter;
   - the big safe and the 21,953-safe field;
   - the 78-digit number;
@@ -27,11 +24,11 @@
   - the BIP-361 document;
   - the payoff board (what broke / what held).
 - **Polarity chapters:**
-  - navy: the hack, and how it happened;
+  - navy: the hack (hook only);
   - black: Satoshi's untouched coins, the field and the digits;
   - off-white: the caveat (the logo is hidden there);
   - navy: the payoff.
-- **Hero move:** one: the big safe splits into the field, and the camera rises from the safe to the whole field (32–35 s).
+- **Hero move:** one: the big safe splits into the field, and the camera rises from the safe to the whole field (about 22–25 s after the cut).
   - The field crosses the text zones during this move, so the headline and micro captions are muted for those 3.7 s (layout rules: drop text rather than put it over graphics).
   - Every other shot change in 3D is a cut, with the field framed inside y 780–1420.
 - **Layout:**

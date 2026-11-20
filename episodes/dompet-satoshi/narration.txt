@@ -1,12 +1,10 @@
 # Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
 # [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
-# Approved by the user ("script"), 19 Nov 2026.
+# Approved by the user ("script"), 19 Nov 2026. 20 Nov 2026: the "how Binance was hacked" beat cut at the user's request (outdated, filler); cut from the same take.
 
 [[hook]] Enam koma tiga miliar dolar, dikuras dari *Binance*. Kebanyakan cuma dalam *dua puluh menit*.
 
 [[satoshi]] Tapi sekitar *satu koma satu juta BTC* punya *Satoshi Nakamoto*, hampir delapan belas tahun nggak pernah dibobol.
-
-[[how]] Hacker Binance nggak memecahkan Bitcoin. Menurut Binance, mereka *menipu satu engineer* lewat wawancara kerja palsu, lalu menguasai *hot wallet*: dompet yang selalu online.
 
 [[still]] Koin Satoshi nggak pernah dipindah. Nggak ada hot wallet, nggak ada karyawan. Satu-satunya jalan: *menebak kunci privatnya*.
 

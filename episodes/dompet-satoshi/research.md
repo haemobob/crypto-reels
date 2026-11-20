@@ -72,4 +72,6 @@ User brief: with the recent cyberattacks, why has Satoshi Nakamoto's ~1M BTC nev
 | "Kalau kripto lo di exchange, kuncinya dipegang exchange" | Definitional (custodial accounts) |
 
 ## Angle
+20 Nov 2026: the "how Binance was hacked" beat (fake job interview, hot-wallet signing) was cut at the user's request as outdated filler. The hack stays as the hook only; the research above is kept for the record.
+
 Not "news happened". The hack is the hook: the viewer learns *where* hacks actually happen (keys and people, not Bitcoin's math). The breakdown of Satoshi's coins shows why a dormant, split, offline-signed holding has nothing to phish. The quantum caveat keeps it honest and current.

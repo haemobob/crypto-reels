@@ -15,7 +15,7 @@
 | 3 | Mostly in 20 minutes; a real report | — |
 | 5 | Satoshi's ~1.1 M BTC is a far bigger target | Has it been hit? |
 | 8 | It's 60× the stolen BTC and has never been hacked | Why not? |
-| 12 | (answer starts: the hack didn't break Bitcoin) | How did they get in, then? |
+| 12 | (answer starts: Satoshi's coins never moved; nothing online, nobody to trick) | So how would anyone get in? |
 
 ## The three questions
 - **Who / what:** the Binance hack and Satoshi's coins.
@@ -25,6 +25,6 @@
 ## Animatic review (stills, sound off)
 - **First frame:** "$6,3 MILIAR DICURI" alone, centred. One subject, the stake readable in a second.
 - **Real by second 3:** the Binance logo from 0.3 s, the TRM Labs headline from 2.5 s, and the 20-minute timeline from 3.4 s.
-- **Measured:** "Tapi" at 5.3 s; "1,1 juta BTC… Satoshi" at 7.0–9.2 s with the bars and the whitepaper; "nggak pernah dibobol" at 11.7 s; the answer begins at 12.5 s.
+- **Measured:** "Tapi" at 5.3 s; "1,1 juta BTC… Satoshi" at 7.0–9.2 s with the bars and the whitepaper; "nggak pernah dibobol" at 11.7 s; the answer begins at 12.5 s with "Koin Satoshi nggak pernah dipindah" and block 3 on mempool.space. (20 Nov cut: the Binance "how" beat is gone.)
 - **No abstract 3D before second 8:** the 3D starts at 30.3 s.
 - **Approved to animate the rest:** YES. The user approved the script and supplied the voice.

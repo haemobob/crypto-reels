@@ -3,8 +3,6 @@
 [intrigued] Tapi…
 sekitar satu koma satu juta BTC punya Satoshi Nakamoto, hampir delapan belas tahun nggak pernah dibobol.
 
-[serious] Hacker Binance nggak memecahkan Bitcoin. Menurut Binance, mereka menipu satu engineer lewat wawancara kerja palsu, lalu menguasai hot wallet: dompet yang selalu online.
-
 [calm] Koin Satoshi nggak pernah dipindah. Nggak ada hot wallet, nggak ada karyawan. Satu-satunya jalan… menebak kunci privatnya.
 
 [storytelling] Dan itu bukan satu dompet. Menurut pola temuan peneliti Sergio Lerner, koinnya tersebar di sekitar dua puluh dua ribu blok awal. Masing-masing lima puluh BTC, dengan kunci berbeda.
@@ -17,7 +15,7 @@ sekitar satu koma satu juta BTC punya Satoshi Nakamoto, hampir delapan belas tah
 
 ----------------------------------------------------------------
 PRONUNCIATION NOTES (not part of the text to paste)
-Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · intriguing and slow · no CAPS · target 72–82 s (window 60–88 s)
+Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · intriguing and slow · no CAPS · target 62–72 s (window 60–88 s). 20 Nov 2026: the Binance-hack paragraph was cut from the delivered take; no re-record needed
 - "Binance": "bai-nens".
 - "BTC": "bi-ti-si".
 - "Satoshi Nakamoto": "sa-to-shi na-ka-mo-to".

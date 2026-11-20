@@ -11,7 +11,7 @@ import type {CamKey} from '../../three/camera';
 import {colors} from '../../theme/colors';
 import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
-import {Icon, Link, Node, TwentyMinutes} from './Chain';
+import {Icon, Node, TwentyMinutes} from './Chain';
 import {Cover} from './Cover';
 import {asset, Chip, clamp, DocWindow, life, PaperCard, ramp} from './Docs';
 import patoshi from './patoshi.json';
@@ -73,24 +73,6 @@ const Bars = ({from, to, grow, mark, still}: {from: number; to: number; grow: nu
         <text x={110} y={258} opacity={s} fontFamily={fonts.mono} fontWeight={700} fontSize={22} fill={GREEN} letterSpacing="0.03em">SEJAK 2009 · BELUM PERNAH DIPINDAH</text>
       )}
     </svg>
-  );
-};
-
-/** The Bitcoin lock, intact: what the Binance hack did not break. */
-const IntactLock = ({from, to}: {from: number; to: number}) => {
-  const f = useCurrentFrame();
-  const o = life(f, from, to);
-  if (o <= 0.01) return null;
-  const c = ramp(f, from + 14, from + 26, ease.out);
-  return (
-    <div style={{position: 'absolute', left: 0, right: 0, top: 820, opacity: o, textAlign: 'center'}}>
-      <svg width={300} height={300} viewBox="0 0 100 100">
-        <Icon kind="lock" color={colors.light} />
-        {c > 0.01 && <path d="M30 64l12 12 24-26" stroke={GREEN} strokeWidth={8} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={80} strokeDashoffset={80 * (1 - c)} transform="translate(2 -12)" />}
-      </svg>
-      <div style={{fontFamily: fonts.mono, fontWeight: 700, fontSize: 28, color: '#FFFFFF', letterSpacing: '0.05em', marginTop: 6}}>KRIPTOGRAFI BITCOIN</div>
-      <div style={{fontFamily: fonts.heading, fontWeight: 800, fontSize: 44, color: GREEN, marginTop: 6, opacity: c}}>UTUH</div>
-    </div>
   );
 };
 
@@ -285,18 +267,17 @@ const Scene = () => {
   const f = useCurrentFrame();
   const {cue, word, narrationEnd} = useCues();
   const b = {
-    hook: cue('hook'), satoshi: cue('satoshi'), how: cue('how'), still: cue('still'), split: cue('split'), digits: cue('digits'), quantum: cue('quantum'), payoff: cue('payoff'), end: narrationEnd,
+    hook: cue('hook'), satoshi: cue('satoshi'), still: cue('still'), split: cue('split'), digits: cue('digits'), quantum: cue('quantum'), payoff: cue('payoff'), end: narrationEnd,
     binance: word('binance', 0), kebanyakan: word('kebanyakan'), juta: word('juta'), satoshiW: word('satoshi', 0), hampir: word('hampir'),
-    menurut: word('menurut', 0), menipu: word('menipu'), engineer: word('engineer'), wawancara: word('wawancara'), menguasai: word('menguasai'), online: word('online'),
-    dipindah: word('dipindah'), nggakAda: word('nggak', 3), karyawan: word('karyawan'), satuSatunya: word('satusatunya'),
-    dompet: word('dompet', 1), lerner: word('lerner'), tersebar: word('tersebar'), awal: word('awal', 0), masing: word('masingmasing'), berbeda: word('berbeda'),
+    dipindah: word('dipindah'), nggakAda: word('nggak', 2), karyawan: word('karyawan'), satuSatunya: word('satusatunya'),
+    dompet: word('dompet', 0), lerner: word('lerner'), tersebar: word('tersebar'), awal: word('awal', 0), masing: word('masingmasing'), berbeda: word('berbeda'),
     brankas: word('brankas'), untuk: word('untuk', 0), jumlah: word('jumlah'), tujuh: word('tujuh'), digit: word('digit'),
     format: word('format'), memajang: word('memajang'), komputer: word('komputer'), teori: word('teori'), menghitung: word('menghitung'), mesinnya: word('mesinnya'), draf: word('draf'), membekukan: word('membekukan'),
     bukan2: word('bukan', 1), tempat: word('tempat'), orang: word('orang'), kalau: word('kalau'),
   };
 
   // Chapters by meaning: navy = the hack, black = Satoshi's coins, off-white = the caveat, navy = the payoff.
-  const ground = f < b.satoshi ? colors.bg : f < b.how ? '#000000' : f < b.still ? colors.bg : f < b.quantum ? '#000000' : f < b.payoff ? colors.offWhite : colors.bg;
+  const ground = f < b.satoshi ? colors.bg : f < b.quantum ? '#000000' : f < b.payoff ? colors.offWhite : colors.bg;
 
   // 3D: one safe splits into 21,953 safes, one per Patoshi block.
   const p0 = tilePos(0);
@@ -319,8 +300,7 @@ const Scene = () => {
 
   const source =
     f < b.satoshi ? 'TRM LABS & CHAINALYSIS, 30 OKT 2026 · LOGO: BINANCE'
-      : f < b.how ? '18.270 BTC: TRM LABS · PERKIRAAN: POLA PATOSHI (S. D. LERNER) · WHITEPAPER: BITCOIN.ORG'
-        : f < b.still ? 'PENILAIAN AWAL BINANCE via NPR, 3 NOV 2026 · TRM LABS'
+      : f < b.still ? '18.270 BTC: TRM LABS · PERKIRAAN: POLA PATOSHI (S. D. LERNER) · WHITEPAPER: BITCOIN.ORG'
           : f < b.satuSatunya ? 'DATA ON-CHAIN: MEMPOOL.SPACE · DICEK 19 NOV 2026'
             : f < b.split ? 'TEBAKAN: ILUSTRASI'
               : f < b.untuk ? 'DATA: 21.953 BLOK POLA PATOSHI (LERNER · LOPP) · DIDUGA MILIK SATOSHI'
@@ -328,7 +308,7 @@ const Scene = () => {
                   : f < b.komputer ? 'MEMPOOL.SPACE · BLOK 3, 9 JAN 2009'
                     : f < b.draf ? 'BELUM ADA KOMPUTER KUANTUM YANG MAMPU · FOTO: OJB QUANTUM (CC BY 4.0)'
                       : f < b.payoff ? 'BIP-361 · GITHUB.COM/BITCOIN/BIPS · DRAF, BELUM DIADOPSI'
-                        : 'TRM LABS · NPR · MEMPOOL.SPACE';
+                        : 'TRM LABS, 30 OKT 2026 · MEMPOOL.SPACE';
   const light = f >= b.quantum && f < b.payoff;
 
   return (
@@ -345,28 +325,11 @@ const Scene = () => {
       <TwentyMinutes from={b.kebanyakan - 2} to={b.satoshi} sweep={[b.kebanyakan, b.satoshi - 6]} y={1150} />
 
       {/* --- Satoshi's coins: 60× the stolen BTC, never moved. --- */}
-      <Bars from={b.satoshi + 2} to={b.how} grow={b.juta - 10} mark={b.juta + 18} still={b.hampir} />
-      <DocWindow src="whitepaper-p1.jpg" size={[1870, 2420]} from={b.satoshiW - 6} to={b.how} y={1090} h={330} focus={[360, 250, 1150, 300]} zoomAt={b.satoshiW + 8} zoomEnd={b.satoshiW + 30} dark={false} credit="WHITEPAPER BITCOIN, 2008 · BITCOIN.ORG" />
-
-      {/* --- How Binance fell: a person and an online hot wallet. --- */}
-      <IntactLock from={b.how + 2} to={b.menurut} />
-      <PaperCard from={b.menurut} to={b.still} y={762} source="NPR · 3 NOV 2026" tag="PENILAIAN AWAL BINANCE" size={34}>
-        A Binance engineer thought he was interviewing for a job. Then the hackers pounced
-      </PaperCard>
-      {f >= b.menipu - 2 && f < b.still && (
-        <>
-          <Link x1={252} x2={348} y={1150} o={life(f, b.wawancara, b.still)} t={ramp(f, b.wawancara, b.wawancara + 16)} color={RED} />
-          <Link x1={492} x2={588} y={1150} o={life(f, b.wawancara + 10, b.still)} t={ramp(f, b.wawancara + 10, b.wawancara + 26)} color={RED} />
-          <Link x1={732} x2={828} y={1150} o={life(f, b.menguasai, b.still)} t={ramp(f, b.menguasai, b.menguasai + 16)} color={RED} />
-          <Node x={180} y={1150} o={life(f, b.menipu, b.still)} kind="recruiter" label={<>REKRUTER<br />PALSU</>} accent={RED} />
-          <Node x={420} y={1150} o={life(f, b.wawancara, b.still)} kind="file" label={<>"TUGAS"<br />= MALWARE</>} accent={RED} />
-          <Node x={660} y={1150} o={life(f, b.engineer, b.still)} kind="laptop" label={<>LAPTOP<br />ENGINEER</>} />
-          <Node x={900} y={1150} o={life(f, b.menguasai, b.still)} kind="wallet" label={<>HOT<br />WALLET</>} sub={f >= b.online - 4 ? 'SELALU ONLINE' : undefined} accent={f >= b.online - 4 ? RED : colors.electric} pulse={f >= b.online - 4 ? ((f - b.online + 4) % 24) / 24 : 0} />
-        </>
-      )}
+      <Bars from={b.satoshi + 2} to={b.still} grow={b.juta - 10} mark={b.juta + 18} still={b.hampir} />
+      <DocWindow src="whitepaper-p1.jpg" size={[1870, 2420]} from={b.satoshiW - 6} to={b.still} y={1090} h={330} focus={[360, 250, 1150, 300]} zoomAt={b.satoshiW + 8} zoomEnd={b.satoshiW + 30} dark={false} credit="WHITEPAPER BITCOIN, 2008 · BITCOIN.ORG" />
 
       {/* --- Why Satoshi differs: never moved, nothing online, nobody to trick. --- */}
-      <DocWindow src="mempool-block3.jpg" size={[2200, 2800]} from={b.still} to={b.satuSatunya} y={760} h={430} focus={[1110, 1925, 1040, 105]} zoomAt={b.still + 14} zoomEnd={b.still + 40} mark="out" credit="MEMPOOL.SPACE · TRANSAKSI BLOK 3 · DIAMBIL 19 NOV 2026" />
+      <DocWindow src="mempool-block3.jpg" size={[2200, 2800]} from={b.still - 4} to={b.satuSatunya} y={760} h={430} focus={[1110, 1925, 1040, 105]} zoomAt={b.still + 14} zoomEnd={b.still + 40} mark="out" credit="MEMPOOL.SPACE · TRANSAKSI BLOK 3 · DIAMBIL 19 NOV 2026" />
       {f >= b.dipindah - 4 && f < b.nggakAda + 4 && (
         <div style={{position: 'absolute', left: 0, right: 0, top: 1300, textAlign: 'center', opacity: life(f, b.dipindah - 4, b.nggakAda + 4)}}>
           <Chip color={GREEN} size={24}>BLOK 3 · 9 JAN 2009 · 50 BTC · BELUM PERNAH DIPAKAI</Chip>
@@ -374,8 +337,8 @@ const Scene = () => {
       )}
       {f >= b.nggakAda - 2 && f < b.satuSatunya && (
         <>
-          <Node x={380} y={1336} o={life(f, b.nggakAda, b.satuSatunya)} kind="wallet" label="HOT WALLET" crossed={ramp(f, b.nggakAda + 6, b.nggakAda + 18)} />
-          <Node x={700} y={1336} o={life(f, b.karyawan - 6, b.satuSatunya)} kind="staff" label="KARYAWAN" crossed={ramp(f, b.karyawan, b.karyawan + 12)} />
+          <Node x={380} y={1336} o={life(f, b.nggakAda, b.satuSatunya)} kind="wallet" label="HOT WALLET" sub="DOMPET ONLINE" accent={RED} crossed={ramp(f, b.nggakAda + 6, b.nggakAda + 18)} />
+          <Node x={700} y={1336} o={life(f, b.karyawan - 6, b.satuSatunya)} kind="staff" label="KARYAWAN" sub="BISA DITIPU" accent={RED} crossed={ramp(f, b.karyawan, b.karyawan + 12)} />
         </>
       )}
       <KeyGuess from={b.satuSatunya} to={b.split} />
@@ -417,9 +380,6 @@ const Scene = () => {
         cues={[
           {from: b.satoshi + 2, content: <>1,1 JUTA BTC<br /><Hi>MILIK SATOSHI?</Hi></>, size: 96},
           {from: b.hampir, content: <>±18 TAHUN<br /><Hi>NGGAK DIBOBOL</Hi></>, size: 96},
-          {from: b.how, content: <>BITCOIN-NYA<br /><Hi>NGGAK DIBOBOL</Hi></>, size: 92},
-          {from: b.menipu - 2, content: <>YANG DITIPU:<br /><Red>SATU ENGINEER</Red></>, size: 88},
-          {from: b.menguasai, content: <>LALU MENGUASAI<br /><Red>HOT WALLET</Red></>, size: 92},
           {from: b.still, content: <>KOIN SATOSHI<br /><Hi>NGGAK PERNAH DIPINDAH</Hi></>, size: 80},
           {from: b.nggakAda, content: <>NGGAK ADA YANG<br /><Hi>BISA DITIPU</Hi></>, size: 88},
           {from: b.satuSatunya, content: <>SATU-SATUNYA JALAN:<br /><Hi>MENEBAK KUNCI</Hi></>, size: 80},
@@ -462,7 +422,7 @@ const fps = 30;
 const q = captions.cues as Record<string, number>;
 const wordAt = (w: string, nth = 0) => Math.round((captions.words as Array<{text: string; start: number}>).filter((x) => x.text.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '') === w)[nth].start * fps);
 // The hero move (one safe → 21,953 safes) crosses the text zones, so the micro captions sit it out.
-const heroMove: Array<[number, number]> = [[wordAt('dompet', 1) + 2, wordAt('tersebar')]];
+const heroMove: Array<[number, number]> = [[wordAt('dompet', 0) + 2, wordAt('tersebar')]];
 
 const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene, Cover, logoHide: [[Math.round(q.quantum * fps), Math.round(q.payoff * fps)]], captionMute: heroMove};
 export default episode;
