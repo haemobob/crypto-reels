@@ -103,3 +103,39 @@ Aim for **60–75 seconds**. Let narration duration determine exact timings; avo
 - Source files reviewed at 720×1280; this is the **reference resolution**, not the target resolution.
 - When using authentic footage, clear usage rights. Recreate the style and methodology, never trace original branded visual compositions.
 - Actual footage should be rendered and reviewed, including transition midframes and frame boundaries. Never claim motion has been validated from stills alone.
+
+## Addendum — measured on the full Fink / tokenization Reel (user upload, 20 Nov 2026)
+
+Source: the user's SaveClip download of the 0x100x Larry Fink / tokenization Reel. It is 720×1280, 30 fps, 84.6 s, the same piece as Reference 1 above. The file is kept out of the repo (third-party video).
+
+**Pace** (`npm run pace -- <file>`, main zone y 470–1500):
+
+| | 0x100x Fink | dompet-satoshi | satu-meja |
+|---|---|---|---|
+| Still time | **16.1%** | 55.5% | 54% |
+| Still stretches > 1.5 s | 2, both on the end card (78–83 s) | 8 | 10 |
+| Mean picture activity | **2.99** | 1.05 | 1.46 |
+| First change | frame 1 | 0.3 s | 0.03 s |
+
+They are almost never still, about three times our on-screen activity. Their "events" metric is low only because the picture never calms down long enough to start a new one.
+
+**Frame by frame** (4 fps for 0–12 s, 1 fps for the rest):
+- **0–1 s:** the camera starts very close on a frosted-silver glass ID card (a real portrait in a circle, "Larry Fink, CEO of BlackRock", the BlackRock logo in a badge) and pulls back, while a light glint runs along the card edge. The headline above, "HE MANAGES $10 TRILLION", is small, medium weight, all caps.
+- **1–4 s:** a quote ("something is the future") flies in word by word at different depths and sizes, with blur. A white sphere rises from the bottom and becomes a sphere-person (head plus dome body) on "you".
+- **4–5 s:** a dip to black on "attention".
+- **5–7 s:** coins drop into dark chrome stacks with a green rim and under-glow. "$10 TRILLION" lands in a tall condensed display face with motion blur.
+- **7.5–9.5 s:** a China map wipes in (the flag's red on one half, grey on the other) with "50% GDP OF CHINA" in staggered words.
+- **9.75 s:** a hard cut to off-white. An orange 3D bitcoin rolls in and a red X draws over it. "Tokenization" spells in letter by letter, struck by red; "Let us explain." on black.
+- **19–35 s:** off-white "porcelain" clay world: a black-hole ring, a retro computer with a green matrix screen ("1970s"), a post office with a red mailbox. The sphere-person sends a letter that takes 3 days ("before the internet"); then an envelope icon with "Email Moment".
+- **37–55 s:** black, with small elegant centred sentences ("And if you want to sell a building?" / "Good luck. That takes months."). "3 days → 3 seconds" in a narrowing corridor; an open box with a glass "$" sphere ("Profitable").
+- **56–64 s:** a green aurora field, "liquid collateral", a green sphere becoming a house icon, then a loan card with a timer; a phone UI ("without a bank manager in sight").
+- **64–74 s:** a white flash, then a ticking counter ($4.8T → $27.2T) inside a spinning "C Crypto" ring; DeFi flow lines carrying loan cards.
+- **75–84 s:** an Instagram profile mockup of 0x100x with a follow button (the CTA; we don't use one).
+
+**Their language, distilled:**
+1. **One 3D art direction for the whole film.** White matte "porcelain" objects in soft light on off-white, and dark chrome or glass with a single accent rim on black. There are no flat cards in a void.
+2. **Monochrome plus one accent** (green). Other colours only where they carry meaning: bitcoin orange, China's red, a red X, a red mailbox.
+3. **Typography in two registers.** Small, medium-weight sans for headlines and sentences. A tall condensed display face only for the big number.
+4. **Characters and analogies.** Sphere-people act out the old way (the letter, the post office) before the new mechanism. A new visual idea arrives with almost every sentence.
+5. **Continuous micro-motion.** Glints on edges, floating objects, ticking counters, a camera that pulls or pushes in every shot.
+6. **Transitions:** dips to black, white flashes, hard polarity cuts, objects morphing (sphere → house → loan card), letter-by-letter type.

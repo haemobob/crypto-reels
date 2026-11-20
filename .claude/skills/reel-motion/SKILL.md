@@ -121,3 +121,21 @@ Plan each seam in `transition-map.md`: outgoing state → **cause on screen** �
 3. **Describe each beat frame as a stranger would.** Name every tell from the playbook §4 and replace it.
 4. **The pictures alone:** with the words covered, do the beats still tell the story?
 5. Record the pace numbers in `qa-report.md` Part B. Motion is not "reviewed" until a full render was watched or measured.
+
+## 9. Art direction at 0x100x level (playbook §11)
+- **Two studio worlds for the whole film:**
+  - **Porcelain** (off-white): matte white objects, soft light, contact shadows. For the old way, analogies and characters.
+  - **Graphite** (black): dark chrome and glass, white rim highlights, one brand-blue accent. For money, numbers and the mechanism.
+- **Render finish:**
+  - drei `Environment` with `Lightformer` panels;
+  - `MeshReflectorMaterial` floor;
+  - `ContactShadows`;
+  - `<Post focus bloom grain>` from `src/three/post.tsx`. Not `@react-three/postprocessing`'s `<EffectComposer>`, which renders black under Remotion.
+  - Reference: `look-test`.
+- **Type:**
+  - headlines are small and medium weight (Inter Tight 600, ~54–64 px);
+  - the big number gets the display treatment;
+  - the 800-weight 100 px headline is retired for ordinary lines.
+- **Colour:** monochrome plus brand blue. Semantic colours only where they carry meaning.
+- **Composition:** objects at 40–60% of the width, generous black. Make the camera move instead of making the object bigger.
+- **Style frames first:** render 3–6 at final quality and compare them side by side with a 0x100x frame before animating the rest.

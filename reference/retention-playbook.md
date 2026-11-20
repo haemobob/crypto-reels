@@ -6,7 +6,7 @@ Why this exists: the user's verdict on the first ten Reels. They are going in th
 - `reference/0x100x-reference-study.md`: three 0x100x Reels (Fink, Buffett, gold), read at one frame per second.
 - **HyperFrames motion and story references** (heygen-com/hyperframes, `skills/hyperframes/references/motion.md`, `story.md`, `types/vertical.md`, `types/explainer.md`, `types/data.md`, `review.md`, `sound.md`). Craft numbers measured frame by frame from professional films. The user's 20 Oct decision already says these skills win on style. The plugin wasn't installed in recent sessions, so the restrained-camera rule kept winning by default.
 - **Our own renders, measured with `npm run pace`** (new, below).
-- **Limitation:** Instagram and YouTube now block anonymous downloads, so no new 0x100x video could be pulled from here. To calibrate the targets on their real cuts, put 5–10 of their Reels as MP4 in the repo or a Drive folder and run `npm run pace -- <file.mp4>` on each.
+- **Limitation:** Instagram and YouTube now block anonymous downloads. The user supplied the Fink Reel (20 Nov 2026); its measurements are in the table, and its frame-by-frame reading is in the addendum to `0x100x-reference-study.md`. More of their Reels sharpen the targets: run `npm run pace -- <file.mp4>` on each.
 
 ## 1. What we measured (`npm run pace`, outro excluded, main zone y 470–1500, captions and logo excluded)
 
@@ -16,6 +16,7 @@ Why this exists: the user's verdict on the first ten Reels. They are going in th
 | satu-meja (63 s) | **54%** | 10 | 3.7 s | 22.8 / min | 3.1 s / 6.3 s |
 | mulai-konsisten (15 s, wordless) | 9% | 0 | 0 s | 4 / min | one continuous shot, nothing new for 15 s |
 | 0x100x site clip (8 s of live footage) | 1% | 0 | 0 s | — | live footage is never still |
+| **0x100x Fink Reel (84.6 s, user upload)** | **16.1%** | 2 (end card only) | 2.2 s | 9.9 / min | never calm; mean activity 2.99 vs our 1.05–1.46 |
 
 **Reading:** in our explainers the picture is frozen more than half the time. Each element pops in, then parks until the next cue. That is the "not alive" feeling, measured.
 
@@ -71,7 +72,7 @@ Why this exists: the user's verdict on the first ten Reels. They are going in th
 
 ## 5. The Cryptonite rules from now on
 
-### Pace (gate: `npm run pace -- <id>`)
+### Pace (gate: `npm run pace -- <id>`; 0x100x measured 16% still)
 - **Stillness:**
   - still time ≤ 25% of the film;
   - no still stretch over 1.5 s, except up to two marked thesis holds of ≤ 1.5 s each (logged in `qa-report.md`).
@@ -194,3 +195,41 @@ Angle shapes that retain:
   - match-cut the 20-minute bar back in the payoff.
 - **P1 (story):** no spoken re-hook between 12 s and 39 s. Add one at ~20 s ("Dan itu baru satu blok…") and one at ~39 s, where the caveat already works as one.
 - **P2 (sound):** a pulse bed at ~100 BPM, effects on every event, one riser into the payoff board.
+
+## 11. The path to 0x100x level (beyond pace)
+Pace makes a Reel alive. The 0x100x *level* is craft: one coherent 3D world, light, materials, type and sound. Measured against their Fink Reel (20 Nov 2026), in order of impact:
+
+1. **One art direction for the whole film, two studio worlds.**
+   - **Porcelain** (off-white): matte white clay objects, soft key light, contact shadows. Used for the old way, analogies and characters.
+   - **Graphite** (black): dark chrome and glass, crisp white rim highlights, one brand-blue accent rim or under-glow. Used for money, numbers and the mechanism.
+   - Every beat is staged in one of the two; no flat cards in a void.
+2. **Monochrome plus one accent.** Brand blue is the only accent. Red, green and orange appear only where they carry meaning (a loss, a status, the bitcoin coin, a flag).
+3. **Typography in two registers.**
+   - Headlines and sentences: small and medium weight (Inter Tight 600, about 54–64 px, sentence or upper case), never shouting.
+   - Big numbers: a tall condensed display face (a candidate is an OFL face such as Anton or Bebas Neue; adding a brand font is the user's call).
+   - The 800-weight 100 px headline is retired for ordinary lines.
+4. **Characters and analogies.** A recurring sphere-person acts out the old way (the queue, the letter, the bank teller) before the mechanism arrives. Write scripts as "the old way, shown → the new mechanism → what it means for you", with a new visual idea per sentence.
+5. **Light and material.**
+   - Studio environments of light panels (drei `Environment` + `Lightformer`), a reflective floor, contact shadows, a spotlight pool.
+   - Finish: depth of field on the subject, light bloom, AgX tone mapping, grain (`src/three/post.tsx`).
+   - Glints that travel along edges.
+6. **A reusable premium asset library.** Built once, reused across episodes:
+   - the ID card (portrait or logo);
+   - coin stacks (BTC, USD, IDR);
+   - a glass number sphere;
+   - an institution building;
+   - a phone with a real UI screen;
+   - a document sheet;
+   - map and flag tiles;
+   - a dotted globe;
+   - a vault or server;
+   - a chart ribbon;
+   - the sphere-person (idle, walk, hold, look).
+7. **Sound.** A licensed music library is the biggest perceived-quality lever after the picture. Our synthesised pads are the weakest link. It needs a source the user licenses (e.g. Artlist, Epidemic Sound) or tracks they supply.
+8. **Calibration.**
+   - Each new episode gets 3–6 style frames rendered at final quality and compared side by side with 0x100x frames before animating (`compare` sheet: their frame | ours).
+   - More of their Reels as MP4 make the measured targets sharper.
+
+**Proof (20 Nov 2026):**
+- `look-test` (`src/compositions/LookTest.tsx`) is a 5 s shot in the graphite world: a glass ID card made from the real whitepaper page, a chrome coin stack with a reeded edge and blue under-glow, a reflective floor, depth of field, bloom, grain, a whip with motion blur.
+- Its stills sit beside 0x100x's in the comparison. It closes much of the gap in light and material. Type scale, composition (smaller objects, more black) and brighter frosted materials are the next fixes.
