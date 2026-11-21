@@ -18,6 +18,19 @@ Why this exists: the user's verdict on the first ten Reels. They are going in th
 | 0x100x site clip (8 s of live footage) | 1% | 0 | 0 s | — | live footage is never still |
 | **0x100x Fink Reel (84.6 s, user upload)** | **16.1%** | 2 (end card only) | 2.2 s | 9.9 / min | never calm; mean activity 2.99 vs our 1.05–1.46 |
 
+**Re-measured 21 Nov 2026 with the relative event detector** (an event is now a spike above the previous second's median motion, so a camera that never stops no longer hides them):
+
+| Reel | Still time | Visual events | Median gap / max gap |
+|---|---|---|---|
+| 0x100x Fink Reel | 16.1% | 17.8 / min | 1.7 s / 13.4 s |
+| TikTok B (pictogram, 33 s) | 20.8% | 28.9 / min | 1.9 s / 4.5 s |
+| TikTok A (pictogram, 69 s) | 4.3% | 10.4 / min | 2.7 s / 27.5 s |
+| dompet-satoshi | 56.3% | 26.7 / min | 2.3 s / 4.8 s |
+| tiga-hammer (first build, slow drift) | 74.1% | — | — |
+| tiga-hammer (camera spline + replays) | 6.6% | 15.5 / min | 2.8 s / 8.3 s |
+
+Long gaps in otherwise lively films are continuous motion without a landing (a replay or a pan), not freezes. Treat the event target as a guide to punctuate those stretches with meaningful landings, never with punch-in zooms.
+
 **Reading:** in our explainers the picture is frozen more than half the time. Each element pops in, then parks until the next cue. That is the "not alive" feeling, measured.
 
 ## 2. Diagnosis: the tells in our Reels

@@ -4,6 +4,6 @@
   "minSeconds": 45,
   "maxSeconds": 72,
   "captions": "none",
-  "tailSeconds": 0.6,
+  "tailSeconds": 1.1,
   "outro": true
 }

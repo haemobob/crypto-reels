@@ -2,7 +2,7 @@
 
 **Brief (user):** recreate @tradersarena_id's Reel (https://www.instagram.com/reels/De4kXljzc6R/) in the pictogram-actor style from `reference/pictogram-storytelling-study.md`.
 - Instagram blocked the video download.
-- The idea comes from the post's public embed caption (`evidence/reference-embed.html`): three H1 hammers with identical OHLC; on 15 m, A is "cakep dari luar tapi kosong di dalam", C "sempat mantul, tapi buyer-nya cepat ngilang", B "sapu equal low dulu, terus tembus lower high terakhir. Itu CHOCH di dalam satu candle"; next time check a liquidity sweep and a structure break.
+- The idea comes from the post's public embed caption (`evidence/reference-caption.txt`): three H1 hammers with identical OHLC; on 15 m, A is "cakep dari luar tapi kosong di dalam", C "sempat mantul, tapi buyer-nya cepat ngilang", B "sapu equal low dulu, terus tembus lower high terakhir. Itu CHOCH di dalam satu candle"; next time check a liquidity sweep and a structure break.
 - Their market is XAUUSD/forex. Ours is BTCUSDT.
 - Their CTA ("Komen 'CHART'") is not reproduced.
 

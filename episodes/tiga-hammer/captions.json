@@ -1,910 +1,910 @@
 {
-  "durationSec": 73.72,
+  "durationSec": 58.72,
+  "timing": "supplied take clean.wav; whisper.cpp 1.7.5 small, aligned to narration.txt (148/149 words matched, rest interpolated)",
   "words": [
     {
       "text": "Tiga",
-      "start": 0.15,
-      "end": 0.55,
+      "start": 0.05,
+      "end": 0.46,
       "highlight": false
     },
     {
       "text": "hammer",
-      "start": 0.58,
-      "end": 0.98,
+      "start": 0.46,
+      "end": 1.15,
       "highlight": false
     },
     {
       "text": "Bitcoin.",
-      "start": 1.01,
-      "end": 1.41,
+      "start": 1.15,
+      "end": 2.15,
       "highlight": false
     },
     {
       "text": "Di",
-      "start": 1.83,
-      "end": 2.03,
+      "start": 2.15,
+      "end": 2.33,
       "highlight": false
     },
     {
       "text": "chart",
-      "start": 2.06,
-      "end": 2.26,
+      "start": 2.33,
+      "end": 2.53,
       "highlight": false
     },
     {
       "text": "satu",
-      "start": 2.29,
-      "end": 2.69,
+      "start": 2.53,
+      "end": 2.76,
       "highlight": false
     },
     {
       "text": "jam,",
-      "start": 2.72,
-      "end": 2.92,
+      "start": 2.76,
+      "end": 2.99,
       "highlight": false
     },
     {
       "text": "bentuknya",
-      "start": 3.12,
-      "end": 3.72,
+      "start": 2.99,
+      "end": 3.68,
       "highlight": false
     },
     {
       "text": "hampir",
-      "start": 3.75,
-      "end": 4.15,
+      "start": 3.68,
+      "end": 4.13,
       "highlight": false
     },
     {
       "text": "sama",
-      "start": 4.18,
-      "end": 4.58,
+      "start": 4.13,
+      "end": 4.44,
       "highlight": true
     },
     {
       "text": "persis.",
-      "start": 4.61,
-      "end": 5.01,
+      "start": 4.44,
+      "end": 5.25,
       "highlight": true
     },
     {
       "text": "Tiga",
-      "start": 5.78,
-      "end": 6.18,
+      "start": 5.25,
+      "end": 5.4,
       "highlight": false
     },
     {
       "text": "trader,",
-      "start": 6.21,
-      "end": 6.61,
+      "start": 5.4,
+      "end": 6.08,
       "highlight": false
     },
     {
       "text": "masing-masing",
-      "start": 6.81,
-      "end": 7.61,
+      "start": 6.08,
+      "end": 6.76,
       "highlight": false
     },
     {
       "text": "beli",
-      "start": 7.64,
-      "end": 8.04,
+      "start": 6.76,
+      "end": 6.84,
       "highlight": false
     },
     {
       "text": "satu.",
-      "start": 8.07,
-      "end": 8.47,
+      "start": 6.84,
+      "end": 7.78,
       "highlight": false
     },
     {
       "text": "Tapi",
-      "start": 8.89,
-      "end": 9.29,
+      "start": 7.78,
+      "end": 8.15,
       "highlight": false
     },
     {
       "text": "di",
-      "start": 9.32,
-      "end": 9.52,
+      "start": 8.15,
+      "end": 8.33,
       "highlight": false
     },
     {
       "text": "chart",
-      "start": 9.55,
-      "end": 9.75,
+      "start": 8.33,
+      "end": 8.61,
       "highlight": false
     },
     {
       "text": "lima",
-      "start": 9.78,
-      "end": 10.18,
+      "start": 8.61,
+      "end": 8.89,
       "highlight": false
     },
     {
       "text": "menit,",
-      "start": 10.21,
-      "end": 10.61,
+      "start": 8.89,
+      "end": 9.47,
       "highlight": false
     },
     {
       "text": "isinya",
-      "start": 10.81,
-      "end": 11.41,
+      "start": 9.47,
+      "end": 10.01,
       "highlight": true
     },
     {
       "text": "beda",
-      "start": 11.44,
-      "end": 11.84,
+      "start": 10.01,
+      "end": 10.43,
       "highlight": false
     },
     {
       "text": "total.",
-      "start": 11.87,
-      "end": 12.27,
+      "start": 10.43,
+      "end": 10.722,
       "highlight": true
     },
     {
       "text": "Hammer",
-      "start": 13.04,
-      "end": 13.44,
+      "start": 11.099,
+      "end": 11.39,
       "highlight": false
     },
     {
       "text": "A:",
-      "start": 13.47,
-      "end": 13.67,
+      "start": 11.39,
+      "end": 11.58,
       "highlight": false
     },
     {
       "text": "turun",
-      "start": 13.87,
-      "end": 14.27,
+      "start": 11.58,
+      "end": 12.02,
       "highlight": false
     },
     {
       "text": "terus,",
-      "start": 14.3,
-      "end": 14.7,
+      "start": 12.02,
+      "end": 12.24,
       "highlight": false
     },
     {
       "text": "baru",
-      "start": 14.9,
-      "end": 15.3,
+      "start": 12.24,
+      "end": 12.5,
       "highlight": false
     },
     {
       "text": "balik",
-      "start": 15.33,
-      "end": 15.73,
+      "start": 12.5,
+      "end": 12.83,
       "highlight": false
     },
     {
       "text": "di",
-      "start": 15.76,
-      "end": 15.96,
+      "start": 12.83,
+      "end": 12.96,
       "highlight": false
     },
     {
       "text": "menit",
-      "start": 15.99,
-      "end": 16.39,
+      "start": 12.96,
+      "end": 13.29,
       "highlight": false
     },
     {
       "text": "terakhir.",
-      "start": 16.42,
-      "end": 17.02,
+      "start": 13.29,
+      "end": 14,
       "highlight": false
     },
     {
       "text": "Nggak",
-      "start": 17.44,
-      "end": 17.64,
+      "start": 14,
+      "end": 14.352,
       "highlight": false
     },
     {
       "text": "ada",
-      "start": 17.67,
-      "end": 18.07,
+      "start": 14.638,
+      "end": 14.688,
       "highlight": false
     },
     {
       "text": "yang",
-      "start": 18.1,
-      "end": 18.3,
+      "start": 14.818,
+      "end": 14.93,
       "highlight": false
     },
     {
       "text": "disapu,",
-      "start": 18.33,
-      "end": 18.93,
+      "start": 15.08,
+      "end": 15.48,
       "highlight": false
     },
     {
       "text": "nggak",
-      "start": 19.13,
-      "end": 19.33,
+      "start": 15.48,
+      "end": 15.87,
       "highlight": false
     },
     {
       "text": "ada",
-      "start": 19.36,
-      "end": 19.76,
+      "start": 15.87,
+      "end": 16,
       "highlight": false
     },
     {
       "text": "struktur",
-      "start": 19.79,
-      "end": 20.19,
+      "start": 16,
+      "end": 16.62,
       "highlight": false
     },
     {
       "text": "yang",
-      "start": 20.22,
-      "end": 20.42,
+      "start": 16.62,
+      "end": 16.96,
       "highlight": false
     },
     {
       "text": "patah.",
-      "start": 20.45,
-      "end": 20.85,
+      "start": 16.96,
+      "end": 17.57,
       "highlight": false
     },
     {
       "text": "Cantik",
-      "start": 21.27,
-      "end": 21.67,
+      "start": 17.57,
+      "end": 18.09,
       "highlight": false
     },
     {
       "text": "di",
-      "start": 21.7,
-      "end": 21.9,
+      "start": 18.09,
+      "end": 18.26,
       "highlight": false
     },
     {
       "text": "luar,",
-      "start": 21.93,
-      "end": 22.13,
+      "start": 18.26,
+      "end": 18.466,
       "highlight": false
     },
     {
       "text": "kosong",
-      "start": 22.33,
-      "end": 22.73,
+      "start": 18.665,
+      "end": 19.12,
       "highlight": true
     },
     {
       "text": "di",
-      "start": 22.76,
-      "end": 22.96,
+      "start": 19.12,
+      "end": 19.29,
       "highlight": false
     },
     {
       "text": "dalam.",
-      "start": 22.99,
-      "end": 23.39,
+      "start": 19.29,
+      "end": 19.532,
       "highlight": true
     },
     {
       "text": "Hammer",
-      "start": 24.16,
-      "end": 24.56,
+      "start": 19.865,
+      "end": 20.3,
       "highlight": false
     },
     {
       "text": "C:",
-      "start": 24.59,
-      "end": 24.79,
+      "start": 20.3,
+      "end": 20.56,
       "highlight": false
     },
     {
       "text": "low",
-      "start": 24.99,
-      "end": 25.19,
+      "start": 20.792,
+      "end": 20.842,
       "highlight": false
     },
     {
       "text": "lama",
-      "start": 25.22,
-      "end": 25.62,
+      "start": 20.972,
+      "end": 21.12,
       "highlight": false
     },
     {
       "text": "disapu,",
-      "start": 25.65,
-      "end": 26.25,
+      "start": 21.28,
+      "end": 21.61,
       "highlight": false
     },
     {
       "text": "harga",
-      "start": 26.45,
-      "end": 26.85,
+      "start": 21.61,
+      "end": 22.02,
       "highlight": false
     },
     {
       "text": "mantul,",
-      "start": 26.88,
-      "end": 27.28,
+      "start": 22.02,
+      "end": 22.51,
       "highlight": false
     },
     {
       "text": "tapi",
-      "start": 27.48,
-      "end": 27.88,
+      "start": 22.51,
+      "end": 22.84,
       "highlight": false
     },
     {
       "text": "gagal",
-      "start": 27.91,
-      "end": 28.31,
+      "start": 22.84,
+      "end": 23.38,
       "highlight": false
     },
     {
       "text": "tembus",
-      "start": 28.34,
-      "end": 28.74,
+      "start": 23.38,
+      "end": 23.75,
       "highlight": false
     },
     {
       "text": "lower",
-      "start": 28.77,
-      "end": 29.17,
+      "start": 23.75,
+      "end": 24.16,
       "highlight": true
     },
     {
       "text": "high",
-      "start": 29.2,
-      "end": 29.4,
+      "start": 24.16,
+      "end": 24.66,
       "highlight": true
     },
     {
       "text": "terakhir.",
-      "start": 29.43,
-      "end": 30.03,
+      "start": 24.66,
+      "end": 25.184,
       "highlight": false
     },
     {
       "text": "Hammer",
-      "start": 30.8,
-      "end": 31.2,
+      "start": 25.499,
+      "end": 25.86,
       "highlight": false
     },
     {
       "text": "B:",
-      "start": 31.23,
-      "end": 31.43,
+      "start": 25.86,
+      "end": 26.08,
       "highlight": false
     },
     {
       "text": "sapu",
-      "start": 31.63,
-      "end": 32.03,
+      "start": 26.08,
+      "end": 26.38,
       "highlight": false
     },
     {
       "text": "equal",
-      "start": 32.06,
-      "end": 32.46,
+      "start": 26.38,
+      "end": 26.76,
       "highlight": true
     },
     {
       "text": "low",
-      "start": 32.49,
-      "end": 32.69,
+      "start": 26.76,
+      "end": 26.99,
       "highlight": true
     },
     {
       "text": "dulu,",
-      "start": 32.72,
-      "end": 33.12,
+      "start": 26.99,
+      "end": 27.3,
       "highlight": false
     },
     {
       "text": "lalu",
-      "start": 33.32,
-      "end": 33.72,
+      "start": 27.3,
+      "end": 27.59,
       "highlight": false
     },
     {
       "text": "tembus",
-      "start": 33.75,
-      "end": 34.15,
+      "start": 27.59,
+      "end": 28.06,
       "highlight": false
     },
     {
       "text": "lower",
-      "start": 34.18,
-      "end": 34.58,
+      "start": 28.06,
+      "end": 28.44,
       "highlight": false
     },
     {
       "text": "high",
-      "start": 34.61,
-      "end": 34.81,
+      "start": 28.44,
+      "end": 28.9,
       "highlight": false
     },
     {
       "text": "terakhir.",
-      "start": 34.84,
-      "end": 35.44,
+      "start": 28.9,
+      "end": 29.68,
       "highlight": false
     },
     {
       "text": "Itu",
-      "start": 35.86,
-      "end": 36.26,
+      "start": 29.75,
+      "end": 29.89,
       "highlight": false
     },
     {
       "text": "change",
-      "start": 36.29,
-      "end": 36.69,
+      "start": 29.89,
+      "end": 30.35,
       "highlight": true
     },
     {
       "text": "of",
-      "start": 36.72,
-      "end": 36.92,
+      "start": 30.35,
+      "end": 30.46,
       "highlight": false
     },
     {
       "text": "character,",
-      "start": 36.95,
-      "end": 37.55,
+      "start": 30.46,
+      "end": 31.1,
       "highlight": true
     },
     {
       "text": "di",
-      "start": 37.75,
-      "end": 37.95,
+      "start": 31.1,
+      "end": 31.24,
       "highlight": false
     },
     {
       "text": "dalam",
-      "start": 37.98,
-      "end": 38.38,
+      "start": 31.24,
+      "end": 31.59,
       "highlight": false
     },
     {
       "text": "satu",
-      "start": 38.41,
-      "end": 38.81,
+      "start": 31.59,
+      "end": 31.87,
       "highlight": false
     },
     {
       "text": "candle.",
-      "start": 38.84,
-      "end": 39.24,
+      "start": 31.87,
+      "end": 32.26,
       "highlight": false
     },
     {
       "text": "Enam",
-      "start": 40.01,
-      "end": 40.41,
+      "start": 32.656,
+      "end": 32.82,
       "highlight": false
     },
     {
       "text": "jam",
-      "start": 40.44,
-      "end": 40.64,
+      "start": 32.82,
+      "end": 33.13,
       "highlight": false
     },
     {
       "text": "kemudian,",
-      "start": 40.67,
-      "end": 41.27,
+      "start": 33.13,
+      "end": 34.12,
       "highlight": false
     },
     {
       "text": "B",
-      "start": 41.47,
-      "end": 41.67,
+      "start": 34.12,
+      "end": 34.21,
       "highlight": false
     },
     {
       "text": "naik",
-      "start": 41.7,
-      "end": 41.9,
+      "start": 34.21,
+      "end": 34.58,
       "highlight": false
     },
     {
       "text": "satu",
-      "start": 41.93,
-      "end": 42.33,
+      "start": 34.58,
+      "end": 34.817,
       "highlight": false
     },
     {
       "text": "koma",
-      "start": 42.36,
-      "end": 42.76,
+      "start": 34.817,
+      "end": 35.053,
       "highlight": false
     },
     {
       "text": "enam",
-      "start": 42.79,
-      "end": 43.19,
+      "start": 35.053,
+      "end": 35.29,
       "highlight": false
     },
     {
       "text": "persen.",
-      "start": 43.22,
-      "end": 43.62,
+      "start": 35.29,
+      "end": 35.712,
       "highlight": false
     },
     {
       "text": "A",
-      "start": 44.04,
-      "end": 44.24,
+      "start": 36.059,
+      "end": 36.109,
       "highlight": false
     },
     {
       "text": "nyaris",
-      "start": 44.27,
-      "end": 44.67,
+      "start": 36.179,
+      "end": 36.77,
       "highlight": false
     },
     {
       "text": "diam.",
-      "start": 44.7,
-      "end": 44.9,
+      "start": 36.77,
+      "end": 37.45,
       "highlight": false
     },
     {
       "text": "C",
-      "start": 45.32,
-      "end": 45.52,
+      "start": 37.45,
+      "end": 37.55,
       "highlight": false
     },
     {
       "text": "sempat",
-      "start": 45.55,
-      "end": 45.95,
+      "start": 37.55,
+      "end": 38.04,
       "highlight": false
     },
     {
       "text": "turun",
-      "start": 45.98,
-      "end": 46.38,
+      "start": 38.04,
+      "end": 38.46,
       "highlight": false
     },
     {
       "text": "satu",
-      "start": 46.41,
-      "end": 46.81,
+      "start": 38.46,
+      "end": 38.683,
       "highlight": false
     },
     {
       "text": "koma",
-      "start": 46.84,
-      "end": 47.24,
+      "start": 38.683,
+      "end": 38.907,
       "highlight": false
     },
     {
       "text": "tiga",
-      "start": 47.27,
-      "end": 47.67,
+      "start": 38.907,
+      "end": 39.13,
       "highlight": false
     },
     {
       "text": "persen.",
-      "start": 47.7,
-      "end": 48.1,
+      "start": 39.13,
+      "end": 39.512,
       "highlight": false
     },
     {
       "text": "Tapi",
-      "start": 48.87,
-      "end": 49.27,
+      "start": 39.851,
+      "end": 40.08,
       "highlight": false
     },
     {
       "text": "ini",
-      "start": 49.3,
-      "end": 49.7,
+      "start": 40.08,
+      "end": 40.35,
       "highlight": false
     },
     {
       "text": "bukan",
-      "start": 49.73,
-      "end": 50.13,
+      "start": 40.35,
+      "end": 40.8,
       "highlight": true
     },
     {
       "text": "rumus.",
-      "start": 50.16,
-      "end": 50.56,
+      "start": 40.8,
+      "end": 41.172,
       "highlight": true
     },
     {
       "text": "Dari",
-      "start": 50.98,
-      "end": 51.38,
+      "start": 41.41,
+      "end": 41.65,
       "highlight": false
     },
     {
       "text": "dua",
-      "start": 51.41,
-      "end": 51.61,
+      "start": 41.65,
+      "end": 41.74,
       "highlight": false
     },
     {
       "text": "puluh",
-      "start": 51.64,
-      "end": 52.04,
+      "start": 41.74,
+      "end": 41.89,
       "highlight": false
     },
     {
       "text": "delapan",
-      "start": 52.07,
-      "end": 52.67,
+      "start": 41.89,
+      "end": 42.1,
       "highlight": false
     },
     {
       "text": "hammer",
-      "start": 52.7,
-      "end": 53.1,
+      "start": 42.1,
+      "end": 42.55,
       "highlight": false
     },
     {
       "text": "Bitcoin",
-      "start": 53.13,
-      "end": 53.53,
+      "start": 42.55,
+      "end": 43.07,
       "highlight": false
     },
     {
       "text": "enam",
-      "start": 53.56,
-      "end": 53.96,
+      "start": 43.07,
+      "end": 43.29,
       "highlight": false
     },
     {
       "text": "bulan",
-      "start": 53.99,
-      "end": 54.39,
+      "start": 43.29,
+      "end": 43.66,
       "highlight": false
     },
     {
       "text": "terakhir,",
-      "start": 54.42,
-      "end": 55.02,
+      "start": 43.66,
+      "end": 44.49,
       "highlight": false
     },
     {
       "text": "pola",
-      "start": 55.22,
-      "end": 55.62,
+      "start": 44.49,
+      "end": 44.86,
       "highlight": false
     },
     {
       "text": "B",
-      "start": 55.65,
-      "end": 55.85,
+      "start": 44.86,
+      "end": 44.95,
       "highlight": false
     },
     {
       "text": "naik",
-      "start": 55.88,
-      "end": 56.08,
+      "start": 44.95,
+      "end": 45.33,
       "highlight": false
     },
     {
       "text": "lima",
-      "start": 56.11,
-      "end": 56.51,
+      "start": 45.33,
+      "end": 45.6,
       "highlight": false
     },
     {
       "text": "dari",
-      "start": 56.54,
-      "end": 56.94,
+      "start": 45.6,
+      "end": 45.99,
       "highlight": false
     },
     {
       "text": "delapan.",
-      "start": 56.97,
-      "end": 57.57,
+      "start": 45.99,
+      "end": 46.7,
       "highlight": false
     },
     {
       "text": "Sisanya,",
-      "start": 57.99,
-      "end": 58.59,
+      "start": 46.7,
+      "end": 47.26,
       "highlight": false
     },
     {
       "text": "tiga",
-      "start": 58.79,
-      "end": 59.19,
+      "start": 47.26,
+      "end": 47.544,
       "highlight": false
     },
     {
       "text": "belas",
-      "start": 59.22,
-      "end": 59.62,
+      "start": 47.544,
+      "end": 47.9,
       "highlight": false
     },
     {
       "text": "dari",
-      "start": 59.65,
-      "end": 60.05,
+      "start": 47.9,
+      "end": 48.32,
       "highlight": false
     },
     {
       "text": "dua",
-      "start": 60.08,
-      "end": 60.28,
+      "start": 48.32,
+      "end": 48.59,
       "highlight": false
     },
     {
       "text": "puluh.",
-      "start": 60.31,
-      "end": 60.71,
+      "start": 48.59,
+      "end": 48.832,
       "highlight": false
     },
     {
       "text": "Isi",
-      "start": 61.48,
-      "end": 61.88,
+      "start": 49.148,
+      "end": 49.23,
       "highlight": false
     },
     {
       "text": "candle",
-      "start": 61.91,
-      "end": 62.31,
+      "start": 49.23,
+      "end": 49.64,
       "highlight": false
     },
     {
       "text": "ngasih",
-      "start": 62.34,
-      "end": 62.74,
+      "start": 49.64,
+      "end": 50.03,
       "highlight": false
     },
     {
       "text": "tahu",
-      "start": 62.77,
-      "end": 63.17,
+      "start": 50.03,
+      "end": 50.23,
       "highlight": false
     },
     {
       "text": "siapa",
-      "start": 63.2,
-      "end": 63.6,
+      "start": 50.23,
+      "end": 50.56,
       "highlight": true
     },
     {
       "text": "yang",
-      "start": 63.63,
-      "end": 63.83,
+      "start": 50.56,
+      "end": 50.83,
       "highlight": false
     },
     {
       "text": "pegang",
-      "start": 63.86,
-      "end": 64.26,
+      "start": 50.83,
+      "end": 51.23,
       "highlight": false
     },
     {
       "text": "kendali,",
-      "start": 64.29,
-      "end": 64.89,
+      "start": 51.23,
+      "end": 51.96,
       "highlight": true
     },
     {
       "text": "bukan",
-      "start": 65.09,
-      "end": 65.49,
+      "start": 51.96,
+      "end": 52.27,
       "highlight": false
     },
     {
       "text": "arah",
-      "start": 65.52,
-      "end": 65.92,
+      "start": 52.27,
+      "end": 52.55,
       "highlight": false
     },
     {
       "text": "berikutnya.",
-      "start": 65.95,
-      "end": 66.75,
+      "start": 52.55,
+      "end": 53.259,
       "highlight": false
     },
     {
       "text": "Pakai",
-      "start": 67.17,
-      "end": 67.57,
+      "start": 53.585,
+      "end": 53.83,
       "highlight": false
     },
     {
       "text": "buat",
-      "start": 67.6,
-      "end": 67.8,
+      "start": 53.83,
+      "end": 54.11,
       "highlight": false
     },
     {
       "text": "tahu",
-      "start": 67.83,
-      "end": 68.23,
+      "start": 54.11,
+      "end": 54.34,
       "highlight": false
     },
     {
       "text": "kapan",
-      "start": 68.26,
-      "end": 68.66,
+      "start": 54.34,
+      "end": 54.67,
       "highlight": false
     },
     {
       "text": "lo",
-      "start": 68.69,
-      "end": 68.89,
+      "start": 54.67,
+      "end": 54.81,
       "highlight": false
     },
     {
       "text": "salah:",
-      "start": 68.92,
-      "end": 69.32,
+      "start": 54.81,
+      "end": 55.29,
       "highlight": false
     },
     {
       "text": "kalau",
-      "start": 69.52,
-      "end": 69.92,
+      "start": 55.503,
+      "end": 55.78,
       "highlight": false
     },
     {
       "text": "low",
-      "start": 69.95,
-      "end": 70.15,
+      "start": 55.78,
+      "end": 55.93,
       "highlight": false
     },
     {
       "text": "yang",
-      "start": 70.18,
-      "end": 70.38,
+      "start": 55.93,
+      "end": 56.23,
       "highlight": false
     },
     {
       "text": "disapu",
-      "start": 70.41,
-      "end": 71.01,
+      "start": 56.23,
+      "end": 56.68,
       "highlight": false
     },
     {
       "text": "tembus",
-      "start": 71.04,
-      "end": 71.44,
+      "start": 56.68,
+      "end": 57.13,
       "highlight": false
     },
     {
       "text": "lagi,",
-      "start": 71.47,
-      "end": 71.87,
+      "start": 57.13,
+      "end": 57.403,
       "highlight": false
     },
     {
       "text": "idenya",
-      "start": 72.07,
-      "end": 72.67,
+      "start": 57.602,
+      "end": 58.05,
       "highlight": true
     },
     {
       "text": "batal.",
-      "start": 72.7,
-      "end": 73.1,
+      "start": 58.05,
+      "end": 58.72,
       "highlight": true
     }
   ],
   "cues": {
-    "hook": 0.15,
-    "pick": 5.78,
-    "a": 13.04,
-    "c": 24.16,
-    "b": 30.8,
-    "result": 40.01,
-    "twist": 48.87,
-    "payoff": 61.48
-  },
-  "timing": "ESTIMATE (no voice yet): 5 syllables/s, not measured"
+    "hook": 0.05,
+    "pick": 5.25,
+    "a": 11.099,
+    "c": 19.865,
+    "b": 25.499,
+    "result": 32.656,
+    "twist": 39.851,
+    "payoff": 49.148
+  }
 }

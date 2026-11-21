@@ -79,7 +79,7 @@ export const Pill = ({x, y, text, color = '#FFFFFF', bg = '#0B0F16', border = '#
 /**
  * ISOTYPE count: `n` pictogram icons in rows of `cols`, the first `lit` light up one by one from frame `at`.
  */
-export const IconGrid = ({x, y, n, lit, cols, size = 44, at, litColor = ACTOR.blue, offColor = ACTOR.dim}: {x: number; y: number; n: number; lit: number; cols: number; size?: number; at: number; litColor?: string; offColor?: string}) => {
+export const IconGrid = ({x, y, n, lit, cols, size = 44, at, litAt, litColor = ACTOR.blue, offColor = ACTOR.dim}: {x: number; y: number; n: number; lit: number; cols: number; size?: number; at: number; /** Frame the lit icons start lighting (default: right after they all appear). */ litAt?: number; litColor?: string; offColor?: string}) => {
   const f = useCurrentFrame();
   return (
     <g>
@@ -87,7 +87,8 @@ export const IconGrid = ({x, y, n, lit, cols, size = 44, at, litColor = ACTOR.bl
         const r = Math.floor(i / cols);
         const c = i % cols;
         const appear = ramp(f, at + i * 1.5, at + i * 1.5 + 6);
-        const on = i < lit ? ramp(f, at + n * 1.5 + 6 + i * 3, at + n * 1.5 + 12 + i * 3) : 0;
+        const l0 = litAt ?? at + n * 1.5 + 6;
+        const on = i < lit ? ramp(f, l0 + i * 3, l0 + 6 + i * 3) : 0;
         if (appear <= 0.01) return null;
         const col = on > 0.5 ? litColor : offColor;
         const cx = x + c * size * 0.82 + size * 0.4;

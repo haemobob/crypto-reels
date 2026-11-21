@@ -79,11 +79,18 @@ for (let i = 1; i <= n; i++) {
     runStart = -1;
   }
 }
+// An event is a spike above the motion that was already going on: something new starts moving, lands or cuts. The
+// baseline is the median activity of the previous second, so a continuously drifting camera (never calm in absolute
+// terms) doesn't hide events, and the drift itself doesn't count as one. (Until 21 Nov 2026 an event needed an
+// absolute calm first, which scored continuous-camera reels, the pictogram references included, as eventless.)
 const events: number[] = [];
 let calm = 0;
 for (let i = 1; i < n; i++) {
-  if (d[i] >= EVENT && calm >= 4) events.push(i);
-  calm = d[i] < EVENT * 0.5 ? calm + 1 : 0;
+  const prev = d.slice(Math.max(1, i - Math.round(fps)), i).sort((a, b) => a - b);
+  const base = prev.length ? prev[Math.floor(prev.length / 2)] : 0;
+  const level = Math.max(EVENT, base * 2 + 0.3);
+  if (d[i] >= level && calm >= 4) events.push(i);
+  calm = d[i] < level * 0.7 ? calm + 1 : 0;
 }
 const hard = d.map((v, i) => (v >= HARD ? i : -1)).filter((i) => i > 0);
 const gaps = events.slice(1).map((e, i) => (e - events[i]) / fps);
@@ -105,6 +112,7 @@ const report = {
   hardChangesPerMin: +((hard.length / seconds) * 60).toFixed(1),
   firstChange: firstChange > 0 ? t(firstChange) : null,
   meanActivity: +(d.reduce((a, b) => a + b, 0) / n).toFixed(3),
+  eventTimes: events.map(t),
 };
 if (json) {
   console.log(JSON.stringify(report, null, 2));
