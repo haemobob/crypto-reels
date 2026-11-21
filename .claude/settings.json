@@ -1,0 +1,37 @@
+{
+  "enabledPlugins": {
+    "remotion@anthropic-plugin-directory": true,
+    "it-reelsmaker@anthropic-plugin-directory": true,
+    "social-media-skills@anthropic-plugin-directory": true,
+    "gsap-skills@gsap-skills": true,
+    "genjutsu@genjutsu": true,
+    "hyperframes@hyperframes": true,
+    "lemo-opuscar@lemolab": true
+  },
+  "extraKnownMarketplaces": {
+    "gsap-skills": {
+      "source": {
+        "source": "github",
+        "repo": "greensock/gsap-skills"
+      }
+    },
+    "genjutsu": {
+      "source": {
+        "source": "github",
+        "repo": "AThevon/genjutsu"
+      }
+    },
+    "hyperframes": {
+      "source": {
+        "source": "github",
+        "repo": "heygen-com/hyperframes"
+      }
+    },
+    "lemolab": {
+      "source": {
+        "source": "github",
+        "repo": "lemomo-ai/lemo-opuscar"
+      }
+    }
+  }
+}

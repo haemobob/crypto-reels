@@ -1,6 +1,6 @@
 #!/bin/bash
 # Setup script for the Cryptonite Reels cloud environment (paste into the environment's "Setup script").
-# Reinstalls what can't live in the repo: the four plugins and the onetake skill (~200 MB).
+# Reinstalls what can't live in the repo: the plugins (also declared at project scope in .claude/settings.json) and the onetake skill (~115 MB, PolyForm Noncommercial).
 # The smaller skills (hypit, design-dna, motion-design, gbro-collage-broll, three.js) are in .claude/skills/.
 # Every step is allowed to fail without stopping the session; failures are logged.
 set -u
@@ -17,6 +17,10 @@ if command -v claude >/dev/null 2>&1; then
   add_plugin AThevon/genjutsu genjutsu@genjutsu .claude-plugin skills
   add_plugin heygen-com/hyperframes hyperframes@hyperframes .claude-plugin skills
   add_plugin lemomo-ai/lemo-opuscar lemo-opuscar@lemolab .claude-plugin plugin
+  # From the built-in Anthropic directory (also enabled at project scope in .claude/settings.json).
+  for p in remotion it-reelsmaker social-media-skills; do
+    if claude plugin install "$p@anthropic-plugin-directory" --scope user >/dev/null 2>&1; then log "installed $p"; else log "install $p failed"; fi
+  done
 else
   log "claude CLI not found; skipping plugins"
 fi
