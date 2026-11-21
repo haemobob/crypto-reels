@@ -1,0 +1,9 @@
+{
+  "id": "tiga-hammer",
+  "title": "Tiga hammer, isinya beda",
+  "minSeconds": 45,
+  "maxSeconds": 72,
+  "captions": "micro",
+  "tailSeconds": 0.6,
+  "outro": true
+}

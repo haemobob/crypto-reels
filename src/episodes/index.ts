@@ -16,10 +16,12 @@ import bentukVolume from './bentuk-volume';
 import satuMeja from './satu-meja';
 import mulaiKonsisten from './mulai-konsisten';
 import dompetSatoshi from './dompet-satoshi';
+import tigaHammer from './tiga-hammer';
 // @episodes-import (scripts/new-episode.ts adds imports above this line)
 
 export const episodes: Record<string, EpisodeModule> = {
   // @episodes-entry (scripts/new-episode.ts adds entries below this line)
+  'tiga-hammer': tigaHammer,
   'dompet-satoshi': dompetSatoshi,
   'mulai-konsisten': mulaiKonsisten,
   'satu-meja': satuMeja,

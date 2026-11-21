@@ -1,0 +1,19 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+# DRAFT for Gate 1 (script approval), 21 Nov 2026. Pictogram-actor style (reference/pictogram-storytelling-study.md).
+
+[[hook]] Tiga hammer Bitcoin. Di chart satu jam, bentuknya hampir *sama persis*.
+
+[[pick]] Tiga trader, masing-masing beli satu. Tapi di chart lima menit, *isinya beda total*.
+
+[[a]] Hammer A: turun terus, baru balik di menit terakhir. Nggak ada yang disapu, nggak ada struktur yang patah. Cantik di luar, *kosong di dalam*.
+
+[[c]] Hammer C: low lama disapu, harga mantul, tapi gagal tembus *lower high* terakhir.
+
+[[b]] Hammer B: sapu *equal low* dulu, lalu tembus lower high terakhir. Itu *change of character*, di dalam satu candle.
+
+[[result]] Enam jam kemudian, B naik satu koma enam persen. A nyaris diam. C sempat turun satu koma tiga persen.
+
+[[twist]] Tapi ini *bukan rumus*. Dari dua puluh delapan hammer Bitcoin enam bulan terakhir, pola B naik lima dari delapan. Sisanya, tiga belas dari dua puluh.
+
+[[payoff]] Isi candle ngasih tahu *siapa yang pegang kendali*, bukan arah berikutnya. Pakai buat tahu kapan lo salah: kalau low yang disapu tembus lagi, *idenya batal*.
