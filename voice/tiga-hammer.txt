@@ -1,0 +1,28 @@
+[intrigued] Tiga hammer Bitcoin. Di chart satu jam, bentuknya hampir sama persis.
+
+[curious] Tiga trader, masing-masing beli satu. Tapi di chart lima menit… isinya beda total.
+
+[storytelling] Hammer A: turun terus, baru balik di menit terakhir. Nggak ada yang disapu, nggak ada struktur yang patah. Cantik di luar, kosong di dalam.
+
+[storytelling] Hammer C: low lama disapu, harga mantul, tapi gagal tembus lower high terakhir.
+
+[confident] Hammer B: sapu equal low dulu, lalu tembus lower high terakhir. Itu change of character, di dalam satu candle.
+
+[calm] Enam jam kemudian, B naik satu koma enam persen. A nyaris diam. C sempat turun satu koma tiga persen.
+
+[serious] Tapi ini bukan rumus.
+Dari dua puluh delapan hammer Bitcoin enam bulan terakhir, pola B naik lima dari delapan. Sisanya, tiga belas dari dua puluh.
+
+[calm, confident] Isi candle ngasih tahu siapa yang pegang kendali, bukan arah berikutnya. Pakai buat tahu kapan lo salah: kalau low yang disapu tembus lagi, idenya batal.
+
+----------------------------------------------------------------
+PRONUNCIATION NOTES (not part of the text to paste)
+Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · intriguing and slow · no CAPS · target 58–68 s (window 45–72 s)
+- "hammer": "hem-mer".
+- "chart": "chart".
+- "trader": "tre-der".
+- "candle": "ken-del".
+- "low": "lo"; "lower high": "lo-wer hai"; "equal low": "i-kuel lo".
+- "change of character": "cheinj of kerekter".
+- "Bitcoin": "bit-koin".
+- If the voice reads a bracketed tag aloud, keep the take; I'll cut it.

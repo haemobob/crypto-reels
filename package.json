@@ -17,7 +17,8 @@
     "import-sfx": "tsx scripts/import-sfx.ts",
     "typecheck": "tsc --noEmit",
     "cover": "tsx scripts/cover.ts",
-    "pace": "tsx scripts/pace.ts"
+    "pace": "tsx scripts/pace.ts",
+    "estimate": "tsx scripts/estimate-captions.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",

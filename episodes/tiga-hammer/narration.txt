@@ -1,6 +1,6 @@
 # Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
 # [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
-# DRAFT for Gate 1 (script approval), 21 Nov 2026. Pictogram-actor style (reference/pictogram-storytelling-study.md).
+# Approved by the user ("i approve"), 21 Nov 2026, with the data twist and the style choices. Pictogram-actor style (reference/pictogram-storytelling-study.md).
 
 [[hook]] Tiga hammer Bitcoin. Di chart satu jam, bentuknya hampir *sama persis*.
 
