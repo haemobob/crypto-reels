@@ -20,12 +20,12 @@ export type Pose = 'stand' | 'cheer' | 'shrug' | 'slump' | 'hold' | 'point';
  * A pictogram person, feet at (x, y), `h` tall. `pop` is the frame it appears (scale-settle inside a glow ring);
  * `glow` 0–1 lights the ring (this is the one we're talking about). `poseAt` switches pose at a frame.
  */
-export const Actor = ({x, y, h = 200, color = ACTOR.white, pose = 'stand', pop, glow = 0, children}: {x: number; y: number; h?: number; color?: string; pose?: Pose; pop?: number; glow?: number; children?: ReactNode}) => {
+export const Actor = ({x, y, h = 200, color = ACTOR.white, pose = 'stand', pop, glow = 0, ring = true, children}: {x: number; y: number; h?: number; color?: string; pose?: Pose; pop?: number; glow?: number; /** Show the blue ring when it pops in (off for crowds). */ ring?: boolean; children?: ReactNode}) => {
   const f = useCurrentFrame();
   const a = pop === undefined ? 1 : ramp(f, pop, pop + 10);
   if (a <= 0.001) return null;
   const s = pop === undefined ? 1 : a < 1 ? 0.6 + 0.4 * a + Math.sin(a * Math.PI) * 0.08 : 1;
-  const ringO = Math.max(glow, pop === undefined ? 0 : 1 - ramp(f, pop + 6, pop + 26, ease.inOut));
+  const ringO = Math.max(glow, pop === undefined || !ring ? 0 : 1 - ramp(f, pop + 6, pop + 26, ease.inOut));
   const head = h * 0.13;
   const top = h * 0.31;
   const w = h * 0.27;
@@ -125,12 +125,13 @@ export const FlowLine = ({d, len, at, dur = 18, color = '#5A6577', dots = 0, dot
  * Sentence builder (study §type, reel A): the spoken sentence assembles word by word at the top third; *highlighted*
  * words turn brand blue and bold; the previous sentence blurs out when the next one starts. Driven by captions.json.
  */
-export const SentenceTrack = ({y = 400, size = 50, width = 900, color = '#FFFFFF', accent = ACTOR.blue, preview = true}: {y?: number; size?: number; width?: number; color?: string; accent?: string; preview?: boolean}) => {
+export const SentenceTrack = ({y = 400, size = 50, width = 900, color = '#FFFFFF', accent = ACTOR.blue, preview = true, from}: {y?: number; size?: number; width?: number; color?: string; accent?: string; preview?: boolean; /** Hidden before this frame (e.g. while an opening headline holds the zone). */ from?: number}) => {
   const f = useCurrentFrame();
+  const hidden = from !== undefined && f < from;
   const {fps} = useVideoConfig();
   const {captions} = useCuesCaptions();
   const words = captions.words;
-  if (!words.length) return null;
+  if (!words.length || hidden) return null;
   // Sentences end on . ? ! : …
   const sentences: Array<{from: number; to: number}> = [];
   let s0 = 0;

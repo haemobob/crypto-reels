@@ -1,4 +1,4 @@
-# DRAFT for Gate 1 (not yet approved). Bahasa Indonesia, exact wording.
+# Approved exact wording, Bahasa Indonesia (user: "i think better", 22 Nov 2026).
 # [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
 # Rebuild of tiga-hammer (user, 22 Nov 2026): one story, two characters, the hammer's wick tip as a floor.
 

@@ -1,0 +1,23 @@
+[intrigued] Hammer Bitcoin, empat belas November. Raka dan Dina sama-sama beli.
+Tapi...
+[slowly] besok paginya, Raka minus lima koma tujuh persen. Dina cuma rugi satu persen. Bedanya cuma... satu garis.
+
+[storytelling] Dina pasang stop di bawah ujung ekornya. Sejam kemudian, ujung itu tembus. Dina keluar. Harga sempat balik, Raka merasa menang. [pause] Lalu jatuh sampai pagi.
+
+[curious] Apes? Nggak juga. Dari dua puluh delapan hammer Bitcoin enam bulan terakhir, tiga belas ujung ekornya tembus dalam sehari. Hampir setengah.
+
+[thoughtful] Jadi hammer nggak berguna? Berguna, cuma bukan buat nebak arah. Ekor panjang itu jejak pembeli yang nahan harga. Ujungnya jadi lantai. Lantai jebol, idenya mati.
+
+[confident] Lantainya dekat: biasanya cuma nol koma delapan persen di bawah harga beli. Tujuh belas kali, harga naik sejauh itu duluan. Cuma sembilan kali lantainya jebol duluan.
+
+[calm] Jadi hammer bukan sinyal beli. Hammer ngasih tahu di mana lo salah. Beli tanpa lantai, itu berharap. Pakai lantai... itu rencana.
+
+----------------------------------------------------------------
+PRONUNCIATION NOTES (not part of the text to paste)
+Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · intriguing and slow · no CAPS · target 52–62 s (window 45–68 s)
+- "hammer": "hem-mer".
+- "Bitcoin": "bit-koin".
+- "stop": "stop" (English).
+- "Raka", "Dina": names, Indonesian reading.
+- "Tapi..." sits on its own line: let it hang a beat before "besok paginya".
+- If the voice reads a bracketed tag aloud, keep the take; I'll cut it.
