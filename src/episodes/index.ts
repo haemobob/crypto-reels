@@ -17,10 +17,12 @@ import satuMeja from './satu-meja';
 import mulaiKonsisten from './mulai-konsisten';
 import dompetSatoshi from './dompet-satoshi';
 import tigaHammer from './tiga-hammer';
+import lantaiHammer from './lantai-hammer';
 // @episodes-import (scripts/new-episode.ts adds imports above this line)
 
 export const episodes: Record<string, EpisodeModule> = {
   // @episodes-entry (scripts/new-episode.ts adds entries below this line)
+  'lantai-hammer': lantaiHammer,
   'tiga-hammer': tigaHammer,
   'dompet-satoshi': dompetSatoshi,
   'mulai-konsisten': mulaiKonsisten,

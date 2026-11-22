@@ -1,0 +1,15 @@
+# DRAFT for Gate 1 (not yet approved). Bahasa Indonesia, exact wording.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+# Rebuild of tiga-hammer (user, 22 Nov 2026): one story, two characters, the hammer's wick tip as a floor.
+
+[[hook]] Hammer Bitcoin, empat belas November. Raka dan Dina sama-sama beli. Tapi... besok paginya, Raka minus *lima koma tujuh persen*. Dina cuma rugi satu persen. Bedanya cuma *satu garis*.
+
+[[line]] Dina pasang stop di bawah ujung ekornya. Sejam kemudian, ujung itu tembus. Dina keluar. Harga sempat balik, Raka merasa menang. Lalu jatuh sampai pagi.
+
+[[common]] Apes? Nggak juga. Dari dua puluh delapan hammer Bitcoin enam bulan terakhir, *tiga belas* ujung ekornya tembus dalam sehari. Hampir setengah.
+
+[[floor]] Jadi hammer nggak berguna? Berguna, cuma bukan buat nebak arah. Ekor panjang itu jejak pembeli yang nahan harga. Ujungnya jadi *lantai*. Lantai jebol, idenya mati.
+
+[[near]] Lantainya dekat: biasanya cuma nol koma delapan persen di bawah harga beli. *Tujuh belas* kali, harga naik sejauh itu duluan. Cuma *sembilan* kali lantainya jebol duluan.
+
+[[payoff]] Jadi hammer bukan sinyal beli. Hammer ngasih tahu *di mana lo salah*. Beli tanpa lantai, itu berharap. Pakai lantai, itu *rencana*.

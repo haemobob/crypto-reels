@@ -1,0 +1,9 @@
+{
+  "id": "lantai-hammer",
+  "title": "Lantai hammer",
+  "minSeconds": 45,
+  "maxSeconds": 68,
+  "captions": "none",
+  "tailSeconds": 0.8,
+  "outro": true
+}
