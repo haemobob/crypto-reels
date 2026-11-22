@@ -21,7 +21,7 @@ const BLUE = '#2997FF';
 // Price → height (world units): 64,700 sits on the ground.
 const PY = (p: number) => ((p - 64700) / 2300) * 6;
 
-const Studio = () => (
+export const Studio = () => (
   <Environment resolution={256} frames={1}>
     <Lightformer form="rect" intensity={6} color="#ffffff" position={[-3, 7, 5]} scale={[6, 3, 1]} />
     <Lightformer form="rect" intensity={8} color="#ffffff" position={[0, 4, -6]} scale={[12, 0.25, 1]} />
@@ -31,11 +31,11 @@ const Studio = () => (
   </Environment>
 );
 
-const porcelain = {color: '#F2F4F7', roughness: 0.42, metalness: 0, clearcoat: 0.6, clearcoatRoughness: 0.35} as const;
-const graphite = {color: '#1B2029', roughness: 0.28, metalness: 0.75, clearcoat: 1, clearcoatRoughness: 0.2} as const;
+export const porcelain = {color: '#F2F4F7', roughness: 0.42, metalness: 0, clearcoat: 0.6, clearcoatRoughness: 0.35} as const;
+export const graphite = {color: '#1B2029', roughness: 0.28, metalness: 0.75, clearcoat: 1, clearcoatRoughness: 0.2} as const;
 
 /** A soft figure (0x100x-style): a bell body, a sphere head with a simple face. */
-const Figure = ({position, scale = 1, color = '#F2F4F7', arms, tilt = 0, face = true}: {position: V3; scale?: number; color?: string; arms?: 'up' | 'out'; tilt?: number; face?: boolean}) => {
+export const Figure = ({position, scale = 1, color = '#F2F4F7', arms, tilt = 0, face = true}: {position: V3; scale?: number; color?: string; arms?: 'up' | 'out'; tilt?: number; face?: boolean}) => {
   const body = useMemo(() => {
     const pts = [[0, 0], [0.5, 0], [0.56, 0.12], [0.55, 0.42], [0.46, 0.7], [0.28, 0.86], [0, 0.9]].map(([x, y]) => new THREE.Vector2(x, y));
     return new THREE.LatheGeometry(pts, 48);
@@ -97,13 +97,13 @@ const Candle3D = ({k, x, z = 0, w = 0.9, mat}: {k: K; x: number; z?: number; w?:
 };
 
 /** The floor: a slab of blue glass with a lit edge. */
-const Slab = ({position, size, glow = 1, rot = 0}: {position: V3; size: V3; glow?: number; rot?: number}) => (
+export const Slab = ({position, size, glow = 1, rot = 0, color = BLUE}: {position: V3; size: V3; glow?: number; rot?: number; color?: string}) => (
   <RoundedBox args={size} radius={0.04} smoothness={3} position={position} rotation={[0, 0, rot]} castShadow>
-    <meshPhysicalMaterial color={BLUE} emissive={BLUE} emissiveIntensity={0.55 * glow} roughness={0.15} transmission={0.3} thickness={0.4} clearcoat={1} />
+    <meshPhysicalMaterial color={color} emissive={color} emissiveIntensity={0.55 * glow} roughness={0.15} transmission={0.3} thickness={0.4} clearcoat={1} />
   </RoundedBox>
 );
 
-const Ground = () => (
+export const Ground = () => (
   <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
     <planeGeometry args={[80, 80]} />
     <MeshReflectorMaterial resolution={1024} blur={[400, 120]} mixBlur={1} mixStrength={3} roughness={0.75} depthScale={1} minDepthThreshold={0.4} maxDepthThreshold={1.3} color="#05080D" metalness={0.6} mirror={0.55} />

@@ -11,6 +11,7 @@ import type {Captions, EpisodeConfig} from '../../lib/types';
 import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
 import data from './data.json';
+import {Film3D} from './Film3D';
 
 /**
  * lantai-hammer: one world, the floor. Two fictional traders (Raka, Dina) buy the real 14 Nov 2026 BTC hammer
@@ -508,5 +509,7 @@ const Scene = () => {
   );
 };
 
-const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene};
+/** The 2D full-frame version is kept as Scene2D for reference; the film is the 3D build (user, 22 Nov 2026). */
+export const Scene2D = Scene;
+const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene: Film3D};
 export default episode;
