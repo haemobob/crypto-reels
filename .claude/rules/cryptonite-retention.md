@@ -36,6 +36,30 @@ Use at least three *different mechanisms*, not five synonyms for one clickbait h
 
 Rate each candidate 0–5 on (a) personal consequence, (b) novelty/curiosity, (c) specificity, (d) evidence/trust, and (e) ability to represent it in one striking visual. Record scores and reasoning, choose the strongest aligned with target audience. This is an internal editorial rubric, **not a scientifically validated predictor of virality**. Write one alternative optimized for broader audiences and one for niche financially literate viewers. If the selected candidate has no genuine surprise, rewrite the story angle.
 
+### The stay board (user's direction, 22 Nov 2026)
+Write every hook and every re-hook as a chain that ends in **what the viewer does next and what they are waiting for**. If a line can't name that, it isn't a hook yet. The user's board has five rows (two beats we say → what the viewer does → what they're waiting for):
+
+| Row | We say | Then | Viewer | Waiting for | Cryptonite example (shape only; facts must be real) |
+|---|---|---|---|---|---|
+| 1 | **Result first** | what was done | learns | the steps | "B naik 1,6%, A diam, C turun 1,3%. Bentuknya sama. Ini yang kami cek di dalamnya." → the check, step by step |
+| 2 | **A → B** | in/without **C** | stays | how it happened | "Dari 1 BTC jadi nol dalam 20 menit, tanpa password dicuri." → the mechanism |
+| 3 | **Common belief** | contradiction | stays | why | "Semua bilang hammer = balik arah. Dua puluh delapan hammer bilang lain." → the evidence |
+| 4 | **Better way** | best way | re-hooks | keeps watching | mid-body, at 15–25 s: "Cek bentuknya, lebih baik. Cek isinya, jauh lebih baik." → paid within 10–20 s |
+| 5 | **Won't work** | unless | stays | how | "Stop loss lo nggak nolong, kecuali taruh di bawah low yang disapu." → the how |
+
+How it plugs into the Hook Lab:
+- Each of the five candidates names its board row beside its entry point.
+- Rows 1, 2, 3 and 5 are cold opens. Row 4 is a re-hook pattern for the body, not an opener.
+- Use at least three different rows across the five candidates.
+- The beat sheet gets a **Stay reason** column: for every beat, what the viewer is waiting for and when it is paid.
+- **No unpaid loop:** every "waiting for" is delivered on screen, usually within 10–20 s.
+
+Truth limits (these win over the board):
+- **Row 1:** the result is a real, dated data result, never a trading P&L or income claim, and never cherry-picked without saying so.
+- **Row 2:** A, B and C are verified. No "from Rp1 juta to Rp100 juta" promises.
+- **Row 4:** "best" means best for understanding or risk control, never "the best coin or trade".
+- **Row 5:** "won't work… unless" must be literally true. Otherwise soften it to "jarang nolong" or "nggak cukup".
+
 **First-frame test:** A non-follower should understand the stakes from the picture/main title alone in about one second. A one-word upper microcaption is NEVER the only opening text. Display an immediately readable focal headline or unmistakable visual event; narration begins within the first few frames. Brand/logo does not precede the hook.
 
 ## Rule 3 — The first 12 seconds are their own mini-story

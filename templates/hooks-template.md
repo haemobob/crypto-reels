@@ -10,13 +10,13 @@ At least five meaningfully different Indonesian cold opens, using at least three
 
 Scoring 0–5: **C** personal consequence · **N** novelty/curiosity · **S** specificity · **E** evidence/trust · **V** one striking visual.
 
-| # | Entry point (authority / problem / contradiction / evidence / simulation / question) | Cold open (Indonesian, as spoken) | First-frame headline (3–8 words) + real anchor | C | N | S | E | V | Total | Reasoning |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | | | | | | | | | | |
-| 2 | | | | | | | | | | |
-| 3 | | | | | | | | | | |
-| 4 | | | | | | | | | | |
-| 5 | | | | | | | | | | |
+| # | Entry point (authority / problem / contradiction / evidence / simulation / question) | Stay-board row (1 result first · 2 A→B in C · 3 belief→contradict · 5 won't work unless) + what the viewer waits for | Cold open (Indonesian, as spoken) | First-frame headline (3–8 words) + real anchor | C | N | S | E | V | Total | Reasoning |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | | | | | | | | | | | |
+| 2 | | | | | | | | | | | |
+| 3 | | | | | | | | | | | |
+| 4 | | | | | | | | | | | |
+| 5 | | | | | | | | | | | |
 
 **Selected hook:**
 **Why it wins for this audience:**
