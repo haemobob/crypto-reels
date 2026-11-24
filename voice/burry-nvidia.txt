@@ -1,0 +1,29 @@
+[serious] Dalam sembilan hari, market kacau banget. CEO Nvidia mundur karena skandal, sahamnya ambruk dua puluh delapan persen, Bitcoin ikut jatuh dua puluh persen. Banyak yang rungkad.
+Tapi...
+[intrigued] satu trader justru cuan besar: Michael Burry.
+
+[storytelling] Dia tokoh asli film The Big Short. Tahun dua ribu lima, dia bertaruh pasar rumah Amerika bakal jebol, dan krisis dua ribu delapan membuktikannya. Investornya untung lebih dari tujuh ratus juta dolar.
+
+[curious] November dua ribu dua puluh lima, ketahuan dia taruhan lagi: Nvidia bakal turun. Harganya waktu itu dua ratus tujuh dolar.
+
+[tense] Tapi Nvidia malah naik. Awal Oktober tembus dua ratus empat puluh tiga. [pause] Burry minus duluan.
+
+[slowly] Dua puluh November, di titik paling panik, Nvidia di seratus dua puluh lima, dan Burry ambil untung. Hasil aslinya nggak dia umumkan. Tapi kalau short seratus juta dolar, untungnya sekitar tiga puluh sembilan juta dolar. Tiga hari kemudian, CEO-nya balik dan Nvidia memantul tiga puluh satu persen.
+
+[calm] Pelajarannya: benar soal arah itu baru setengah. Short yang sama pakai leverage lima kali, kayak di futures kripto, modal lo tinggal dua belas persen di bulan Oktober. Setengahnya lagi... bisa bertahan sampai terbukti benar.
+
+----------------------------------------------------------------
+PRONUNCIATION NOTES (not part of the text to paste)
+Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · intriguing and slow · no CAPS · target 62–70 s (window 50–75 s)
+- "Nvidia": "en-vi-dia".
+- "CEO": "si-i-o" (English letters). "CEO-nya": "si-i-o-nya".
+- "Michael Burry": "mai-kel ber-ri".
+- "The Big Short": English, "de big syort".
+- "short": "syort" (English).
+- "leverage": "le-ve-rej".
+- "futures": "fyu-cers".
+- "Bitcoin": "bit-koin".
+- "rungkad": Indonesian slang, as written.
+- "Tapi..." sits on its own line: let it hang a beat before "satu trader".
+- If the take runs past 75 s, the easiest cut is the last sentence of scene 5 ("Tiga hari kemudian … tiga puluh satu persen"): tell me and I'll update the script.
+- If the voice reads a bracketed tag aloud, keep the take; I'll cut it.

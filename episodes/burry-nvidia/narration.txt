@@ -1,0 +1,17 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+# Burry & Nvidia (user brief, 24 Nov 2026; script approved: "alright generate the reel").
+# Two accuracy tweaks after approval: "Dalam sembilan hari" (the window is 11 → 20 Nov, not the last nine days) and
+# "ketahuan dia taruhan lagi" (the 13F filed 3 Nov 2025 revealed puts held on 30 Sep 2025).
+
+[[hook]] Dalam sembilan hari, market kacau banget. CEO Nvidia mundur karena skandal, sahamnya ambruk *dua puluh delapan persen*, Bitcoin ikut jatuh dua puluh persen. Banyak yang rungkad. Tapi satu trader justru *cuan besar*: Michael Burry.
+
+[[known]] Dia tokoh asli film The Big Short. Tahun dua ribu lima, dia bertaruh pasar rumah Amerika bakal jebol, dan krisis dua ribu delapan membuktikannya. Investornya untung lebih dari *tujuh ratus juta dolar*.
+
+[[bet]] November dua ribu dua puluh lima, ketahuan dia taruhan lagi: Nvidia bakal turun. Harganya waktu itu dua ratus tujuh dolar.
+
+[[pain]] Tapi Nvidia malah naik. Awal Oktober tembus dua ratus empat puluh tiga. Burry minus duluan.
+
+[[payoff]] Dua puluh November, di titik paling panik, Nvidia di seratus dua puluh lima, dan Burry ambil untung. Hasil aslinya nggak dia umumkan. Tapi kalau short seratus juta dolar, untungnya sekitar *tiga puluh sembilan juta dolar*. Tiga hari kemudian, CEO-nya balik dan Nvidia memantul tiga puluh satu persen.
+
+[[takeaway]] Pelajarannya: benar soal arah itu baru setengah. Short yang sama pakai leverage lima kali, kayak di futures kripto, modal lo tinggal dua belas persen di bulan Oktober. Setengahnya lagi: *bisa bertahan sampai terbukti benar*.
