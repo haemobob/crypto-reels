@@ -14,16 +14,16 @@ Visual-quality audit result: PENDING
 - [x] 4. Reason to continue: who → why him (2008) → his new bet → down first → profit → lesson; each answer opens the next.
 - [x] 5. Concrete nouns: a price line, a dashed rail at the buy-in price, red = losing, green = winning, a draining bar for leverage. "Put" is defined on the 13F card ("untung kalau harga turun").
 - [x] 6. Cut test: no headline repeats; 2008 section kept to 3 sentences.
-- [x] 7. Promise/payoff: the opening asks how one trader profited amid the chaos; the ending says how (being right + surviving until proven right).
-- [x] 8. Truth test: Burry's real profit is never stated; spoken "Hasil aslinya nggak dia umumkan" + on-screen "HASIL ASLINYA TIDAK DIUMUMKAN" and SIMULASI on the $100 M and 5× numbers. 50%/75% conflict avoided ("ambil untung"). Spy allegation not used. Wording tweaks: "Dalam sembilan hari" (window 11–20 Nov), "ketahuan dia taruhan lagi" (13F revealed 30 Sep positions).
+- [x] 7. Promise/payoff: the opening asks how one trader profited amid the chaos; the ending shows how (in at $206.88, out at the low) and the timing that made people talk. Ending set by the user (no "pelajaran").
+- [x] 8. Truth test: Burry's real profit is never stated; spoken "Hasil aslinya nggak dia umumkan" + on-screen "HASIL ASLINYA TIDAK DIUMUMKAN" and SIMULASI on the $100 M and 5× numbers. 50%/75% conflict avoided ("ambil untung"). Spy allegation not used. Ending: "banyak orang berspekulasi" is followed by the verified fact that he disclosed every move the same day; no claim or hint of advance information; closing question offers luck or instinct only. Wording tweaks: "Dalam sembilan hari" (window 11–20 Nov), "ketahuan dia taruhan lagi" (13F revealed 30 Sep positions).
 - [x] 9. Silent test: headline + red −27,7%/−20,5% read muted; the rail with red/green gaps carries the trade muted.
 - [x] 10. Share reason: a friend trading futures with leverage after the November drop.
 
 ### Viewer-value gate
-- [x] Opening understandable within three seconds · [x] reason to care (BTC −20%) · [x] early payoff (who) · [x] each section adds information · [x] mechanism clear (rail) · [x] no removable sentence (bounce sentence is the optional cut) · [x] insight worth remembering · [x] delivers the promise · [x] no follow/save/share request
+- [x] Opening understandable within three seconds · [x] reason to care (BTC −20%) · [x] early payoff (who) · [x] each section adds information · [x] mechanism clear (rail) · [x] no removable sentence · [~] insight worth remembering: replaced by the user's speculation ending (user override, recorded) · [x] delivers the promise · [x] no follow/save/share request
 
 ### Retention ladder
-- 3 s CEO resigned · 5 s −27,7% · 7 s BTC −20,5% · 12 s Burry · 15 s The Big Short · 18 s 2005 bet · 21 s 2008 · 23 s $700 M · 27 s 13F Nov 2025 · 30 s $206,88 · 35 s $243 · 38 s down first · 41 s $125 · 44 s took profit · 46 s result not disclosed · 50 s +$39,3 jt SIMULASI · 54 s +31,5% · 59 s half · 64 s 12% left · 68 s survive until proven right.
+- 3 s CEO resigned · 5 s −27,7% · 7 s BTC −20,5% · 12 s Burry · 15 s The Big Short · 18 s 2005 bet · 21 s 2008 · 23 s $700 M · 27 s 13F Nov 2025 · 30 s $206,88 · 35 s $243 · 38 s down first · 41 s $125 · 44 s took profit · 46 s result not disclosed · 50 s +$39,3 jt SIMULASI · 54 s same-day calls · 58 s 3 days, +31,5% · 63 s pas banget · 67 s disclosed the same day · 70 s luck or instinct.
 - Re-hook at ≈33 s ("Tapi Nvidia malah naik … minus duluan"), paid at ≈41 s.
 
 ### Rejection gates: none triggered.
@@ -82,6 +82,6 @@ Visual-quality audit result: PENDING
 
 ## Final verified artifact path
 
-## Draft check (silent draft, ESTIMATED timing, 24 Nov 2026)
-- `output/burry-nvidia-silent.mp4`, 73.1 s incl. outro. Pace (outro excluded, 71.1 s): still 10.2%, longest still 1.17 s, events 28.7/min, median gap 1.83 s, max gap 5.5 s (47.2–52.7 s: SIMULASI card hold; re-check on the real voice), first change 0.3 s.
-- Contact sheet checked at 1 fps; preview stills in `previews/burry-nvidia/`. Motion NOT REVIEWED by watching; final checks wait for the real voice.
+## Draft check (silent draft, ESTIMATED timing, ending reworked 24 Nov 2026)
+- `output/burry-nvidia-silent.mp4`, 75.1 s incl. outro. Pace (outro excluded, 73.1 s): still 12.6%, longest still 1.17 s, events 27.1/min, median gap 2.17 s, max gap 5.2 s (47.2 s, SIMULASI card; 61.8 s and 54.8 s gaps 4.8/4.6 s; re-check on the real voice), first change 0.3 s.
+- Stills checked across every beat and the new ending; preview stills in `previews/burry-nvidia/`. Motion NOT REVIEWED by watching; final checks wait for the real voice.

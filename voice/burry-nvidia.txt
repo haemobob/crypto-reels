@@ -8,22 +8,23 @@ Tapi...
 
 [tense] Tapi Nvidia malah naik. Awal Oktober tembus dua ratus empat puluh tiga. [pause] Burry minus duluan.
 
-[slowly] Dua puluh November, di titik paling panik, Nvidia di seratus dua puluh lima, dan Burry ambil untung. Hasil aslinya nggak dia umumkan. Tapi kalau short seratus juta dolar, untungnya sekitar tiga puluh sembilan juta dolar. Tiga hari kemudian, CEO-nya balik dan Nvidia memantul tiga puluh satu persen.
+[slowly] Dua puluh November, di titik paling panik, Nvidia di seratus dua puluh lima, dan Burry ambil untung. Hasil aslinya nggak dia umumkan. Tapi kalau short seratus juta dolar, untungnya sekitar tiga puluh sembilan juta dolar.
 
-[calm] Pelajarannya: benar soal arah itu baru setengah. Short yang sama pakai leverage lima kali, kayak di futures kripto, modal lo tinggal dua belas persen di bulan Oktober. Setengahnya lagi... bisa bertahan sampai terbukti benar.
+[intrigued] Hari itu juga, dia beli sedikit opsi call, yang untung kalau Nvidia naik. Tiga hari kemudian, CEO-nya balik, dan Nvidia melonjak tiga puluh satu persen.
+
+[mysterious] Timingnya pas banget, sampai banyak orang berspekulasi. Tapi semua langkahnya dia umumkan terbuka, hari itu juga.
+[slowly] Kebetulan... atau insting orang yang sudah dua kali benar?
 
 ----------------------------------------------------------------
 PRONUNCIATION NOTES (not part of the text to paste)
-Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · intriguing and slow · no CAPS · target 62–70 s (window 50–75 s)
-- "Nvidia": "en-vi-dia".
-- "CEO": "si-i-o" (English letters). "CEO-nya": "si-i-o-nya".
-- "Michael Burry": "mai-kel ber-ri".
-- "The Big Short": English, "de big syort".
-- "short": "syort" (English).
-- "leverage": "le-ve-rej".
-- "futures": "fyu-cers".
-- "Bitcoin": "bit-koin".
-- "rungkad": Indonesian slang, as written.
+Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · intriguing and slow · no CAPS · target 68–76 s (window 50–80 s)
+- Nvidia: "en-vi-dia"
+- CEO: "ceh-eh-oh" (Indonesian letters, not English "si-i-o"). If the voice still says "si-i-o", write "C-E-O" in the pasted text for that take; the captions keep "CEO".
+- Michael Burry: "mai-kel ber-ri"
+- The Big Short: "de big syort"
+- short: "syort"
+- call: "kol" (English)
+- Timingnya: "tai-ming-nya"
+- Bitcoin: "bit-koin"
 - "Tapi..." sits on its own line: let it hang a beat before "satu trader".
-- If the take runs past 75 s, the easiest cut is the last sentence of scene 5 ("Tiga hari kemudian … tiga puluh satu persen"): tell me and I'll update the script.
 - If the voice reads a bracketed tag aloud, keep the take; I'll cut it.

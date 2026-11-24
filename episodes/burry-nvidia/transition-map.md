@@ -8,6 +8,7 @@
 | 4 | Wide portrait | zoom through the backdrop letters into the story behind the film | zoom through | off-white archive (desk print, house prices) | "Tahun" | whoosh + paper |
 | 5 | Archive with the 2005 marker | polarity flood from the 2005 marker (the bet, again) | flood | black Nvidia line world | "November" | deep whoosh |
 | 6 | Line world | one continuous camera (track, rise, descent) | camera move | same world | each beat | ticks on numbers |
-| 7 | Payoff close-up | pull-back to the whole year | pull-back | takeaway | "Pelajarannya" | riser → hit on "bertahan" |
+| 7 | Payoff | push in on the 20 Nov low | push | timing (calls, 3 days) | "Hari itu juga" | whoosh |
+| 8 | Close-up on the low and the jump | pull-back to the whole trade, entry to exit | pull-back | closing question | "Kebetulan" | riser → hit on "insting" |
 
 Kinds used: carry, flood, reframe, zoom-through, camera track/pull-back (5).

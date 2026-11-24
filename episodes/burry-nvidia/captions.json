@@ -1,5 +1,5 @@
 {
-  "durationSec": 70.29,
+  "durationSec": 72.35,
   "words": [
     {
       "text": "Dalam",
@@ -818,280 +818,304 @@
       "highlight": true
     },
     {
-      "text": "Tiga",
-      "start": 52.091,
-      "end": 52.377,
-      "highlight": false
-    },
-    {
-      "text": "hari",
-      "start": 52.407,
-      "end": 52.693,
-      "highlight": false
-    },
-    {
-      "text": "kemudian,",
-      "start": 52.723,
-      "end": 53.151,
-      "highlight": false
-    },
-    {
-      "text": "CEO-nya",
-      "start": 53.351,
-      "end": 53.637,
-      "highlight": false
-    },
-    {
-      "text": "balik",
-      "start": 53.667,
-      "end": 53.953,
-      "highlight": false
-    },
-    {
-      "text": "dan",
-      "start": 53.983,
-      "end": 54.126,
-      "highlight": false
-    },
-    {
-      "text": "Nvidia",
-      "start": 54.156,
-      "end": 54.441,
-      "highlight": false
-    },
-    {
-      "text": "memantul",
-      "start": 54.471,
-      "end": 54.9,
-      "highlight": false
-    },
-    {
-      "text": "tiga",
-      "start": 54.93,
-      "end": 55.216,
-      "highlight": false
-    },
-    {
-      "text": "puluh",
-      "start": 55.246,
-      "end": 55.531,
-      "highlight": false
-    },
-    {
-      "text": "satu",
-      "start": 55.561,
-      "end": 55.847,
-      "highlight": false
-    },
-    {
-      "text": "persen.",
-      "start": 55.877,
-      "end": 56.163,
-      "highlight": false
-    },
-    {
-      "text": "Pelajarannya:",
-      "start": 56.933,
-      "end": 57.647,
-      "highlight": false
-    },
-    {
-      "text": "benar",
-      "start": 57.847,
-      "end": 58.133,
-      "highlight": false
-    },
-    {
-      "text": "soal",
-      "start": 58.163,
-      "end": 58.306,
-      "highlight": false
-    },
-    {
-      "text": "arah",
-      "start": 58.336,
-      "end": 58.621,
+      "text": "Hari",
+      "start": 52.441,
+      "end": 52.727,
       "highlight": false
     },
     {
       "text": "itu",
-      "start": 58.651,
-      "end": 58.937,
+      "start": 52.757,
+      "end": 53.043,
       "highlight": false
     },
     {
-      "text": "baru",
-      "start": 58.967,
-      "end": 59.253,
+      "text": "juga,",
+      "start": 53.073,
+      "end": 53.359,
       "highlight": false
     },
     {
-      "text": "setengah.",
-      "start": 59.283,
-      "end": 59.711,
+      "text": "dia",
+      "start": 53.559,
+      "end": 53.701,
       "highlight": false
     },
     {
-      "text": "Short",
-      "start": 60.131,
-      "end": 60.274,
+      "text": "beli",
+      "start": 53.731,
+      "end": 54.017,
+      "highlight": false
+    },
+    {
+      "text": "sedikit",
+      "start": 54.047,
+      "end": 54.476,
+      "highlight": false
+    },
+    {
+      "text": "opsi",
+      "start": 54.506,
+      "end": 54.791,
+      "highlight": false
+    },
+    {
+      "text": "call,",
+      "start": 54.821,
+      "end": 54.964,
       "highlight": false
     },
     {
       "text": "yang",
-      "start": 60.304,
-      "end": 60.447,
+      "start": 55.164,
+      "end": 55.307,
       "highlight": false
     },
     {
-      "text": "sama",
-      "start": 60.477,
-      "end": 60.763,
+      "text": "untung",
+      "start": 55.337,
+      "end": 55.623,
       "highlight": false
     },
     {
-      "text": "pakai",
-      "start": 60.793,
-      "end": 61.079,
+      "text": "kalau",
+      "start": 55.653,
+      "end": 55.939,
       "highlight": false
     },
     {
-      "text": "leverage",
-      "start": 61.109,
-      "end": 61.68,
+      "text": "Nvidia",
+      "start": 55.969,
+      "end": 56.254,
       "highlight": false
     },
     {
-      "text": "lima",
-      "start": 61.71,
-      "end": 61.996,
+      "text": "naik.",
+      "start": 56.284,
+      "end": 56.427,
       "highlight": false
     },
     {
-      "text": "kali,",
-      "start": 62.026,
-      "end": 62.311,
+      "text": "Tiga",
+      "start": 56.847,
+      "end": 57.133,
       "highlight": false
     },
     {
-      "text": "kayak",
-      "start": 62.511,
-      "end": 62.654,
+      "text": "hari",
+      "start": 57.163,
+      "end": 57.449,
       "highlight": false
     },
     {
-      "text": "di",
-      "start": 62.684,
-      "end": 62.827,
+      "text": "kemudian,",
+      "start": 57.479,
+      "end": 57.907,
       "highlight": false
     },
     {
-      "text": "futures",
-      "start": 62.857,
-      "end": 63.286,
+      "text": "CEO-nya",
+      "start": 58.107,
+      "end": 58.393,
       "highlight": false
     },
     {
-      "text": "kripto,",
-      "start": 63.316,
-      "end": 63.601,
+      "text": "balik,",
+      "start": 58.423,
+      "end": 58.709,
       "highlight": false
     },
     {
-      "text": "modal",
-      "start": 63.801,
-      "end": 64.087,
+      "text": "dan",
+      "start": 58.909,
+      "end": 59.051,
       "highlight": false
     },
     {
-      "text": "lo",
-      "start": 64.117,
-      "end": 64.26,
+      "text": "Nvidia",
+      "start": 59.081,
+      "end": 59.367,
       "highlight": false
     },
     {
-      "text": "tinggal",
-      "start": 64.29,
-      "end": 64.576,
+      "text": "melonjak",
+      "start": 59.397,
+      "end": 59.826,
+      "highlight": false
+    },
+    {
+      "text": "tiga",
+      "start": 59.856,
+      "end": 60.141,
+      "highlight": true
+    },
+    {
+      "text": "puluh",
+      "start": 60.171,
+      "end": 60.457,
+      "highlight": false
+    },
+    {
+      "text": "satu",
+      "start": 60.487,
+      "end": 60.773,
+      "highlight": false
+    },
+    {
+      "text": "persen.",
+      "start": 60.803,
+      "end": 61.089,
+      "highlight": true
+    },
+    {
+      "text": "Timingnya",
+      "start": 61.859,
+      "end": 62.287,
+      "highlight": false
+    },
+    {
+      "text": "pas",
+      "start": 62.317,
+      "end": 62.46,
+      "highlight": true
+    },
+    {
+      "text": "banget,",
+      "start": 62.49,
+      "end": 62.776,
+      "highlight": true
+    },
+    {
+      "text": "sampai",
+      "start": 62.976,
+      "end": 63.261,
+      "highlight": false
+    },
+    {
+      "text": "banyak",
+      "start": 63.291,
+      "end": 63.577,
+      "highlight": false
+    },
+    {
+      "text": "orang",
+      "start": 63.607,
+      "end": 63.893,
+      "highlight": false
+    },
+    {
+      "text": "berspekulasi.",
+      "start": 63.923,
+      "end": 64.637,
+      "highlight": false
+    },
+    {
+      "text": "Tapi",
+      "start": 65.057,
+      "end": 65.343,
+      "highlight": false
+    },
+    {
+      "text": "semua",
+      "start": 65.373,
+      "end": 65.659,
+      "highlight": false
+    },
+    {
+      "text": "langkahnya",
+      "start": 65.689,
+      "end": 66.117,
+      "highlight": false
+    },
+    {
+      "text": "dia",
+      "start": 66.147,
+      "end": 66.29,
+      "highlight": false
+    },
+    {
+      "text": "umumkan",
+      "start": 66.32,
+      "end": 66.749,
+      "highlight": false
+    },
+    {
+      "text": "terbuka,",
+      "start": 66.779,
+      "end": 67.207,
+      "highlight": false
+    },
+    {
+      "text": "hari",
+      "start": 67.407,
+      "end": 67.693,
+      "highlight": false
+    },
+    {
+      "text": "itu",
+      "start": 67.723,
+      "end": 68.009,
+      "highlight": false
+    },
+    {
+      "text": "juga.",
+      "start": 68.039,
+      "end": 68.324,
+      "highlight": false
+    },
+    {
+      "text": "Kebetulan,",
+      "start": 68.744,
+      "end": 69.316,
+      "highlight": false
+    },
+    {
+      "text": "atau",
+      "start": 69.516,
+      "end": 69.801,
+      "highlight": false
+    },
+    {
+      "text": "insting",
+      "start": 69.831,
+      "end": 70.117,
+      "highlight": false
+    },
+    {
+      "text": "orang",
+      "start": 70.147,
+      "end": 70.433,
+      "highlight": false
+    },
+    {
+      "text": "yang",
+      "start": 70.463,
+      "end": 70.606,
+      "highlight": false
+    },
+    {
+      "text": "sudah",
+      "start": 70.636,
+      "end": 70.921,
       "highlight": false
     },
     {
       "text": "dua",
-      "start": 64.606,
-      "end": 64.749,
+      "start": 70.951,
+      "end": 71.094,
       "highlight": false
     },
     {
-      "text": "belas",
-      "start": 64.779,
-      "end": 65.064,
+      "text": "kali",
+      "start": 71.124,
+      "end": 71.41,
       "highlight": false
     },
     {
-      "text": "persen",
-      "start": 65.094,
-      "end": 65.38,
+      "text": "benar?",
+      "start": 71.44,
+      "end": 71.726,
       "highlight": false
-    },
-    {
-      "text": "di",
-      "start": 65.41,
-      "end": 65.553,
-      "highlight": false
-    },
-    {
-      "text": "bulan",
-      "start": 65.583,
-      "end": 65.869,
-      "highlight": false
-    },
-    {
-      "text": "Oktober.",
-      "start": 65.899,
-      "end": 66.327,
-      "highlight": false
-    },
-    {
-      "text": "Setengahnya",
-      "start": 66.747,
-      "end": 67.319,
-      "highlight": false
-    },
-    {
-      "text": "lagi:",
-      "start": 67.349,
-      "end": 67.634,
-      "highlight": false
-    },
-    {
-      "text": "bisa",
-      "start": 67.834,
-      "end": 68.12,
-      "highlight": true
-    },
-    {
-      "text": "bertahan",
-      "start": 68.15,
-      "end": 68.579,
-      "highlight": false
-    },
-    {
-      "text": "sampai",
-      "start": 68.609,
-      "end": 68.894,
-      "highlight": false
-    },
-    {
-      "text": "terbukti",
-      "start": 68.924,
-      "end": 69.353,
-      "highlight": false
-    },
-    {
-      "text": "benar.",
-      "start": 69.383,
-      "end": 69.669,
-      "highlight": true
     }
   ],
   "cues": {
@@ -1100,7 +1124,8 @@
     "bet": 25.294,
     "pain": 33.079,
     "payoff": 39.191,
-    "takeaway": 56.933
+    "timing": 52.441,
+    "spec": 61.859
   },
   "timing": "ESTIMATE (no voice yet): 7 syllables/s, not measured"
 }

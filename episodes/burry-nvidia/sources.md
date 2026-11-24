@@ -22,7 +22,13 @@
 
 ## Simulations (labelled SIMULASI on screen)
 - $100 M plain short (no leverage, no fees, no borrow cost) at $206.88, closed at $125.53: +39.32% = **+$39.3 M**. Not Burry's result (he used put options; his real P&L is not public).
-- 5× leveraged short from $206.88: at the 6 Oct 2026 intraday high $243.37 (+17.64%), loss = 5 × 17.64% = 88.2% of margin → **11.8% left (≈ 12%)**. Ignores fees, funding and the exchange's maintenance margin; a 5× isolated position liquidates at roughly +19–20%, so it is not liquidated here.
+- (Removed 24 Nov 2026 with the old takeaway: the 5× leverage simulation.)
+
+## The ending (user's rework, 24 Nov 2026)
+- On Fri 20 Nov 2026 Burry also bought a small tranche of long-dated, deep out-of-the-money Nvidia **call** options, which he called a **hedge** (with the remaining puts, "essentially a straddle"); he disclosed the trades the same day on his Substack "Cassandra Unchained" and on X. Sources: Stocktwits/Yahoo Finance "Michael Burry Bought Nvidia Calls, Cut His Semiconductor Shorts Before The Rally" https://finance.yahoo.com/markets/stocks/articles/michael-burry-bought-nvidia-calls-032355083.html ; KuCoin flash "Burry Trims Nvidia Put Bets, Adds Calls Ahead of Huang-Driven Rally"; BigGo Finance "Burry Trims Nvidia Short Right at the Wire, Bails Before 31% Rally"; Benzinga (headline only).
+- Huang's reinstatement was announced Monday 23 Nov before the open; NVDA +31.48% that day (Yahoo series).
+- "Timingnya pas banget, sampai banyak orang berspekulasi": the timing was widely framed as remarkable (Finbold: "exceptionally timed"; "Right at the Wire"; "Bails Before 31% Rally"). **No report alleges or shows that Burry had advance information**; the script says people speculated, then states the fact that he disclosed every move publicly the same day. The closing question ("Kebetulan, atau insting…?") offers luck or instinct only.
+- "Orang yang sudah dua kali benar": 2005–2008 housing short (Wikipedia) and the Nvidia short, which was in profit by 20 Nov (−39% from the disclosure price).
 
 ## Images
 | File | What | Origin | Basis |

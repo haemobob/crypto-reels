@@ -1,6 +1,7 @@
 # Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
 # [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
 # Burry & Nvidia (user brief, 24 Nov 2026; script approved: "alright generate the reel").
+# Ending reworked (user, 24 Nov 2026): no "pelajaran"; the timing looked too perfect, people speculated.
 # Two accuracy tweaks after approval: "Dalam sembilan hari" (the window is 11 → 20 Nov, not the last nine days) and
 # "ketahuan dia taruhan lagi" (the 13F filed 3 Nov 2025 revealed puts held on 30 Sep 2025).
 
@@ -12,6 +13,8 @@
 
 [[pain]] Tapi Nvidia malah naik. Awal Oktober tembus dua ratus empat puluh tiga. Burry minus duluan.
 
-[[payoff]] Dua puluh November, di titik paling panik, Nvidia di seratus dua puluh lima, dan Burry ambil untung. Hasil aslinya nggak dia umumkan. Tapi kalau short seratus juta dolar, untungnya sekitar *tiga puluh sembilan juta dolar*. Tiga hari kemudian, CEO-nya balik dan Nvidia memantul tiga puluh satu persen.
+[[payoff]] Dua puluh November, di titik paling panik, Nvidia di seratus dua puluh lima, dan Burry ambil untung. Hasil aslinya nggak dia umumkan. Tapi kalau short seratus juta dolar, untungnya sekitar *tiga puluh sembilan juta dolar*.
 
-[[takeaway]] Pelajarannya: benar soal arah itu baru setengah. Short yang sama pakai leverage lima kali, kayak di futures kripto, modal lo tinggal dua belas persen di bulan Oktober. Setengahnya lagi: *bisa bertahan sampai terbukti benar*.
+[[timing]] Hari itu juga, dia beli sedikit opsi call, yang untung kalau Nvidia naik. Tiga hari kemudian, CEO-nya balik, dan Nvidia melonjak *tiga puluh satu persen*.
+
+[[spec]] Timingnya *pas banget*, sampai banyak orang berspekulasi. Tapi semua langkahnya dia umumkan terbuka, hari itu juga. Kebetulan, atau insting orang yang sudah dua kali benar?

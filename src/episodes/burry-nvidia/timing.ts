@@ -23,8 +23,10 @@ export const T = {
   // pain
   pain: C('pain'), naik: W('naik'), oktober: W('oktober'), minus: W('minus'),
   // payoff
-  payoff: C('payoff'), panik: W('panik'), ambil: W('ambil'), hasil: W('hasil'), kalau: W('kalau'), untungnya: W('untungnya'), kemudian: W('kemudian'), balik: W('balik'), memantul: W('memantul'),
-  // takeaway
-  takeaway: C('takeaway'), setengah: W('setengah'), leverage: W('leverage'), futures: W('futures'), tinggal: W('tinggal'), setengahnya: W('setengahnya'), bertahan: W('bertahan'),
+  payoff: C('payoff'), panik: W('panik'), ambil: W('ambil'), hasil: W('hasil'), kalau: W('kalau'), untungnya: W('untungnya'),
+  // timing: the calls on the same day, Huang back three days later
+  timing: C('timing'), call: W('call'), naik2: W('naik', 1), kemudian: W('kemudian'), balik: W('balik'), melonjak: W('melonjak'),
+  // spec: the timing looked too perfect; it was all disclosed the same day
+  spec: C('spec'), pas: W('pas'), berspekulasi: W('berspekulasi'), terbuka: W('terbuka'), kebetulan: W('kebetulan'), insting: W('insting'), benar: W('benar'),
   end: Math.round(cap.durationSec * FPS),
 };
