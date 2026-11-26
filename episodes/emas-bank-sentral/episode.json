@@ -1,9 +1,9 @@
 {
   "id": "emas-bank-sentral",
-  "title": "emas-bank-sentral",
-  "minSeconds": 35,
-  "maxSeconds": 60,
-  "captions": "micro",
-  "tailSeconds": 0.6,
+  "title": "Emas anjlok, bank sentral memborong",
+  "minSeconds": 50,
+  "maxSeconds": 75,
+  "captions": "none",
+  "tailSeconds": 0.8,
   "outro": true
 }

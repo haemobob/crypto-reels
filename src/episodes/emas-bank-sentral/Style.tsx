@@ -7,12 +7,12 @@ import {ThreeCanvas} from '@remotion/three';
 import type {ReactNode} from 'react';
 import {AbsoluteFill, useVideoConfig} from 'remotion';
 import * as THREE from 'three';
-import {fontsReady, textTexture, toTexture, useAssets3D, type TextTexture} from '../../three/assets';
+import {fontsReady, textTexture, useAssets3D, type TextTexture} from '../../three/assets';
 import {KeyedCamera, type CamKey} from '../../three/camera';
 import {CornerLogo} from '../../components/CornerLogo';
 import {fonts} from '../../theme/typography';
 import {Bank, Billboard, C, Crate, Flag, GoldPile, goldMat, Ground, GroundText, Person, Road, SignPost, SportsCar, Tower, Trees, Truck, Vault, type V3} from './city';
-import data from './data.json';
+import {chartTexture, flagTexture, windowsTexture} from './textures';
 
 const AZ = Math.PI / 4;
 const EL = (32 * Math.PI) / 180;
@@ -35,112 +35,6 @@ export const DepthRange = ({near = 70, far = 220}: {near?: number; far?: number}
 };
 
 // ---------------------------------------------------------------------------------------------------------------
-// Canvas textures
-
-const windowsTexture = () => {
-  const c = document.createElement('canvas');
-  c.width = 256;
-  c.height = 512;
-  const g = c.getContext('2d')!;
-  g.fillStyle = C.building;
-  g.fillRect(0, 0, 256, 512);
-  for (let y = 0; y < 16; y++)
-    for (let x = 0; x < 6; x++) {
-      const lit = Math.abs((Math.sin(x * 12.9 + y * 78.2) * 43758.5) % 1);
-      g.fillStyle = lit > 0.6 ? '#DCE8FF' : '#1A4FC9';
-      g.fillRect(18 + x * 38, 20 + y * 30, 22, 16);
-    }
-  return toTexture(c);
-};
-
-const flagTexture = (country: 'cn' | 'pl') => {
-  const c = document.createElement('canvas');
-  c.width = 300;
-  c.height = 200;
-  const g = c.getContext('2d')!;
-  if (country === 'pl') {
-    g.fillStyle = '#FFFFFF';
-    g.fillRect(0, 0, 300, 100);
-    g.fillStyle = '#DC143C';
-    g.fillRect(0, 100, 300, 100);
-  } else {
-    g.fillStyle = '#EE1C25';
-    g.fillRect(0, 0, 300, 200);
-    const star = (cx: number, cy: number, r: number, rot: number) => {
-      g.beginPath();
-      for (let i = 0; i < 10; i++) {
-        const a = rot + (i * Math.PI) / 5 - Math.PI / 2;
-        const rr = i % 2 ? r * 0.382 : r;
-        g.lineTo(cx + Math.cos(a) * rr, cy + Math.sin(a) * rr);
-      }
-      g.closePath();
-      g.fillStyle = '#FFFF00';
-      g.fill();
-    };
-    star(50, 50, 30, 0);
-    [[100, 20], [120, 40], [120, 70], [100, 90]].forEach(([x, y], i) => star(x, y, 10, 0.3 + i * 0.3));
-  }
-  return toTexture(c);
-};
-
-/** The real gold price (daily closes) between two dates on an LED board. */
-const chartTexture = ({from, to, title, badge, sub, highlight}: {from: string; to: string; title: string; badge: string; sub: string; highlight?: [string, string]}) => {
-  const W = 1200;
-  const H = 700;
-  const c = document.createElement('canvas');
-  c.width = W;
-  c.height = H;
-  const g = c.getContext('2d')!;
-  g.fillStyle = '#071433';
-  g.fillRect(0, 0, W, H);
-  const pts = data.gold.filter((p) => p.d >= from && p.d <= to);
-  const vals = pts.map((p) => p.c);
-  const lo = Math.min(...vals) * 0.96;
-  const hi = Math.max(...vals) * 1.03;
-  const px = (i: number) => 60 + (i / (pts.length - 1)) * (W - 200);
-  const py = (v: number) => 190 + ((hi - v) / (hi - lo)) * (H - 250);
-  if (highlight) {
-    const a = pts.findIndex((p) => p.d >= highlight[0]);
-    const b = pts.findLastIndex((p) => p.d <= highlight[1]);
-    g.fillStyle = 'rgba(255,82,99,0.16)';
-    g.fillRect(px(a), 170, px(b) - px(a), H - 210);
-  }
-  const step = hi - lo > 2000 ? 1000 : 250;
-  g.strokeStyle = 'rgba(255,255,255,0.08)';
-  g.lineWidth = 2;
-  g.font = `600 26px "${fonts.mono}"`;
-  for (let v = Math.ceil(lo / step) * step; v < hi; v += step) {
-    g.beginPath();
-    g.moveTo(40, py(v));
-    g.lineTo(W - 150, py(v));
-    g.stroke();
-    g.fillStyle = 'rgba(255,255,255,0.5)';
-    g.fillText(`$${v.toLocaleString('id-ID')}`, W - 140, py(v) + 9);
-  }
-  g.beginPath();
-  pts.forEach((p, i) => (i ? g.lineTo(px(i), py(p.c)) : g.moveTo(px(i), py(p.c))));
-  g.strokeStyle = C.gold;
-  g.lineWidth = 7;
-  g.lineJoin = 'round';
-  g.stroke();
-  g.beginPath();
-  g.arc(px(pts.length - 1), py(pts[pts.length - 1].c), 12, 0, Math.PI * 2);
-  g.fillStyle = '#FF5263';
-  g.fill();
-  g.font = `800 56px "${fonts.heading}"`;
-  g.fillStyle = '#FFFFFF';
-  g.fillText(title, 60, 90);
-  g.font = `800 80px "${fonts.mono}"`;
-  g.fillStyle = '#FF5263';
-  g.textAlign = 'right';
-  g.fillText(badge, W - 50, 100);
-  g.textAlign = 'left';
-  g.font = `600 24px "${fonts.mono}"`;
-  g.fillStyle = 'rgba(255,255,255,0.6)';
-  g.fillText(sub, 60, 135);
-  return toTexture(c);
-};
-
 type Assets = {windows: THREE.Texture; cn: THREE.Texture; pl: THREE.Texture; chart: THREE.Texture; chartOct: THREE.Texture; txt: Record<string, TextTexture>};
 
 const loadAssets = async (): Promise<Assets> => {

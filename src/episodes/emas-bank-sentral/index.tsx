@@ -1,18 +1,11 @@
-import {AbsoluteFill} from 'remotion';
 import captions from '../../../episodes/emas-bank-sentral/captions.json';
 import config from '../../../episodes/emas-bank-sentral/episode.json';
-import {Ground} from '../../components/Ground';
-import {Headline} from '../../components/Headline';
 import type {EpisodeModule} from '../../lib/episode-module';
 import type {Captions, EpisodeConfig} from '../../lib/types';
+import {Film} from './Film';
 
-const Scene = () => (
-  <Ground polarity="navy">
-    <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', padding: '0 90px'}}>
-      <Headline>emas-bank-sentral</Headline>
-    </AbsoluteFill>
-  </Ground>
-);
+/** Emas & bank sentral: an isometric city in Cryptonite blue (format adapted from a reference reel; see brief.md). */
+const Scene = () => <Film />;
 
-const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene};
+const episode: EpisodeModule = {config: config as EpisodeConfig, captions: captions as Captions, Scene, logoPlate: true};
 export default episode;

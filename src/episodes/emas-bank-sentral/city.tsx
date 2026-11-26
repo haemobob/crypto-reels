@@ -106,7 +106,8 @@ export const goldMat = new THREE.MeshStandardMaterial({color: C.gold, roughness:
  * A crate of gold bars: `n` bars in rows × cols × layers inside a thin cage. `fill` 0–1 shows how many bars are in
  * (stacking animation), `wrapped` covers it in blue wrap (the unreported crates).
  */
-export const Crate = ({position, rows = 6, cols = 4, layers = 6, fill = 1, wrapped = false, rot = 0}: {position: V3; rows?: number; cols?: number; layers?: number; fill?: number; wrapped?: boolean; rot?: number}) => {
+export const Crate = ({position, rows = 6, cols = 4, layers = 6, fill = 1, wrapped = false, wrap, rot = 0}: {position: V3; rows?: number; cols?: number; layers?: number; fill?: number; wrapped?: boolean; /** 0–1: the wrap comes down over the bars (animated). */ wrap?: number; rot?: number}) => {
+  const wr = wrap ?? (wrapped ? 1 : 0);
   const w = cols * 0.3 + 0.1;
   const d = rows * 0.15 + 0.1;
   const h = layers * 0.11 + 0.08;
@@ -126,8 +127,8 @@ export const Crate = ({position, rows = 6, cols = 4, layers = 6, fill = 1, wrapp
         <boxGeometry args={[w + 0.06, 0.06, d + 0.06]} />
         <meshStandardMaterial color={C.cage} roughness={0.8} />
       </mesh>
-      {wrapped ? (
-        <group position={[0, h / 2 + 0.03, 0]}>
+      {wr > 0.001 && (
+        <group position={[0, 0.03 + h - (h * wr) / 2, 0]} scale={[1.01, Math.max(0.001, wr), 1.01]}>
           <mesh castShadow receiveShadow geometry={wrapGeo(w, h, d)}>
             <meshStandardMaterial color={C.wrap} roughness={0.45} metalness={0.15} flatShading />
           </mesh>
@@ -142,9 +143,8 @@ export const Crate = ({position, rows = 6, cols = 4, layers = 6, fill = 1, wrapp
             <meshStandardMaterial color="#0A2468" roughness={0.7} />
           </mesh>
         </group>
-      ) : (
-        shown > 0 && <instancedMesh key={shown} args={[barGeo, goldMat, shown]} castShadow ref={(m) => m && matrices.slice(0, shown).forEach((mm, i) => m.setMatrixAt(i, mm))} />
       )}
+      {wr < 0.999 && shown > 0 && <instancedMesh key={shown} args={[barGeo, goldMat, shown]} castShadow ref={(m) => m && matrices.slice(0, shown).forEach((mm, i) => m.setMatrixAt(i, mm))} />}
       <lineSegments geometry={edges} position={[0, h / 2 + 0.03, 0]}>
         <lineBasicMaterial color={C.cage} />
       </lineSegments>
