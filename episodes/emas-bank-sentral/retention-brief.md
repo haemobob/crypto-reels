@@ -1,43 +1,30 @@
 # Retention brief — emas-bank-sentral
 
-Written before any full script (viewer-value directive §1 and retention rules, Rule 1).
+Format adapted from a reference reel (Argus Terminal, 20 Nov 2026) at the user's request; facts re-checked and two corrected (see sources.md).
 
-## Viewer reward (answer concretely first)
-Weak: "The viewer learns about cryptocurrency." Strong: "The viewer learns how to identify two warning signs of low liquidity before buying an altcoin."
+## Viewer reward
+- **Who:** Indonesian investors who hold or watch gold (emas Antam, digital gold) and crypto traders who follow macro.
+- **Problem / misconception:** "Gold is crashing, so the smart money is out." Or the opposite: "Central banks are buying, so the price can only go up."
+- **What exactly they learn:** who sold (speculators: $9.3 bn of futures in four days to 20 Nov; bonds pay ~5%, gold pays nothing), who bought (central banks: 321 t in Q3, +42%; about 63% unreported; China +26 t in October while the price fell 7%), and why (74% expect the dollar's reserve share to fall within five years).
+- **Why it matters to an Indonesian investor:** it separates the weekly price from the decade-long buyer, so a drop isn't read as "the story is over", and central-bank buying isn't read as a price floor.
+- **What they keep:** "Harga minggu ini ditentukan uang cepat. Arah satu dekade ditentukan pembeli yang sabar", plus the caveat that the buying didn't stop the fall.
 
-- **Who it is for**:
-- **Viewer's problem, question or misconception**:
-- **What exactly they learn** (know, understand, or be able to do after watching):
-- **Why it matters to an Indonesian crypto investor**:
-- **What they keep afterwards** (practical check / mental model / comparison / warning; the reason to save it):
+## Concept scorecard (1–5)
+| Criterion | Score | Why |
+|---|---|---|
+| Viewer relevance | 4 | Gold is widely held in Indonesia; −32% is news |
+| Educational payoff | 4 | Two kinds of buyer, two time horizons, with a real caveat |
+| Retention structure | 5 | Contradiction → who sells → who buys → the hidden part → why → payoff |
+| Credibility | 5 | WGC primary data, real price series, corrections to the reference |
+| Visual explanation | 5 | Every number is a physical object in one city |
+Score 23 × 4 = **92/100**.
 
-## Discovery sequence
-- **Early useful insight** (by 8–12 s):
-- **Visual demonstration** (the mechanism shown, not decorated):
-- **Final takeaway** (the last content beat; answers the opening):
-- **Real assets the mechanism needs** (and which ones the user must supply):
-
-## Concept scorecard (1–5 each; score = sum × 4)
-Rework the angle when any criterion is below 3, or Educational payoff or Credibility is below 4. An editorial filter, not a prediction.
-
-| Criterion | Question | Score | Why |
-|---|---|---|---|
-| Viewer relevance | Would an Indonesian crypto investor care? | | |
-| Educational payoff | Does the viewer leave with a useful insight? | | |
-| Retention structure | Is there a clear reason to watch each section? | | |
-| Credibility | Are facts and examples accurate and properly framed? | | |
-| Visual explanation | Do the graphics clarify how something works? | | |
-
-Concept score: /100
-
-## Retention brief (V3) If the topic is only "news happened" with no viewer-facing consequence, reframe the angle instead of manufacturing stakes.
-
-- **Audience** (exactly who should care):
-- **Consequence** ("Why should I spend a minute on this?", one sentence):
-- **Counterintuitive fact** (verified surprise or contradiction, if the evidence supports one):
-- **Evidence** (exact person / event / date / number that makes the premise credible, with source):
-- **One-sentence payoff** (what the viewer understands by the end):
-- **Misconception** (what the viewer might wrongly believe now):
-- **Share trigger** (who a viewer would send this to, and why it is useful to them):
-- **Emotional shape** (concern / curiosity / surprise / relief / clarity; no fabricated fear):
-- **Chosen length** (the shortest runtime that keeps the mechanism and payoff; most single-idea Reels 35–60 s, 60–90+ s only when earned or requested) and why:
+## V3 brief
+- **Consequence:** the price and the biggest buyers point in opposite directions; the reason tells you which signal to watch.
+- **Counterintuitive fact:** central banks bought more as the price fell, and most of it went unreported.
+- **Evidence:** gold $5,318 → $3,604 (29 Jan → 26 Nov 2026); WGC Q3 2026 (3 Nov); PBoC October; WGC survey (16 Jun 2026).
+- **One-sentence payoff:** fast money sets this week's price, patient buyers set the decade's direction, and their buying doesn't stop a fall.
+- **Misconception:** central-bank buying guarantees a rising price.
+- **Share trigger:** a friend who panicked about their gold.
+- **Emotional shape:** surprise → curiosity → clarity.
+- **Chosen length:** ~68 s estimated (window 50–75 s). The reference ran 102 s; ours keeps the mechanism with fewer side facts (euro comparison dropped).

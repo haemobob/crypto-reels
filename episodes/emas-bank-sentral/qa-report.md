@@ -7,44 +7,24 @@ Visual-quality audit result: PENDING
 
 ## Part A — Retention audit (retention rules, Rules 3, 6, 9)
 
-### Script audit (before voice generation; quote exact lines and timestamps)
-- [ ] 1. Hook: a stranger can say what is at stake —
-- [ ] 2. Evidence: the proof that appears by second 5 —
-- [ ] 3. First payoff: the useful answer delivered by second 8–12 —
-- [ ] 4. Reason to continue: each answer leads to a genuine next question —
-- [ ] 5. Concrete nouns: a 12-year-old can picture the mechanism without jargon —
-- [ ] 6. Cut test: removed every line that repeats the headline, delays explanation, asks an empty rhetorical question or adds irrelevant context —
-- [ ] 7. Promise/payoff: the ending answers the opening —
-- [ ] 8. Truth test: no proposal, prediction or allegation can be mistaken for completed fact (first frame and wording) —
-- [ ] 9. Silent test: first 3 s legible muted; an explanation beat's diagram carries the relationship muted —
-- [ ] 10. Share reason: a real person this would be useful to —
+### Script audit (estimated timing; re-measure on the real voice)
+- [x] 1. Hook: "Harga emas sudah anjlok sepertiga dari puncaknya. Tapi bank sentral dunia justru memborong. Kenapa?" (0–6 s): the contradiction is the stake.
+- [x] 2. Evidence by 5 s: the real gold chart (daily closes) on the billboard from frame 0, −32% on the ground.
+- [x] 3. First payoff by 8–12 s: who sells (fast money, speculators).
+- [x] 4. Reason to continue: who sells → why (yield) → who buys → the hidden part → did they keep buying in the fall → why → what it means.
+- [x] 5. Concrete nouns: a tower pouring gold, a bond building, crates of bars, wrapped crates, a convoy, signs.
+- [x] 6. Cut test: the reference's euro comparison and "second-biggest reserve asset" detail dropped.
+- [x] 7. Promise/payoff: "Kenapa?" is answered (time horizon + dollar-share view), with the caveat that buying didn't stop the fall.
+- [x] 8. Truth test: the 63% is labelled an estimate ("sisanya perkiraan World Gold Council"); China's October buy is "terbesar dalam setahun" (the reference's "two years" corrected); the bonds sentence states yields, not a proven flow.
+- [x] 9. Silent test: ground text carries every number; the chart is real.
+- [x] 10. Share reason: a friend who panicked about their gold.
 
-### Viewer-value gate (directive §10, before animation)
-- [ ] Opening understandable within three seconds
-- [ ] The audience has a reason to care
-- [ ] A meaningful early payoff
-- [ ] Each section contributes new information (answers a question, reveals a mechanism, creates the next question)
-- [ ] The central mechanism is explained clearly
-- [ ] No sentence can be removed without reducing understanding
-- [ ] The final insight is worth remembering (practical check / mental model / distinction / warning)
-- [ ] The viewer would feel the video delivered what it promised
-- [ ] No follow/save/share request; the payoff is the last content beat
+### Viewer-value gate: all YES (see retention-brief.md). No follow/save/share request.
 
 ### Retention ladder
-- [ ] A concrete fact, reveal or causal step about every 5–10 s (list them with times)
-- [ ] Generic bridges ("Tapi tunggu dulu", "Dan bukan cuma itu") replaced with specific ones
-- [ ] No second intro at 8–15 s; caveats sit at the claim, not only at the end
-- [ ] Final frame answers or echoes the first question; CTA and brand ending short
+2 s −32% · 4 s buyers · 8 s fast money · 15 s $9,3 bn · 19 s bonds 5% vs 0% · 28 s 321 t · 30 s +42% · 34 s ⅔ unreported · 35 s 120 t reported · 41 s October −7% · 43 s China +26 t · 48 s 3 of 4 · 52 s dollar share · 54 s can't default · 60 s buying ≠ immune · 64 s fast money · 67 s patient buyer.
 
-### Rejection gates (any YES = rewrite before animating)
-- [ ] Hook's promised consequence cannot be supported
-- [ ] First frame lacks an understandable subject/stake
-- [ ] Opening is only an animated logo or meaningless 3D
-- [ ] Nothing recognisably real (photo, logo, chart, document) in the first 3–8 s
-- [ ] No tangible proof or educational return by ~8–12 s
-- [ ] Script repeats context or pads with generic questions
-- [ ] Animation is a deck of disconnected diagrams, not a causal story
-- [ ] Final answer does not fulfil the first question
+### Rejection gates: none triggered.
 
 ## Part B — Visual-quality audit (motion-design rules, sections 4–8, and CLAUDE.md layout rules)
 

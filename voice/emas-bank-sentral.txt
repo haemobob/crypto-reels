@@ -1,0 +1,23 @@
+[serious] Harga emas sudah anjlok sepertiga dari puncaknya.
+Tapi...
+[intrigued] bank sentral dunia justru memborong. Kenapa?
+
+[matter-of-fact] Yang jual itu uang cepat: dana spekulan yang mikir dalam hitungan minggu. Empat hari sampai dua puluh November, mereka melepas kontrak emas senilai sembilan koma tiga miliar dolar. Apalagi obligasi Amerika sekarang kasih bunga hampir lima persen, sementara emas nggak kasih bunga sama sekali.
+
+[calm] Bank sentral main di jam yang beda. Kuartal ketiga, mereka beli tiga ratus dua puluh satu ton, naik empat puluh dua persen dari tahun lalu. [pause] Dan hampir dua pertiganya nggak dilaporkan: cuma seratus dua puluh ton yang tercatat resmi, sisanya perkiraan World Gold Council.
+
+[intrigued] Waktu harga jatuh tujuh persen di Oktober, China malah nambah dua puluh enam ton, terbesar dalam setahun.
+
+[thoughtful] Alasannya ada di survei mereka: tiga dari empat bank sentral yakin porsi dolar di cadangan devisa bakal turun dalam lima tahun. Emas nggak bisa gagal bayar, dan nggak bergantung pada negara mana pun.
+
+[slowly] Tapi ingat, borongan bank sentral nggak bikin harga kebal. Buktinya, harganya tetap jatuh. Harga minggu ini ditentukan uang cepat. Arah satu dekade... ditentukan pembeli yang sabar.
+
+----------------------------------------------------------------
+PRONUNCIATION NOTES (not part of the text to paste)
+Model: Eleven v3 · Voice: Ongky Himawan – Calm, Deep · Stability: Natural · intriguing and slow · no CAPS · target 62–72 s (window 50–75 s)
+- World Gold Council: English, "werld gold kaun-sil".
+- China: "cai-na" (English) or "Cina", either is fine.
+- spekulan: Indonesian, "spe-ku-lan".
+- obligasi: Indonesian, "o-bli-ga-si".
+- "Tapi..." sits on its own line: let it hang a beat before "bank sentral".
+- If the voice reads a bracketed tag aloud, keep the take; I'll cut it.
