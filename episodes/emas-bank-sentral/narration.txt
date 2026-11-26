@@ -1,0 +1,16 @@
+# Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
+# [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
+# Emas & bank sentral (user, 26 Nov 2026: recreate the Argus Terminal reel of 20 Nov 2026 as a Cryptonite episode).
+# DRAFT for Gate 1 (not approved yet).
+
+[[hook]] Harga emas sudah anjlok *sepertiga* dari puncaknya. Tapi bank sentral dunia justru memborong. Kenapa?
+
+[[fast]] Yang jual itu uang cepat: dana spekulan yang mikir dalam hitungan minggu. Empat hari sampai dua puluh November, mereka melepas kontrak emas senilai *sembilan koma tiga miliar dolar*. Apalagi obligasi Amerika sekarang kasih bunga hampir lima persen, sementara emas nggak kasih bunga sama sekali.
+
+[[slow]] Bank sentral main di jam yang beda. Kuartal ketiga, mereka beli *tiga ratus dua puluh satu ton*, naik empat puluh dua persen dari tahun lalu. Dan hampir dua pertiganya nggak dilaporkan: cuma seratus dua puluh ton yang tercatat resmi, sisanya perkiraan World Gold Council.
+
+[[dip]] Waktu harga jatuh tujuh persen di Oktober, China malah nambah *dua puluh enam ton*, terbesar dalam setahun.
+
+[[why]] Alasannya ada di survei mereka: tiga dari empat bank sentral yakin porsi dolar di cadangan devisa bakal turun dalam lima tahun. Emas nggak bisa gagal bayar, dan nggak bergantung pada negara mana pun.
+
+[[payoff]] Tapi ingat, borongan bank sentral nggak bikin harga kebal. Buktinya, harganya tetap jatuh. Harga minggu ini ditentukan *uang cepat*. Arah satu dekade ditentukan *pembeli yang sabar*.

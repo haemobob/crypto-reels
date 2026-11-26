@@ -19,10 +19,12 @@ import dompetSatoshi from './dompet-satoshi';
 import tigaHammer from './tiga-hammer';
 import lantaiHammer from './lantai-hammer';
 import burryNvidia from './burry-nvidia';
+import emasBankSentral from './emas-bank-sentral';
 // @episodes-import (scripts/new-episode.ts adds imports above this line)
 
 export const episodes: Record<string, EpisodeModule> = {
   // @episodes-entry (scripts/new-episode.ts adds entries below this line)
+  'emas-bank-sentral': emasBankSentral,
   'burry-nvidia': burryNvidia,
   'lantai-hammer': lantaiHammer,
   'tiga-hammer': tigaHammer,
