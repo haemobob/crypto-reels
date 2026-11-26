@@ -1,7 +1,7 @@
 # Approved exact wording, Bahasa Indonesia. Lines starting with # are ignored.
 # [[cue]] before a beat's first word, *keyword* for blue, [[pause:0.6]] for a silence.
 # Emas & bank sentral (user, 26 Nov 2026: recreate the Argus Terminal reel of 20 Nov 2026 as a Cryptonite episode).
-# DRAFT for Gate 1 (not approved yet).
+# Approved: user "progress" after the style frames (26 Nov 2026).
 
 [[hook]] Harga emas sudah anjlok *sepertiga* dari puncaknya. Tapi bank sentral dunia justru memborong. Kenapa?
 

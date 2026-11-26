@@ -9,6 +9,7 @@ import {AbsoluteFill, useVideoConfig} from 'remotion';
 import * as THREE from 'three';
 import {fontsReady, textTexture, toTexture, useAssets3D, type TextTexture} from '../../three/assets';
 import {KeyedCamera, type CamKey} from '../../three/camera';
+import {CornerLogo} from '../../components/CornerLogo';
 import {fonts} from '../../theme/typography';
 import {Bank, Billboard, C, Crate, Flag, GoldPile, goldMat, Ground, GroundText, Person, Road, SignPost, SportsCar, Tower, Trees, Truck, Vault, type V3} from './city';
 import data from './data.json';
@@ -412,6 +413,7 @@ export const EmasStyle = ({shot = 'hidden'}: {shot?: string}) => {
           {s.body(a)}
         </ThreeCanvas>
       )}
+      <CornerLogo from={0} plate />
       {/* Caption box (karaoke): spoken words white, the current word gold, the rest dim */}
       <div style={{position: 'absolute', left: 120, right: 120, top: 1440, display: 'flex', justifyContent: 'center'}}>
         <div style={{background: 'rgba(5,11,24,0.92)', borderRadius: 14, padding: '16px 26px', fontFamily: fonts.heading, fontWeight: 700, fontSize: 46, lineHeight: 1.18, textAlign: 'center', color: 'rgba(255,255,255,0.45)'}}>

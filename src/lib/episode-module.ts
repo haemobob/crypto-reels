@@ -9,6 +9,8 @@ export type EpisodeModule = {
   captionMute?: Array<[number, number]>;
   /** Frame ranges where the corner logo is hidden (light grounds). */
   logoHide?: Array<[number, number]>;
+  /** Put the corner logo on a navy plate (bright or blue grounds). */
+  logoPlate?: boolean;
   /** Optional Reel cover (1080×1920 still): registered as `cover-<id>`, rendered with `npm run cover -- <id>`. */
   Cover?: FC;
   /** Optional audio that plays across the whole Reel, outro included (e.g. a track that resolves under the logo).
