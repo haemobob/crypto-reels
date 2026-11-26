@@ -36,7 +36,7 @@ export const RemotionRoot = () => (
     {/* Style frames for the lantai-hammer rebuild (stills; input prop shot = hook | crowd | floor | payoff). */}
     <Composition id="lantai-style" component={LantaiStyle} durationInFrames={1} fps={VIDEO.fps} width={VIDEO.width} height={VIDEO.height} />
     {/* Style frames for emas-bank-sentral (input prop shot = chart | vault). */}
-    <Composition id="emas-style" component={EmasStyle} durationInFrames={1} fps={VIDEO.fps} width={VIDEO.width} height={VIDEO.height} defaultProps={{shot: 'vault'}} />
+    <Composition id="emas-style" component={EmasStyle} durationInFrames={1} fps={VIDEO.fps} width={VIDEO.width} height={VIDEO.height} defaultProps={{shot: 'hidden'}} />
     {/* Reel covers (thumbnails): one still per episode that defines a Cover. */}
     {Object.entries(episodes).map(([id, ep]) =>
       ep.Cover ? <Composition key={`cover-${id}`} id={`cover-${id}`} component={ep.Cover} durationInFrames={1} fps={VIDEO.fps} width={VIDEO.width} height={VIDEO.height} /> : null,

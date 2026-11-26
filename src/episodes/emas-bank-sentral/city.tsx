@@ -129,7 +129,7 @@ export const Crate = ({position, rows = 6, cols = 4, layers = 6, fill = 1, wrapp
       {wrapped ? (
         <group position={[0, h / 2 + 0.03, 0]}>
           <mesh castShadow receiveShadow geometry={wrapGeo(w, h, d)}>
-            <meshStandardMaterial color={C.wrap} roughness={0.5} metalness={0.1} flatShading />
+            <meshStandardMaterial color={C.wrap} roughness={0.45} metalness={0.15} flatShading />
           </mesh>
           {[-0.3, 0.3].map((k) => (
             <mesh key={k} position={[k * w, 0, 0]}>
@@ -157,13 +157,13 @@ const wrapCache = new Map<string, THREE.BufferGeometry>();
 const wrapGeo = (w: number, h: number, d: number) => {
   const key = `${w}|${h}|${d}`;
   if (!wrapCache.has(key)) {
-    const g = new THREE.BoxGeometry(w, h, d, 6, 5, 4).toNonIndexed();
+    const g = new THREE.BoxGeometry(w, h, d, 9, 7, 6).toNonIndexed();
     const p = g.attributes.position;
     for (let i = 0; i < p.count; i++) {
       const x = p.getX(i);
       const y = p.getY(i);
       const z = p.getZ(i);
-      const n = (rnd(Math.round(x * 97 + y * 131 + z * 173)) - 0.5) * 0.05;
+      const n = (rnd(Math.round(x * 97 + y * 131 + z * 173)) - 0.5) * 0.09;
       p.setXYZ(i, x * (1 + n), y * (1 + n * 0.6), z * (1 + n));
     }
     g.computeVertexNormals();
@@ -236,7 +236,7 @@ export const Vault = ({position, size = [4.2, 2.6, 3.2], open = 0, rot = 0, chil
         </group>
       )}
       {/* the door, hinged on the right edge */}
-      <group position={[r, r + 0.15, d / 2 + 0.08]} rotation={[0, -open * 1.9, 0]}>
+      <group position={[r, r + 0.15, d / 2 + 0.08]} rotation={[0, open * 1.6, 0]}>
         <group position={[-r, 0, 0]}>
           <mesh rotation={[Math.PI / 2, 0, 0]} castShadow>
             <cylinderGeometry args={[r, r, 0.18, 28]} />
@@ -312,3 +312,144 @@ export const GroundText = ({tex, height, position, yaw = 0, opacity = 1}: {tex: 
       <meshBasicMaterial map={tex.texture} transparent opacity={opacity} depthWrite={false} toneMapped={false} />
     </mesh>
   );
+
+/** A triangular prism (pediment) of width w, height h, depth d. */
+const pedimentGeo = (w: number, h: number, d: number) => {
+  const s = new THREE.Shape();
+  s.moveTo(-w / 2, 0);
+  s.lineTo(w / 2, 0);
+  s.lineTo(0, h);
+  s.closePath();
+  const g = new THREE.ExtrudeGeometry(s, {depth: d, bevelEnabled: false});
+  g.translate(0, 0, -d / 2);
+  return g;
+};
+
+/** A classical building (treasury / central bank): steps, columns, pediment; `sign` is a text texture on the frieze. */
+export const Bank = ({position, w = 4.4, d = 3, h = 2.4, rot = 0, sign}: {position: V3; w?: number; d?: number; h?: number; rot?: number; sign?: TextTexture}) => {
+  const cols = 6;
+  const ped = useMemo(() => pedimentGeo(w + 0.2, 0.9, d + 0.2), [w, d]);
+  return (
+    <group position={position} rotation={[0, rot, 0]}>
+      {[0, 1, 2].map((i) => (
+        <mesh key={i} position={[0, 0.08 + i * 0.16, 0.25 - i * 0.12]} castShadow receiveShadow>
+          <boxGeometry args={[w + 0.8 - i * 0.25, 0.16, d + 0.9 - i * 0.25]} />
+          <meshStandardMaterial color={C.buildingDark} roughness={0.85} />
+        </mesh>
+      ))}
+      <mesh position={[0, 0.48 + h / 2, -0.25]} castShadow receiveShadow>
+        <boxGeometry args={[w - 0.6, h, d - 0.9]} />
+        <meshStandardMaterial color={C.buildingDark} roughness={0.85} />
+      </mesh>
+      {Array.from({length: cols}, (_, i) => (
+        <mesh key={i} position={[-w / 2 + 0.3 + (i * (w - 0.6)) / (cols - 1), 0.48 + h / 2, d / 2 - 0.25]} castShadow>
+          <cylinderGeometry args={[0.14, 0.16, h, 10]} />
+          <meshStandardMaterial color={C.building} roughness={0.7} />
+        </mesh>
+      ))}
+      <mesh position={[0, 0.48 + h + 0.18, 0]} castShadow>
+        <boxGeometry args={[w + 0.2, 0.36, d + 0.2]} />
+        <meshStandardMaterial color={C.building} roughness={0.8} />
+      </mesh>
+      <mesh geometry={ped} position={[0, 0.48 + h + 0.36, 0]} castShadow>
+        <meshStandardMaterial color={C.building} roughness={0.8} flatShading />
+      </mesh>
+      {sign && (
+        <mesh position={[0, 0.48 + h + 0.18, d / 2 + 0.11]}>
+          <planeGeometry args={[0.26 * sign.aspect, 0.26]} />
+          <meshBasicMaterial map={sign.texture} transparent toneMapped={false} />
+        </mesh>
+      )}
+    </group>
+  );
+};
+
+/** A heap of gold bars (instanced, deterministic) with `fill` 0–1 of them shown. */
+export const GoldPile = ({position, count = 260, radius = 1.6, fill = 1, seed = 1}: {position: V3; count?: number; radius?: number; fill?: number; seed?: number}) => {
+  const matrices = useMemo(() => {
+    const out: THREE.Matrix4[] = [];
+    for (let i = 0; i < count; i++) {
+      const a = rnd(seed * 31 + i) * Math.PI * 2;
+      const r = Math.sqrt(rnd(seed * 17 + i * 3)) * radius;
+      const y = Math.max(0.05, (1 - r / radius) * radius * 0.55 * (0.7 + rnd(i * 7) * 0.5));
+      out.push(new THREE.Matrix4().compose(new THREE.Vector3(Math.cos(a) * r, y, Math.sin(a) * r), new THREE.Quaternion().setFromEuler(new THREE.Euler(rnd(i) * 0.8, rnd(i + 1) * 6, rnd(i + 2) * 0.8)), new THREE.Vector3(1, 1, 1)));
+    }
+    return out;
+  }, [count, radius, seed]);
+  const shown = Math.round(count * Math.max(0, Math.min(1, fill)));
+  return shown <= 0 ? null : (
+    <group position={position}>
+      <instancedMesh key={shown} args={[barGeo, goldMat, shown]} castShadow ref={(m) => m && matrices.slice(0, shown).forEach((mm, i) => m.setMatrixAt(i, mm))} />
+    </group>
+  );
+};
+
+/** A low sports car (fast money). */
+export const SportsCar = ({position, rot = 0}: {position: V3; rot?: number}) => (
+  <group position={position} rotation={[0, rot, 0]}>
+    <mesh position={[0, 0.22, 0]} castShadow>
+      <boxGeometry args={[1.5, 0.2, 0.68]} />
+      <meshStandardMaterial color={C.white} roughness={0.35} metalness={0.2} flatShading />
+    </mesh>
+    <mesh position={[-0.12, 0.39, 0]} castShadow>
+      <boxGeometry args={[0.66, 0.16, 0.56]} />
+      <meshStandardMaterial color="#9DB9F0" roughness={0.2} />
+    </mesh>
+    {[-0.48, 0.48].map((x) =>
+      [-0.33, 0.33].map((z) => (
+        <mesh key={`${x}${z}`} position={[x, 0.13, z]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.13, 0.13, 0.08, 10]} />
+          <meshStandardMaterial color="#0A2468" roughness={0.9} />
+        </mesh>
+      )),
+    )}
+  </group>
+);
+
+/** A sign on a post, facing +z (rotate with `rot`). */
+export const SignPost = ({position, tex, h = 0.5, rot = 0, lift = 1}: {position: V3; tex: TextTexture; h?: number; rot?: number; lift?: number}) => (
+  <group position={position} rotation={[0, rot, 0]}>
+    <mesh position={[0, 0.6 * lift, 0]} castShadow>
+      <cylinderGeometry args={[0.03, 0.03, 1.2 * lift, 6]} />
+      <meshStandardMaterial color={C.white} roughness={0.5} />
+    </mesh>
+    <mesh position={[0, 1.2 * lift + h / 2, 0.02]} castShadow>
+      <planeGeometry args={[h * tex.aspect, h]} />
+      <meshBasicMaterial map={tex.texture} toneMapped={false} side={THREE.DoubleSide} />
+    </mesh>
+  </group>
+);
+
+/** A billboard on two legs showing a canvas texture. */
+export const Billboard = ({position, tex, w = 6.2, h = 3.6, rot = 0}: {position: V3; tex: THREE.Texture; w?: number; h?: number; rot?: number}) => (
+  <group position={position} rotation={[0, rot, 0]}>
+    {[-w * 0.42, w * 0.42].map((x) => (
+      <mesh key={x} position={[x, 1.6, 0]} castShadow>
+        <boxGeometry args={[0.25, 3.2, 0.25]} />
+        <meshStandardMaterial color={C.buildingDark} roughness={0.8} />
+      </mesh>
+    ))}
+    <mesh position={[0, 3.2 + h / 2 - 0.2, 0.02]} castShadow>
+      <boxGeometry args={[w + 0.4, h + 0.3, 0.3]} />
+      <meshStandardMaterial color={C.buildingDark} roughness={0.8} />
+    </mesh>
+    <mesh position={[0, 3.2 + h / 2 - 0.2, 0.18]}>
+      <planeGeometry args={[w, h]} />
+      <meshBasicMaterial map={tex} toneMapped={false} />
+    </mesh>
+  </group>
+);
+
+/** A small person (white capsule body, round head). */
+export const Person = ({position, color = C.white}: {position: V3; color?: string}) => (
+  <group position={position}>
+    <mesh position={[0, 0.28, 0]} castShadow>
+      <capsuleGeometry args={[0.1, 0.26, 4, 8]} />
+      <meshStandardMaterial color={color} roughness={0.6} />
+    </mesh>
+    <mesh position={[0, 0.58, 0]} castShadow>
+      <sphereGeometry args={[0.09, 10, 8]} />
+      <meshStandardMaterial color={color} roughness={0.6} />
+    </mesh>
+  </group>
+);
