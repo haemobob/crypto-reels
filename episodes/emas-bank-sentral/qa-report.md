@@ -79,3 +79,7 @@ Visual-quality audit result: PENDING
 ## Fixes completed and rechecked
 
 ## Final verified artifact path
+
+## Draft check (silent draft, ESTIMATED timing, 26 Nov 2026)
+- `output/emas-bank-sentral-silent.mp4`, 71.3 s incl. outro, 1080×1920 (dpr 2 supersampled). Pace (outro excluded, 69.3 s): still 19.2%, longest still 1.17 s, events 41.6/min, median gap 1.43 s, max gap 2.9 s, first change 0.1 s. PASS on every pace target.
+- Contact sheet checked at 1 fps. Motion NOT REVIEWED by watching; final checks wait for the real voice.
