@@ -84,3 +84,8 @@ Visual-quality audit result: PENDING
 - `output/emas-bank-sentral-silent.mp4`, 71.3 s incl. outro, 1080×1920 (dpr 2 supersampled). Pace (outro excluded, 69.3 s): still 19.2%, longest still 1.17 s, events 41.6/min, median gap 1.43 s, max gap 2.9 s, first change 0.1 s. PASS on every pace target.
 - Re-render 27 Nov 2026 (fixed lanes, convoys in gaps, chute stream): still 7.4%, longest still 1.03 s, events 41.6/min, median gap 1.47 s, max gap 2.57 s, first change 0.1 s. PASS. Frames at the fixed spots (4.5, 5.5, 11.5, 12.5, 41.5, 43, 44.5, 66.5 s) checked: no overlapping trucks, gold stays on the chute.
 - Contact sheet checked at 1 fps. Motion NOT REVIEWED by watching; final checks wait for the real voice.
+
+## Render with voice (27 Nov 2026)
+- `output/emas-bank-sentral.mp4`: 87.0 s, 1080×1920, 30 fps, H.264 + AAC; −14.0 LUFS integrated, peak −1.5 dBFS; `validate` passed.
+- Pace (outro excluded, 84.9 s): still 6.5%, longest still 1.37 s, events 32.5/min, median gap 1.97 s, max gap 4.13 s (49.9–54.0 s, the October convoy; 0.13 s over the 4 s target), first change 0.1 s.
+- Contact sheet at 1 fps checked. Motion measured by the pace tool, NOT watched; Visual-quality audit stays PENDING until the user reviews the render (Gate 3).
