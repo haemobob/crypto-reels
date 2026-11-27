@@ -17,6 +17,7 @@ import {ease} from '../../theme/motion';
 import {fonts} from '../../theme/typography';
 import {Bank, Billboard, C, Crate, Flag, GoldPile, goldMat, Ground, GroundText, Person, Road, SignPost, SportsCar, Tower, Trees, Truck, Vault, type V3} from './city';
 import {iso, DepthRange} from './Style';
+import {Sound} from './Sound';
 import {drawChart, flagTexture, windowsTexture, type ChartOpts} from './textures';
 
 const cap = captionsJson as Captions;
@@ -467,6 +468,7 @@ export const Film = (): ReactNode => {
         </ThreeCanvas>
       )}
       <CaptionBox />
+      <Sound />
     </AbsoluteFill>
   );
 };

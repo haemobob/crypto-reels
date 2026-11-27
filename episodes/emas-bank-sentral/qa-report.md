@@ -2,7 +2,7 @@
 
 Both audits are done **before final rendering** (the user renders the final MP4). Update the two result lines; `npm run audit -- <id>` reads them and warns at render time while either is not PASS.
 
-Retention audit result: PENDING
+Retention audit result: PASS
 Visual-quality audit result: PENDING
 
 ## Part A — Retention audit (retention rules, Rules 3, 6, 9)

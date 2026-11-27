@@ -407,7 +407,8 @@ export const SportsCar = ({position, rot = 0}: {position: V3; rot?: number}) => 
 );
 
 /** A sign on a post, facing +z (rotate with `rot`). */
-export const SignPost = ({position, tex, h = 0.5, rot = 0, lift = 1}: {position: V3; tex: TextTexture; h?: number; rot?: number; lift?: number}) => (
+export const SignPost = ({position, tex, h = 0.5, rot = 0, lift = 1}: {position: V3; tex: TextTexture; h?: number; rot?: number; lift?: number}) =>
+  lift < 0.04 ? null : (
   <group position={position} rotation={[0, rot, 0]}>
     <mesh position={[0, 0.6 * lift, 0]} castShadow>
       <cylinderGeometry args={[0.03, 0.03, 1.2 * lift, 6]} />

@@ -15,7 +15,7 @@ if (audit.retention !== 'PASS' || audit.visual !== 'PASS')
 
 const raw = p('output', `${id}.raw.mp4`);
 const final = p('output', `${id}.mp4`);
-remotion(['render', p('src', 'index.ts'), id, raw, '--codec', 'h264', '--audio-codec', 'aac', '--log', 'error']);
+remotion(['render', p('src', 'index.ts'), id, raw, '--codec', 'h264', '--audio-codec', 'aac', '--log', process.env.RENDER_LOG ?? 'error']);
 
 // Two-pass loudnorm: measure, then apply with the measured values (video stream copied untouched).
 // TP aims at -1.5 because AAC encoding adds a few tenths of overshoot; the result lands under -1 dBTP.
