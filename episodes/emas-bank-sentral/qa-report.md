@@ -82,4 +82,5 @@ Visual-quality audit result: PENDING
 
 ## Draft check (silent draft, ESTIMATED timing, 26 Nov 2026)
 - `output/emas-bank-sentral-silent.mp4`, 71.3 s incl. outro, 1080×1920 (dpr 2 supersampled). Pace (outro excluded, 69.3 s): still 19.2%, longest still 1.17 s, events 41.6/min, median gap 1.43 s, max gap 2.9 s, first change 0.1 s. PASS on every pace target.
+- Re-render 27 Nov 2026 (fixed lanes, convoys in gaps, chute stream): still 7.4%, longest still 1.03 s, events 41.6/min, median gap 1.47 s, max gap 2.57 s, first change 0.1 s. PASS. Frames at the fixed spots (4.5, 5.5, 11.5, 12.5, 41.5, 43, 44.5, 66.5 s) checked: no overlapping trucks, gold stays on the chute.
 - Contact sheet checked at 1 fps. Motion NOT REVIEWED by watching; final checks wait for the real voice.
