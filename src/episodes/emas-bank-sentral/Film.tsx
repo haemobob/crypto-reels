@@ -181,16 +181,63 @@ const GT = ({tex, at, out = 99999, height, position, yaw = 0}: {tex: TextTexture
   );
 };
 
-/** Ambient traffic on the main road, both directions, wrapping over x -70…90. */
-const Traffic = ({f}: {f: number}) => (
-  <>
-    {Array.from({length: 18}, (_, i) => {
-      const dir = i % 2 ? 1 : -1;
-      const x = ((((i * 9.3 + f * 0.07 * (0.8 + (i % 3) * 0.15)) % 160) + 160) % 160) - 70;
-      return <Truck key={i} position={[dir * x, 0, 3 + (dir > 0 ? 0.6 : -0.6)]} rot={dir > 0 ? 0 : Math.PI} cargo={i % 3 !== 0} />;
-    })}
-  </>
-);
+/**
+ * Traffic on the main road. Two lanes: west-bound (z 2.4, toward -x) and east-bound (z 3.6, toward +x). Every truck
+ * in a lane has the same speed and spacing (10 units, 16 slots over x -70…90), so trucks never overlap. The lane's
+ * phase is reset only on hard cuts (invisible), and each segment's phase puts slot 0 so that a convoy riding in the
+ * gap behind it (offsets 2.5 / 4.7 / 6.9) reaches its mark on time.
+ */
+const LANE = {L: 160, S: 10, v: 0.076, x0: 90};
+const SLOTS = LANE.L / LANE.S;
+const OFFS = [2.5, 4.7, 6.9];
+const wrap = (u: number) => ((u % LANE.L) + LANE.L) % LANE.L;
+/** Segments between hard cuts; `mark` = [frame, x] where the convoy's lead truck should be (west lane). */
+const SEGMENTS: Array<{from: number; mark?: [number, number]; convoy?: 'vault' | 'china'; east: boolean}> = [
+  {from: -100, mark: [T.bank0 + 18, 21], convoy: 'vault', east: false},
+  {from: T.fast, east: true},
+  {from: T.slow, east: true},
+  {from: T.dip, mark: [T.china + 10, 47], convoy: 'china', east: true},
+  {from: T.payoff, mark: [T.arah + 28, 21], convoy: 'vault', east: false},
+];
+const segmentAt = (f: number) => SEGMENTS[SEGMENTS.findLastIndex((s) => f >= s.from)] ?? SEGMENTS[0];
+const phaseOf = (seg: (typeof SEGMENTS)[number]) => (seg.mark ? wrap(LANE.x0 - (seg.mark[1] - OFFS[0]) - seg.mark[0] * LANE.v) : 37);
+const westX = (k: number, f: number, ph: number) => LANE.x0 - wrap(k * LANE.S + f * LANE.v + ph);
+const eastX = (k: number, f: number) => -70 + wrap(k * LANE.S + 5 + f * LANE.v);
+
+const Traffic = ({f, cn}: {f: number; cn: THREE.Texture}) => {
+  const seg = segmentAt(f);
+  const ph = phaseOf(seg);
+  const trucks: ReactNode[] = [];
+  for (let k = 0; k < SLOTS; k++) {
+    trucks.push(<Truck key={`w${k}`} position={[westX(k, f, ph), 0, 2.4]} rot={Math.PI} cargo={k % 3 !== 0} />);
+    if (seg.east) trucks.push(<Truck key={`e${k}`} position={[eastX(k, f), 0, 3.6]} cargo={k % 3 !== 1} />);
+  }
+  // The convoy in the gap behind slot 0: into the vault (turning up the access road at x 21), or China's convoy.
+  if (seg.convoy) {
+    OFFS.forEach((o, j) => {
+      const xl = westX(0, f, ph) + o;
+      if (seg.convoy === 'china') {
+        trucks.push(
+          <group key={`c${j}`} position={[xl, 0, 2.4]} rotation={[0, Math.PI, 0]}>
+            <Truck position={[0, 0, 0]} />
+            <Flag position={[0.62, 0.66, 0]} tex={cn} raise={0.3} />
+          </group>,
+        );
+        return;
+      }
+      if (xl > 21) {
+        trucks.push(<Truck key={`v${j}`} position={[xl, 0, 2.4]} rot={Math.PI} />);
+        return;
+      }
+      const d = 21 - xl;
+      const z = 2.4 - d;
+      if (z < -3.1) return; // inside the vault
+      const turn = Math.min(1, d / 0.9);
+      trucks.push(<Truck key={`v${j}`} position={[21, 0, z]} rot={Math.PI - (Math.PI / 2) * turn} />);
+    });
+  }
+  return <>{trucks}</>;
+};
 
 // ---------------------------------------------------------------------------------------------------------------
 // The places
@@ -208,11 +255,6 @@ const Hook = ({a, f}: {a: Assets; f: number}) => (
 /** The central bank compound: vault, access road, a 3×3 crate yard (back row reported, front rows unreported). */
 const Compound = ({a, f}: {a: Assets; f: number}) => {
   const door = ramp(f, T.bank0, T.bank0 + 30);
-  // Trucks into the vault: during the hook and again for the payoff.
-  const runs = [
-    {start: T.bank0 - 10, n: 3},
-    {start: T.arah - 10, n: 4},
-  ];
   return (
     <group>
       <Vault position={[21, 0, -5.4]} size={[5, 3.2, 4]} open={door} />
@@ -221,15 +263,6 @@ const Compound = ({a, f}: {a: Assets; f: number}) => {
         <meshBasicMaterial map={a.txt.bankSign.texture} transparent toneMapped={false} />
       </mesh>
       <Road at={[21, 0, -0.6]} length={3.8} alongZ width={2.2} />
-      {runs.flatMap(({start, n}) =>
-        Array.from({length: n}, (_, i) => {
-          const t = (f - start - i * 22) / 70;
-          if (t < 0 || t > 1) return null;
-          const z = interpolate(t, [0, 1], [3.6, -3.0]);
-          const x = t < 0.15 ? interpolate(t, [0, 0.15], [25.5, 21]) : 21;
-          return <Truck key={`${start}${i}`} position={[x, 0, z]} rot={t < 0.15 ? Math.PI * 0.75 : Math.PI / 2} />;
-        }),
-      )}
       {[0, 1, 2].map((r) =>
         [0, 1, 2].map((c) => {
           const k = r * 3 + c;
@@ -262,11 +295,25 @@ const Speculators = ({a, f}: {a: Assets; f: number}) => {
         <boxGeometry args={[1.1, 0.08, 2.4]} />
         <meshStandardMaterial color={C.buildingDark} roughness={0.8} />
       </mesh>
-      {/* bars sliding down the chute, a continuous stream */}
-      {Array.from({length: 10}, (_, i) => {
-        const u = (((f * 0.05 + i / 10) % 1) + 1) % 1;
+      {/* bars sliding down the chute's top surface, then dropping onto the pile: a continuous stream */}
+      {Array.from({length: 14}, (_, i) => {
+        const u = (((f * 0.03 + i / 14) % 1) + 1) % 1 * 1.3;
+        // Chute top surface: from (y 1.928, z -3.890) to (y 0.572, z -1.910), lifted along its normal by 0.09.
+        const x = -23.25 + (i % 4) * 0.23;
+        let y: number;
+        let z: number;
+        let rx = 0.6;
+        if (u <= 1) {
+          y = 1.928 + (0.572 - 1.928) * u + 0.074;
+          z = -3.89 + (-1.91 + 3.89) * u + 0.051;
+        } else {
+          const t = (u - 1) / 0.3;
+          y = 0.646 + 0.2 * t - 0.62 * t * t;
+          z = -1.86 + 0.75 * t;
+          rx = 0.6 + t * 1.4;
+        }
         return (
-          <mesh key={i} material={goldMat} position={[-23.2 + (i % 3) * 0.25, 2.0 - u * 1.6, -3.9 + u * 1.9]} rotation={[0.6, i, 0]} castShadow>
+          <mesh key={i} material={goldMat} position={[x, y, z]} rotation={[rx, (i % 3) * 0.2 - 0.2, 0]} castShadow>
             <boxGeometry args={[0.27, 0.1, 0.13]} />
           </mesh>
         );
@@ -301,16 +348,6 @@ const Bonds = ({a, f}: {a: Assets; f: number}) => (
 const Dip = ({a, f}: {a: Assets; f: number}) => (
   <group>
     <ChartBoard position={[44.4, 0, -4.2]} opts={OCT_CHART} progress={ramp(f, T.dip + 2, T.oktober + 10, ease.inOut)} />
-    {/* China's convoy on the far lane, heading for the compound */}
-    {[0, 1, 2].map((i) => {
-      const x = interpolate(f, [T.china - 30, T.why + 30], [56 + i * 2.2, 40 + i * 2.2], clamp);
-      return (
-        <group key={i} position={[x, 0, 2.4]} rotation={[0, Math.PI, 0]}>
-          <Truck position={[0, 0, 0]} />
-          <Flag position={[0.62, 0.66, 0]} tex={a.cn} raise={0.3} />
-        </group>
-      );
-    })}
     <GT tex={a.txt.plus26} at={T.dua5 - 2} height={1.0} position={[49.2, 0.03, -1.6]} yaw={Math.PI / 2} />
     <GT tex={a.txt.terbesar} at={T.terbesar} height={0.32} position={[50.4, 0.03, -1.6]} yaw={Math.PI / 2} />
   </group>
@@ -410,7 +447,7 @@ const City = ({a}: {a: Assets}) => {
       <Bonds a={a} f={f} />
       <Dip a={a} f={f} />
       <Survey a={a} f={f} />
-      <Traffic f={f} />
+      <Traffic f={f} cn={a.cn} />
       <FastCar f={f} />
       <Road at={[10, 0, 3]} length={170} />
       <Trees area={TREE_AREA} count={1900} seed={4} clear={TREE_CLEAR} />
